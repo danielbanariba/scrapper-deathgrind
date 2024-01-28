@@ -38,3 +38,6 @@ driver.quit()
 # 2. para que con el html generado pueda venir yo facilmente y abrir link por link para ver que descargar y que no
 # 3. Tener alguna opcion o algo donde los que ya busque, no me vuelva aparecer, hacer una comparacion de titulos, y decir "Caracass - Heartwork (Full Album) ya lo busque" entonces ignorarlo en la nueva lista que haga, para de esa forma evitar duplicados
 # 4. hacer que el programa se ejecute cada cierto tiempo, para que se actualice la lista de titulos, y asi no tener que estar yo ejecutando el programa cada vez que quiera actualizar la lista de titulos
+# 5. Crear 3 listas de titulos, la primera es cuando se guardan todos los titulos de los albumes
+        # la segunda es cuando se guardan los titulos de los albumes que ya se buscaron en youtube
+        # La tercera es cuando se verifica si ya se busco ese titulo en youtube, si ya se busco, se ignora, si no se busca y se guarda en la segunda lista
