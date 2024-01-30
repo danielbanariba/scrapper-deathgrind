@@ -22,19 +22,22 @@ soup = BeautifulSoup(content, 'html.parser')
 
 # Abrir el archivo de salida
 with open('aprobadas.txt', 'w', encoding='utf-8') as out_file:
+    # Inicializar el contador
+    search_counter = 0
+
+    # Iniciar el navegador
+    options = Options()
+    options.headless = True
+    driver = webdriver.Chrome(options=options)  # Use headless browser
+
     # Iterar sobre todos los enlaces de búsqueda
     for search_link in soup.find_all('a'):
-        # Iniciar el navegador
-        options = Options()
-        options.headless = True
-        driver = webdriver.Chrome(options=options)  # Use headless browser
-
         # Navegar a la página de resultados de la búsqueda
         driver.get(search_link.get('href'))
 
         try:
             # Esperar a que se carguen los enlaces de los videos
-            video_links = WebDriverWait(driver, 10).until(
+            video_links = WebDriverWait(driver, 120).until(
                 EC.presence_of_all_elements_located((By.ID, 'video-title'))
             )
 
@@ -59,5 +62,15 @@ with open('aprobadas.txt', 'w', encoding='utf-8') as out_file:
             # Escribir el nombre de la búsqueda aprobada en el archivo de salida
             out_file.write(approved_search + '\n')
 
-        # Cerrar el navegador
-        driver.quit()
+        search_counter += 1  # Incrementar el contador después de cada búsqueda
+
+        if search_counter >= 50:  # Comprobar si el contador ha llegado a 50
+            driver.quit()  # Cerrar el navegador
+            search_counter = 0  # Reiniciar el contador
+            # Aquí deberías volver a abrir el navegador
+            options = Options()
+            options.headless = True
+            driver = webdriver.Chrome(options=options)  # Use headless browser
+
+    # Cerrar el navegador una vez que hayas terminado todas las búsquedas
+    driver.quit()
