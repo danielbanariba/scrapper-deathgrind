@@ -1,54 +1,40 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
 from bs4 import BeautifulSoup
-import time
+import glob
 
-# Leer el archivo de bandas aprobadas
-with open('aprobadas.txt', 'r') as f:
-    bandas_aprobadas = f.read().splitlines()
+# Leer el archivo 'aprobadas.txt' y almacenar los nombres en una lista
+with open('bandas_sin_keywords.txt', 'r', encoding='utf-8') as f:
+    names = [line.strip() for line in f]
 
-# Configurar el navegador
-options = Options()
-options.headless = False
-driver = webdriver.Firefox(options=options)
+# Inicializar una lista para almacenar los enlaces encontrados
+links = []
 
-# Lista para almacenar los links de descarga
-links_descarga = []
+# Obtener una lista de todos los archivos HTML en el directorio
+html_files = glob.glob('C:/Users/banar/Downloads/deathgrind_geners/*.html')
 
-# Recorrer los archivos HTML
-for banda in bandas_aprobadas:
-    driver.get('C:/Users/banar/Downloads/deathgrind_geners/*.html')
-    time.sleep(2)  # Esperar a que la página cargue
+# Para cada archivo HTML en la lista
+for filename in html_files:
+    print(f"Processing {filename}")  # Agregar esta línea
+    # Abrir el archivo y analizar el contenido con BeautifulSoup
+    with open(filename, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f, 'html.parser')
 
-    # Buscar los elementos 'a' con el atributo 'title'
-    elementos = driver.find_elements_by_xpath('//a[@title]')
+    # Buscar todos los elementos con la etiqueta 'h3' y la clase 'dgc-ljodyg etdg1c916'
+    elements = soup.find_all('h3', {'class': 'dgc-ljodyg etdg1c916'})
 
-    # Recorrer los elementos y hacer click si el título coincide con el nombre de la banda
-    for elemento in elementos:
-        if elemento.get_attribute('title') == banda:
-            elemento.click()
-            print(f'{banda}')  # Imprimir el nombre de la banda
-            time.sleep(2)  # Esperar a que la página cargue
+    # Para cada elemento encontrado
+    for element in elements:
+        # Buscar la etiqueta 'a'
+        a_tag = element.find('a')
 
-            # Buscar el botón y hacer click
-            boton = driver.find_element_by_class_name('MuiButtonBase-root')
-            boton.click()
-            time.sleep(2)  # Esperar a que la página cargue
+        # Si el título coincide exactamente
+        if a_tag:
+            title = a_tag.get('title')
+            print(f"Comparing title: {title}")  # Agregar esta línea
+            if title in names:
+                # Extraer el atributo 'href' y almacenarlo
+                links.append(a_tag.get('href'))
 
-            # Extraer el HTML de la página y analizarlo con BeautifulSoup
-            html = driver.page_source
-            soup = BeautifulSoup(html, 'html.parser')
-
-            # Buscar los elementos 'span' y extraer los links de descarga
-            spans = soup.find_all('span', {'aria-label': True, 'class': 'dgc-1x1y7r3 emyorhn0'})
-            for span in spans:
-                link = span.find('a')['href']
-                links_descarga.append(link)
-
-# Cerrar el navegador
-driver.quit()
-
-# Guardar los links de descarga en un archivo
-with open('links_descarga.txt', 'w') as f:
-    for link in links_descarga:
-        f.write(link + '\n')
+# Escribir todos los enlaces encontrados en el archivo 'links_bandas.txt'
+with open('links_bandas.txt', 'w', encoding='utf-8') as f:
+    for link in links:
+        f.write(f"{link}\n")
