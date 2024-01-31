@@ -27,6 +27,7 @@ for banda in bandas_aprobadas:
     for elemento in elementos:
         if elemento.get_attribute('title') == banda:
             elemento.click()
+            print(f'{banda}')  # Imprimir el nombre de la banda
             time.sleep(2)  # Esperar a que la página cargue
 
             # Buscar el botón y hacer click
@@ -47,6 +48,7 @@ for banda in bandas_aprobadas:
 # Cerrar el navegador
 driver.quit()
 
-# Imprimir los links de descarga
-for link in links_descarga:
-    print(link)
+# Guardar los links de descarga en un archivo
+with open('links_descarga.txt', 'w') as f:
+    for link in links_descarga:
+        f.write(link + '\n')
