@@ -29,7 +29,7 @@ for filename in html_files:
         # Si el título coincide exactamente
         if a_tag:
             title = a_tag.get('title')
-            print(f"Comparing title: {title}")  # Agregar esta línea
+            #print(f"Comparing title: {title}")  # Agregar esta línea
             if title in names:
                 # Extraer el atributo 'href' y almacenarlo
                 links.append(a_tag.get('href'))
