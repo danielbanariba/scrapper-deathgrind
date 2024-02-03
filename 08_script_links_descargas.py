@@ -1,30 +1,44 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
 
-# Abre el archivo con los enlaces
-with open('links_bandas_corregidos.txt', 'r', encoding='utf-8') as file:
-    links = file.readlines()
+# Crea una nueva instancia del navegador
+driver = webdriver.Firefox()
 
-# Inicia un navegador Chrome con Selenium
-driver = webdriver.Chrome()
+# Abre el archivo con los enlaces y lee todas las líneas
+with open('links_bandas_corregidos2.txt', 'r') as f:
+    links = f.read().splitlines()
 
-# Abre el archivo donde se guardarán los enlaces encontrados
-with open('links_para_descargar.txt', 'w', encoding='utf-8') as output:
-    # Para cada enlace
+# Abre el archivo donde se guardarán los enlaces de descarga
+with open('links_para_descargar.txt', 'w') as f:
+    # Para cada enlace en el archivo de entrada
     for link in links:
-        # Navega al enlace con Selenium
-        driver.get(link.strip())
-        # Espera a que se cargue el botón con el nombre de la clase
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'dgc-1x1y7r3.emyorhn0')))
-        # Encuentra todos los enlaces dentro de este botón
-        buttons = driver.find_elements_by_css_selector('dgc-1x1y7r3.emyorhn0 a')
-        for button in buttons:
-            # Extrae el atributo 'href' de cada enlace
-            href = button.get_attribute('href')
-            # Guarda estos enlaces en el archivo
-            output.write(href + '\n')
+        print(f'Procesando {link}...')
+        # Abre el enlace en el navegador
+        driver.get(link)
+        # Obtiene el código fuente de la página
+        html = driver.page_source
+        # Analiza el contenido con BeautifulSoup
+        soup = BeautifulSoup(html, 'html.parser')
+        # Busca el div con la clase específica
+        div = soup.find('div', {'class': 'dgc-1v5q7bt e6btpoe22'})
+        # Si el div existe
+        if div:
+            print('Div encontrado.')
+            # Busca la etiqueta a con la clase específica dentro del div
+            a_tags = div.find_all('a', {'class': 'MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth ek7zlxg1 dgc-1sonpuj'})
+            # Si se encontraron etiquetas a
+            if a_tags:
+                print(f'Encontradas {len(a_tags)} etiquetas a.')
+                # Para cada etiqueta a
+                for a in a_tags:
+                    # Si la etiqueta a tiene un atributo href
+                    if 'href' in a.attrs:
+                        # Escribe el enlace de descarga en el archivo de salida
+                        f.write(a['href'] + '\n')
+            else:
+                print('No se encontraron etiquetas a.')
+        else:
+            print('Div no encontrado.')
 
-# Cierra el navegador Chrome
+# Cierra el navegador al finalizar
 driver.quit()

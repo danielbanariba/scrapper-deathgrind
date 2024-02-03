@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import glob
 
 # Leer el archivo 'aprobadas.txt' y almacenar los nombres en una lista
-with open('bandas_sin_keywords.txt', 'r', encoding='utf-8') as f:
+with open('links_bandas_corregidos2.txt', 'r', encoding='utf-8') as f:
     names = [line.strip() for line in f]
 
 # Inicializar una lista para almacenar los enlaces encontrados
@@ -32,9 +32,9 @@ for filename in html_files:
             #print(f"Comparing title: {title}")  # Agregar esta línea
             if title in names:
                 # Extraer el atributo 'href' y almacenarlo
-                links.append(a_tag.get('href'))
+                links.append((title, a_tag.get('href')))
 
-# Escribir todos los enlaces encontrados en el archivo 'links_bandas.txt'
-with open('links_bandas.txt', 'w', encoding='utf-8') as f:
-    for link in links:
-        f.write(f"{link}\n")
+# Escribir todos los enlaces encontrados en el archivo 'links_bandas.html'
+with open('links_bandas.html', 'w', encoding='utf-8') as f:
+    for title, link in links:
+        f.write(f'<a href="{link}" target="_blank">{title}</a><br>\n')
