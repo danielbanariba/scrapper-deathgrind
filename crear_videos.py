@@ -3,7 +3,9 @@ import cv2
 import shutil
 import numpy as np
 from moviepy.editor import ImageClip, concatenate_audioclips, AudioFileClip
-from PIL import Image, ImageFilter
+from moviepy.video.fx.all import fadein, fadeout
+from PIL import Image, ImageFilter, ImageChops
+from pydub.utils import mediainfo
 
 main_dir_path = 'D:\\script_video\\'
 
@@ -55,6 +57,33 @@ img = Image.open(os.path.join(dir_path, image_file))
 # Guarda una copia de la imagen original para superponerla más tarde
 cover = img.copy()
 
+#############################--------------------------efecto sombra--------------------------#############################
+
+# ALA MIERDA CON LA SOMBRA!!!!!!!! NO FUNCIONA, EN OTRO DIA VOY A PROBAR
+
+# # Agrega una sombra a la portada
+# shadow_color = (0, 0, 0)  # El color de la sombra en formato RGB
+# shadow_width = 28  # El ancho de la sombra
+
+# # Crear una imagen de sombra con el mismo tamaño que la imagen original
+# shadow = Image.new('RGBA', cover.size, color=shadow_color)
+
+# # Aplicar el desenfoque a la sombra
+# shadow_blurred = shadow.filter(ImageFilter.GaussianBlur(radius=50))
+
+# # Crear una nueva imagen que sea más grande que la imagen original para acomodar la sombra
+# new_image = Image.new('RGBA', (cover.width + shadow_width, cover.height + shadow_width), (0, 0, 0, 0))
+
+# # Pegar la imagen de sombra desenfocada en la nueva imagen de manera que se desplace hacia el eje -y y el eje +x
+# new_image.paste(shadow_blurred, (shadow_width, 0))
+
+# # Pegar la imagen original en la nueva imagen de manera que se superponga con la sombra
+# new_image.paste(cover, (0, shadow_width))
+
+# cover = new_image.convert("RGB")
+
+#############################--------------------------efecto sombra--------------------------#############################
+
 # Calcula el factor de escala para llenar el ancho
 scale_factor = max(3840 / img.width, 2160 / img.height)
 
@@ -91,6 +120,14 @@ video = ImageClip('combined.jpg', duration=concatenated_audio.duration)
 # Añade el audio al video
 video = video.set_audio(concatenated_audio)
 
+
+#------------------------------------------------------Transiciones------------------------------------------------------
+
+# Agrega una transición de disolución al principio y al final del video
+video = video.fx(fadein, 5).fx(fadeout, 5)
+
+#------------------------------------------------------Transiciones------------------------------------------------------
+
 # Establece los frames por segundo del video
 video.fps = 24
 
@@ -98,4 +135,4 @@ video.fps = 24
 folder_name = os.path.basename(dir_path)
 
 # Escribe el video final en el directorio de salida con el nombre de la carpeta
-video.write_videofile(os.path.join(output_dir, f'{folder_name}.mp4'), codec='h264_nvenc')
+video.write_videofile(os.path.join(output_dir, f'{folder_name}.mp4'), codec='h264_nvenc', bitrate='5000k')
