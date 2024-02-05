@@ -52,6 +52,9 @@ concatenated_audio = concatenate_audioclips(audio_clips)
 # Abre la imagen original
 img = Image.open(os.path.join(dir_path, image_file))
 
+# Guarda una copia de la imagen original para superponerla más tarde
+cover = img.copy()
+
 # Calcula el factor de escala para llenar el ancho
 scale_factor = max(3840 / img.width, 2160 / img.height)
 
@@ -70,11 +73,20 @@ if new_height > 2160:
 # Aplica el efecto borroso
 background = img.filter(ImageFilter.GaussianBlur(radius=20))  # Puedes ajustar el radio para cambiar la cantidad de desenfoque
 
-# Guarda la imagen de fondo
-background.save('background.jpg')
+# Calcula las coordenadas para centrar la portada en el fondo
+left = (background.width - cover.width) / 2
+top = (background.height - cover.height) / 2
+right = left + cover.width
+bottom = top + cover.height
+
+# Pega la portada en el centro del fondo
+background.paste(cover, (int(left), int(top), int(right), int(bottom)))
+
+# Guarda la imagen combinada
+background.save('combined.jpg')
 
 # Crea un clip de video a partir de tu imagen final
-video = ImageClip('background.jpg', duration=concatenated_audio.duration)
+video = ImageClip('combined.jpg', duration=concatenated_audio.duration)
 
 # Añade el audio al video
 video = video.set_audio(concatenated_audio)
