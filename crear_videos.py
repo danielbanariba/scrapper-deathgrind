@@ -1,8 +1,22 @@
 import os
+import cv2
+import shutil
+import numpy as np
 from moviepy.editor import ImageClip, concatenate_audioclips, AudioFileClip
+from PIL import Image, ImageFilter
 
-# Directorio donde están tus canciones e imagen
-dir_path = r'D:\script_video\Desoectomy–Maul-Desecrated-Atrocity'
+main_dir_path = 'D:\\script_video\\'
+
+# Recorre todos los directorios en la ruta principal
+for dirname in os.listdir(main_dir_path):
+    dir_path = os.path.join(main_dir_path, dirname)
+    
+    if os.path.isdir(dir_path):
+        new_dir_path = dir_path.replace('–', '-')
+        
+        # Mueve el directorio si el nombre ha cambiado
+        if dir_path != new_dir_path:
+            shutil.move(dir_path, new_dir_path)
 
 # Directorio donde se guardará el video renderizado
 output_dir = r'D:\videos_renderizados'
@@ -35,8 +49,32 @@ audio_clips = [AudioFileClip(song) for song in songs]
 # Concatena los clips de audio
 concatenated_audio = concatenate_audioclips(audio_clips)
 
-# Crea un clip de video a partir de tu imagen
-video = ImageClip(os.path.join(dir_path, image_file), duration=concatenated_audio.duration)
+# Abre la imagen original
+img = Image.open(os.path.join(dir_path, image_file))
+
+# Calcula el factor de escala para llenar el ancho
+scale_factor = max(3840 / img.width, 2160 / img.height)
+
+# Calcula las nuevas dimensiones de la imagen
+new_width = round(img.width * scale_factor)
+new_height = round(img.height * scale_factor)
+
+# Redimensiona la imagen
+img = img.resize((new_width, new_height))
+
+# Si la imagen es más alta que la altura deseada, recorta la parte superior e inferior
+if new_height > 2160:
+    top = (new_height - 2160) // 2
+    img = img.crop((0, top, new_width, top + 2160))
+
+# Aplica el efecto borroso
+background = img.filter(ImageFilter.GaussianBlur(radius=20))  # Puedes ajustar el radio para cambiar la cantidad de desenfoque
+
+# Guarda la imagen de fondo
+background.save('background.jpg')
+
+# Crea un clip de video a partir de tu imagen final
+video = ImageClip('background.jpg', duration=concatenated_audio.duration)
 
 # Añade el audio al video
 video = video.set_audio(concatenated_audio)
