@@ -29,8 +29,7 @@ pip selenium
 
 #### 00_script:
 
-Este script no sirve de nada, ya que la pagina original se hace el escaneo tiene un detector de boots, 
-entonces la pagina se queda trabada, pero lo dejo ya que es en parte interesante ver como hace scroll de manera automatica. 
+Este script no sirve de nada, ya que la pagina original donde se hace el escaneo tiene un detector de boots, entonces la pagina se queda trabada, pero lo dejo ya que es interesante ver como hace scroll de manera automatica. 
 
 #### 01_script_prueba:
 
