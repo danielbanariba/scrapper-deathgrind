@@ -42,10 +42,10 @@ Como es logico, mas de alguna banda va a tener mas de un genero musical, por end
 En este script no hay mucho que explicar, solo va agarrar los titulos del archivo bandas.txt y va a generar un html con la etiqueta **<a>** para que se pueda dar click y de forma instantanea tener el resultado de busqueda en youtube.
 
 #### 04_script_filtro_busqueda:
-Este script es el que cosidero es el mas interesante y completo de todos, lo que hace es abrir un navegador web, va hacer click uno por uno en el archivo html, al momento de tener la pagina abierta y el resultado de la busqueda va a buscar en los resultados de busqueda si alguno contiene alguna coincidecia en el titulo, si se cumple, se elimina la banda y si no se cumple se guarda la banda.
+Este script es el que cosidero es el mas interesante y completo de todos, lo que hace es abrir un navegador web, va hacer click uno por uno en el archivo html, al momento de tener la pagina abierta y en el resultado de la busqueda va a buscar en los primeros tres videos alguna coincidecia en el titulo (album, ep, demo o split), si se cumple, se elimina la banda de la lista bandas.txt y si no se cumple se guarda la banda y lo almacena en un nuevo archivo .txt llamado bandas_filtradas.txt.
 
 #### 05_script_filtro_single_and_demo:
-Ya teniendo el archivo filtrado toca aplicar otro filtro que seria separar los demos y los singles, ya que es contenido que no me interesan en mi canal de youtube.
+Ya teniendo el archivo filtrado toca aplicar otro filtro que seria separar los demos y los singles, ya que es contenido que no me interesa para mi canal de youtube.
 
 #### 06_script_descargas:
 
