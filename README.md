@@ -45,7 +45,8 @@ En este script no hay mucho que explicar, solo va agarrar los titulos del archiv
 Este script es el que cosidero es el mas interesante y completo de todos, lo que hace es abrir un navegador web, va hacer click uno por uno en el archivo html, al momento de tener la pagina abierta y en el resultado de la busqueda va a buscar en los primeros tres videos alguna coincidecia en el titulo (album, ep, demo o split), si se cumple, se elimina la banda de la lista bandas.txt y si no se cumple se guarda la banda y lo almacena en un nuevo archivo .txt llamado bandas_filtradas.txt. 
 
 >.[!WARNING]
->Lastimosamente el script no es perfecto y tiene un >límite, y de repente falla, asi qye hay que entrar >al archivo de bandas.txt y eliminar desde la >última búsqueda y volver a ejecutar el script.
+Lastimosamente el script no es perfecto y tiene un límite, y de repente falla, asi qye hay que entrar al archivo de bandas.txt y eliminar desde la última búsqueda y volver a ejecutar el script.
+>
 
 *Detalles adicionales y advertencias aquí.*
 #### 05_script_filtro_single_and_demo:
