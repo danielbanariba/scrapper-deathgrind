@@ -45,16 +45,25 @@ with open('aprobadas-v3.txt', 'w', encoding='utf-8') as out_file: #Cambiar el no
             valid_video_found = False
 
             # Filtrar los enlaces de los videos
-            for video_link in video_links[:3]:  # Limitar la búsqueda a los primeros 3 videos
+            analyzed_videos = 0  # Counter for analyzed videos
+            for video_link in video_links:
+                # Check if the link is a playlist
+                if 'ytd-playlist-renderer' in video_link.get_attribute('class'):
+                    continue  # Skip this link
+
+                # Limitar la búsqueda a los primeros 3 videos
+                if analyzed_videos >= 3:
+                    break
+
                 title = video_link.get_attribute('title')
-                #print(f"Comparando titulo: {title}")  # Print the title being checked
                 if keywords_regex.search(title):
-                    #print(f"Coincidencia en el titulo: {title}")  # Print the title if a keyword is found
                     valid_video_found = False
                     break  # Salir del bucle una vez que se encuentra un video inválido
-            else:  # Se ejecuta si el bucle terminó normalmente, es decir, no se encontró ninguna palabra clave
-                valid_video_found = True
+                else:  # Se ejecuta si el bucle terminó normalmente, es decir, no se encontró ninguna palabra clave
+                    valid_video_found = True
 
+                analyzed_videos += 1  # Increment the counter for analyzed videos
+                
             if valid_video_found:
                 approved_search = search_link.text
                 #print(f"Titulo aprobado: {approved_search}")  # Print the approved search

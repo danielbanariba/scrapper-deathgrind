@@ -1,4 +1,4 @@
-with open('lista/bandas_corregidos.txt', 'r', encoding='utf-8') as f:
+with open('bandas_corregidos.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
 
 print(f"Leídas {len(lines)} líneas de bandas.txt")

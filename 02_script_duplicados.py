@@ -1,3 +1,5 @@
+import os
+
 # Leer el archivo
 with open('bandas.txt', 'r', encoding='utf-8') as f:
     lines = f.read().splitlines()
@@ -9,3 +11,6 @@ lines = list(set(lines))
 with open('bandas_corregidos.txt', 'w', encoding='utf-8') as f:
     for line in lines:
         f.write(line + '\n')
+
+# Eliminar el archivo original
+os.remove('bandas.txt')
