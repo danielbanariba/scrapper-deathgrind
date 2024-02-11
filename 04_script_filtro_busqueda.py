@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import re
 
 # Definir las palabras clave
-keywords = ["full album", "full ep", "official ep stream", "official album stream", "split", "full split", "demo", "full demo", "full album stream", "compilation"]
+keywords = ["full album", "official album stream", "full album stream", "full ep", "official ep stream", "full ep stream"]
 
 # Compilar la expresión regular para las palabras clave
 keywords_regex = re.compile("|".join(keywords), re.IGNORECASE)
