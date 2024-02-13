@@ -60,3 +60,7 @@ Ya teniendo el archivo filtrado toca aplicar otro filtro que seria separar los d
 #### crear_videos:
 
 #### 03_script_busqueda_youtube:
+
+Ideas:
+
+Para extraer el link de las bandas que quiero descargar, pues, descargar el código fuente de la banda aprobadas, el funcionamiento del algoritmo sería, ao momento de crear el archivo links_descargas.txt y abre el navegador al mismo tiempo descarga todo el código fuente, eso lo hago para no iniciar sección y de un solo extraer el link de descargas
