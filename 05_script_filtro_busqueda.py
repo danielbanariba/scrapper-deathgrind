@@ -12,7 +12,7 @@ keywords = [
             "full album",  "full ep", 
             "official album stream", "official ep stream", 
             "full album stream" , "full ep stream", 
-            "full length", "full length ep", "full length album"
+            "full length", "full length ep", "full length album",
             "album stream", "ep stream", 
             "full e.p", "full a.l.b.u.m",
             "full-ep", "full-album",
@@ -63,7 +63,7 @@ with open('aprobadas-v1.txt', 'w', encoding='utf-8') as out_file: #Cambiar el no
                     continue  # Skip this link
 
                 # Limitar la búsqueda a los primeros 3 videos
-                if analyzed_videos >= 2:
+                if analyzed_videos >= 3:
                     break
 
                 title = video_link.get_attribute('title').lower()  # Get the title of the video
