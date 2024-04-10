@@ -32,7 +32,7 @@ with open('busqueda.html', 'r', encoding='utf-8') as f:
 soup = BeautifulSoup(content, 'html.parser')
 
 # Abrir el archivo de salida
-with open('aprobadas-v1.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
+with open('aprobadas-v2.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
     # Inicializar el contador
     search_counter = 0
 

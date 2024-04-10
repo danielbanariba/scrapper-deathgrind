@@ -37,7 +37,7 @@ import re
 import os
 
 # Lista de sellos discográficos a filtrar
-sellos_discograficos = ["Unique Leader Records", "Century Media Records", "Nuclear Blast Records", "Metal Blade Records"]
+sellos_discograficos = ["Unique Leader Records", "Century Media Records", "Nuclear Blast Records", "Metal Blade Records", "Candlelight Records", "Xtreem Music"]
 
 # Verificar si el archivo 'links_bandas.html' existe
 if not os.path.exists('links_bandas.html'):
@@ -77,6 +77,11 @@ for link in band_links:
             año = info_banda_divs[1].text.split(": ")[1].strip()
             genero = info_banda_divs[2].text.split(": ")[1].strip()
             pais = info_banda_divs[3].text.split(": ")[1].strip()
+            
+            # Extrae el nombre de la banda y el álbum de la etiqueta h1
+            nombre_banda_album = soup.find('h1', class_='dgc-1dah97c e6btpoe22').text.strip()
+            nombre_banda, nombre_album = nombre_banda_album.split(' – ')
+            
         except (AttributeError, IndexError):
             print(f"No se pudo encontrar toda la información de la banda para el enlace {link}")
             continue

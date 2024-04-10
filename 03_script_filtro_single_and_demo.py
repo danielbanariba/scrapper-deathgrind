@@ -1,5 +1,5 @@
 # Palabras clave
-keywords = ["[Demo]", "[Single]", "[Split]", "[Compilation]"]
+keywords = ["[Demo]", "[Single]", "[Split]", "[Compilation]", "[Promo]", "[Live]", "Demo", "Promo", "Discography"]
 
 # Listas para almacenar las bandas
 bandas_con_keywords = []
@@ -18,7 +18,7 @@ for banda in bandas:
         bandas_sin_keywords.append(banda)
 
 # Guardar las bandas en archivos
-with open('demo-single-split-compilation.txt', 'w', encoding='utf-8') as f:
+with open('promo-live-demo-discography.txt', 'w', encoding='utf-8') as f:
     for banda in bandas_con_keywords:
         f.write(banda + '\n')
 
