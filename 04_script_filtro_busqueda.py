@@ -12,12 +12,14 @@ keywords = [
             "full album",  "full ep", 
             "official album stream", "official ep stream", 
             "full album stream" , "full ep stream", 
-            "full lenght", "full lenght ep", 
+            "full length", "full length ep", "full length album"
             "album stream", "ep stream", 
             "full e.p", "full a.l.b.u.m",
             "full-ep", "full-album", 
             "{full-album}", "{full-ep}",
             "ep full", "album full",
+            "full lenght", "full lenght album", "full lenght ep",
+            "full-length album", "full-length ep"
             ]
 
 # Compilar la expresión regular para las palabras clave
@@ -65,7 +67,7 @@ with open('aprobadas-v1.txt', 'w', encoding='utf-8') as out_file: #Cambiar el no
                 if analyzed_videos >= 2:
                     break
 
-                title = video_link.get_attribute('title')
+                title = video_link.get_attribute('title').lower()  # Get the title of the video
                 if keywords_regex.search(title):
                     valid_video_found = False
                     break  # Salir del bucle una vez que se encuentra un video inválido
