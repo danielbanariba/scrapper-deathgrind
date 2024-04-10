@@ -1,9 +1,7 @@
-with open('bandas_corregidos.txt', 'r', encoding='utf-8') as f:
+with open('album-ep.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
 
-print(f"Leídas {len(lines)} líneas de bandas.txt")
-
-# Genera los enlaces a YouTube del archivo bandas_corregidos.txt
+# Genera los enlaces a YouTube del archivo album-ep.txt
 links = []
 for line in lines:
     line = line.strip()
@@ -12,10 +10,8 @@ for line in lines:
     link = f'<a href="{url}" target="_blank">{line}</a><br>'
     links.append(link)
 
-print(f"Generados {len(links)} enlaces")
+print(f"{len(links)} enlaces generados")
 
 with open('busqueda.html', 'w', encoding='utf-8') as f:
     for link in links:
         f.write(link + '\n')
-
-print("Archivo busqueda.html creado")

@@ -6,7 +6,8 @@ bandas_con_keywords = []
 bandas_sin_keywords = []
 
 # Leer el archivo de bandas aprobadas
-with open('total_bandas_aprobadas.txt', 'r', encoding='utf-8') as f:
+# Yo creo manualmente el alrchivo bandas_corregidos.txt
+with open('bandas_corregidos.txt', 'r', encoding='utf-8') as f:
     bandas = f.read().splitlines()
 
 # Clasificar las bandas
@@ -17,10 +18,10 @@ for banda in bandas:
         bandas_sin_keywords.append(banda)
 
 # Guardar las bandas en archivos
-with open('bandas_con_keywords.txt', 'w', encoding='utf-8') as f:
+with open('demo-single-split-compilation.txt', 'w', encoding='utf-8') as f:
     for banda in bandas_con_keywords:
         f.write(banda + '\n')
 
-with open('bandas_sin_keywords.txt', 'w', encoding='utf-8') as f:
+with open('album-ep.txt', 'w', encoding='utf-8') as f:
     for banda in bandas_sin_keywords:
         f.write(banda + '\n')

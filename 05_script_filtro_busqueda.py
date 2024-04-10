@@ -15,8 +15,7 @@ keywords = [
             "full length", "full length ep", "full length album"
             "album stream", "ep stream", 
             "full e.p", "full a.l.b.u.m",
-            "full-ep", "full-album", 
-            "{full-album}", "{full-ep}",
+            "full-ep", "full-album",
             "ep full", "album full",
             "full lenght", "full lenght album", "full lenght ep",
             "full-length album", "full-length ep"
