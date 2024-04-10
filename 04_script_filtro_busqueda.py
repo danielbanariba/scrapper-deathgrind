@@ -8,7 +8,17 @@ from bs4 import BeautifulSoup
 import re
 
 # Definir las palabras clave
-keywords = ["full album", "official album stream", "full album stream", "full ep", "official ep stream", "full ep stream", "full lenght"]
+keywords = [
+            "full album",  "full ep", 
+            "official album stream", "official ep stream", 
+            "full album stream" , "full ep stream", 
+            "full lenght", "full lenght ep", 
+            "album stream", "ep stream", 
+            "full e.p", "full a.l.b.u.m",
+            "full-ep", "full-album", 
+            "{full-album}", "{full-ep}",
+            "ep full", "album full",
+            ]
 
 # Compilar la expresión regular para las palabras clave
 keywords_regex = re.compile("|".join(keywords), re.IGNORECASE)
@@ -21,7 +31,7 @@ with open('busqueda.html', 'r', encoding='utf-8') as f:
 soup = BeautifulSoup(content, 'html.parser')
 
 # Abrir el archivo de salida
-with open('aprobadas-v3.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
+with open('aprobadas-v1.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
     # Inicializar el contador
     search_counter = 0
 
@@ -52,7 +62,7 @@ with open('aprobadas-v3.txt', 'w', encoding='utf-8') as out_file: #Cambiar el no
                     continue  # Skip this link
 
                 # Limitar la búsqueda a los primeros 3 videos
-                if analyzed_videos >= 3:
+                if analyzed_videos >= 2:
                     break
 
                 title = video_link.get_attribute('title')

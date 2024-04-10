@@ -3,6 +3,7 @@ with open('bandas_corregidos.txt', 'r', encoding='utf-8') as f:
 
 print(f"Leídas {len(lines)} líneas de bandas.txt")
 
+# Genera los enlaces a YouTube del archivo bandas_corregidos.txt
 links = []
 for line in lines:
     line = line.strip()
