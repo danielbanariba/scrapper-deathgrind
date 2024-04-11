@@ -1,3 +1,5 @@
+#Va a buscar todas las bandas en el archivo html y las va a guardar en un archivo de texto
+
 from bs4 import BeautifulSoup
 import glob
 

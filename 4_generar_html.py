@@ -1,3 +1,5 @@
+# Genera un archivo HTML con enlaces a YouTube de las canciones para poder facilitar la búsqueda de las mismas.
+
 with open('album-ep.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
 

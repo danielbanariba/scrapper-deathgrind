@@ -1,3 +1,5 @@
+# Elimina los duplicados de un archivo de texto y guarda el resultado en un nuevo archivo
+
 import os
 
 # Leer el archivo
