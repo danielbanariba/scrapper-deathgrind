@@ -3,16 +3,16 @@
 import os
 
 # Leer el archivo
-with open('bandas.txt', 'r', encoding='utf-8') as f:
+with open('nombre-de-bandas-encontradas.txt', 'r', encoding='utf-8') as f:
     lines = f.read().splitlines()
 
 # Eliminar duplicados convirtiendo las líneas en un conjunto
 lines = list(set(lines))
 
 # Escribir las líneas de nuevo en el archivo
-with open('bandas_corregidos.txt', 'w', encoding='utf-8') as f:
+with open('bandas.txt', 'w', encoding='utf-8') as f:
     for line in lines:
         f.write(line + '\n')
 
 # Eliminar el archivo original
-os.remove('bandas.txt')
+os.remove('nombre-de-bandas-encontradas.txt')

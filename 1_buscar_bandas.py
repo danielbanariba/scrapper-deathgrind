@@ -7,7 +7,7 @@ import glob
 html_files = glob.glob('C:/Users/banar/Downloads/deathgrind_geners/*.html')
 
 # Abrir un archivo en modo de escritura
-with open('bandas.txt', 'w', encoding='utf-8') as f:
+with open('nombre-de-bandas-encontradas.txt', 'w', encoding='utf-8') as f:
     # Iterar sobre los archivos HTML
     for html_file in html_files:
         # Leer el archivo HTML
