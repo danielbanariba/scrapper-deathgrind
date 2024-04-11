@@ -32,7 +32,7 @@ with open('busqueda.html', 'r', encoding='utf-8') as f:
 soup = BeautifulSoup(content, 'html.parser')
 
 # Abrir el archivo de salida
-with open('aprobadas-v2.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
+with open('bandas-aprobadas.txt', 'w', encoding='utf-8') as out_file: #Cambiar el nombre del archivo de salida
     # Inicializar el contador
     search_counter = 0
 
@@ -90,7 +90,7 @@ with open('aprobadas-v2.txt', 'w', encoding='utf-8') as out_file: #Cambiar el no
 
         search_counter += 1  # Incrementar el contador después de cada búsqueda
 
-        if search_counter >= 50:  # Comprobar si el contador ha llegado a 50
+        if search_counter >= 250:  # Comprobar si el contador ha llegado a 50
             driver.quit()  # Cerrar el navegador
             search_counter = 0  # Reiniciar el contador
             # Aquí deberías volver a abrir el navegador

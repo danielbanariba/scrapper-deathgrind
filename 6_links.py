@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import glob
 
 # Leer el archivo y almacenar los nombres en una lista
-with open('links_bandas_corregidas.txt', 'r', encoding='utf-8') as f:
+with open('lista//bandas-aprobadas-v2.txt', 'r', encoding='utf-8') as f:
     names = [line.strip() for line in f]
 
 # Inicializar una lista para almacenar los enlaces encontrados
@@ -18,21 +18,19 @@ for filename in html_files:
     with open(filename, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'html.parser')
 
-    # Buscar todos los elementos con la etiqueta 'h3' y la clase 'dgc-ljodyg etdg1c916'
-    elements = soup.find_all('h3', {'class': 'dgc-ljodyg etdg1c916'})
+    # Buscar todos los elementos 'a' con el atributo 'title'
+    elements = soup.find_all('a', title=True)
 
     # Para cada elemento encontrado
     for element in elements:
-        # Buscar la etiqueta 'a'
-        a_tag = element.find('a')
-
-        # Si el título coincide exactamente
-        if a_tag:
-            title = a_tag.get('title')
-            #print(f"Comparing title: {title}")  # Agregar esta línea
-            if title in names:
+        title = element['title']
+        # Si el título contiene alguno de los nombres
+        for name in names:
+            if name == title:  # Cambiar a la comparación exacta
                 # Extraer el atributo 'href' y almacenarlo
-                links.append((title, a_tag.get('href')))
+                links.append((title, element.get('href')))
+                names.remove(name)  # Eliminar el nombre de la lista
+                break  # Salir del bucle una vez que se encuentra una coincidencia
 
 # Escribir todos los enlaces encontrados en el archivo 'links_bandas.html'
 with open('links_bandas.html', 'w', encoding='utf-8') as f:
