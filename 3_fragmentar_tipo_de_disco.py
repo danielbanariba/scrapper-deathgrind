@@ -1,7 +1,7 @@
 import os
 
 # Palabras clave
-keywords = ["[Demo]", "[Single]", "[Split]", "[Compilation]", "[Promo]", "[Live]", "Demo", "Promo", "Discography"]
+keywords = ["[Demo]", "[Single]", "[Split]", "[Compilation]", "[Promo]", "[Live]", "Demo", "Promo", "Discography", "[EP]"]
 
 # Leer el archivo de bandas aprobadas
 with open('bandas.txt', 'r', encoding='utf-8') as f:

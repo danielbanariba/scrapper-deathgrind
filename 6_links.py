@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import glob
 
 # Leer el archivo y almacenar los nombres en una lista
-with open('lista//bandas-aprobadas-v2.txt', 'r', encoding='utf-8') as f:
+with open('bandas-aprobadas.txt', 'r', encoding='utf-8') as f:
     names = [line.strip() for line in f]
 
 # Inicializar una lista para almacenar los enlaces encontrados

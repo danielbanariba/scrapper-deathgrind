@@ -8,17 +8,13 @@ from bs4 import BeautifulSoup
 import re
 
 # Definir las palabras clave
+#keywords_EP = ["full ep", "official ep stream", "full ep stream", "full length ep", "ep stream", "full e.p", "full-length ep", "full lenght ep"]
+
 keywords = [
-            "full album",  "full ep", 
-            "official album stream", "official ep stream", 
-            "full album stream" , "full ep stream", 
-            "full length", "full length ep", "full length album",
-            "album stream", "ep stream", 
-            "full e.p", "full a.l.b.u.m",
-            "full-ep", "full-album",
-            "ep full", "album full",
-            "full lenght", "full lenght album", "full lenght ep",
-            "full-length album", "full-length ep"
+            "full album", "official album stream", "full album stream" , 
+            "full length", "full length album", "album stream", "full a.l.b.u.m",
+            "full-album", "album full", "full lenght", "full lenght album",
+            "full-length album", "full-length album", "full death metal album", "offical album premiere",
             ]
 
 # Compilar la expresión regular para las palabras clave
@@ -63,7 +59,7 @@ with open('bandas-aprobadas.txt', 'w', encoding='utf-8') as out_file: #Cambiar e
                     continue  # Skip this link
 
                 # Limitar la búsqueda a los primeros 3 videos
-                if analyzed_videos >= 3:
+                if analyzed_videos >= 2:
                     break
 
                 title = video_link.get_attribute('title').lower()  # Get the title of the video
