@@ -1,6 +1,7 @@
 import webbrowser
 from bs4 import BeautifulSoup
 import re
+import random  # Importar el módulo random
 
 # Leer el archivo HTML
 with open('links_bandas.html', 'r', encoding='utf-8') as f:
@@ -12,19 +13,13 @@ soup = BeautifulSoup(contenido, 'html.parser')
 # Encontrar todos los enlaces
 enlaces = soup.find_all('a')
 
-# Encontrar todas las etiquetas <br/>
-brs = soup.find_all('br')
-
 # Iterar sobre los enlaces y abrir cada uno en una nueva pestaña
 for i in range(24):
     if enlaces:
-        enlace = enlaces.pop(0)
+        enlace = random.choice(enlaces)  # Seleccionar un enlace aleatorio
         webbrowser.open_new_tab(enlace.get('href'))
+        enlaces.remove(enlace)  # Eliminar el enlace de la lista
         enlace.decompose()  # Eliminar el enlace del objeto soup
-
-    if brs:
-        br = brs.pop(0)
-        br.decompose()  # Eliminar la etiqueta <br/> del objeto soup
 
 # Convertir la sopa de nuevo a HTML
 nuevo_contenido = str(soup)
