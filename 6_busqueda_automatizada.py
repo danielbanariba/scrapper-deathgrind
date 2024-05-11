@@ -11,10 +11,11 @@ import re
 #keywords_EP = ["full ep", "official ep stream", "full ep stream", "full length ep", "ep stream", "full e.p", "full-length ep", "full lenght ep"]
 
 keywords = [
-            "full album", "official album stream", "full album stream" , 
+            "full album", "official album stream", "full album stream",
             "full length", "full length album", "album stream", "full a.l.b.u.m",
             "full-album", "album full", "full lenght", "full lenght album",
             "full-length album", "full-length album", "full death metal album", "offical album premiere",
+            "full-length", "full", "album", "premiere", "full album premiere"
             ]
 
 # Compilar la expresión regular para las palabras clave
@@ -59,21 +60,22 @@ with open('bandas-aprobadas.txt', 'w', encoding='utf-8') as out_file: #Cambiar e
                     continue  # Skip this link
 
                 # Limitar la búsqueda a los primeros 3 videos
-                if analyzed_videos >= 2:
+                if analyzed_videos >= 3:
                     break
 
                 title = video_link.get_attribute('title').lower()  # Get the title of the video
-                if keywords_regex.search(title):
-                    valid_video_found = False
-                    break  # Salir del bucle una vez que se encuentra un video inválido
-                else:  # Se ejecuta si el bucle terminó normalmente, es decir, no se encontró ninguna palabra clave
-                    valid_video_found = True
+                valid_video_found = True  # Assume the video is valid until proven otherwise
+
+                # Check the title against each keyword
+                for keyword in keywords:
+                    if keyword in title:
+                        valid_video_found = False  # Mark the video as invalid as soon as a keyword is found
+                        break  # No need to check the rest of the keywords
 
                 analyzed_videos += 1  # Increment the counter for analyzed videos
-                
-            if valid_video_found:
-                approved_search = search_link.text
-                #print(f"Titulo aprobado: {approved_search}")  # Print the approved search
+
+                if not valid_video_found:
+                    break  # If the video is invalid, no need to check the rest of the videos
         except TimeoutException:  # Catch TimeoutException instead of TimeoutError
             # Si no se encuentran videos dentro del tiempo valido, marcar como inválido
             valid_video_found = False
