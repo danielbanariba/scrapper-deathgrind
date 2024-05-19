@@ -6,6 +6,7 @@
 #TODO descargar el html de las paginas de DeathGrind.club donde este relacionado el sello discografico
 # Century Media Records = https://deathgrind.club/posts/labels/Century%20Media%20Records
 # Nuclear Blast Records = https://deathgrind.club/posts/labels/Nuclear%20Blast%20Records
+# https://deathgrind.club/posts/labels/Nuclear%20Blast
 # Metal Blade Records = https://deathgrind.club/posts/labels/Metal%20Blade%20Records
 # Unique Leader Records = https://deathgrind.club/posts/labels/Unique%20Leader%20Records
 # Season of Mist = https://deathgrind.club/posts/labels/Season%20of%20Mist
@@ -56,11 +57,14 @@
 # Lifeforce Records   = https://deathgrind.club/posts/labels/Lifeforce%20Records
 # Ibex Moon Records  = https://deathgrind.club/posts/labels/Ibex%20Moon%20Records
 # Scarlet Records   = https://deathgrind.club/posts/labels/Scarlet%20Records
+# Napalm Records = https://deathgrind.club/posts/labels/Napalm%20Records
 
 import webbrowser
 
 # urls = [
+#     "https://deathgrind.club/posts/labels/Napalm%20Records",
 #     "https://deathgrind.club/posts/labels/Century%20Media%20Records",
+#     "https://deathgrind.club/posts/labels/Nuclear%20Blast",
 #     "https://deathgrind.club/posts/labels/Nuclear%20Blast%20Records",
 #     "https://deathgrind.club/posts/labels/Metal%20Blade%20Records",
 #     "https://deathgrind.club/posts/labels/Unique%20Leader%20Records",

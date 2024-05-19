@@ -14,7 +14,7 @@ soup = BeautifulSoup(contenido, 'html.parser')
 enlaces = soup.find_all('a')
 
 # Iterar sobre los enlaces y abrir cada uno en una nueva pestaña
-for i in range(24):
+for i in range(18):
     if enlaces:
         enlace = random.choice(enlaces)  # Seleccionar un enlace aleatorio
         webbrowser.open_new_tab(enlace.get('href'))
