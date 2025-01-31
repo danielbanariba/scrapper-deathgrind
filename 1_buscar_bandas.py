@@ -23,9 +23,15 @@ with open('nombre-de-bandas-encontradas.txt', 'w', encoding='utf-8') as f:
             album_title = article.find('a', class_='dgc-s4ltpl')
             # Encontrar el nombre de la banda
             band_name = article.find('a', class_='dgc-f2fkwf')
+            # Encontrar el div que contiene la información del tipo
+            info_div = article.find('div', class_='dgc-upo1hu')
             
-            # Solo escribir si ambos elementos existen
-            if album_title and band_name:
-                # Formatear como "Banda - album"
-                formatted_line = f"{band_name.text} - {album_title.text}\n"
-                f.write(formatted_line)
+            # Solo escribir si todos los elementos necesarios existen
+            if album_title and band_name and info_div:
+                # Encontrar el tipo dentro del div de información
+                release_type = info_div.find('a', href=lambda x: x and '/filter?type=' in x)
+                
+                if release_type:
+                    # Formatear como "Banda - Album [Tipo]"
+                    formatted_line = f"{band_name.text} - {album_title.text} [{release_type.text}]\n"
+                    f.write(formatted_line)
