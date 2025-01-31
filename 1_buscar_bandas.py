@@ -1,5 +1,3 @@
-#Va a buscar todas las bandas en el archivo html y las va a guardar en un archivo de texto
-
 from bs4 import BeautifulSoup
 import glob
 
@@ -17,14 +15,17 @@ with open('nombre-de-bandas-encontradas.txt', 'w', encoding='utf-8') as f:
         # Crear un objeto BeautifulSoup con el contenido del archivo
         soup = BeautifulSoup(contents, 'html.parser')
 
-        # Encontrar todos los elementos `a` con el atributo `title`
-        elements = soup.find_all('a', title=True)
+        # Encontrar todos los artículos que contienen la información
+        articles = soup.find_all('article', class_='dgc-6v5e1w')
 
-        # Iterar sobre estos elementos y extraer el valor del atributo `title`
-        for element in elements:
-            title = element['title']
-            # Si el título es "Click to open post" o "Haga clic para abrir la publicación", saltar a la siguiente iteración
-            if title == 'Click to open post' or title == 'Haga clic para abrir la publicación':
-                continue
-            # Escribir el título en el archivo
-            f.write(title + '\n')
+        for article in articles:
+            # Encontrar el título del álbum
+            album_title = article.find('a', class_='dgc-s4ltpl')
+            # Encontrar el nombre de la banda
+            band_name = article.find('a', class_='dgc-f2fkwf')
+            
+            # Solo escribir si ambos elementos existen
+            if album_title and band_name:
+                # Formatear como "Banda - album"
+                formatted_line = f"{band_name.text} - {album_title.text}\n"
+                f.write(formatted_line)
