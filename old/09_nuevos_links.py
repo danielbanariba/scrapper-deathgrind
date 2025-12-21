@@ -1,0 +1,2 @@
+# Este algoritmo va agarrar la lista que ya tenemos que es el archivo txt "bandas-aprobadas.txt" va a comparar los titulos que contenga con el nuevo archivo .txt 
+# y va a guardar los titulos que no esten en la lista en un nuevo archivo .txt que se llamara "nuevos-links.txt" y va a generar nuevos links

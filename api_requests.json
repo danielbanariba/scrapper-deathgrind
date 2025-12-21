@@ -1,0 +1,185 @@
+[
+  {
+    "method": "POST",
+    "url": "https://o265074.ingest.us.sentry.io/api/4504577541865472/envelope/?sentry_version=7&sentry_key=a9285ec4333547509454acade3e66a7f&sentry_client=sentry.javascript.react%2F10.26.0",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://deathgrind.club/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "content-type": "text/plain;charset=UTF-8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": "{\"sent_at\":\"2025-11-22T00:22:19.127Z\",\"sdk\":{\"name\":\"sentry.javascript.react\",\"version\":\"10.26.0\"}}\n{\"type\":\"session\"}\n{\"sid\":\"4bc72ba5c24b4217952294b0ad5b2716\",\"init\":true,\"started\":\"2025-11-22T00:22:19.127Z\",\"timestamp\":\"2025-11-22T00:22:19.127Z\",\"status\":\"ok\",\"errors\":0,\"attrs\":{\"release\":\"d1c0107461354e06f8afb812dbfa7218c1c36a12\",\"environment\":\"production\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://deathgrind.club/api/auth/login",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "d1735f9080981334ce9250b34297afec1ab514b7",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=UTF-8",
+      "x-uuid": "b822fc95-ebe2-4735-81f0-1fdbfaa58a97"
+    },
+    "post_data": "{\"login\":\"banaribad@gmail.com\",\"password\":\"ninaeliza9803\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://o265074.ingest.us.sentry.io/api/4504577541865472/envelope/?sentry_version=7&sentry_key=a9285ec4333547509454acade3e66a7f&sentry_client=sentry.javascript.react%2F10.26.0",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://deathgrind.club/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "content-type": "text/plain;charset=UTF-8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": "{\"sent_at\":\"2025-11-22T00:22:22.991Z\",\"sdk\":{\"name\":\"sentry.javascript.react\",\"version\":\"10.26.0\"}}\n{\"type\":\"session\"}\n{\"sid\":\"b638d4bef10f4cfda44aca4ac1acf5bb\",\"init\":true,\"started\":\"2025-11-22T00:22:22.991Z\",\"timestamp\":\"2025-11-22T00:22:22.991Z\",\"status\":\"ok\",\"errors\":0,\"attrs\":{\"release\":\"d1c0107461354e06f8afb812dbfa7218c1c36a12\",\"environment\":\"production\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"}}"
+  },
+  {
+    "method": "PUT",
+    "url": "https://deathgrind.club/api/users/online",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=UTF-8",
+      "x-uuid": "29655f1d-d058-4a7a-af1d-c54a95f4de10"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/sse",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/users/3803",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "29655f1d-d058-4a7a-af1d-c54a95f4de10"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/posts/users/3803?offset=0",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "29655f1d-d058-4a7a-af1d-c54a95f4de10"
+    },
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://o265074.ingest.us.sentry.io/api/4504577541865472/envelope/?sentry_version=7&sentry_key=a9285ec4333547509454acade3e66a7f&sentry_client=sentry.javascript.react%2F10.26.0",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://deathgrind.club/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "content-type": "text/plain;charset=UTF-8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": "{\"sent_at\":\"2025-11-22T00:22:27.643Z\",\"sdk\":{\"name\":\"sentry.javascript.react\",\"version\":\"10.26.0\"}}\n{\"type\":\"session\"}\n{\"sid\":\"4ad0b383c5ee49b7954695e75c6a2c24\",\"init\":true,\"started\":\"2025-11-22T00:22:27.643Z\",\"timestamp\":\"2025-11-22T00:22:27.643Z\",\"status\":\"ok\",\"errors\":0,\"attrs\":{\"release\":\"d1c0107461354e06f8afb812dbfa7218c1c36a12\",\"environment\":\"production\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\"}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/posts/filter?genres=104",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "22c196ba-92a4-4e68-99b9-876f6b5b34e6"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/sse",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/posts/filter?genres=104&offset=1",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "22c196ba-92a4-4e68-99b9-876f6b5b34e6"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/posts/filter?genres=104&offset=2",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "22c196ba-92a4-4e68-99b9-876f6b5b34e6"
+    },
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://deathgrind.club/api/posts/filter?genres=104&offset=3",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "x-csrf-token": "69965607947e3a2253a0bd8af3b54aa8049ddd7c",
+      "referer": "",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "content-type": "application/json; charset=utf-8",
+      "x-uuid": "22c196ba-92a4-4e68-99b9-876f6b5b34e6"
+    },
+    "post_data": null
+  }
+]
