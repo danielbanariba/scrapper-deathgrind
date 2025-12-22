@@ -115,24 +115,15 @@ def detectar_tipo_link(url):
     """Detecta el tipo de enlace de descarga"""
     url_lower = url.lower()
 
+    # Mega requiere herramienta especial (megadl)
     if 'mega.nz' in url_lower or 'mega.co.nz' in url_lower:
         return 'mega'
-    elif 'mediafire.com' in url_lower:
-        return 'mediafire'
-    elif 'drive.google.com' in url_lower:
-        return 'gdrive'
-    elif 'cdn2.deathgrind.club' in url_lower or 'cdn.deathgrind.club' in url_lower:
-        return 'direct'  # Enlaces directos del CDN
+    # Servicios muertos o con captcha (no intentar)
     elif 'zippyshare.com' in url_lower:
-        return 'zippyshare'  # Zippyshare cerró en 2023
-    elif 'krakenfiles.com' in url_lower:
-        return 'krakenfiles'
-    elif 'pixeldrain.com' in url_lower:
-        return 'pixeldrain'
-    elif any(ext in url_lower for ext in ['.zip', '.rar', '.7z']):
-        return 'direct'
+        return 'dead'  # Cerró en 2023
+    # Todo lo demás: intentar descarga directa
     else:
-        return 'unknown'
+        return 'direct'
 
 
 def descargar_mega(url, destino, password=None, verbose=True):
@@ -220,29 +211,47 @@ def descargar_mediafire(url, destino, verbose=True):
 
 
 def descargar_directo(url, destino, verbose=True):
-    """Descarga un archivo directo por HTTP"""
+    """Descarga un archivo directo por HTTP (funciona con la mayoría de servicios)"""
     try:
         headers = {
-            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36',
+            'Accept': '*/*',
         }
 
-        response = requests.get(url, headers=headers, stream=True, timeout=300)
+        # Permitir redirecciones
+        response = requests.get(url, headers=headers, stream=True, timeout=300, allow_redirects=True)
         response.raise_for_status()
 
+        # Verificar que no sea una página HTML (debe ser un archivo)
+        content_type = response.headers.get('content-type', '').lower()
+        if 'text/html' in content_type:
+            # Es una página HTML, no un archivo descargable
+            if verbose:
+                print(f"    ⚠️ Página HTML (requiere navegador)")
+            return None
+
         # Obtener nombre del archivo
+        filename = None
         if 'content-disposition' in response.headers:
             cd = response.headers['content-disposition']
             match = re.search(r'filename[*]?=["\']?(?:UTF-8\'\')?([^"\';]+)', cd)
             if match:
                 filename = unquote(match.group(1))
-            else:
-                filename = 'download.zip'
-        else:
-            # Usar el nombre de la URL
-            parsed = urlparse(url)
-            filename = os.path.basename(parsed.path) or 'download.zip'
 
-        filepath = os.path.join(destino, limpiar_nombre(filename))
+        if not filename:
+            # Intentar obtener de la URL final (después de redirecciones)
+            parsed = urlparse(response.url)
+            filename = os.path.basename(parsed.path)
+
+        if not filename or filename == '':
+            filename = 'download.zip'
+
+        # Limpiar nombre
+        filename = limpiar_nombre(filename)
+        if not any(filename.lower().endswith(ext) for ext in ['.zip', '.rar', '.7z', '.tar', '.gz', '.mp3', '.flac']):
+            filename += '.zip'
+
+        filepath = os.path.join(destino, filename)
 
         # Descargar con progreso
         total_size = int(response.headers.get('content-length', 0))
@@ -260,11 +269,25 @@ def descargar_directo(url, destino, verbose=True):
         if verbose and total_size > 0:
             print()  # Nueva línea
 
+        # Verificar que el archivo no sea muy pequeño (probablemente error)
+        if os.path.exists(filepath):
+            size = os.path.getsize(filepath)
+            if size < 1000:  # Menos de 1KB probablemente es un error
+                os.remove(filepath)
+                if verbose:
+                    print(f"    ⚠️ Archivo muy pequeño ({size} bytes), probablemente error")
+                return None
+
         return filepath
 
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None
     except Exception as e:
         if verbose:
-            print(f"    ⚠️ Error descarga directa: {e}")
+            error_msg = str(e)[:50]
+            print(f"    ⚠️ {error_msg}")
         return None
 
 
@@ -276,14 +299,13 @@ def descargar_link(url, destino, password=None, verbose=True):
 
     if tipo == 'mega':
         return descargar_mega(url, destino, password, verbose)
-    elif tipo == 'mediafire':
-        return descargar_mediafire(url, destino, verbose)
-    elif tipo == 'direct':
-        return descargar_directo(url, destino, verbose)
-    else:
+    elif tipo == 'dead':
         if verbose:
-            print(f"    ⚠️ Tipo de enlace no soportado: {tipo}")
+            print(f"    ⚠️ Servicio cerrado/muerto")
         return None
+    else:
+        # Intentar descarga directa para cualquier otro enlace
+        return descargar_directo(url, destino, verbose)
 
 
 def extraer_archivo(filepath, destino, password=None, verbose=True):

@@ -98,6 +98,22 @@ def cargar_sellos_blacklist():
     return sellos
 
 
+def cargar_descargados():
+    """Carga lista de releases ya descargados (por post_id)"""
+    descargados = set()
+    descargados_file = 'data/descargados.txt'
+    if os.path.exists(descargados_file):
+        with open(descargados_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    # Formato: post_id|band|album
+                    parts = line.split('|')
+                    if parts:
+                        descargados.add(parts[0])
+    return descargados
+
+
 def post_en_blacklist(post, sellos_blacklist):
     """Verifica si un post está en un sello problemático"""
     labels = post.get('label', [])
@@ -110,18 +126,22 @@ def post_en_blacklist(post, sellos_blacklist):
     return False, None
 
 
-def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, verbose=True):
+def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados=None, verbose=True):
     """
-    Extrae TODOS los posts de un género, filtrando por sello al vuelo
+    Extrae TODOS los posts de un género, filtrando por sello y descargados al vuelo
     """
     releases = []
     bandas_encontradas = {}
     posts_total = 0
-    posts_filtrados = 0
+    posts_filtrados_sello = 0
+    posts_filtrados_descargados = 0
     offset = None
     retries_429 = 0
     retries_error = 0
     max_retries_error = 5
+
+    if descargados is None:
+        descargados = set()
 
     while True:
         try:
@@ -164,11 +184,17 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
 
             for post in posts:
                 posts_total += 1
+                post_id = post.get('postId')
+
+                # Filtrar por ya descargados
+                if str(post_id) in descargados:
+                    posts_filtrados_descargados += 1
+                    continue
 
                 # Filtrar por sello problemático
                 en_blacklist, sello = post_en_blacklist(post, sellos_blacklist)
                 if en_blacklist:
-                    posts_filtrados += 1
+                    posts_filtrados_sello += 1
                     continue
 
                 # Filtrar por tipo de disco
@@ -176,9 +202,6 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
                 if tipos_permitidos:
                     if not any(tid in tipos_permitidos for tid in type_ids):
                         continue
-
-                # Extraer info del post
-                post_id = post.get('postId')
                 album = post.get('album', 'Unknown')
                 year = post.get('releaseDate', [None])[0] if post.get('releaseDate') else None
 
