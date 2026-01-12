@@ -13,6 +13,7 @@ Uso:
 
 import os
 import sys
+import importlib.util
 
 # Agregar módulos al path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -89,6 +90,21 @@ def verificar_dependencias():
     for archivo, desc in archivos_opcionales:
         if not os.path.exists(archivo):
             print(f"ℹ️  {archivo} no encontrado (opcional)")
+
+    # Verificar dependencias de Python necesarias para el pipeline
+    faltantes_py = []
+    for modulo in ("requests", "playwright"):
+        if importlib.util.find_spec(modulo) is None:
+            faltantes_py.append(modulo)
+
+    if faltantes_py:
+        print("⚠️  Dependencias de Python faltantes:")
+        for mod in faltantes_py:
+            print(f"  ❌ {mod}")
+        print("\nInstala con:")
+        print("  pip install -r requirements.txt")
+        print("  playwright install chromium")
+        return False
 
     return True
 

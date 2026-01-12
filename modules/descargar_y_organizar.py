@@ -127,55 +127,67 @@ def detectar_tipo_link(url):
 
 
 def descargar_mega(url, destino, password=None, verbose=True):
-    """Descarga un archivo de Mega.nz usando megadl"""
+    """
+    Descarga un archivo de Mega.nz usando megadl
+    Retorna: (filepath, skip_mega)
+        - filepath: ruta al archivo descargado o None si falló
+        - skip_mega: True si se debe saltar Mega para este release (límite/timeout)
+    """
     try:
         # Asegurar que la URL tenga la clave de encriptación
         # Formato: https://mega.nz/file/ID#KEY o https://mega.nz/#!ID!KEY
         if '#' not in url and '!' not in url:
             if verbose:
                 print("    ⚠️ URL de Mega sin clave de encriptación")
-            return None
+            return None, False
 
         # megadl necesita la URL completa con la clave
         cmd = ['megadl', '--path', destino, '--print-names', url]
 
-        # Timeout más largo para archivos grandes (30 minutos)
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+        # Timeout de 10 minutos - si tarda más, probar otros servidores
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
 
         if result.returncode == 0:
             # megadl con --print-names imprime el nombre del archivo
             filename = result.stdout.strip().split('\n')[-1] if result.stdout else None
 
             if filename and os.path.exists(os.path.join(destino, filename)):
-                return os.path.join(destino, filename)
+                return os.path.join(destino, filename), False
 
             # Fallback: buscar el archivo más reciente en el destino
             for f in os.listdir(destino):
                 filepath = os.path.join(destino, f)
                 if os.path.isfile(filepath):
-                    return filepath
+                    return filepath, False
 
-            return None
+            return None, False
         else:
-            error_msg = result.stderr.strip() if result.stderr else "Error desconocido"
+            error_msg = result.stderr.strip() if result.stderr else ""
+            error_lower = error_msg.lower()
+
+            # Detectar límite de descarga de Mega
+            if 'bandwidth' in error_lower or 'limit' in error_lower or 'quota' in error_lower:
+                if verbose:
+                    print("    ⚠️ Mega: límite de descarga alcanzado, probando otros servidores...")
+                return None, True  # Skip Mega para este release
+
             if verbose:
-                # Mostrar solo la primera línea del error
-                first_line = error_msg.split('\n')[0][:80]
+                first_line = error_msg.split('\n')[0][:60]
                 print(f"    ⚠️ megadl: {first_line}")
-            return None
+            return None, False
 
     except FileNotFoundError:
         if verbose:
             print("    ⚠️ megadl no instalado")
-        return None
+        return None, False
     except subprocess.TimeoutExpired:
         if verbose:
-            print("    ⚠️ Timeout (archivo muy grande, intentar manualmente)")
-        return None
+            print("    ⚠️ Mega: timeout, probando otros servidores...")
+        return None, True  # Skip Mega para este release
     except Exception as e:
         if verbose:
             print(f"    ⚠️ Error Mega: {e}")
-        return None
+        return None, False
 
 
 def descargar_mediafire(url, destino, verbose=True):
@@ -291,21 +303,29 @@ def descargar_directo(url, destino, verbose=True):
         return None
 
 
-def descargar_link(url, destino, password=None, verbose=True):
-    """Descarga un archivo según el tipo de enlace"""
+def descargar_link(url, destino, password=None, verbose=True, skip_mega=False):
+    """
+    Descarga un archivo según el tipo de enlace
+    Retorna: (filepath, skip_mega)
+    """
     tipo = detectar_tipo_link(url)
 
     os.makedirs(destino, exist_ok=True)
 
     if tipo == 'mega':
+        if skip_mega:
+            if verbose:
+                print(f"    ⏭️ Saltando Mega (límite/timeout)")
+            return None, True
         return descargar_mega(url, destino, password, verbose)
     elif tipo == 'dead':
         if verbose:
             print(f"    ⚠️ Servicio cerrado/muerto")
-        return None
+        return None, False
     else:
         # Intentar descarga directa para cualquier otro enlace
-        return descargar_directo(url, destino, verbose)
+        result = descargar_directo(url, destino, verbose)
+        return result, False
 
 
 def extraer_archivo(filepath, destino, password=None, verbose=True):
@@ -447,6 +467,8 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
         print(f"\n📥 {band} - {album}")
 
     # Intentar cada link hasta que uno funcione
+    skip_mega = False  # Se activa si Mega tiene límite/timeout
+
     for link_info in links:
         url = link_info.get('url', '')
         password = link_info.get('password', '')
@@ -465,10 +487,14 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
         try:
             # 1. Descargar
-            archivo = descargar_link(url, temp_download, password, verbose)
+            archivo, new_skip_mega = descargar_link(url, temp_download, password, verbose, skip_mega)
+
+            # Actualizar skip_mega si Mega falló por límite/timeout
+            if new_skip_mega:
+                skip_mega = True
 
             if not archivo or not os.path.exists(archivo):
-                if verbose:
+                if verbose and not new_skip_mega:
                     print("    ✗ Descarga fallida")
                 continue
 

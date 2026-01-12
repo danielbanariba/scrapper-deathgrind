@@ -264,33 +264,40 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
                 print(f"    ⚠️ Error de conexión, reintentando en {wait_time}s...")
             time.sleep(wait_time)
 
-    return releases, bandas_encontradas, posts_total, posts_filtrados
+    return releases, bandas_encontradas, posts_total, posts_filtrados_sello, posts_filtrados_descargados
 
 
-def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, verbose=True):
+def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargados=None, verbose=True):
     """
     Extrae todos los posts y bandas, filtrando al vuelo
     """
     todos_releases = []
     todas_bandas = {}
     posts_total = 0
-    posts_filtrados_total = 0
+    posts_filtrados_sello = 0
+    posts_filtrados_descargados = 0
     posts_ids_vistos = set()  # Para evitar duplicados entre géneros
+
+    if descargados is None:
+        descargados = set()
 
     if verbose:
         print(f"\n📦 Scrapeando {len(generos)} géneros...")
+        if descargados:
+            print(f"📋 {len(descargados)} releases ya descargados (serán omitidos)")
         print("=" * 60)
 
     for i, (genre_id, genre_name) in enumerate(generos):
         if verbose:
             print(f"\n[{i+1}/{len(generos)}] {genre_name} (ID: {genre_id})")
 
-        releases, bandas, posts, filtrados = extraer_posts_genero(
-            session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, verbose
+        releases, bandas, posts, filtrados_sello, filtrados_desc = extraer_posts_genero(
+            session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados, verbose
         )
 
         posts_total += posts
-        posts_filtrados_total += filtrados
+        posts_filtrados_sello += filtrados_sello
+        posts_filtrados_descargados += filtrados_desc
 
         # Agregar bandas nuevas
         nuevas_bandas = 0
@@ -309,14 +316,15 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, verbose=T
                 nuevos_releases += 1
 
         if verbose:
-            print(f"  → {posts} posts, {filtrados} filtrados, +{nuevas_bandas} bandas, +{nuevos_releases} releases")
+            filtrados_total = filtrados_sello + filtrados_desc
+            print(f"  → {posts} posts, {filtrados_total} filtrados, +{nuevas_bandas} bandas, +{nuevos_releases} releases")
             print(f"     Total: {len(todas_bandas)} bandas, {len(todos_releases)} releases")
 
         # Pausa entre géneros para evitar rate limiting
         if i < len(generos) - 1:
             time.sleep(DELAY_ENTRE_GENEROS)
 
-    return todos_releases, list(todas_bandas.values()), posts_total, posts_filtrados_total
+    return todos_releases, list(todas_bandas.values()), posts_total, posts_filtrados_sello, posts_filtrados_descargados
 
 
 def guardar_datos(bandas, releases, verbose=True):
@@ -337,12 +345,12 @@ def guardar_datos(bandas, releases, verbose=True):
 def run(tipos_permitidos=None, verbose=True):
     """
     Ejecuta la extracción optimizada
-    Extrae posts, filtra por sello, y guarda bandas + releases en un solo paso
+    Extrae posts, filtra por sello y descargados, guarda bandas + releases
     """
     if verbose:
         print("=" * 60)
         print("🎸 MÓDULO 1: EXTRACCIÓN DE BANDAS Y REPERTORIO")
-        print("   (Optimizado: filtra por sello al extraer)")
+        print("   (Optimizado: filtra por sello y descargados al extraer)")
         print("=" * 60)
 
     if tipos_permitidos is None:
@@ -361,15 +369,17 @@ def run(tipos_permitidos=None, verbose=True):
         raise FileNotFoundError("No se encontró generos_activos.txt")
 
     sellos_blacklist = cargar_sellos_blacklist()
+    descargados = cargar_descargados()
 
     if verbose:
         print(f"✓ {len(generos)} géneros")
         print(f"✓ {len(sellos_blacklist)} sellos en blacklist")
+        print(f"✓ {len(descargados)} releases ya descargados")
         tipos_nombres = [TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos]
         print(f"✓ Tipos: {', '.join(tipos_nombres)}")
 
-    releases, bandas, posts_total, posts_filtrados = extraer_todo(
-        session, generos, sellos_blacklist, tipos_permitidos, verbose
+    releases, bandas, posts_total, posts_filtrados_sello, posts_filtrados_desc = extraer_todo(
+        session, generos, sellos_blacklist, tipos_permitidos, descargados, verbose
     )
 
     guardar_datos(bandas, releases, verbose)
@@ -379,9 +389,10 @@ def run(tipos_permitidos=None, verbose=True):
         print("📊 RESULTADO")
         print("=" * 60)
         print(f"Posts procesados: {posts_total:,}")
-        print(f"Posts filtrados (sellos problemáticos): {posts_filtrados:,}")
+        print(f"Filtrados (sellos): {posts_filtrados_sello:,}")
+        print(f"Filtrados (ya descargados): {posts_filtrados_desc:,}")
         print(f"Bandas únicas: {len(bandas):,}")
-        print(f"Releases válidos: {len(releases):,}")
+        print(f"Releases nuevos: {len(releases):,}")
 
     return OUTPUT_BANDAS, OUTPUT_REPERTORIO
 
