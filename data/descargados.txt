@@ -470,3 +470,545 @@
 80372|Morphogenetic Malformation|Pathogenesis F20.0
 80364|Morgues|Dismembering Corpses
 76053|First Degree Murder|Anomalous Hallucinations
+90183|Horrified|In The Garden Of The Unearthly Delights
+81951|Unblessed Divine|Portal To Darkness
+19725|Primordial Throne|Eidolon
+13563|Abyss Of Insanity|Fuck Humanity
+1574|Tintagel|Schindler's Fist
+91480|Scenarios|Triumphant Over The Perished
+91131|Guerra Total|Of Death's Apotheosis... Cthulhu's Call And The Terror Of The Cosmic Unknown
+91073|Perdition Temple|Malign Apotheosis
+90698|Misanthropic Might|Qualzucht
+89438|Werewolves|The Ugliest Of All
+90393|Incinerated|The Epitome Of Transgression
+88765|Cogas|Among The Dead: How To Become A Ghost
+88297|Hallucivore|Shrouded In Exogaian Petrichor
+88023|Kryptan|Violence, Our Power
+87567|Shaarimoth|Devildom
+86938|Purgatorial|Fading Whispers Of Voidbound Souls
+86597|Arkona|Stella Pandora
+86586|Unctoris|Shout Demise
+86293|Mourning Veil|Heresy Code
+85005|Inconcessus Lux Lucis|Temples Colliding In Fire
+85578|Septic State|Life Of Hate
+84955|Bythos|Chthonic Gates Unveiled
+84887|Methchrist|Pestilential Warfare Of The Black Flame
+84702|Merrimack|Of Grace And Gravity
+83346|Sulfuric Hatred|Sulfuric Hatred
+82639|Akouphenom|Death·Chaos·Void
+82468|Ruin Lust|Dissimulant
+81963|Invultation|Feral Legion
+81659|Blasphemous|Emerging Through Fire
+81632|Disimperium|Grand Insurgence Upon Despotic Altars
+80720|Gutted Christ|Hail And Kill
+79852|Guerra Total|War Is The Pursuit Of Death: A Hymnal For The Misanthrope
+79684|Plague Bearer|Summoning Apocalyptic Devastation
+78435|Sisters Of Suffocation|Eradication
+77529|Rejekts|Adamo
+77040|Theotoxin|Atramentvm
+76876|Coscradh|Nahanagan Stadial
+76535|Exaltation|Under Blind Reasoning
+76402|Weregoat|Pestilential Rites Of Infernal Fornication
+75962|Verberis|Adumbration Of The Veiled Logos
+75696|Aparthiva Raktadhara|আদ্যাপীঠ মরণসংহিতা (Adyapeeth Maranasamhita)
+74199|Thorybos|Monuments Of Doom Revolved
+74192|Worm|Foreverglade
+74160|Kommandant|The Architects Of Extermination
+73749|Autokrator|Autokrator
+73011|Vortex Of End|In Satan And Plutonium We Trust
+73004|Vortex Of End|Fvlgvr.Lvx.Terror
+72037|Autokrator|Persecution
+70332|Morgue|Flames And Blood
+68995|Behemoth|Behemoth - In Absentia Dei
+67750|Perdition Winds|Transcendent Emptiness
+67187|Svarttjern|Misanthropic Path Of Madness
+62833|VoidCeremony|Entropic Reflections Continuum: Dimensional Unravel
+62786|Infer|Aeon Of Deathless Blight
+60791|Blasphamagoatachrist|Bastardizing The Purity
+56049|Asmodée|Symptômes De Ruine
+40791|Necrophobic|The Third Antichrist
+39849|Iperyt|No State Of Grace
+27710|Skaldic Curse|Devourer
+27332|Sadistik Exekution|The Magus
+27306|Calciferum|The Beast Inside
+27219|The Black Sorcery|Wolven Degrade
+26967|Internment|Chained To The Moon
+26531|Unendlich|Thanatophobia
+26436|Seges Findere|Atrocious Decimation
+25594|Ethereal Shade|Veritas
+25507|Crucifier|Thy Sulfur Throne On High
+23897|Varathron|His Majesty At The Swamp
+23896|Darkened Nocturn Slaughtercult|Nocturnal March
+22574|Hel's Crusade|Depths Of Mind
+21621|Barbarian Prophecies|Origin
+20476|Akercocke|Rape Of The Bastard Nazarene
+20348|Wargrinder|In Suicidal Triumph
+20320|Communion|At The Announcement
+19919|In Battle|In Battle
+19764|Carbonized Gnawing Mandible|Harvested And Disposed
+19757|Ethelyn|Devilicious
+19746|Carbonized Gnawing Mandible|Anointed By The Elders
+19496|Infestum|Les Rites De Passage
+17985|A Hill To Die Upon|Via Artis Via Mortis
+16866|Dephosphorus|Ravenous Solemnity
+14823|Absvrdist|Illusory
+14637|Saille|Gnosis
+14280|Sunlight's Bane|The Blackest Volume (Like All The Earth Was Buried)
+14120|Ritualization|Sacraments To The Sons Of The Abyss
+13335|Gehenna|WW
+13296|Ragnarok|Diabolical Age
+12628|Impious Baptism|Wrath Of The Apex Predator
+12618|Abigor|Nachthymnen (From The Twilight Kingdom)
+12553|Acheron|Those Who Have Risen
+11703|Kratornas|Devoured By Damnation
+11284|Trivax|Sin
+10958|From The Vastland|Darkness Vs. Light, The Perpetual Battle
+10860|Keitzer|Ascension
+10831|Sorghegard|Holocaust Of The Holy
+10112|Whore Of Bethlehem|Upon Judas' Throne
+9609|Ragnarok|Blackdoor Miracle
+7042|Montuln|Espíritu Ancestral
+6945|Behemoth|Thelema.6
+6647|Necrophobic|Bloodhymns
+6265|Vargafrost|Honour, Blood, Spirit And Love
+6206|Marduk|Panzer Division Marduk
+5895|Immortal|Blizzard Beasts
+5894|Immortal|Battles In The North
+5880|Satyricon|Satyricon
+3707|Altars Of Grief|This Shameful Burden
+89397|Faecalized|Craniopagus Parasiticus
+85213|Brodequin|Instruments Of Torture
+81046|Cadavoracity|Cadavoracity
+79583|Stagnated|Persecuted Insanity
+73736|Baalsebub|Famine
+73601|Intestinal Engorgement|Putrefying Consumption Of Dismemberment
+73600|Scrumptious Putrescence|CanniBaalistic Offerings
+69777|Undeciphered|Beneath The Gentle Smile
+67716|Ecchymosis|Ritualistic Intercourse Within Abject Surrealism
+24369|Endoparasitic|Abiogenesis
+17871|Pustulated|Pathognomonic Purulency
+8582|Wormeaten|Tortured Cadaveric Humanity
+8519|Omnipotent Hysteria|Abattoir Of Slain Deities
+4337|Impure|Hemicorporectomy
+3772|Embodied Torment|Liturgy Of Ritual Execution
+3558|Orchidectomy|A Prelate's Attrition
+2737|Excoriation|Excoriation
+1910|Gorephagia|Configurating The Angles Of Self Destruction
+91558|Lesbian Tribbing Squirt|Squirt Development Clinic Princesses
+91573|Prolong Anoxia|Suffering That Ties Bind
+91572|Spastic|A Gruesome Bliss Invades Esophagus
+91550|Pathogen|Decaying Worship
+91548|The Malum Process|Ignominious Feast Of Decay
+91522|Blasted Pancreas|Carcinoma
+91500|Genophobic Perversion|Sanguinary Omens Scrawled on the Eroding Tomb of Man
+91498|Gape|Gape
+91426|Dr. Gore|Rotting Remnants
+91403|Mangled|Mangled Beyond Recognition
+91388|Desvirginizagore|Desvircuartizando Genitales Anodiarreicos
+91369|Splattered Mermaids|Stench Of Flesh
+91345|Massacred|The Final Plague of Earth
+91340|Unborn Salivate|Genitalien
+91316|Massacred|Dark Demon Of Hatred
+91044|Queiron|Dwelling At Opposite Slime
+90975|Gastrorrexis|Dominant Disease
+90656|Decaying Human|Consume Violent Atrocities
+90886|Premethius|Zombocalypse
+89896|Stillbirth|Survival Protocol
+89956|Distaste|Agoniepositur
+90779|Brodequin|Instruments Of Torture
+90704|Gorehammer|The Celebration
+90697|Ghoulish|Psychosomatic Molesting Consonance
+90460|Human Vivisection|Relentless Redemption
+90436|Squassation|Decorated With Feculent Appurtenances
+90674|Reborn In Flames|Hate Killer
+90606|XXX Lunatic|Hellbound Flesh Torment
+90599|Dead Filth|Instructions On Decay
+90586|Fecalizer|Gore Galore
+90465|Bloodcrusher|Aberrant Hypermorph
+90411|Goremitory|Rituals Of Dismemberment
+90405|Pathology Infection|112
+90327|Dead Filth|Every Ounce Of Flesh
+90248|Godzilla|III
+90218|Necrotic Infection|Little Lamb
+90219|Necrotic Infection|Sexuallyassaultedbyahomelesswithlepra
+89542|Compulsed|Amalgamated Anguish
+89540|Monoliyth|He Who Kills
+90054|Hallucinating|Carnage
+90041|Dead Filth|Disgusting Exhibition Of Human Cruelty
+89981|Barbarity|Enough Graves For Everybody
+89959|Intestinal Disgorge|Scat Blast
+89858|Souledge|Blood Has No Limit
+89702|Vomitous Iniquity|Libellus Ephemerus I
+89714|Momus|The Price Of Illiteracy
+89688|Useless Attitude|Nonetheless...Useless!
+89685|Entrail Disgorge|Anatomical Putrefaction Of The Cerebellum
+89687|Zenoxis|The Basement Devourer
+89407|Vulgar Dissection|Liquifying Coagulated Viscera
+89647|Zuckuss|Zuck My Nock
+89625|Microrgasmia|Carnage Sonata
+89589|Premethius|Aftermath...
+89524|Desvirginizagore|Redemption Through Dismemberment
+89455|Unborn Suffer|Da Fukk Is This??
+89440|Ancient Necropsy|A Mass Grave Under The City
+89374|Parasitic Infection|Children of Sepsis
+89336|Caveman Attack|Cave Emperor
+89335|Terminal Punishment|Shrine Of Obliteration
+89324|Exorency|Obsecration Of Immortal Flesh
+89323|Purulent|Garavito's Pedophilia Tales (20 Anniversary)
+89245|Running With Scissors|For The Sick
+89130|Sudden Death|In Sinner Hate
+89110|Purulent|Patología Grotesca
+88745|Cumbeast|Fairytales Of Filth
+88731|Insane Desecration|Monolith Of Inhuman Suffering
+88963|Regurgitation|Tales of Necrophilia
+88832|Ruthless Inhumanity|To Be Realized In The Presence Of Death
+88964|Duramater|Miss Piss
+88956|Light Of Dark|Colisevm
+88900|Duramater|Ignited Corpses
+88827|Cannabis Crypt|Vile Breed
+88509|Gaffed|I Can Feel Myself Rot
+88720|Liquified Guts|Sour Cream And Phibes
+88710|Roots Of Deception|Heinous Disfigurement
+88354|Fleshmangled|Morphing Into Despised Victimology
+88624|Ripperology|Pathogenic Delicate Execrate And Secrete
+88551|Viral Load|Practitioners Of Perversion
+88542|Spinal Stenosis|Paralyzed
+88492|Infectology|Origin Of Pathological Extermination
+88482|55Gore|It Was A Cold And Dark Night… The Coffin Was Opened After 11 Years Of Dormancy And The Alcohol Demons Are Once Again Set Free With Fresh Bodily Fluids…
+87791|Bodybox|3
+88449|Kuvotus|Unisolmuirvistys
+88427|Images Of Violence|Degrade The Shapeless
+88274|Torture Everlasting|Land Of Depravity
+87849|Debridement|Mutation
+88093|Putrid Impetus|Fatal Necrotic Ecstasy
+87813|Coffin Syrup|The Unique Magic Of Rigor Mortis
+87662|Imperious Malevolence|Imperious Malevolence
+87292|Indecent Excision|Aberration
+87232|Luminosity|Nebulae
+86751|Terrorpy|The Bisection Collection
+86529|Spasmodia|Insatiable Barbarity
+86534|Mastectomy|Blown By Bullet
+86401|Reconstructed Torso|Glimpse
+86360|Dissected|The Preamble Of Mass Extinction
+86280|Purulent Granny Gangrene|Circular Saw Dismemberment
+86230|Viscera Infest|Teratoma
+86238|Putrefier|Mutated Melodies And Septic Serenades
+85583|Iniquitous Monolith|Monstrous Degradation
+86158|Waist Chop|The Fallen Capital
+86150|Lumpur|Aku Dan Tuhanku
+85995|Grotesque Atrocity|For a World Without Humans
+85846|Congenital|Only the Dead Have Seen the End of War
+85902|Mivedantal|In Claws Of Ignorance
+85900|Mivedantal|Gallery Of Human Perversity
+85527|Necrotic Infibulation|Fermented Intestinal Egesta
+85363|Submerged|Tortured In The Depths
+85361|Despondency|Matriphagy
+85187|Infection|Total Infection
+85002|Disrupting|Conceive To Obliteration
+84991|Mazaroth|Torture Sessions
+84954|Ovenhead|Altar Of Flesh
+84868|Post Mortal Possession|The Dead Space Between The Stars
+84814|Fluids|Reduced Capabilities
+84797|Khaos Of Death|The Invader
+84687|Crepitation|If You Want Blood(Stock)
+84678|Saw|Unleash Perpetual Torture
+84676|Exterminated|Sphere Of Catastrophism
+84666|Vertiginous|Reek Of Putrefaction Of The Excruciating Lust
+84604|Restlessly|Unforeseen Consequences
+84549|Prostitute Butchery|Compulsive Prostitute Killings
+84500|Duramater|No Brain No Pain
+84451|Gutfuck|Piranha Blowjob
+84329|Product Of Neglect|Synthetic Freedom
+84205|CuntFull Of Concrete|Excrucior Ultra Mortem
+84106|Incurable|Self-Burial
+84093|Acéldama|Cruciatti Mentis
+84064|Syphilic|Behind Bars
+83971|Putrefied Feast|Contra Vim Mortis Non Crescit Salvia In Hortis
+83615|Disgorge|Chronic Corpora Infest
+83541|Chainsaw Torture|Severed Limb Fantasy
+83540|Child Cemetery|Rebirthed Revived Rekilled
+83408|Cuntpuncher|Fifty Shades Of Rape
+83382|Torture|War Crime: 37 Tracks / 37 Homicides
+83251|Brain Disorder|The Massive Killing
+83063|Deivos|Emanation From Below
+83024|Syphilic|The Medication
+82895|Rottenness|Live Rot In The Czech Republic
+82831|Mental Apraxia|Perverse Intentions
+82770|Martin And The Vampires|Giving Head To The Living Dead
+82755|Infected Load|Dripping
+82752|Devoured Souls|Acheron
+82577|Scrabs|Molted
+82465|Dehumanizing Encephalectomy|Sacrosanctity Of Human Extermination
+82447|Decomposed Flesh Of Humanity|Apology Of A Depraved Society
+82274|Ferocious Fetal Formula|Primordial Generic Genocide
+82261|Dead Twilight|Fall Of Humanity
+81992|Dead Twilight|Endless Torment
+81937|Gethebong|Genocide
+81918|Cryophilic|Damned And Decayed
+81852|Gutted Alive|Human Taxidermy
+81555|Nuclear Remains|Dawn Of Eternal Suffering
+81475|Iatrogenia|Compulsive Pathological Carnifexia
+81426|Rat Torture|Blood Fetish
+81332|Reencarnación|Mar De Vicios Y Dolor
+81256|Scattered Disease|Dilapidation And Endless Suicide
+81129|Vasculitis|Masochistic Intestinal Eruption
+80973|Pigsty|The Sect Of The Ignoramuses
+80962|Course Of Extinction|Course Of Extinction
+80403|Infecting The Swarm|Pulsing Coalescence
+80375|Untombed|Meaningless Decay
+80374|Gorepoflesh|Gore Fucking Corpses
+80370|Suffocate Bastard|Devouring The Void
+80301|Brutally Mutilated|Tortured, Fucked, And Mutilated
+80241|Necroaholics|Les Glands Gourmands
+80126|Smashed And Dissected|Cadaveric Abyss Os Sorrow
+79840|Sadistic Pathology|Decomposed Human Remains
+79780|The Monolith Deathcult|The White Crematorium 2.0 (The Revenge Of The Failed)
+79494|Clit Commander|Obey The Clit
+79411|Pussy Destruction|Inglorious Cat Terds: 100 Scrotums
+79389|Murder Pussy|Primitive Rituals Of Self Extinction
+79108|Darkall Slaves|Mephitic Redolence Of The Decomposed
+78847|Resurrected|Faireless To The Flesh II
+78702|Coprolalia|Offensive Brutality
+78679|Akinetopsia|Collapse Of Continuum
+78652|Interminable Corruptions|Xenodimensional Conflux
+78513|Gorepot|How Much Is A Gram Over There?
+78452|Urosepsis|Exploratory Autopsy
+78249|Severe Torture|Misanthropic Carnage
+76898|Horrified|Crematorium Mist
+76564|Tomb Of Anubis|Double Barrel Facelift
+76537|Abomination Impurity|Post Disembowelment Blunt Serial Decapitation
+76511|Fetal Embalment|Mutilation Surgery
+76509|Infection After Surgery|Chaper Of Necrophile Assimilation
+76477|Genophobic Perversion|The Putrid Stench Of Death Engulfing Your Senses
+76367|Deformed Slut|At The Inhumane Cesspool
+75980|Filthed|Loathsome
+75972|Gore Encyclopedia|Odes Of Scatological Love
+75812|Cell Block Autopsy|Fertile Soil Of Immorality
+75757|Tomb Of Butchery|Rapidly Declining Mental State
+75642|Necroveg|Gluttony
+75389|Mutilatred|Determined To Rot
+75347|Teratocarcinomas|A Night Of Terrifying Horror
+75182|Massacred|Human Extermination
+74416|Sanguinary Execution|Slowly Torment Towards Death
+74390|Cadaverous Infest|The Relationship Between Squizophrenia Religion And His Implications For Blood
+74304|Visceral Cadaverment|Absorb The Devastating Favour
+74224|Infester|To The Depths, In Degradation
+74054|Hidden Pride|Brutal Advice
+73603|Craniotomy|Ripped Out By Violence
+73416|Diarrhea|Muddied Waters
+73374|Leg|Cneowian Disingenerate
+73197|Eradication Of The Unworthy Infants|Change Is Good
+73021|Autotomy|Minced Lives
+72758|Bowel Stew|Necrocannibal Rites... The Primitive Sessions
+72247|Intestinal Pestilence|Rotten Cadaver Forsaken
+72036|Omnioid|Regurgitated Inexistential Pestilence
+72033|Poppy Seed Grinder|Faceless Atrocities
+71771|Trapped In The Morgue|Kleptocracy
+71574|Sederai Mutilation|Suffering Extends
+71338|Regurgitation|Tales Of Necrophilia
+71126|Flesh Hoarder|Relic Of Putrescent Filth
+70570|Fadihat|Sick Vagina Hole
+70556|Injected Sufferage|Denial In The Grave Torment
+70461|Waifucide|In The Depths Of Intoxication
+70305|Guzarat|Algorithm
+70301|Execración|Pervert Slave
+70049|Frogtician|Froged Up For Barbecue
+70048|Frogtician|Frog Dismemberment
+69857|Stickoxydal|Obstetrical Collection
+69730|Saffar|Mandatory El Arshy
+69614|Ominous Scriptures|Incarnation Of The Unheavenly
+68766|Detritivor|Scattered Remnants
+68635|Acéldama|Melquisedec
+67903|Sadistic Torture|Repulsive Iniquity Catastrophic
+67725|Fecalizer|The Planet Of Seven Billion Zombies
+67692|Blind Hate|Cruel Impeccable Horrific Killer
+67335|Anarkhon|Phantasmagorical Personification Of The Death Temple
+67334|Dead And Dripping|Profane Verses Of Murderous Rhetoric
+67206|Arsebreed|Butoh
+67166|Orgiastic Defleshment|Perverse Carnivorous Humanicide
+66935|Blood Carnival|Blood Awakening
+66730|Cranial Contamination|Into The Warp
+66681|Butchery|Eternal Return
+66636|Butchery|Verdugos
+63411|Embedded|Banished From The Light
+63316|Disembodied|Eternal Worshiper
+63310|Mutilatred|Dissecting Your Future
+63304|Death Vomit|Dominion Over Creation
+62276|Solegnium|Unavoidable Destruction
+61992|Putrefied Cadaver|Wretched Times
+61857|Sanguinary Execution|Lake Of Excrement
+60831|Shampoon Killer|Mankind Depravity
+60381|Goretrade|Regressive Entities
+60206|Rottenblast|Ilusi Soliteris
+54056|Mastectomy|Worst Kind Of Human
+43892|Necrosis|Acta Sanctorum
+37995|Dehumanized Behavior|Throne Of Dismemberment
+37983|Baalphegor|The End Of Descent
+37853|Necroinfection|Rebirth Of The Epidemic
+37753|Visceral Carnage|Perverse Collection Of Mutilated Bodies
+29202|Kombenk|Scenery Of Slaughter
+29020|Lord Piggy|Mundo Enfermo
+28305|Infernal Torment|Man's True Nature
+27350|Axsem|Ciclos De Atrocidad Mental
+27304|Vaginal Scars|With Legs Wide Open
+26855|Paroxysmal Butchering|Amygdala
+26261|Light Of Dark|Spiritual Cannibalism
+26015|Houwitser|Damage Assessment
+25855|Abhorration|Despondent
+25769|Stigmatuary|Decimation Of Psyche
+25724|Hecatomb|Empire Of No Emperor
+25619|Vaginal Addiction|Orgy Of Depravity
+25275|Rotten Evisceration|Ancient Grave Ascension
+25044|Insidious Squelching Penetration|Writhing In Darkness
+24763|Intestinal Disgorge|Everlasting Fractal Nightmare
+24749|Violate|Pleasures Of The Pit
+24670|ByoNoiseGenerator|Neuromechanica
+24633|Sublime Cadaveric Decomposition|Sublime Cadaveric Decomposition
+24360|Expulsed|Kingdom Of Desolation
+24256|Heinous Killings|Hung With Barbwire
+24135|Guttural Queef|Like An Evergrowing Queef
+23984|Raped While Strangled|Cunt Totally Torn
+23935|Brain Damage|Indulging Cannibalistic For Mutilation
+23818|Conquer The Rotted|Conquer The Rotted
+23789|Augurium|Unhallowed Ascendance
+23675|Psychopathic|Phases
+23670|Crypticus|The Nightcomers
+23655|Ophiolatry|Transmutation
+23632|Шумовая Экзекуция|Nihil Sanctorum
+23312|Imperious Malevolence|Decades Of Death
+23260|Waste|Residuos Despilfarros
+23197|Atrocious|Mental Disorder
+23000|Feraliminal Lycanthropizer|The Ideal Model Of Deviance
+22919|Neoplasia|Gracias Al Odio
+22817|Abitabyss|Rural Métal
+22813|Morgroth|Surgical Intervention
+22806|Γέννα Από Κώλο|Anti-Trendy Attack
+22749|Gore And Carnage|Carnage Drinking Party
+22646|Lividity|...'Til Only The Sick Remain
+22505|Gods Of Emptiness|Disobedience
+22432|Legal Butchery|Key To Paradise
+22223|Glutton For Punishment|Purified In Blood
+22152|Offalmincer|Filicide At Feretory
+22103|Corpsedecay|Fetish Human Extermination
+22039|Reincarnation|Seed Of Hate / Void
+21899|Jagal|Among The Massacre
+21850|Sabathory|Forever Ill
+21842|Victim|Cocktail Of Brutality
+21841|Victim|Faces Of Death
+21806|Intestinal Disgorge|Vagina
+21788|Psychotic Homicidal Dismemberment|Pentagram Of Butchered Fetuses
+21668|Croque-Mort|Necrophonic Terror
+21667|Entropia|Takte Mòrbid
+21620|Cutterred Flesh|Dying In Pieces
+21393|Slowly Rotten|Human Misery
+21309|Azoemia|Forced To Devour
+21241|Surgical Dissection|Origin & Intention
+21213|Sadistic Kill|Cirugia Cerebral Calibre 38
+21149|Gutslit|Skewered In The Sewer
+21101|Infected Asshole|Coup De Poudre
+21068|CorpseVomit|Raping The Ears Of Those Above
+21039|Psychotic Homicidal Dismemberment|Female Mutilation
+20943|E.B.D.B.|A Bullet Up Your Nostril
+20888|Gore|Necrotic Feast
+20697|Parental Advisory|The Wither Process
+20695|Intestinal Mastication|A Night Of Laceration And Dismemberment
+20640|Sickcunt|Kicoz
+20604|Inexorable Chaos|Global Infection
+20600|Trojan|Metamorphosis As The Phenomenon
+20566|Epicedium|Anthropogenic
+20519|Pukelization|Inextricable Impregnation
+20510|Katatonie|Herpes Der Götterbote
+20465|Drop|Sadistic Independent Of Bliss
+20407|Phylactery|Aeber
+20375|Disgusting Castigation|Perpetual Carve On Manifest Torture
+20371|Scalpel|Sorrow And Skin
+20202|Fecal Addiction|Jenkem
+20133|Grog|Scooping The Cranial Insides
+20066|Harmony Dies|I'll Be Your Master
+20040|Hyonblud|Chaos From World Orgasm
+20037|Syphilic|In The Pen
+19942|Victim|Truth?
+19924|Bound And Gagged|Fornicate The Gutted
+19923|Decrepit|Creation Of Sin
+19899|Grotesqueuphoria|Euphoric Discordance
+19898|Grotesqueuphoria|Conquered By Corruption
+19762|Sudden Death|Injection Of Hate
+19759|Sick Society|Scripture Of Defiance
+19747|Sudden Death|Devoured Inside
+19686|Sikfuk|Gore Delicious
+19627|Troglodyte|Anthropological Curiosities And Unearthed Archaeological Relics
+19626|Troglodyte|Don't Go In The Woods
+19625|Troglodyte|Welcome To Boggy Creek
+19604|Corrosive Gastric Hemorrhage|Extracting The Bowels
+19566|Rotten Minds|Necrogallery
+19339|Fugax|Bury The Hatchet Wound
+19242|Visceral|Involución Parasitoide
+19181|Severe Mutilation|Spawn Of Hatred
+19122|Endor|Free Us From Jesus
+19035|Departed|Oblation Of Heaven Suffering
+19024|Moker|Home Invader
+18986|Ton|Plague
+18961|Unborn Suffer|Unborn Suffer
+18904|Genocaust|The End Of All Things
+18899|Exploding Zombies|Several Severed Heads
+18896|Bastard Saints|The Shape Of My Will
+18855|Butchery|Dungeon Of Execution
+18818|Human Abasement|Annihilation Of The Human Plague
+18814|Very Wicked|Goregutgreedy
+18797|Binaash|Binaashkaari
+18796|Anal Fissure|Mind Of A Serial Killer
+18749|Dvorhead|House Of Pain
+18725|Hydrophobia|Human Shredder
+18713|Solidification|Vendetta Driven
+18645|Brain Ass|Primordial Uncouth
+18586|Vigilia Mortum|Bloody Remorse
+18539|Strangulation|Atrocious Retribution
+18525|Morbopraxis|Instruments Of Carnal Torture
+18501|Born Headless|Headless Henchmen
+18490|Recueil Morbide|Only Hate Left
+18479|Perverse|Blunt Of Stench
+18472|Morsgatt|Butt Mud
+18430|Faeces|Vertex
+18421|Prophecy|Foretold... Foreseen
+18399|Surgical Dissection|Absurd Humanism
+18398|Ghouls|Until It Bleeds
+18359|Disastrum|Dark Side Of God
+18356|Fetus Grinder|Rather Unpleasant
+18315|Holocausto Canibal|Sublime Massacre Corpóreo
+18313|Light Of Dark|World War Satan
+18285|Putrefukation|Vortex Of Zombified Mortuary Procedures
+18278|Revel Decay|Eternal Decay
+18160|Gutslit|Amputheatre
+18140|Foetopsy|In The Bathroom
+18041|Datura|Kaput
+18040|Datura|Fucking State
+18035|Borow|Крестили = Распяли
+17939|Havok 666|Blessing The Flames With Sacrosanct Blood
+17841|Hail Caligula|Bacchanalia Sanguis
+17815|Distaste|Rotten Cold / Distaste
+17814|Distaste|Of Abyss-Hearts And Falsity...
+17806|Virulent Gestation|Drenched In Sickness
+17685|No One Gets Out Alive|Vomit And Guts
+17657|Membro Genitali Befurcator|Total War
+17647|Diaroe|Das Eskalat
+17235|Accidental Death Benefit|Венец Творения Природы
+17204|Abandoned Grave|Purulent Purgation
+17196|Gorepoflesh|Gore Fucking Corpses
+17134|Autopsy Night|Рождённый Убивать
+16551|Birth Of Depravity|From Obscure Domains
+16523|Braincasket|Ratchet Of Perdition
+16506|Psychobolia|Chiaroscuro
+16093|Cadaverous Incarnate|Fetal And Majestic Rotten Incarnation
+14997|Rectal Smegma|Licking A Leper
+14996|Rectal Smegma|Because We Care
+14995|Rectal Smegma|Become The Bitch
+14831|Saprobiontic|Science Of War
+14402|Syphilic|Erotishock Therapy
+14314|Expendiency|Sadistic Murder
+14130|Perfidious|Malevolent Martyrdom
+14073|Suffocation|Split Demos
+13622|Perversity|In The Garment Of Lust
+13012|Cephalic Mugre|Sars Infected Dog
+12752|Morbid Crucifixion|Refinery Of Humanity
+12731|Resurrected|Blood Spilled
+12686|By Brute Force|We Declare War

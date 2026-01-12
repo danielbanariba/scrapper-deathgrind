@@ -54,7 +54,7 @@ def cargar_keywords():
         keywords = [
             "full album", "official album stream", "full album stream",
             "full length", "album stream", "full-album", "album full",
-            "full ep", "full ep stream", "ep stream", "official ep"
+            "full ep", "full ep stream", "ep stream", "official ep", "official full stream"
         ]
 
     return keywords
