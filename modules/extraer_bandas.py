@@ -18,6 +18,7 @@ BASE_URL = "https://deathgrind.club"
 API_URL = f"{BASE_URL}/api"
 OUTPUT_BANDAS = "data/bandas.json"
 OUTPUT_REPERTORIO = "data/repertorio.json"
+FALLIDOS_FILE = "data/fallidos_bandas.txt"
 
 # Configuración de rate limiting (ajustable)
 DELAY_ENTRE_PAGINAS = 1.0      # Segundos entre cada página de resultados
@@ -114,6 +115,20 @@ def cargar_descargados():
     return descargados
 
 
+def cargar_fallidos():
+    """Carga lista de bandas con links fallidos (por band_id)"""
+    fallidos = set()
+    if os.path.exists(FALLIDOS_FILE):
+        with open(FALLIDOS_FILE, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    parts = line.split('|')
+                    if parts and parts[0].isdigit():
+                        fallidos.add(parts[0])
+    return fallidos
+
+
 def post_en_blacklist(post, sellos_blacklist):
     """Verifica si un post está en un sello problemático"""
     labels = post.get('label', [])
@@ -126,7 +141,8 @@ def post_en_blacklist(post, sellos_blacklist):
     return False, None
 
 
-def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados=None, verbose=True):
+def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_permitidos,
+                         descargados=None, fallidos_bandas=None, verbose=True):
     """
     Extrae TODOS los posts de un género, filtrando por sello y descargados al vuelo
     """
@@ -135,6 +151,7 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
     posts_total = 0
     posts_filtrados_sello = 0
     posts_filtrados_descargados = 0
+    posts_filtrados_fallidos = 0
     offset = None
     retries_429 = 0
     retries_error = 0
@@ -142,6 +159,8 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
 
     if descargados is None:
         descargados = set()
+    if fallidos_bandas is None:
+        fallidos_bandas = set()
 
     while True:
         try:
@@ -190,6 +209,22 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
                 if str(post_id) in descargados:
                     posts_filtrados_descargados += 1
                     continue
+
+                # Filtrar por bandas fallidas
+                if fallidos_bandas:
+                    bands_tmp = post.get('bands', [])
+                    band_fallida = False
+                    for b in bands_tmp:
+                        if isinstance(b, dict):
+                            band_id = b.get('bandId')
+                        else:
+                            band_id = None
+                        if band_id is not None and str(band_id) in fallidos_bandas:
+                            band_fallida = True
+                            break
+                    if band_fallida:
+                        posts_filtrados_fallidos += 1
+                        continue
 
                 # Filtrar por sello problemático
                 en_blacklist, sello = post_en_blacklist(post, sellos_blacklist)
@@ -264,10 +299,12 @@ def extraer_posts_genero(session, genre_id, genre_name, sellos_blacklist, tipos_
                 print(f"    ⚠️ Error de conexión, reintentando en {wait_time}s...")
             time.sleep(wait_time)
 
-    return releases, bandas_encontradas, posts_total, posts_filtrados_sello, posts_filtrados_descargados
+    return (releases, bandas_encontradas, posts_total, posts_filtrados_sello,
+            posts_filtrados_descargados, posts_filtrados_fallidos)
 
 
-def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargados=None, verbose=True):
+def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
+                 descargados=None, fallidos_bandas=None, verbose=True):
     """
     Extrae todos los posts y bandas, filtrando al vuelo
     """
@@ -276,10 +313,13 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargad
     posts_total = 0
     posts_filtrados_sello = 0
     posts_filtrados_descargados = 0
+    posts_filtrados_fallidos = 0
     posts_ids_vistos = set()  # Para evitar duplicados entre géneros
 
     if descargados is None:
         descargados = set()
+    if fallidos_bandas is None:
+        fallidos_bandas = set()
 
     if verbose:
         print(f"\n📦 Scrapeando {len(generos)} géneros...")
@@ -291,13 +331,14 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargad
         if verbose:
             print(f"\n[{i+1}/{len(generos)}] {genre_name} (ID: {genre_id})")
 
-        releases, bandas, posts, filtrados_sello, filtrados_desc = extraer_posts_genero(
-            session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados, verbose
+        releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos = extraer_posts_genero(
+            session, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados, fallidos_bandas, verbose
         )
 
         posts_total += posts
         posts_filtrados_sello += filtrados_sello
         posts_filtrados_descargados += filtrados_desc
+        posts_filtrados_fallidos += filtrados_fallidos
 
         # Agregar bandas nuevas
         nuevas_bandas = 0
@@ -316,7 +357,7 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargad
                 nuevos_releases += 1
 
         if verbose:
-            filtrados_total = filtrados_sello + filtrados_desc
+            filtrados_total = filtrados_sello + filtrados_desc + filtrados_fallidos
             print(f"  → {posts} posts, {filtrados_total} filtrados, +{nuevas_bandas} bandas, +{nuevos_releases} releases")
             print(f"     Total: {len(todas_bandas)} bandas, {len(todos_releases)} releases")
 
@@ -324,7 +365,8 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos, descargad
         if i < len(generos) - 1:
             time.sleep(DELAY_ENTRE_GENEROS)
 
-    return todos_releases, list(todas_bandas.values()), posts_total, posts_filtrados_sello, posts_filtrados_descargados
+    return (todos_releases, list(todas_bandas.values()), posts_total,
+            posts_filtrados_sello, posts_filtrados_descargados, posts_filtrados_fallidos)
 
 
 def guardar_datos(bandas, releases, verbose=True):
@@ -345,12 +387,12 @@ def guardar_datos(bandas, releases, verbose=True):
 def run(tipos_permitidos=None, verbose=True):
     """
     Ejecuta la extracción optimizada
-    Extrae posts, filtra por sello y descargados, guarda bandas + releases
+    Extrae posts, filtra por sello/descargados/fallidos, guarda bandas + releases
     """
     if verbose:
         print("=" * 60)
         print("🎸 MÓDULO 1: EXTRACCIÓN DE BANDAS Y REPERTORIO")
-        print("   (Optimizado: filtra por sello y descargados al extraer)")
+        print("   (Optimizado: filtra por sello, descargados y fallidos al extraer)")
         print("=" * 60)
 
     if tipos_permitidos is None:
@@ -370,16 +412,18 @@ def run(tipos_permitidos=None, verbose=True):
 
     sellos_blacklist = cargar_sellos_blacklist()
     descargados = cargar_descargados()
+    fallidos_bandas = cargar_fallidos()
 
     if verbose:
         print(f"✓ {len(generos)} géneros")
         print(f"✓ {len(sellos_blacklist)} sellos en blacklist")
         print(f"✓ {len(descargados)} releases ya descargados")
+        print(f"✓ {len(fallidos_bandas)} bandas con links fallidos")
         tipos_nombres = [TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos]
         print(f"✓ Tipos: {', '.join(tipos_nombres)}")
 
-    releases, bandas, posts_total, posts_filtrados_sello, posts_filtrados_desc = extraer_todo(
-        session, generos, sellos_blacklist, tipos_permitidos, descargados, verbose
+    releases, bandas, posts_total, posts_filtrados_sello, posts_filtrados_desc, posts_filtrados_fallidos = extraer_todo(
+        session, generos, sellos_blacklist, tipos_permitidos, descargados, fallidos_bandas, verbose
     )
 
     guardar_datos(bandas, releases, verbose)
@@ -391,6 +435,7 @@ def run(tipos_permitidos=None, verbose=True):
         print(f"Posts procesados: {posts_total:,}")
         print(f"Filtrados (sellos): {posts_filtrados_sello:,}")
         print(f"Filtrados (ya descargados): {posts_filtrados_desc:,}")
+        print(f"Filtrados (bandas fallidas): {posts_filtrados_fallidos:,}")
         print(f"Bandas únicas: {len(bandas):,}")
         print(f"Releases nuevos: {len(releases):,}")
 

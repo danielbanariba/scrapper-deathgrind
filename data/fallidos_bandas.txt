@@ -1,0 +1,2 @@
+# Bandas con links fallidos
+# Formato: band_id|band|post_id|album|fecha|motivo

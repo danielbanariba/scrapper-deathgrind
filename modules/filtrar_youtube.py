@@ -52,9 +52,7 @@ def cargar_keywords():
     # Si no hay archivos, usar defaults
     if not keywords:
         keywords = [
-            "full album", "official album stream", "full album stream",
-            "full length", "album stream", "full-album", "album full",
-            "full ep", "full ep stream", "ep stream", "official ep", "official full stream"
+            "full album", "official album stream", "full album stream", "full length", "album stream", "full-album", "album full", "official full stream"
         ]
 
     return keywords

@@ -8,6 +8,10 @@ Soporta:
   - Mega.nz
   - Mediafire
   - Google Drive
+  - Yandex Disk
+  - pCloud
+  - Mail.ru Cloud
+  - Workupload
   - Otros enlaces directos
 """
 
@@ -21,22 +25,31 @@ import tempfile
 import zipfile
 import requests
 from pathlib import Path
-from urllib.parse import urlparse, unquote
+from urllib.parse import urlparse, unquote, parse_qs, urlencode, urlunparse
 
 # Configuración
 INPUT_FILE = "data/repertorio_con_links.json"
 DESTINO_BASE = "/run/media/banar/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas"
 TEMP_DIR = "/tmp/deathgrind_downloads"
 DESCARGADOS_FILE = "data/descargados.txt"  # Lista de releases ya descargados
+FALLIDOS_FILE = "data/fallidos_bandas.txt"  # Bandas con links fallidos
 
 # Configuración de rate limiting
 DELAY_ENTRE_DESCARGAS = 2.0  # Segundos entre cada descarga
+DELAY_REINTENTO_DESCARGA = 10.0  # Segundos entre reintentos por descarga parcial
+MAX_REINTENTOS_PARCIALES = 5  # 0 = infinito, reintentos si hubo descarga parcial
 
 # Extensiones de archivos comprimidos
 EXTENSIONES_COMPRIMIDAS = {'.zip', '.rar', '.7z', '.tar', '.tar.gz', '.tgz', '.tar.bz2'}
 
 # Extensiones de audio (para verificar extracción exitosa)
 EXTENSIONES_AUDIO = {'.mp3', '.flac', '.wav', '.ogg', '.m4a', '.aac', '.wma'}
+
+# User-Agent consistente para evitar bloqueos básicos
+DEFAULT_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36',
+    'Accept': '*/*',
+}
 
 
 def cargar_repertorio(input_file=INPUT_FILE):
@@ -81,6 +94,49 @@ def release_ya_descargado(release, descargados):
     return post_id in descargados or any(post_id in d for d in descargados)
 
 
+def cargar_fallidos(fallidos_file=FALLIDOS_FILE):
+    """Carga la lista de bandas con fallos previos"""
+    fallidos = set()
+    if os.path.exists(fallidos_file):
+        with open(fallidos_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    parts = line.split('|')
+                    if parts and parts[0].isdigit():
+                        fallidos.add(parts[0])
+    return fallidos
+
+
+def guardar_fallido(release, fallidos, fallidos_file=FALLIDOS_FILE, motivo="Todos los links fallaron"):
+    """Agrega una banda a la lista de fallidos (si no existe)"""
+    band_id = str(release.get('band_id', '')).strip()
+    if not band_id:
+        return
+
+    if band_id in fallidos:
+        return
+
+    os.makedirs(os.path.dirname(fallidos_file), exist_ok=True)
+
+    # Si el archivo no existe, crear con encabezado
+    if not os.path.exists(fallidos_file):
+        with open(fallidos_file, 'w', encoding='utf-8') as f:
+            f.write("# Bandas con links fallidos\n")
+            f.write("# Formato: band_id|band|post_id|album|fecha|motivo\n")
+            f.write("\n")
+
+    band = release.get('band', 'Unknown')
+    album = release.get('album', 'Unknown')
+    post_id = str(release.get('post_id', ''))
+    fecha = time.strftime('%Y-%m-%d')
+
+    with open(fallidos_file, 'a', encoding='utf-8') as f:
+        f.write(f"{band_id}|{band}|{post_id}|{album}|{fecha}|{motivo}\n")
+
+    fallidos.add(band_id)
+
+
 def limpiar_nombre(nombre):
     """Limpia un nombre para usarlo como nombre de carpeta"""
     # Remover caracteres no válidos para sistemas de archivos
@@ -90,6 +146,160 @@ def limpiar_nombre(nombre):
     # Remover puntos al final (Windows no los permite)
     nombre = nombre.rstrip('.')
     return nombre.strip()
+
+
+def _extraer_nombre_archivo(headers, final_url):
+    """Intenta extraer el nombre de archivo desde headers o URL"""
+    filename = None
+    if headers and 'content-disposition' in headers:
+        cd = headers['content-disposition']
+        match = re.search(r'filename[*]?=["\']?(?:UTF-8\'\')?([^"\';]+)', cd)
+        if match:
+            filename = unquote(match.group(1))
+
+    if not filename:
+        parsed = urlparse(final_url)
+        filename = os.path.basename(parsed.path)
+
+    if not filename:
+        filename = 'download'
+
+    filename = limpiar_nombre(filename)
+
+    # Si no tiene extensión conocida, usar .zip por compatibilidad con el flujo actual
+    if not any(filename.lower().endswith(ext) for ext in ['.zip', '.rar', '.7z', '.tar', '.gz', '.mp3', '.flac']):
+        filename += '.zip'
+
+    return filename
+
+
+def _guardar_respuesta(response, destino, verbose=True):
+    """Guarda un response streaming en destino y retorna (filepath, parcial)"""
+    filename = _extraer_nombre_archivo(response.headers, response.url)
+    filepath = os.path.join(destino, filename)
+
+    # Descargar con progreso
+    total_size = int(response.headers.get('content-length', 0))
+    downloaded = 0
+    try:
+        with open(filepath, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+                    downloaded += len(chunk)
+                    if verbose and total_size > 0:
+                        pct = (downloaded / total_size) * 100
+                        print(f"\r    Descargando: {pct:.1f}%", end='', flush=True)
+
+        if verbose and total_size > 0:
+            print()  # Nueva línea
+
+    except Exception:
+        # Descarga parcial
+        if os.path.exists(filepath):
+            try:
+                os.remove(filepath)
+            except Exception:
+                pass
+        return None, downloaded > 0
+
+    # Verificar archivo muy pequeño (probable error)
+    if os.path.exists(filepath):
+        size = os.path.getsize(filepath)
+        if size < 1000:
+            os.remove(filepath)
+            if verbose:
+                print(f"    ⚠️ Archivo muy pequeño ({size} bytes), probablemente error")
+            return None, False
+
+    return filepath, False
+
+
+def _ext_compuesta(filepath):
+    """Obtiene extensión considerando .tar.gz y similares"""
+    name = os.path.basename(filepath).lower()
+    if name.endswith('.tar.gz'):
+        return '.tar.gz'
+    if name.endswith('.tar.bz2'):
+        return '.tar.bz2'
+    if name.endswith('.tgz'):
+        return '.tgz'
+    return os.path.splitext(name)[1]
+
+
+def _archivo_es_comprimido(filepath, ext):
+    """Valida firma básica para evitar intentar extraer archivos que no son comprimidos"""
+    try:
+        if ext == '.zip':
+            return zipfile.is_zipfile(filepath)
+        if ext == '.rar':
+            with open(filepath, 'rb') as f:
+                sig = f.read(8)
+            return sig.startswith(b'Rar!\x1a\x07')
+        if ext == '.7z':
+            with open(filepath, 'rb') as f:
+                sig = f.read(6)
+            return sig == b'7z\xbc\xaf\x27\x1c'
+        if ext in ['.tar', '.tar.gz', '.tgz', '.tar.bz2']:
+            import tarfile
+            return tarfile.is_tarfile(filepath)
+    except Exception:
+        # Si no se puede validar, intentar extraer para no perder archivos válidos
+        return True
+    return True
+
+
+def _detectar_extension_audio(filepath):
+    """Detecta extensión de audio por firma de archivo"""
+    try:
+        with open(filepath, 'rb') as f:
+            header = f.read(32)
+    except Exception:
+        return None
+
+    if header.startswith(b'ID3') or header[:2] in (b'\xff\xfb', b'\xff\xf3', b'\xff\xf2'):
+        return '.mp3'
+    if header.startswith(b'fLaC'):
+        return '.flac'
+    if header.startswith(b'OggS'):
+        return '.ogg'
+    if header.startswith(b'RIFF') and header[8:12] == b'WAVE':
+        return '.wav'
+    if header[:2] in (b'\xff\xf1', b'\xff\xf9'):
+        return '.aac'
+    if header[4:8] == b'ftyp':
+        major = header[8:12]
+        if major in (b'M4A ', b'isom', b'mp42', b'MP4 '):
+            return '.m4a'
+    return None
+
+
+def _ajustar_extension_audio(filepath, verbose=True):
+    """Renombra archivo si parece audio y la extensión no coincide"""
+    if not os.path.exists(filepath):
+        return filepath
+
+    ext_actual = os.path.splitext(filepath)[1].lower()
+    ext_audio = _detectar_extension_audio(filepath)
+    if not ext_audio:
+        return filepath
+
+    if ext_actual == ext_audio:
+        return filepath
+
+    nuevo_path = filepath
+    if ext_actual:
+        nuevo_path = filepath[: -len(ext_actual)] + ext_audio
+    else:
+        nuevo_path = filepath + ext_audio
+
+    try:
+        os.rename(filepath, nuevo_path)
+        if verbose:
+            print(f"    ℹ️ Archivo detectado como audio, renombrado a {os.path.basename(nuevo_path)}")
+        return nuevo_path
+    except Exception:
+        return filepath
 
 
 def generar_nombre_carpeta(release):
@@ -118,6 +328,30 @@ def detectar_tipo_link(url):
     # Mega requiere herramienta especial (megadl)
     if 'mega.nz' in url_lower or 'mega.co.nz' in url_lower:
         return 'mega'
+    # Mediafire requiere resolver el link real
+    elif 'mediafire.com' in url_lower:
+        return 'mediafire'
+    # Google Drive requiere confirmación en archivos grandes
+    elif 'drive.google.com' in url_lower or 'docs.google.com' in url_lower:
+        return 'gdrive'
+    # VK Docs (requiere resolver link real en algunos casos)
+    elif 'vk.com/doc' in url_lower:
+        return 'vkdoc'
+    # Yandex Disk (API pública para obtener link directo)
+    elif 'disk.yandex.ru' in url_lower or 'yadi.sk' in url_lower:
+        return 'yandex'
+    # pCloud (link público)
+    elif 'u.pcloud.link' in url_lower or 'pcloud.com' in url_lower:
+        return 'pcloud'
+    # Mail.ru cloud (link público)
+    elif 'cloud.mail.ru' in url_lower:
+        return 'mailru'
+    # Workupload (requiere extraer link real del HTML)
+    elif 'workupload.com' in url_lower:
+        return 'workupload'
+    # WeTransfer (enlaces dinámicos)
+    elif 'we.tl' in url_lower or 'wetransfer.com' in url_lower:
+        return 'wetransfer'
     # Servicios muertos o con captcha (no intentar)
     elif 'zippyshare.com' in url_lower:
         return 'dead'  # Cerró en 2023
@@ -193,20 +427,28 @@ def descargar_mega(url, destino, password=None, verbose=True):
 def descargar_mediafire(url, destino, verbose=True):
     """Descarga un archivo de Mediafire"""
     try:
-        # Obtener página de descarga
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36'
-        }
+        # Normalizar a https
+        if url.startswith('http://'):
+            url = 'https://' + url[len('http://'):]
 
-        response = requests.get(url, headers=headers, timeout=30)
+        # Obtener página de descarga
+        response = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
 
         # Buscar el enlace directo de descarga
         # Mediafire tiene un botón con id="downloadButton" y href con el link real
-        match = re.search(r'href="(https://download\d*\.mediafire\.com/[^"]+)"', response.text)
+        html = response.text
+        match = re.search(r'href="(https?://download\d*\.mediafire\.com/[^"]+)"', html)
 
         if not match:
             # Intentar otro patrón
-            match = re.search(r'aria-label="Download file"\s+href="([^"]+)"', response.text)
+            match = re.search(r'aria-label="Download file"\s+href="([^"]+)"', html)
+
+        if not match:
+            # Patrón en JS: "downloadUrl":"https:\/\/download.../file"
+            match = re.search(r'"downloadUrl":"(https:\\/\\/download[^"]+)"', html)
+            if match:
+                download_url = match.group(1).replace('\\/', '/')
+                return descargar_directo(download_url, destino, verbose)
 
         if match:
             download_url = match.group(1)
@@ -214,99 +456,337 @@ def descargar_mediafire(url, destino, verbose=True):
         else:
             if verbose:
                 print("    ⚠️ No se encontró enlace directo en Mediafire")
-            return None
+            return None, False
 
     except Exception as e:
         if verbose:
             print(f"    ⚠️ Error Mediafire: {e}")
-        return None
+        return None, False
 
 
-def descargar_directo(url, destino, verbose=True):
-    """Descarga un archivo directo por HTTP (funciona con la mayoría de servicios)"""
+def descargar_vk_doc(url, destino, verbose=True):
+    """Descarga un archivo de VK Docs intentando resolver el link directo"""
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36',
-            'Accept': '*/*',
-        }
+        resp = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=30, allow_redirects=True)
+        resp.raise_for_status()
 
-        # Permitir redirecciones
-        response = requests.get(url, headers=headers, stream=True, timeout=300, allow_redirects=True)
-        response.raise_for_status()
+        content_type = resp.headers.get('content-type', '').lower()
+        if 'text/html' not in content_type:
+            intentos = 0
+            while True:
+                intentos += 1
+                filepath, parcial = _guardar_respuesta(resp, destino, verbose)
+                if filepath:
+                    return filepath, False
+                if parcial:
+                    if verbose:
+                        print("    ⚠️ Descarga incompleta, reintentando...")
+                    if MAX_REINTENTOS_PARCIALES and intentos >= MAX_REINTENTOS_PARCIALES:
+                        return None, True
+                    time.sleep(DELAY_REINTENTO_DESCARGA)
+                    resp = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=30, allow_redirects=True)
+                    resp.raise_for_status()
+                    continue
+                return None, False
 
-        # Verificar que no sea una página HTML (debe ser un archivo)
-        content_type = response.headers.get('content-type', '').lower()
-        if 'text/html' in content_type:
-            # Es una página HTML, no un archivo descargable
-            if verbose:
-                print(f"    ⚠️ Página HTML (requiere navegador)")
-            return None
+        html = resp.text
+        patrones = [
+            r'"url":"(https:\\/\\/[^"]+)"',
+            r'href="(https://vk\.com/doc[^"]+)"',
+            r'href="(https?://[^"]+\.(?:zip|rar|7z|tar|gz|mp3|flac|ogg|wav|m4a|aac))"',
+        ]
 
-        # Obtener nombre del archivo
-        filename = None
-        if 'content-disposition' in response.headers:
-            cd = response.headers['content-disposition']
-            match = re.search(r'filename[*]?=["\']?(?:UTF-8\'\')?([^"\';]+)', cd)
+        download_url = None
+        for patron in patrones:
+            match = re.search(patron, html)
             if match:
-                filename = unquote(match.group(1))
+                download_url = match.group(1).replace('\\/', '/')
+                break
 
-        if not filename:
-            # Intentar obtener de la URL final (después de redirecciones)
-            parsed = urlparse(response.url)
-            filename = os.path.basename(parsed.path)
+        if download_url:
+            return descargar_directo(download_url, destino, verbose)
 
-        if not filename or filename == '':
-            filename = 'download.zip'
-
-        # Limpiar nombre
-        filename = limpiar_nombre(filename)
-        if not any(filename.lower().endswith(ext) for ext in ['.zip', '.rar', '.7z', '.tar', '.gz', '.mp3', '.flac']):
-            filename += '.zip'
-
-        filepath = os.path.join(destino, filename)
-
-        # Descargar con progreso
-        total_size = int(response.headers.get('content-length', 0))
-        downloaded = 0
-
-        with open(filepath, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                if chunk:
-                    f.write(chunk)
-                    downloaded += len(chunk)
-                    if verbose and total_size > 0:
-                        pct = (downloaded / total_size) * 100
-                        print(f"\r    Descargando: {pct:.1f}%", end='', flush=True)
-
-        if verbose and total_size > 0:
-            print()  # Nueva línea
-
-        # Verificar que el archivo no sea muy pequeño (probablemente error)
-        if os.path.exists(filepath):
-            size = os.path.getsize(filepath)
-            if size < 1000:  # Menos de 1KB probablemente es un error
-                os.remove(filepath)
-                if verbose:
-                    print(f"    ⚠️ Archivo muy pequeño ({size} bytes), probablemente error")
-                return None
-
-        return filepath
+        # Intento simple con parámetro de descarga
+        dl_url = url + ('&' if '?' in url else '?') + 'dl=1'
+        return descargar_directo(dl_url, destino, verbose)
 
     except requests.exceptions.HTTPError as e:
         if verbose:
             print(f"    ⚠️ HTTP {e.response.status_code}")
-        return None
+        return None, False
     except Exception as e:
         if verbose:
-            error_msg = str(e)[:50]
-            print(f"    ⚠️ {error_msg}")
-        return None
+            print(f"    ⚠️ Error VK: {e}")
+        return None, False
+
+
+def _gdrive_extraer_id(url):
+    """Extrae el ID de un enlace de Google Drive"""
+    patrones = [
+        r'/file/d/([a-zA-Z0-9_-]+)',
+        r'id=([a-zA-Z0-9_-]+)',
+        r'/d/([a-zA-Z0-9_-]+)',
+    ]
+    for patron in patrones:
+        match = re.search(patron, url)
+        if match:
+            return match.group(1)
+    return None
+
+
+def _gdrive_confirm_token(html):
+    """Busca el token de confirmación en HTML de Google Drive"""
+    match = re.search(r'confirm=([0-9A-Za-z_]+)', html)
+    if match:
+        return match.group(1)
+    match = re.search(r'name="confirm"\s+value="([^"]+)"', html)
+    if match:
+        return match.group(1)
+    return None
+
+
+def descargar_google_drive(url, destino, verbose=True):
+    """Descarga un archivo público de Google Drive"""
+    try:
+        file_id = _gdrive_extraer_id(url)
+        if not file_id:
+            if verbose:
+                print("    ⚠️ No se pudo extraer el ID de Google Drive")
+            return None, False
+
+        session = requests.Session()
+        params = {'export': 'download', 'id': file_id}
+        intentos = 0
+        confirm_token = None
+        while True:
+            intentos += 1
+            resp = session.get(
+                'https://drive.google.com/uc',
+                params=params,
+                headers=DEFAULT_HEADERS,
+                stream=True,
+                timeout=300,
+                allow_redirects=True,
+            )
+            resp.raise_for_status()
+
+            content_type = resp.headers.get('content-type', '').lower()
+            if 'text/html' in content_type and confirm_token is None:
+                confirm_token = _gdrive_confirm_token(resp.text)
+                if confirm_token:
+                    params['confirm'] = confirm_token
+                    continue
+
+            content_type = resp.headers.get('content-type', '').lower()
+            if 'text/html' in content_type and 'content-disposition' not in resp.headers:
+                if verbose:
+                    print("    ⚠️ Google Drive requiere confirmación/cookies (archivo grande o restringido)")
+                return None, False
+
+            filepath, parcial = _guardar_respuesta(resp, destino, verbose)
+            if filepath:
+                return filepath, False
+            if parcial:
+                if verbose:
+                    print("    ⚠️ Descarga incompleta, reintentando...")
+                if MAX_REINTENTOS_PARCIALES and intentos >= MAX_REINTENTOS_PARCIALES:
+                    return None, True
+                time.sleep(DELAY_REINTENTO_DESCARGA)
+                continue
+            return None, False
+
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None, False
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Google Drive: {e}")
+        return None, False
+
+
+def descargar_yandex_disk(url, destino, verbose=True):
+    """Descarga un archivo público de Yandex Disk usando su API pública"""
+    try:
+        api_url = 'https://cloud-api.yandex.net/v1/disk/public/resources/download'
+        resp = requests.get(api_url, params={'public_key': url}, headers=DEFAULT_HEADERS, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        href = data.get('href')
+        if not href:
+            if verbose:
+                print("    ⚠️ No se encontró link directo en Yandex Disk")
+            return None, False
+        return descargar_directo(href, destino, verbose)
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None, False
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Yandex Disk: {e}")
+        return None, False
+
+
+def descargar_pcloud(url, destino, verbose=True):
+    """Descarga un archivo público de pCloud"""
+    try:
+        parsed = urlparse(url)
+        qs = parse_qs(parsed.query)
+        code = qs.get('code', [None])[0]
+        if not code:
+            match = re.search(r'code=([A-Za-z0-9]+)', url)
+            code = match.group(1) if match else None
+
+        if code:
+            api_resp = requests.get(
+                'https://api.pcloud.com/getpublinkdownload',
+                params={'code': code},
+                headers=DEFAULT_HEADERS,
+                timeout=30,
+            )
+            api_resp.raise_for_status()
+            data = api_resp.json()
+            hosts = data.get('hosts')
+            path = data.get('path')
+            if hosts and path:
+                download_url = f"https://{hosts[0]}{path}"
+                return descargar_directo(download_url, destino, verbose)
+
+        # Fallback a URL "download"
+        if 'publink/show' in url:
+            url = url.replace('/publink/show', '/publink/download')
+        if 'download' not in url:
+            parsed = urlparse(url)
+            qs = parse_qs(parsed.query)
+            qs['download'] = ['1']
+            url = urlunparse(parsed._replace(query=urlencode(qs, doseq=True)))
+
+        return descargar_directo(url, destino, verbose)
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error pCloud: {e}")
+        return None, False
+
+
+def descargar_mailru(url, destino, verbose=True):
+    """Descarga un archivo público de Mail.ru Cloud"""
+    try:
+        resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+        resp.raise_for_status()
+
+        content_type = resp.headers.get('content-type', '').lower()
+        if 'text/html' in content_type:
+            html = resp.text
+            match = re.search(r'"downloadUrl":"([^"]+)"', html)
+            if not match:
+                match = re.search(r'href="(https?://[^"]+mail\.ru/[^"]+/download[^"]*)"', html)
+            if match:
+                download_url = match.group(1).replace('\\/', '/')
+                return descargar_directo(download_url, destino, verbose)
+
+        # Fallback: parámetro download=1
+        if 'download=1' not in url:
+            sep = '&' if '?' in url else '?'
+            url = f"{url}{sep}download=1"
+        return descargar_directo(url, destino, verbose)
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Mail.ru: {e}")
+        return None, False
+
+
+def descargar_workupload(url, destino, verbose=True):
+    """Descarga un archivo de Workupload resolviendo el link real desde HTML"""
+    try:
+        resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
+        resp.raise_for_status()
+        html = resp.text
+
+        patrones = [
+            r'href="(https?://download\.workupload\.com/[^"]+)"',
+            r'href="(https?://workupload\.com/file/[^"]+/download[^"]*)"',
+            r'data-url="(https?://[^"]+)"',
+        ]
+        download_url = None
+        for patron in patrones:
+            match = re.search(patron, html)
+            if match:
+                download_url = match.group(1)
+                break
+
+        if not download_url:
+            if verbose:
+                print("    ⚠️ No se encontró enlace directo en Workupload")
+            return None, False
+
+        return descargar_directo(download_url, destino, verbose)
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None, False
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Workupload: {e}")
+        return None, False
+
+
+def descargar_wetransfer(url, destino, verbose=True):
+    """WeTransfer usa enlaces dinámicos; no se soporta sin navegación JS"""
+    if verbose:
+        print("    ⚠️ WeTransfer requiere navegador/JS (no soportado)")
+    return None, False
+
+
+def descargar_directo(url, destino, verbose=True):
+    """Descarga un archivo directo por HTTP (funciona con la mayoría de servicios)
+    Retorna: (filepath, parcial)
+    """
+    intentos = 0
+    while True:
+        intentos += 1
+        try:
+            # Permitir redirecciones
+            response = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=300, allow_redirects=True)
+            response.raise_for_status()
+
+            # Verificar que no sea una página HTML (debe ser un archivo)
+            content_type = response.headers.get('content-type', '').lower()
+            if 'text/html' in content_type:
+                # Es una página HTML, no un archivo descargable
+                if verbose:
+                    print(f"    ⚠️ Página HTML (requiere navegador)")
+                return None, False
+
+            filepath, parcial = _guardar_respuesta(response, destino, verbose)
+            if filepath:
+                return filepath, False
+
+            if parcial:
+                if verbose:
+                    print("    ⚠️ Descarga incompleta, reintentando...")
+                if MAX_REINTENTOS_PARCIALES and intentos >= MAX_REINTENTOS_PARCIALES:
+                    return None, True
+                time.sleep(DELAY_REINTENTO_DESCARGA)
+                continue
+
+            return None, False
+
+        except requests.exceptions.HTTPError as e:
+            if verbose:
+                print(f"    ⚠️ HTTP {e.response.status_code}")
+            return None, False
+        except Exception as e:
+            if verbose:
+                error_msg = str(e)[:50]
+                print(f"    ⚠️ {error_msg}")
+            return None, False
 
 
 def descargar_link(url, destino, password=None, verbose=True, skip_mega=False):
     """
     Descarga un archivo según el tipo de enlace
-    Retorna: (filepath, skip_mega)
+    Retorna: (filepath, skip_mega, parcial)
     """
     tipo = detectar_tipo_link(url)
 
@@ -316,16 +796,41 @@ def descargar_link(url, destino, password=None, verbose=True, skip_mega=False):
         if skip_mega:
             if verbose:
                 print(f"    ⏭️ Saltando Mega (límite/timeout)")
-            return None, True
-        return descargar_mega(url, destino, password, verbose)
+            return None, True, False
+        archivo, new_skip_mega = descargar_mega(url, destino, password, verbose)
+        return archivo, new_skip_mega, False
+    elif tipo == 'mediafire':
+        archivo, parcial = descargar_mediafire(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'vkdoc':
+        archivo, parcial = descargar_vk_doc(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'gdrive':
+        archivo, parcial = descargar_google_drive(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'yandex':
+        archivo, parcial = descargar_yandex_disk(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'pcloud':
+        archivo, parcial = descargar_pcloud(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'mailru':
+        archivo, parcial = descargar_mailru(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'workupload':
+        archivo, parcial = descargar_workupload(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'wetransfer':
+        archivo, parcial = descargar_wetransfer(url, destino, verbose)
+        return archivo, False, parcial
     elif tipo == 'dead':
         if verbose:
             print(f"    ⚠️ Servicio cerrado/muerto")
-        return None, False
+        return None, False, False
     else:
         # Intentar descarga directa para cualquier otro enlace
-        result = descargar_directo(url, destino, verbose)
-        return result, False
+        archivo, parcial = descargar_directo(url, destino, verbose)
+        return archivo, False, parcial
 
 
 def extraer_archivo(filepath, destino, password=None, verbose=True):
@@ -333,7 +838,7 @@ def extraer_archivo(filepath, destino, password=None, verbose=True):
     if not os.path.exists(filepath):
         return False
 
-    ext = os.path.splitext(filepath)[1].lower()
+    ext = _ext_compuesta(filepath)
     os.makedirs(destino, exist_ok=True)
 
     try:
@@ -438,15 +943,23 @@ def organizar_carpeta(origen, destino_final, verbose=True):
     return True
 
 
-def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verbose=True, descargados=None):
+def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verbose=True,
+                     descargados=None, fallidos_bandas=None):
     """Procesa un release completo: descarga, extrae y organiza"""
     links = release.get('download_links', [])
     post_id = str(release.get('post_id', ''))
     band = release.get('band', 'Unknown')
     album = release.get('album', 'Unknown')
+    band_id = str(release.get('band_id', ''))
 
     if not links:
         return False, "Sin links", None
+
+    # Banda fallida anteriormente?
+    if fallidos_bandas and band_id in fallidos_bandas:
+        if verbose:
+            print(f"  ⏭️  Banda en fallidos: {band} (id {band_id})")
+        return True, "Fallido previo", None
 
     # Ya descargado anteriormente?
     if descargados and release_ya_descargado(release, descargados):
@@ -469,6 +982,8 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
     # Intentar cada link hasta que uno funcione
     skip_mega = False  # Se activa si Mega tiene límite/timeout
 
+    tuvo_parcial = False
+
     for link_info in links:
         url = link_info.get('url', '')
         password = link_info.get('password', '')
@@ -487,14 +1002,16 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
         try:
             # 1. Descargar
-            archivo, new_skip_mega = descargar_link(url, temp_download, password, verbose, skip_mega)
+            archivo, new_skip_mega, parcial = descargar_link(url, temp_download, password, verbose, skip_mega)
+            if parcial and not archivo:
+                tuvo_parcial = True
 
             # Actualizar skip_mega si Mega falló por límite/timeout
             if new_skip_mega:
                 skip_mega = True
 
             if not archivo or not os.path.exists(archivo):
-                if verbose and not new_skip_mega:
+                if verbose and not new_skip_mega and not parcial:
                     print("    ✗ Descarga fallida")
                 continue
 
@@ -502,19 +1019,26 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
                 size_mb = os.path.getsize(archivo) / (1024 * 1024)
                 print(f"    ✓ Descargado: {size_mb:.1f} MB")
 
+            # Ajustar extensión si el archivo es audio directo
+            archivo = _ajustar_extension_audio(archivo, verbose)
+
             # 2. Extraer si está comprimido
-            ext = os.path.splitext(archivo)[1].lower()
+            ext = _ext_compuesta(archivo)
 
             if ext in EXTENSIONES_COMPRIMIDAS:
                 if verbose:
                     print("    Extrayendo...")
 
-                if not extraer_archivo(archivo, temp_extract, password, verbose):
+                if not _archivo_es_comprimido(archivo, ext):
                     if verbose:
-                        print("    ✗ Extracción fallida")
-                    continue
-
-                origen = temp_extract
+                        print("    ⚠️ Archivo no parece comprimido, se omite extracción")
+                    origen = temp_download
+                else:
+                    if not extraer_archivo(archivo, temp_extract, password, verbose):
+                        if verbose:
+                            print("    ✗ Extracción fallida")
+                        continue
+                    origen = temp_extract
             else:
                 # No está comprimido, usar directamente
                 origen = temp_download
@@ -537,6 +1061,8 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
         time.sleep(1)  # Pausa entre intentos
 
+    if tuvo_parcial:
+        return False, "Descarga parcial", None
     return False, "Todos los links fallaron", None
 
 
@@ -571,6 +1097,11 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
     if verbose and descargados:
         print(f"📋 {len(descargados)} releases ya descargados (serán omitidos)")
 
+    # Cargar lista de bandas fallidas
+    fallidos_bandas = cargar_fallidos()
+    if verbose and fallidos_bandas:
+        print(f"🧾 {len(fallidos_bandas)} bandas con links fallidos (serán omitidas)")
+
     # Cargar repertorio
     repertorio = cargar_repertorio()
 
@@ -597,11 +1128,11 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
         try:
             exito, mensaje, info = procesar_release(
-                release, destino_base, TEMP_DIR, verbose, descargados
+                release, destino_base, TEMP_DIR, verbose, descargados, fallidos_bandas
             )
 
             if exito:
-                if mensaje in ["Ya existe", "Ya descargado"]:
+                if mensaje in ["Ya existe", "Ya descargado", "Fallido previo"]:
                     omitidos += 1
                 else:
                     exitosos += 1
@@ -611,6 +1142,9 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
                         descargados.add(info['post_id'])
             else:
                 fallidos += 1
+                # Registrar banda fallida para omitir en futuras ejecuciones
+                if mensaje != "Descarga parcial":
+                    guardar_fallido(release, fallidos_bandas)
 
         except KeyboardInterrupt:
             print("\n\n⚠️  Interrumpido por el usuario")
