@@ -61,6 +61,21 @@ def cargar_repertorio(input_file=INPUT_FILE):
         return json.load(f)
 
 
+def _parse_year(value):
+    """Convierte year a int seguro para ordenar"""
+    try:
+        if value is None:
+            return 0
+        if isinstance(value, int):
+            return value
+        s = str(value).strip()
+        if not s:
+            return 0
+        return int(s[:4])
+    except Exception:
+        return 0
+
+
 def cargar_descargados(descargados_file=DESCARGADOS_FILE):
     """Carga la lista de releases ya descargados"""
     descargados = set()
@@ -1107,6 +1122,12 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
     # Filtrar solo los que tienen links
     con_links = [r for r in repertorio if r.get('download_links')]
+
+    # Priorizar releases más recientes (year desc)
+    con_links.sort(
+        key=lambda r: (_parse_year(r.get('year')), r.get('band', ''), r.get('album', '')),
+        reverse=True
+    )
 
     if verbose:
         print(f"\n📊 {len(con_links)} releases con links de descarga")

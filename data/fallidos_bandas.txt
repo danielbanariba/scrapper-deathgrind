@@ -1,2 +1,70 @@
 # Bandas con links fallidos
-# Formato: band_id|band|post_id|album|fecha|motivo
+# Formato: band_id|band|post_id|album|fecha|motivo23349|Tombseeker|91372|Tombseeker|2026-01-19|Todos los links fallaron
+23485|Philippe Drouin Obvurt|91306|Le Chemin Du Gaucher|2026-01-19|Todos los links fallaron
+1993|In Utero Cannibalism|91726|Decadence|2026-01-19|Todos los links fallaron
+17718|Emasculated Vituperation|91212|Larval Communion in the Womb Cathedral|2026-01-19|Todos los links fallaron
+16518|Aseptic|91768|Deranged Disturbance|2026-01-19|Todos los links fallaron
+0|Вульвогной|88552|Жажда Крови|2026-01-19|Todos los links fallaron
+12224|The Ominous Circle|91225|Cloven Tongues Of Fire|2026-01-19|Todos los links fallaron
+23068|The Damnnation|90466|Eyes Of Despair|2026-01-19|Todos los links fallaron
+22942|Septic Burial|90098|Entities From Beyond - Within Corpses Obsessed|2026-01-19|Todos los links fallaron
+206|Revocation|90545|New Gods, New Masters|2026-01-19|Todos los links fallaron
+9217|P3D1TVM|91564|True Anal Story|2026-01-19|Todos los links fallaron
+14101|Ossuary|90908|Clean-Up|2026-01-19|Todos los links fallaron
+22700|Hematology|89274|Suppuration Of Putrefied Liquids In Necrotic Tissues|2026-01-19|Todos los links fallaron
+2338|Grumo|88289|Sons Of Disgust|2026-01-19|Todos los links fallaron
+22627|Greater Basilisk|89099|Necroglottal|2026-01-19|Todos los links fallaron
+22461|Great Tribulation|88487|Latter Realities|2026-01-19|Todos los links fallaron
+646|Gorepot|91565|Mixed In A Lot Of Soy Sauce|2026-01-19|Todos los links fallaron
+22057|Gluttonous Overindulgence Of Relentless Torture|89890|The Coomer Chronicles|2026-01-19|Todos los links fallaron
+17720|Genophobic Perversion|87666|Septic Encephalopathy|2026-01-19|Todos los links fallaron
+21906|G.I.S.T.|90584|Preservation Of Decomposing Tissue Via Adipocere Formation|2026-01-19|Todos los links fallaron
+23036|G.A.R.M.|90340|Herencia Maldita|2026-01-19|Todos los links fallaron
+23342|Funestus Bellum|91352|The Sempiternal Night|2026-01-19|Todos los links fallaron
+22349|Frothing|88077|Vile And Debased|2026-01-19|Todos los links fallaron
+22505|Forklift Circumcision|88636|Pulmonary Squishings From Behind The Wheel|2026-01-19|Todos los links fallaron
+20022|Flax|89979|No Hope For Humanity (Fuck The Entire Scene & Everyone In It)|2026-01-19|Todos los links fallaron
+22880|Fetus Grinder|90217|Centipede Infestation|2026-01-19|Todos los links fallaron
+20757|Fessus|91245|Subcutaneous Tomb|2026-01-19|Todos los links fallaron
+22861|Feeble Inducer|89810|Forensic Fecal Fatality|2026-01-19|Todos los links fallaron
+20424|Facial Whore|88598|C.U.M (Catasexual Urge Motivation)|2026-01-19|Todos los links fallaron
+19234|Ethel Hunter|89555|Absence Of Light|2026-01-19|Todos los links fallaron
+2996|Estuarine|87552|Corporeal Furnace|2026-01-19|Todos los links fallaron
+22338|Elphael|87782|Nailed To The Haligtree|2026-01-19|Todos los links fallaron
+16622|Effluence|88259|Pianistic Dismemberment|2026-01-19|Todos los links fallaron
+1114|Diaclast|89596|Violence Originates Violence|2026-01-19|Todos los links fallaron
+20162|Diabetic Ketoacidosis|91120|Contaminated Sewer Biochemical Material|2026-01-19|Todos los links fallaron
+2790|Deterioration|90847|Prepare For The Worst|2026-01-19|Todos los links fallaron
+21676|Desolvation|88422|Pathological Madness|2026-01-19|Todos los links fallaron
+3643|Desalmado|89834|Monopoly Of Violence|2026-01-19|Todos los links fallaron
+6964|Dephosphorus|90453|Planetoktonos|2026-01-19|Todos los links fallaron
+22102|Deepthroat Defecation|88332|Deflowered, Disemboweled, Devoured|2026-01-19|Todos los links fallaron
+21645|Dead Groan|90204|Hollow-Eyed Queen|2026-01-19|Todos los links fallaron
+17957|Dead Bodies|91026|The Stench of Flesh Decomposing|2026-01-19|Todos los links fallaron
+22851|Dark Rage|89734|Rise From The Underground|2026-01-19|Todos los links fallaron
+22793|Dark Indication|89564|Suppressed Horror|2026-01-19|Todos los links fallaron
+19721|Danella|88920|G-Thang|2026-01-19|Todos los links fallaron
+22538|Child Sized Coffin|88735|Feast|2026-01-19|Todos los links fallaron
+21021|Chairmaker|91152|Leviathan Carcass|2026-01-19|Todos los links fallaron
+21748|Cave|89005|Cave IV|2026-01-19|Todos los links fallaron
+21678|Caro Tere|87609|Caro Tere|2026-01-19|Todos los links fallaron
+23457|Butchered|91701|Unholy Undead|2026-01-19|Todos los links fallaron
+23007|Burden Of Despair|90273|Confutatis|2026-01-19|Todos los links fallaron
+14770|Bent Sea|90310|The Dormant Ruin|2026-01-19|Todos los links fallaron
+7075|Anasarca|90275|Godmachine|2026-01-19|Todos los links fallaron
+23096|A Tyrants Lament|90547|Offerings Of The Inhumane|2026-01-19|Todos los links fallaron
+22001|Zero Survive|86973|Besmirch|2026-01-19|Todos los links fallaron
+21391|Vi Er Natten|84438|Echoes Of War|2026-01-19|Todos los links fallaron
+17717|UwU|83779|UwU|2026-01-19|Todos los links fallaron
+20547|Sinistrum|83907|Infernal Dawn|2026-01-19|Todos los links fallaron
+22222|Shattered Spine|87753|Gore-Drenched Carnage|2026-01-19|Todos los links fallaron
+21466|Ri'lyth|84743|Behavior Of The Idols|2026-01-19|Todos los links fallaron
+4779|Repugnant Disorder|84065|Severe Intracraneal Malformation|2026-01-19|Todos los links fallaron
+21976|Psycrotted|86895|Creations Of Insanity|2026-01-19|Todos los links fallaron
+10583|Protest|91130|In Mourning|2026-01-19|Todos los links fallaron
+21949|Primitive Execution|86814|Primitive Execution|2026-01-19|Todos los links fallaron
+22351|Pre Corpse Pulse|88197|Pre Corpse Pulse|2026-01-19|Todos los links fallaron
+21611|Praise Of Death|86856|Philanthropist|2026-01-19|Todos los links fallaron
+21313|Poserectomy|84190|The Great Experimentation|2026-01-19|Todos los links fallaron
+13348|Piss On Christ|87630|666 Rejoice In Blasphemy|2026-01-19|Todos los links fallaron
+20053|Peste Negra|84486|Parasita|2026-01-19|Todos los links fallaron
