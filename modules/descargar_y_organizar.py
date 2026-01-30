@@ -23,9 +23,10 @@ import shutil
 import subprocess
 import tempfile
 import zipfile
+import html as html_lib
 import requests
 from pathlib import Path
-from urllib.parse import urlparse, unquote, parse_qs, urlencode, urlunparse
+from urllib.parse import urlparse, unquote, parse_qs, urlencode, urlunparse, urljoin
 
 # Configuración
 INPUT_FILE = "data/repertorio_con_links.json"
@@ -33,11 +34,17 @@ DESTINO_BASE = "/run/media/banar/Entretenimiento/01_edicion_automatizada/01_limp
 TEMP_DIR = "/tmp/deathgrind_downloads"
 DESCARGADOS_FILE = "data/descargados.txt"  # Lista de releases ya descargados
 FALLIDOS_FILE = "data/fallidos_bandas.txt"  # Bandas con links fallidos
+MEGA_PENDIENTES_FILE = "data/mega_pendientes.json"
 
 # Configuración de rate limiting
 DELAY_ENTRE_DESCARGAS = 2.0  # Segundos entre cada descarga
 DELAY_REINTENTO_DESCARGA = 10.0  # Segundos entre reintentos por descarga parcial
 MAX_REINTENTOS_PARCIALES = 5  # 0 = infinito, reintentos si hubo descarga parcial
+
+# Configuración de Mega
+MEGA_TIMEOUT_SECONDS = int(os.getenv('MEGA_TIMEOUT_SECONDS', '240'))
+MEGA_COOLDOWN_SECONDS = int(os.getenv('MEGA_COOLDOWN_SECONDS', '1200'))
+_MEGA_COOLDOWN_UNTIL = 0
 
 # Extensiones de archivos comprimidos
 EXTENSIONES_COMPRIMIDAS = {'.zip', '.rar', '.7z', '.tar', '.tar.gz', '.tgz', '.tar.bz2'}
@@ -188,6 +195,183 @@ def _extraer_nombre_archivo(headers, final_url):
     return filename
 
 
+def _normalizar_url(url):
+    """Normaliza URLs escapadas o relativas encontradas en HTML/JSON."""
+    if not url:
+        return url
+    url = url.strip().strip('"').strip("'")
+    url = url.replace('\\u002F', '/').replace('\\/', '/')
+    url = html_lib.unescape(url)
+    if url.startswith('//'):
+        url = 'https:' + url
+    if url.startswith('http://'):
+        url = 'https://' + url[len('http://'):]
+    return url
+
+
+def _buscar_url_en_html(html_text, patrones, base_url=None):
+    """Busca una URL de descarga en HTML usando una lista de patrones."""
+    if not html_text:
+        return None
+    html_text = html_lib.unescape(html_text)
+    for patron in patrones:
+        match = re.search(patron, html_text, re.IGNORECASE | re.DOTALL)
+        if match:
+            url = _normalizar_url(match.group(1))
+            if base_url and url.startswith('/'):
+                url = urljoin(base_url, url)
+            return url
+    return None
+
+
+def _buscar_url_en_json(data, keys):
+    """Busca recursivamente una URL en un objeto JSON para claves dadas."""
+    if isinstance(data, dict):
+        for k, v in data.items():
+            if k in keys and isinstance(v, str) and v.startswith('http'):
+                return v
+            found = _buscar_url_en_json(v, keys)
+            if found:
+                return found
+    elif isinstance(data, list):
+        for item in data:
+            found = _buscar_url_en_json(item, keys)
+            if found:
+                return found
+    return None
+
+
+def _resolver_playwright_download_url(url, verbose=True, selectors=None, timeout_ms=60000):
+    """Intenta resolver un link de descarga usando Playwright (fallback)."""
+    try:
+        from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+    except Exception:
+        if verbose:
+            print("    ⚠️ Playwright no disponible")
+        return None
+
+    selectors = selectors or [
+        'a:has-text("Download")',
+        'button:has-text("Download")',
+        'text=/download/i',
+        'a:has-text("Download all")',
+        'button:has-text("Download all")',
+    ]
+
+    download_url = None
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(accept_downloads=True)
+            page = context.new_page()
+
+            def _on_download(download):
+                nonlocal download_url
+                try:
+                    download_url = download.url
+                except Exception:
+                    pass
+
+            page.on("download", _on_download)
+            page.goto(url, wait_until="networkidle", timeout=timeout_ms)
+
+            # Intentar click en botones comunes de descarga
+            for sel in selectors:
+                if download_url:
+                    break
+                try:
+                    with page.expect_download(timeout=5000) as dl_info:
+                        page.click(sel, timeout=5000)
+                    dl = dl_info.value
+                    download_url = getattr(dl, "url", None)
+                except PlaywrightTimeoutError:
+                    continue
+                except Exception:
+                    continue
+
+            # Fallback: buscar hrefs en el DOM
+            if not download_url:
+                try:
+                    hrefs = page.eval_on_selector_all("a", "els => els.map(e => e.href)")
+                    for href in hrefs or []:
+                        if href and "download" in href.lower():
+                            download_url = href
+                            break
+                except Exception:
+                    pass
+
+            context.close()
+            browser.close()
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Playwright error: {e}")
+        return None
+
+    return download_url
+
+
+def _mega_cooldown_activo():
+    return _MEGA_COOLDOWN_UNTIL and time.time() < _MEGA_COOLDOWN_UNTIL
+
+
+def _mega_cooldown_restante():
+    if not _mega_cooldown_activo():
+        return 0
+    return int(_MEGA_COOLDOWN_UNTIL - time.time())
+
+
+def _crear_release_mega(release):
+    """Construye un release con solo links de Mega para reintentos."""
+    links = release.get('download_links', [])
+    mega_links = [li for li in links if detectar_tipo_link(li.get('url', '')) == 'mega']
+    if not mega_links:
+        return None
+    campos = ['post_id', 'band', 'album', 'band_id', 'year', 'type']
+    nuevo = {k: release.get(k) for k in campos}
+    nuevo['download_links'] = mega_links
+    return nuevo
+
+
+def cargar_mega_pendientes(pendientes_file=MEGA_PENDIENTES_FILE):
+    """Carga la lista de releases con Mega pendientes."""
+    if not os.path.exists(pendientes_file):
+        return []
+    try:
+        with open(pendientes_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            # Asegurar que solo haya links mega
+            limpiados = []
+            for r in data:
+                if not isinstance(r, dict):
+                    continue
+                rm = _crear_release_mega(r)
+                if rm:
+                    limpiados.append(rm)
+            return limpiados
+    except Exception:
+        pass
+    return []
+
+
+def guardar_mega_pendientes(pendientes, pendientes_file=MEGA_PENDIENTES_FILE):
+    """Guarda la lista de releases con Mega pendientes."""
+    if not pendientes:
+        if os.path.exists(pendientes_file):
+            try:
+                os.remove(pendientes_file)
+            except Exception:
+                pass
+        return
+
+    os.makedirs(os.path.dirname(pendientes_file), exist_ok=True)
+    try:
+        with open(pendientes_file, 'w', encoding='utf-8') as f:
+            json.dump(pendientes, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
+
 def _guardar_respuesta(response, destino, verbose=True):
     """Guarda un response streaming en destino y retorna (filepath, parcial)"""
     filename = _extraer_nombre_archivo(response.headers, response.url)
@@ -289,6 +473,23 @@ def _detectar_extension_audio(filepath):
     return None
 
 
+def _detectar_extension_comprimido(filepath):
+    """Detecta extensión de comprimido por firma de archivo"""
+    try:
+        with open(filepath, 'rb') as f:
+            header = f.read(8)
+    except Exception:
+        return None
+
+    if header.startswith(b'PK\x03\x04') or header.startswith(b'PK\x05\x06') or header.startswith(b'PK\x07\x08'):
+        return '.zip'
+    if header.startswith(b'Rar!\x1a\x07'):
+        return '.rar'
+    if header.startswith(b'7z\xbc\xaf\x27\x1c'):
+        return '.7z'
+    return None
+
+
 def _ajustar_extension_audio(filepath, verbose=True):
     """Renombra archivo si parece audio y la extensión no coincide"""
     if not os.path.exists(filepath):
@@ -312,6 +513,34 @@ def _ajustar_extension_audio(filepath, verbose=True):
         os.rename(filepath, nuevo_path)
         if verbose:
             print(f"    ℹ️ Archivo detectado como audio, renombrado a {os.path.basename(nuevo_path)}")
+        return nuevo_path
+    except Exception:
+        return filepath
+
+
+def _ajustar_extension_comprimido(filepath, verbose=True):
+    """Renombra archivo si parece comprimido y la extensión no coincide"""
+    if not os.path.exists(filepath):
+        return filepath
+
+    ext_actual = os.path.splitext(filepath)[1].lower()
+    ext_comp = _detectar_extension_comprimido(filepath)
+    if not ext_comp:
+        return filepath
+
+    if ext_actual == ext_comp:
+        return filepath
+
+    nuevo_path = filepath
+    if ext_actual:
+        nuevo_path = filepath[: -len(ext_actual)] + ext_comp
+    else:
+        nuevo_path = filepath + ext_comp
+
+    try:
+        os.rename(filepath, nuevo_path)
+        if verbose:
+            print(f"    ℹ️ Archivo detectado como comprimido, renombrado a {os.path.basename(nuevo_path)}")
         return nuevo_path
     except Exception:
         return filepath
@@ -350,17 +579,23 @@ def detectar_tipo_link(url):
     elif 'drive.google.com' in url_lower or 'docs.google.com' in url_lower:
         return 'gdrive'
     # VK Docs (requiere resolver link real en algunos casos)
-    elif 'vk.com/doc' in url_lower:
+    elif 'vk.com/doc' in url_lower or 'vk.com/s/v1/doc' in url_lower:
         return 'vkdoc'
     # Yandex Disk (API pública para obtener link directo)
-    elif 'disk.yandex.ru' in url_lower or 'yadi.sk' in url_lower:
+    elif 'disk.yandex.ru' in url_lower or 'disk.yandex.com' in url_lower or 'yadi.sk' in url_lower:
         return 'yandex'
     # pCloud (link público)
-    elif 'u.pcloud.link' in url_lower or 'pcloud.com' in url_lower:
+    elif 'u.pcloud.link' in url_lower or 'e.pcloud.link' in url_lower or 'pcloud.com' in url_lower:
         return 'pcloud'
     # Mail.ru cloud (link público)
     elif 'cloud.mail.ru' in url_lower:
         return 'mailru'
+    # Icedrive (links públicos)
+    elif 'icedrive.net' in url_lower:
+        return 'icedrive'
+    # Krakenfiles (requiere resolver link real)
+    elif 'krakenfiles.com' in url_lower:
+        return 'krakenfiles'
     # Workupload (requiere extraer link real del HTML)
     elif 'workupload.com' in url_lower:
         return 'workupload'
@@ -383,6 +618,12 @@ def descargar_mega(url, destino, password=None, verbose=True):
         - skip_mega: True si se debe saltar Mega para este release (límite/timeout)
     """
     try:
+        global _MEGA_COOLDOWN_UNTIL
+        if _mega_cooldown_activo():
+            if verbose:
+                print("    ⏭️ Saltando Mega (cooldown activo)")
+            return None, True
+
         # Asegurar que la URL tenga la clave de encriptación
         # Formato: https://mega.nz/file/ID#KEY o https://mega.nz/#!ID!KEY
         if '#' not in url and '!' not in url:
@@ -393,8 +634,8 @@ def descargar_mega(url, destino, password=None, verbose=True):
         # megadl necesita la URL completa con la clave
         cmd = ['megadl', '--path', destino, '--print-names', url]
 
-        # Timeout de 10 minutos - si tarda más, probar otros servidores
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        # Timeout configurable - si tarda más, probar otros servidores
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=MEGA_TIMEOUT_SECONDS)
 
         if result.returncode == 0:
             # megadl con --print-names imprime el nombre del archivo
@@ -418,6 +659,7 @@ def descargar_mega(url, destino, password=None, verbose=True):
             if 'bandwidth' in error_lower or 'limit' in error_lower or 'quota' in error_lower:
                 if verbose:
                     print("    ⚠️ Mega: límite de descarga alcanzado, probando otros servidores...")
+                _MEGA_COOLDOWN_UNTIL = time.time() + MEGA_COOLDOWN_SECONDS
                 return None, True  # Skip Mega para este release
 
             if verbose:
@@ -432,6 +674,7 @@ def descargar_mega(url, destino, password=None, verbose=True):
     except subprocess.TimeoutExpired:
         if verbose:
             print("    ⚠️ Mega: timeout, probando otros servidores...")
+        _MEGA_COOLDOWN_UNTIL = time.time() + MEGA_COOLDOWN_SECONDS
         return None, True  # Skip Mega para este release
     except Exception as e:
         if verbose:
@@ -448,30 +691,33 @@ def descargar_mediafire(url, destino, verbose=True):
 
         # Obtener página de descarga
         response = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
-
-        # Buscar el enlace directo de descarga
-        # Mediafire tiene un botón con id="downloadButton" y href con el link real
         html = response.text
-        match = re.search(r'href="(https?://download\d*\.mediafire\.com/[^"]+)"', html)
+        patrones = [
+            r'id="downloadButton"[^>]*href="([^"]+)"',
+            r'aria-label="Download file"[^>]*href="([^"]+)"',
+            r'href="(https?://download\d*\.mediafire\.com/[^"]+)"',
+            r'"downloadUrl"\s*:\s*"(https:\\/\\/[^\"]+mediafire\.com/[^\"]+)"',
+            r'"downloadUrl"\s*:\s*"(https:\\/\\/download[^\"]+)"',
+            r'\bdownloadUrl\b\s*=\s*"(https?://[^"]+)"',
+        ]
+        download_url = _buscar_url_en_html(html, patrones, base_url=url)
 
-        if not match:
-            # Intentar otro patrón
-            match = re.search(r'aria-label="Download file"\s+href="([^"]+)"', html)
-
-        if not match:
-            # Patrón en JS: "downloadUrl":"https:\/\/download.../file"
-            match = re.search(r'"downloadUrl":"(https:\\/\\/download[^"]+)"', html)
-            if match:
-                download_url = match.group(1).replace('\\/', '/')
-                return descargar_directo(download_url, destino, verbose)
-
-        if match:
-            download_url = match.group(1)
+        if download_url:
             return descargar_directo(download_url, destino, verbose)
-        else:
-            if verbose:
-                print("    ⚠️ No se encontró enlace directo en Mediafire")
-            return None, False
+
+        # Fallback: probar versión no-premium si existe
+        if 'file_premium' in url:
+            url_alt = url.replace('/file_premium/', '/file/')
+            if url_alt != url:
+                response = requests.get(url_alt, headers=DEFAULT_HEADERS, timeout=30)
+                html_alt = response.text
+                download_url = _buscar_url_en_html(html_alt, patrones, base_url=url_alt)
+                if download_url:
+                    return descargar_directo(download_url, destino, verbose)
+
+        if verbose:
+            print("    ⚠️ No se encontró enlace directo en Mediafire")
+        return None, False
 
     except Exception as e:
         if verbose:
@@ -560,6 +806,13 @@ def _gdrive_confirm_token(html):
     return None
 
 
+def _gdrive_confirm_cookie(cookies):
+    for k, v in cookies.items():
+        if k.startswith('download_warning'):
+            return v
+    return None
+
+
 def descargar_google_drive(url, destino, verbose=True):
     """Descarga un archivo público de Google Drive"""
     try:
@@ -588,6 +841,8 @@ def descargar_google_drive(url, destino, verbose=True):
             content_type = resp.headers.get('content-type', '').lower()
             if 'text/html' in content_type and confirm_token is None:
                 confirm_token = _gdrive_confirm_token(resp.text)
+                if not confirm_token:
+                    confirm_token = _gdrive_confirm_cookie(resp.cookies)
                 if confirm_token:
                     params['confirm'] = confirm_token
                     continue
@@ -711,6 +966,135 @@ def descargar_mailru(url, destino, verbose=True):
         return None, False
 
 
+def _icedrive_extraer_public_id(url):
+    parsed = urlparse(url)
+    path = parsed.path.strip('/')
+    if path.startswith('s/'):
+        return path.split('/', 1)[1]
+    if path.startswith('0/'):
+        return path.split('/', 1)[1]
+    return None
+
+
+def descargar_icedrive(url, destino, verbose=True):
+    """Descarga un archivo público de Icedrive resolviendo el link real desde HTML"""
+    try:
+        resp = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=30, allow_redirects=True)
+        resp.raise_for_status()
+
+        content_type = resp.headers.get('content-type', '').lower()
+        if 'text/html' not in content_type:
+            filepath, parcial = _guardar_respuesta(resp, destino, verbose)
+            return filepath, parcial
+
+        html = resp.text
+        patrones = [
+            r'data-download-url="([^"]+)"',
+            r'"downloadUrl"\\s*:\\s*"([^"]+)"',
+            r'"download_url"\\s*:\\s*"([^"]+)"',
+            r'href="([^"]+download[^"]+)"',
+            r'(https?://[^"\\s]+icedrive\\.net/[^"\\s]+)',
+        ]
+        download_url = _buscar_url_en_html(html, patrones, base_url=url)
+        if download_url and download_url != url:
+            return descargar_directo(download_url, destino, verbose, headers={'Referer': url})
+
+        # Fallback: buscar URLs embebidas con "download"
+        candidatos = re.findall(r'(https?:\\\\/\\\\/[^"\\s]+)', html)
+        for cand in candidatos:
+            cand = _normalizar_url(cand)
+            if cand and 'icedrive.net' in cand and 'download' in cand:
+                return descargar_directo(cand, destino, verbose, headers={'Referer': url})
+
+        public_id = _icedrive_extraer_public_id(url)
+        if public_id:
+            posibles = [
+                f"https://icedrive.net/download/{public_id}",
+                f"https://icedrive.net/0/{public_id}",
+                f"https://icedrive.net/s/{public_id}",
+                f"https://icedrive.net/file/{public_id}",
+            ]
+            for candidato in posibles:
+                if candidato == url:
+                    continue
+                archivo, parcial = descargar_directo(candidato, destino, verbose, headers={'Referer': url})
+                if archivo:
+                    return archivo, parcial
+
+        # Fallback con Playwright si la página requiere JS
+        download_url = _resolver_playwright_download_url(url, verbose)
+        if download_url:
+            return descargar_directo(download_url, destino, verbose, headers={'Referer': url})
+
+        if verbose:
+            print("    ⚠️ No se encontró enlace directo en Icedrive")
+        return None, False
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None, False
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Icedrive: {e}")
+        return None, False
+
+
+def descargar_krakenfiles(url, destino, verbose=True):
+    """Descarga un archivo de Krakenfiles resolviendo el link real desde HTML"""
+    try:
+        resp = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=30, allow_redirects=True)
+        resp.raise_for_status()
+
+        content_type = resp.headers.get('content-type', '').lower()
+        if 'text/html' not in content_type:
+            filepath, parcial = _guardar_respuesta(resp, destino, verbose)
+            return filepath, parcial
+
+        html = resp.text
+        patrones = [
+            r'href="(https?://krakenfiles\\.com/download/[^"]+)"',
+            r'action="(/download/[^"]+)"',
+            r'data-url="(https?://[^"]+)"',
+            r'"download_url"\\s*:\\s*"([^"]+)"',
+        ]
+        download_url = _buscar_url_en_html(html, patrones, base_url=url)
+
+        # Intento con token si aparece en el HTML
+        token = None
+        file_hash = None
+        match_token = re.search(r'data-token="([^"]+)"', html)
+        if match_token:
+            token = match_token.group(1)
+        match_hash = re.search(r'data-file-hash="([^"]+)"', html)
+        if match_hash:
+            file_hash = match_hash.group(1)
+        if not file_hash:
+            match_hash = re.search(r'/view/([A-Za-z0-9]+)/', url)
+            if match_hash:
+                file_hash = match_hash.group(1)
+
+        if token and file_hash:
+            candidate = f"https://krakenfiles.com/download/{file_hash}?token={token}"
+            archivo, parcial = descargar_directo(candidate, destino, verbose, headers={'Referer': url})
+            if archivo:
+                return archivo, parcial
+
+        if download_url:
+            return descargar_directo(download_url, destino, verbose, headers={'Referer': url})
+
+        if verbose:
+            print("    ⚠️ No se encontró enlace directo en Krakenfiles")
+        return None, False
+    except requests.exceptions.HTTPError as e:
+        if verbose:
+            print(f"    ⚠️ HTTP {e.response.status_code}")
+        return None, False
+    except Exception as e:
+        if verbose:
+            print(f"    ⚠️ Error Krakenfiles: {e}")
+        return None, False
+
+
 def descargar_workupload(url, destino, verbose=True):
     """Descarga un archivo de Workupload resolviendo el link real desde HTML"""
     try:
@@ -722,13 +1106,9 @@ def descargar_workupload(url, destino, verbose=True):
             r'href="(https?://download\.workupload\.com/[^"]+)"',
             r'href="(https?://workupload\.com/file/[^"]+/download[^"]*)"',
             r'data-url="(https?://[^"]+)"',
+            r'data-download-url="(https?://[^"]+)"',
         ]
-        download_url = None
-        for patron in patrones:
-            match = re.search(patron, html)
-            if match:
-                download_url = match.group(1)
-                break
+        download_url = _buscar_url_en_html(html, patrones, base_url=url)
 
         if not download_url:
             if verbose:
@@ -747,13 +1127,24 @@ def descargar_workupload(url, destino, verbose=True):
 
 
 def descargar_wetransfer(url, destino, verbose=True):
-    """WeTransfer usa enlaces dinámicos; no se soporta sin navegación JS"""
+    """WeTransfer usa enlaces dinámicos; intentar resolver con Playwright"""
+    download_url = _resolver_playwright_download_url(
+        url,
+        verbose,
+        selectors=[
+            'button:has-text("Download")',
+            'a:has-text("Download")',
+            'text=/download/i',
+        ],
+    )
+    if download_url:
+        return descargar_directo(download_url, destino, verbose, headers={'Referer': url})
     if verbose:
         print("    ⚠️ WeTransfer requiere navegador/JS (no soportado)")
     return None, False
 
 
-def descargar_directo(url, destino, verbose=True):
+def descargar_directo(url, destino, verbose=True, headers=None):
     """Descarga un archivo directo por HTTP (funciona con la mayoría de servicios)
     Retorna: (filepath, parcial)
     """
@@ -761,8 +1152,11 @@ def descargar_directo(url, destino, verbose=True):
     while True:
         intentos += 1
         try:
+            req_headers = DEFAULT_HEADERS.copy()
+            if headers:
+                req_headers.update(headers)
             # Permitir redirecciones
-            response = requests.get(url, headers=DEFAULT_HEADERS, stream=True, timeout=300, allow_redirects=True)
+            response = requests.get(url, headers=req_headers, stream=True, timeout=300, allow_redirects=True)
             response.raise_for_status()
 
             # Verificar que no sea una página HTML (debe ser un archivo)
@@ -803,6 +1197,11 @@ def descargar_link(url, destino, password=None, verbose=True, skip_mega=False):
     Descarga un archivo según el tipo de enlace
     Retorna: (filepath, skip_mega, parcial)
     """
+    if not re.match(r'^https?://', url or ''):
+        if verbose:
+            print("    ⚠️ URL inválida")
+        return None, False, False
+
     tipo = detectar_tipo_link(url)
 
     os.makedirs(destino, exist_ok=True)
@@ -834,6 +1233,12 @@ def descargar_link(url, destino, password=None, verbose=True, skip_mega=False):
         return archivo, False, parcial
     elif tipo == 'workupload':
         archivo, parcial = descargar_workupload(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'icedrive':
+        archivo, parcial = descargar_icedrive(url, destino, verbose)
+        return archivo, False, parcial
+    elif tipo == 'krakenfiles':
+        archivo, parcial = descargar_krakenfiles(url, destino, verbose)
         return archivo, False, parcial
     elif tipo == 'wetransfer':
         archivo, parcial = descargar_wetransfer(url, destino, verbose)
@@ -998,6 +1403,7 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
     skip_mega = False  # Se activa si Mega tiene límite/timeout
 
     tuvo_parcial = False
+    mega_omitido_por_cooldown = False
 
     for link_info in links:
         url = link_info.get('url', '')
@@ -1009,6 +1415,16 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
         tipo = detectar_tipo_link(url)
         if verbose:
             print(f"  → Intentando {tipo}: {url[:60]}...")
+
+        if tipo == 'mega' and _mega_cooldown_activo():
+            mega_omitido_por_cooldown = True
+            if verbose:
+                restante = _mega_cooldown_restante()
+                if restante > 0:
+                    print(f"    ⏭️ Saltando Mega (cooldown {restante}s)")
+                else:
+                    print("    ⏭️ Saltando Mega (cooldown activo)")
+            continue
 
         # Crear directorio temporal único
         temp_release = tempfile.mkdtemp(dir=temp_dir)
@@ -1024,6 +1440,8 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
             # Actualizar skip_mega si Mega falló por límite/timeout
             if new_skip_mega:
                 skip_mega = True
+                if tipo == 'mega' and _mega_cooldown_activo():
+                    mega_omitido_por_cooldown = True
 
             if not archivo or not os.path.exists(archivo):
                 if verbose and not new_skip_mega and not parcial:
@@ -1036,6 +1454,8 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
             # Ajustar extensión si el archivo es audio directo
             archivo = _ajustar_extension_audio(archivo, verbose)
+            # Ajustar extensión si es comprimido con extensión incorrecta
+            archivo = _ajustar_extension_comprimido(archivo, verbose)
 
             # 2. Extraer si está comprimido
             ext = _ext_compuesta(archivo)
@@ -1078,6 +1498,10 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
     if tuvo_parcial:
         return False, "Descarga parcial", None
+    if mega_omitido_por_cooldown:
+        mega_release = _crear_release_mega(release)
+        if mega_release:
+            return False, "Mega pendiente", mega_release
     return False, "Todos los links fallaron", None
 
 
@@ -1117,6 +1541,16 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
     if verbose and fallidos_bandas:
         print(f"🧾 {len(fallidos_bandas)} bandas con links fallidos (serán omitidas)")
 
+    # Cargar cola de Mega pendientes
+    mega_pendientes = cargar_mega_pendientes()
+    mega_pendientes_ids = set()
+    for r in mega_pendientes:
+        pid = str(r.get('post_id', '')).strip()
+        if pid:
+            mega_pendientes_ids.add(pid)
+    if verbose and mega_pendientes:
+        print(f"⏳ {len(mega_pendientes)} releases con Mega pendientes (reanudarán cuando termine el cooldown)")
+
     # Cargar repertorio
     repertorio = cargar_repertorio()
 
@@ -1142,6 +1576,62 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
     exitosos = 0
     fallidos = 0
     omitidos = 0
+    pendientes = 0
+
+    def encolar_mega(release_mega):
+        nonlocal pendientes
+        if not release_mega:
+            return
+        pid = str(release_mega.get('post_id', '')).strip()
+        if pid and pid in mega_pendientes_ids:
+            return
+        mega_pendientes.append(release_mega)
+        if pid:
+            mega_pendientes_ids.add(pid)
+        pendientes += 1
+        if verbose:
+            print("  ⏳ Encolado para reintento Mega")
+
+    def procesar_cola_mega():
+        nonlocal exitosos, fallidos, omitidos
+        # Procesar pendientes solo cuando el cooldown terminó
+        while mega_pendientes and not _mega_cooldown_activo():
+            release_m = mega_pendientes.pop(0)
+            pid = str(release_m.get('post_id', '')).strip()
+            if pid and pid in mega_pendientes_ids:
+                mega_pendientes_ids.remove(pid)
+
+            if verbose:
+                print(f"\n[MEGA] Reintentando: {release_m.get('band', 'Unknown')} - {release_m.get('album', 'Unknown')}")
+
+            exito, mensaje, info = procesar_release(
+                release_m, destino_base, TEMP_DIR, verbose, descargados, fallidos_bandas
+            )
+
+            if exito:
+                if mensaje in ["Ya existe", "Ya descargado", "Fallido previo"]:
+                    omitidos += 1
+                else:
+                    exitosos += 1
+                    if info:
+                        guardar_descargado(info['post_id'], info['band'], info['album'])
+                        descargados.add(info['post_id'])
+                continue
+
+            if mensaje == "Mega pendiente":
+                # Cooldown volvió a activarse, re-encolar y salir
+                encolar_mega(info or release_m)
+                break
+
+            fallidos += 1
+            if mensaje != "Descarga parcial":
+                guardar_fallido(release_m, fallidos_bandas, motivo=mensaje)
+
+        # Si cooldown activo, informar una vez
+        if mega_pendientes and _mega_cooldown_activo() and verbose:
+            restante = _mega_cooldown_restante()
+            if restante > 0:
+                print(f"⏳ Mega en cooldown, pendientes: {len(mega_pendientes)} (reanuda en {restante}s)")
 
     for i, release in enumerate(con_links):
         if verbose:
@@ -1162,13 +1652,17 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
                         guardar_descargado(info['post_id'], info['band'], info['album'])
                         descargados.add(info['post_id'])
             else:
-                fallidos += 1
-                # Registrar banda fallida para omitir en futuras ejecuciones
-                if mensaje != "Descarga parcial":
-                    guardar_fallido(release, fallidos_bandas)
+                if mensaje == "Mega pendiente":
+                    encolar_mega(info)
+                else:
+                    fallidos += 1
+                    # Registrar banda fallida para omitir en futuras ejecuciones
+                    if mensaje != "Descarga parcial":
+                        guardar_fallido(release, fallidos_bandas, motivo=mensaje)
 
         except KeyboardInterrupt:
             print("\n\n⚠️  Interrumpido por el usuario")
+            guardar_mega_pendientes(mega_pendientes)
             break
         except Exception as e:
             fallidos += 1
@@ -1177,6 +1671,17 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
         # Pausa entre descargas
         time.sleep(DELAY_ENTRE_DESCARGAS)
+
+        # Si Mega está disponible, procesar pendientes
+        if mega_pendientes and not _mega_cooldown_activo():
+            procesar_cola_mega()
+
+    # Procesar pendientes al final si el cooldown terminó
+    if mega_pendientes and not _mega_cooldown_activo():
+        procesar_cola_mega()
+
+    # Guardar pendientes restantes en disco
+    guardar_mega_pendientes(mega_pendientes)
 
     # Limpiar temporal
     try:
@@ -1192,6 +1697,8 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
         print(f"✓ Exitosos: {exitosos}")
         print(f"⏭️  Omitidos (ya existían): {omitidos}")
         print(f"✗ Fallidos: {fallidos}")
+        if mega_pendientes:
+            print(f"⏳ Pendientes Mega: {len(mega_pendientes)} (guardados en {MEGA_PENDIENTES_FILE})")
         print(f"\n📁 Archivos en: {destino_base}")
 
 
