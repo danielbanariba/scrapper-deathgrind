@@ -4392,3 +4392,761 @@
 781|R.A.V.A.G.E.|1897|Rotting In Hell|2026-01-31|Todos los links fallaron
 15586|Lethal Aggression|11345|Collection (1985-1990)|2026-01-31|Todos los links fallaron
 885|Necrophagia|1888|Death Is Fun|2026-01-31|Todos los links fallaron
+20245|Astral Rift|80510|Demo 2023|2026-01-31|Todos los links fallaron
+20200|Abyss Of Stench|80343|Hordes Of Rot|2026-01-31|Todos los links fallaron
+18905|Vilespawn|76107|Rotting Apparitions|2026-01-31|Todos los links fallaron
+14877|Trenchlung|76195|Hiraeth Collection|2026-01-31|Todos los links fallaron
+19774|The Crippler|78893|I'm Just Gonna Let Myself In|2026-01-31|Todos los links fallaron
+10587|Suppuration|79877|Ecclesiastical Blasphemy|2026-01-31|Todos los links fallaron
+19626|Ryth|81663|Deceptor Creator|2026-01-31|Todos los links fallaron
+18303|Oxicorte|74026|Burn 'Em All|2026-01-31|Todos los links fallaron
+10704|Murder Method|77165|No Regard For Human Life|2026-01-31|Todos los links fallaron
+11369|Leprosy|76072|Impulse To Kill|2026-01-31|Todos los links fallaron
+18032|Vault|91570|Forced Evolutionary Virus|2026-01-31|Todos los links fallaron
+13247|Total Annihilation|91765|Mountains Of Madness|2026-01-31|Todos los links fallaron
+18755|Gastric Fermentation|75587|Remnants Of A Life No Longer Pretty|2026-01-31|Todos los links fallaron
+18474|Fetid Gore|77198|Stuffing Body Parts|2026-01-31|Todos los links fallaron
+23349|Tombseeker|91372|Tombseeker|2026-01-31|Todos los links fallaron
+17081|Stabbing|91151|Eon Of Obscenity|2026-01-31|Todos los links fallaron
+23518|Shine|91318|Wrathcult|2026-01-31|Todos los links fallaron
+15183|Deathmarch|91868|Violent Retaliation|2026-01-31|Todos los links fallaron
+19767|Vøid It|90309|Dissociative Identity Disorder|2026-01-31|Todos los links fallaron
+23206|Seventh Sight|90860|Wings of Perdition|2026-01-31|Todos los links fallaron
+6186|Mastectomy|91358|Mass Murder Gospel|2026-01-31|Todos los links fallaron
+2585|Cadaver|88888|Hymns Of Misanthropy|2026-01-31|Todos los links fallaron
+23006|Atroxs|90274|Nature´s Involuntary Offensive|2026-01-31|Todos los links fallaron
+4577|Stages Of Decomposition|83898|Raptures Of Psychopathy|2026-01-31|Todos los links fallaron
+10767|Invocation|86379|The Archaic Sanctuary (Ritual Body Postures)|2026-01-31|Todos los links fallaron
+22041|Abysmal Hate|87091|Mephitic Monolith|2026-01-31|Todos los links fallaron
+8571|Zombie Riot|79218|World Epitaph|2026-01-31|Todos los links fallaron
+6167|Yskelgroth|80252|Bleeding Of The Hideous|2026-01-31|Todos los links fallaron
+1182|Voracious Infection|80258|Decrepexist|2026-01-31|Todos los links fallaron
+8503|Venereal Baptism|79944|Reap The Reviled|2026-01-31|Todos los links fallaron
+11633|Undead|80715|Putrefactio|2026-01-31|Todos los links fallaron
+10007|Thron|80187|Dust|2026-01-31|Todos los links fallaron
+1776|Depressed|74934|Diabolical Servents Of The Cross|2026-01-31|Todos los links fallaron
+14627|The Troops Of Doom|80889|Prelude To Blasphemy|2026-01-31|Todos los links fallaron
+5372|Sönambula|79770|Estasis Interrumpida|2026-02-01|Todos los links fallaron
+20569|Sorrow Enthroned|81604|Illicit Infantile Surgical Procedures|2026-02-01|Todos los links fallaron
+15915|Seven Doors|79217|Feast Of The Repulsive Dead|2026-02-01|Todos los links fallaron
+11436|Seraphic Entombment|82605|Sickness Particles Gleam|2026-02-01|Todos los links fallaron
+18893|Pissrot|82627|Pissrot|2026-02-01|Todos los links fallaron
+17191|Orphan Autopsy|79402|Blistering Deprive From Sanity|2026-02-01|Todos los links fallaron
+306|Orphalis|82013|As The Ashes Settle|2026-02-01|Todos los links fallaron
+11481|Nothingness|79124|Supraliminal|2026-02-01|Todos los links fallaron
+19852|Mørtvs|79111|Anti-Peace Death Kvlt|2026-02-01|Todos los links fallaron
+5626|Maze Of Sothoth|80082|Extirpated Light|2026-02-01|Todos los links fallaron
+19837|Leper Colony|79050|Leper Colony|2026-02-01|Todos los links fallaron
+11258|Inhuman Depravation|81110|Servants Of Supremacy|2026-02-01|Todos los links fallaron
+1003|Horrendous|81942|Ontological Mysterium|2026-02-01|Todos los links fallaron
+17852|Fleshless Entity|81386|Unborn Rising|2026-02-01|Todos los links fallaron
+19572|Flammable Regurgitosis|81820|Unhinged Irreversible Mutilations|2026-02-01|Todos los links fallaron
+20202|Extinction|80495|Cryogenesis|2026-02-01|Todos los links fallaron
+1347|Extermination Dismemberment|80657|Dehumanization Protocol|2026-02-01|Todos los links fallaron
+17060|Exsanguination|81461|Burial Rites|2026-02-01|Todos los links fallaron
+19425|Congregation|77767|Congregation|2026-02-01|Todos los links fallaron
+19603|Complot!|80636|Victimes Innocentes (D'une Furie Meurtrière)|2026-02-01|Todos los links fallaron
+19694|Cephalocult|78658|Void Chasm|2026-02-01|Todos los links fallaron
+679|Devangelic|80257|Xul|2026-02-01|Todos los links fallaron
+19132|Deathbed|81425|Obsolete Natural Composition|2026-02-01|Todos los links fallaron
+5015|Dead And Dripping|81882|Blackened Cerebral Rifts|2026-02-01|Todos los links fallaron
+20411|Dammnatorum|81049|In Umbra Mortis|2026-02-01|Todos los links fallaron
+17101|Cystgurgle|79428|Exquisite Macerated Tissue Slippage And Full-Body Degloving Under Extreme Circumstances Of Accelerated Putrefaction|2026-02-01|Todos los links fallaron
+1916|Crepitation|81282|Monstrous Eruption Of Impetuous Preposterosity|2026-02-01|Todos los links fallaron
+2715|Consume|79564|Genetic Waste|2026-02-01|Todos los links fallaron
+417|Condemned|83013|Daemonium|2026-02-01|Todos los links fallaron
+20131|Carnivorous Monstrosity|81252|Post Autopsy Depravities|2026-02-01|Todos los links fallaron
+20586|Blasphemous Fire|81657|Beneath The Darkness|2026-02-01|Todos los links fallaron
+10786|Besta|81801|Terra Em Desapego|2026-02-01|Todos los links fallaron
+12876|Ashen Horde|79219|Antimony|2026-02-01|Todos los links fallaron
+18852|Apokatastasis|79140|The Consecratory Secretion|2026-02-01|Todos los links fallaron
+13344|Anthropophagous|80295|Abuse Of A Corpse|2026-02-01|Todos los links fallaron
+9278|Angelic Desolation|79792|Orchestrionic Abortion|2026-02-01|Todos los links fallaron
+18191|Xicution|73722|For The World Beyond|2026-02-01|Todos los links fallaron
+18531|Xaoc|74810|Proxime Mortis|2026-02-01|Todos los links fallaron
+7843|Warmblood|74270|Master Of The Dead|2026-02-01|Todos los links fallaron
+11669|Unbounded Terror|77132|Echoes Of Despair|2026-02-01|Todos los links fallaron
+11216|To Obey A Tyrant|76816|Omnimalevolent|2026-02-01|Todos los links fallaron
+6366|Theotoxin|77936|Fragment : Totenruhe|2026-02-01|Todos los links fallaron
+6254|The Furor|80163|Head Full Of Hell|2026-02-01|Todos los links fallaron
+8665|Spiritual Hate|74787|The Ancient Pestilence|2026-02-01|Todos los links fallaron
+18917|Spire Of Lazarus|76144|Soaked In The Sands|2026-02-01|Todos los links fallaron
+335|Soreption|75833|Jord|2026-02-01|Todos los links fallaron
+11214|Sedimentum|76464|Suppuration Morphogénésiaque|2026-02-01|Todos los links fallaron
+6661|Sarcasm|73462|Stellar Stream Obscured|2026-02-01|Todos los links fallaron
+13237|Sandarmoh|79056|Void|2026-02-01|Todos los links fallaron
+14499|Ritual Death|78578|Ritual Death|2026-02-01|Todos los links fallaron
+11616|Rend Them Asunder|76204|Existence To Entrails|2026-02-01|Todos los links fallaron
+17329|Pukewraith|79146|Banquet Of Scum|2026-02-01|Todos los links fallaron
+15968|Proudhon|74387|Social Tympanum|2026-02-01|Todos los links fallaron
+11410|Prophecy Of Doom|82456|Acknowledge The Confusion Master|2026-02-01|Todos los links fallaron
+8090|Perversity Denied|77763|The Arrival Of Majestic End|2026-02-01|Todos los links fallaron
+3014|Omophagia|77289|Rebirth In Black|2026-02-01|Todos los links fallaron
+16672|Obvurt|78476|Triumph Beyond Adversity|2026-02-01|Todos los links fallaron
+2872|Morgue Supplier|75237|Inevitability|2026-02-01|Todos los links fallaron
+18609|Misgivings|76057|Misgivings|2026-02-01|Todos los links fallaron
+10014|Lucifericon|78411|The Warlock Of Da'ath|2026-02-01|Todos los links fallaron
+21583|Labyrinth Of Stars|77493|Spectrum Xenomorph|2026-02-01|Todos los links fallaron
+18944|Kruhl|76261|Sanguine Nihilism|2026-02-01|Todos los links fallaron
+14743|Instigate|76058|Unheeded Warnings Of Decay|2026-02-01|Todos los links fallaron
+12769|Indepth|78508|Ancient Architects|2026-02-01|Todos los links fallaron
+9934|Heretic Legion|76435|Torment|2026-02-01|Todos los links fallaron
+22002|Hellfrost And Fire|74113|Fire, Frost And Hell|2026-02-01|Todos los links fallaron
+18013|Grand Harvest|74462|Consummatum Est|2026-02-01|Todos los links fallaron
+3201|Goreskin Coffin|73198|Release My Suffering|2026-02-01|Todos los links fallaron
+3954|Father Befouled|74456|Crowned In Veneficum|2026-02-01|Todos los links fallaron
+20350|Embrace The Devil|80834|Death Is Only A Chapter|2026-02-01|Todos los links fallaron
+19543|Dysgnostic|78211|Scar Echoes|2026-02-01|Todos los links fallaron
+755|Disinter|78274|Breaker Of Bones|2026-02-01|Todos los links fallaron
+3308|Dischordia|75110|Triptych|2026-02-01|Todos los links fallaron
+16767|Disadaptive|77145|Apocryphal|2026-02-01|Todos los links fallaron
+3514|Denouncement Pyre|75963|Forever Burning|2026-02-01|Todos los links fallaron
+19451|Decipher|77859|Breed Of An Obsolete KInd|2026-02-01|Todos los links fallaron
+9486|Deathbringer|76298|It|2026-02-01|Todos los links fallaron
+2118|De Profundis|77612|The Corruption Of Virtue|2026-02-01|Todos los links fallaron
+19092|Cut|76738|Vanquish The Weak|2026-02-01|Todos los links fallaron
+13827|Cryptic Hatred|73856|Nocturnal Sickness|2026-02-01|Todos los links fallaron
+11692|Crusher|75786|Corporal Punishment|2026-02-01|Todos los links fallaron
+19121|Cruentus|76807|Fossilized|2026-02-01|Todos los links fallaron
+18047|Cervicectomy|74411|Gorezilla|2026-02-01|Todos los links fallaron
+18997|Cavernum|76404|Born In A Cave|2026-02-01|Todos los links fallaron
+3186|Blastanus|73477|Beyond|2026-02-01|Todos los links fallaron
+7884|Beyond Mortal Dreams|74717|Abomination Of The Flames|2026-02-01|Todos los links fallaron
+703|Belphegor|76501|The Devils|2026-02-01|Todos los links fallaron
+5288|Ataraxy|75959|The Last Mirror|2026-02-01|Todos los links fallaron
+18946|Apocalyptic Remnants|76263|No Way Out|2026-02-01|Todos los links fallaron
+453|Altars|76222|Ascetic Reflection|2026-02-01|Todos los links fallaron
+4841|Wombbath|72825|Agma|2026-02-01|Todos los links fallaron
+9950|Where Deprivation Lies|72624|Tempest|2026-02-01|Todos los links fallaron
+16105|Vox Mortis|68963|Avignam Jagat Samagram|2026-02-01|Todos los links fallaron
+10763|Vexilla Regis Prodeunt Inferni|72692|The True Path|2026-02-01|Todos los links fallaron
+17180|Vessel Of Iniquity|71093|The Doorway|2026-02-01|Todos los links fallaron
+16508|Velo Misere|71679|Monomanía Del Inexorable Vacío|2026-02-01|Todos los links fallaron
+17502|Timawa|72249|Agoraphobic Rotten Cunt|2026-02-01|Todos los links fallaron
+17012|Terrorflesh|70446|Among The Toxic Shadows|2026-02-01|Todos los links fallaron
+20351|Tausendstern|80835|Hamartia|2026-02-01|Todos los links fallaron
+17702|Taedium Vitae|72783|Lucid Nightmare|2026-02-01|Todos los links fallaron
+17643|Spit On My Tomb|72229|Necrosis|2026-02-01|Todos los links fallaron
+17803|Slog|79055|Graves|2026-02-01|Todos los links fallaron
+1085|Slaughter Brute|70455|Symmetric Biomass|2026-02-01|Todos los links fallaron
+4780|Seputus|70495|Phantom Indigo|2026-02-01|Todos los links fallaron
+17020|Schismopathic|70452|The Human Legacy|2026-02-01|Todos los links fallaron
+17121|Sadistic Defilement|70757|Sadistic Defilement|2026-02-01|Todos los links fallaron
+8729|Rottenbroth|70690|Necroceremony Vomitorum|2026-02-01|Todos los links fallaron
+4743|Psychosurgical Intervention|71563|Act I|2026-02-01|Todos los links fallaron
+316|Portal|70409|Avow|2026-02-01|Todos los links fallaron
+17299|Plasmodium|71197|Towers Of Silence|2026-02-01|Todos los links fallaron
+14488|Phlegmlord|69373|Entrenched In Excremental Fumes Of The Rotting|2026-02-01|Todos los links fallaron
+10903|Otargos|72388|Fleshborer Soulflayer|2026-02-01|Todos los links fallaron
+3416|Nocturnal Hollow|68915|Triumphantly Evil|2026-02-01|Todos los links fallaron
+16976|Neurosurgery|70892|Invitation To Die|2026-02-01|Todos los links fallaron
+11518|Neuro-Visceral Exhumation|68836|Thou Shalt Be Slaughtered|2026-02-01|Todos los links fallaron
+17472|Muertissima|71748|Inquisition|2026-02-01|Todos los links fallaron
+1195|Monument Of Misanthropy|72209|Unterweger|2026-02-01|Todos los links fallaron
+17409|Malgöth|71596|Glory Through Savagery|2026-02-01|Todos los links fallaron
+17203|Kompost|70955|Pallor Mortis|2026-02-01|Todos los links fallaron
+20126|Kaal Akuma|80113|In The Mouth Of Madness|2026-02-01|Todos los links fallaron
+14620|Ischemic Necrosis|70806|Nauseating Stew Of Rancid Decomposition|2026-02-01|Todos los links fallaron
+9735|Infidel Reich|71649|New World Outrage|2026-02-01|Todos los links fallaron
+4659|Horrendum Vermis|71163|Cvlt Ov Malignant Entities|2026-02-01|Todos los links fallaron
+16033|Hexifixion|68820|Hexifixion|2026-02-01|Todos los links fallaron
+6671|Helgast|70065|Tentacled Divinity|2026-02-01|Todos los links fallaron
+17378|Fragments Of Paroxysm|71479|Ominous Music Plays|2026-02-01|Todos los links fallaron
+16224|Extreme Cold Winter|73678|World Exit|2026-02-01|Todos los links fallaron
+17646|Erebor|74327|Inherent Malevolence|2026-02-01|Todos los links fallaron
+3629|Diabolizer|70791|Khalkedonian Death|2026-02-01|Todos los links fallaron
+9581|Decline Of The I|69554|Johannes|2026-02-01|Todos los links fallaron
+17206|Deathfucker|70934|Firespawn|2026-02-01|Todos los links fallaron
+9229|Dawnbreaker|71945|Ad Majorem Dei Glorium|2026-02-01|Todos los links fallaron
+141|Dargonomel|71442|Rebelliant Daemonis|2026-02-01|Todos los links fallaron
+18630|Cülpado|75189|Romper Da Realidade|2026-02-01|Todos los links fallaron
+7467|Crypts Of Despair|69887|All Light Swallowed|2026-02-01|Todos los links fallaron
+15929|Crypt Dweller|70259|A Dark Presence|2026-02-01|Todos los links fallaron
+16395|Crummer|69655|Deathwards|2026-02-01|Todos los links fallaron
+14872|Confinement|69553|Despondency At The Hands Of Self|2026-02-01|Todos los links fallaron
+1348|Carnivored|68736|Labirin|2026-02-01|Todos los links fallaron
+16875|Bound In Fear|71733|Penance|2026-02-01|Todos los links fallaron
+17535|Bloodmouth|71914|Unmanned|2026-02-01|Todos los links fallaron
+14157|Blastocystia|70748|Hypercytotoxic Predatorphiliacs|2026-02-01|Todos los links fallaron
+9400|Baest|69074|Necro Sapiens|2026-02-01|Todos los links fallaron
+16728|Axedra|70021|Mass Deception|2026-02-01|Todos los links fallaron
+10768|Anomaly|71443|Planet Storm|2026-02-01|Todos los links fallaron
+16202|Ankerkeria|69207|Matriarch|2026-02-01|Todos los links fallaron
+17090|Alchemy Of Flesh|71158|Ageless Abominations|2026-02-01|Todos los links fallaron
+9008|1914|71805|Where Fear And Weapons Meet|2026-02-01|Todos los links fallaron
+16096|Zatrata|72896|Zatrata|2026-02-01|Todos los links fallaron
+14054|Well Of Night|66639|The Lower Planes Of Self-Abstraction|2026-02-01|Todos los links fallaron
+15080|Trident|67902|North|2026-02-01|Todos los links fallaron
+11488|Total Fucking Destruction|62095|…To Be Alive At The End Of The World|2026-02-01|Todos los links fallaron
+5604|The Deviant|67793|Rotting Dreams Of Carrion|2026-02-01|Todos los links fallaron
+14147|Terrestrial Hospice|66904|Indian Summer Brought Mushroom Clouds|2026-02-01|Todos los links fallaron
+4829|Soulburn|67561|Noa's D'ark|2026-02-01|Todos los links fallaron
+8960|Slavesun|69075|Breaking The Labyrinth|2026-02-01|Todos los links fallaron
+1935|Skeletal Remains|69335|Beyond The Flesh|2026-02-01|Todos los links fallaron
+1546|Sepultura|62754|Quadra|2026-02-01|Todos los links fallaron
+5804|Sepulchral Curse|63324|Only Ashes Remain|2026-02-01|Todos los links fallaron
+5187|Scalpture|58744|Eisenzeit|2026-02-01|Todos los links fallaron
+6232|Sangre|78539|Technological Destination|2026-02-01|Todos los links fallaron
+14615|Rivers Ablaze|67377|Blood Canvas|2026-02-01|Todos los links fallaron
+9297|Rites Of Daath|62996|Doom Spirit Emanation|2026-02-01|Todos los links fallaron
+14745|Reconstructed Torso|62584|Varied|2026-02-01|Todos los links fallaron
+554|Pyrrhon|62387|Abscess Time|2026-02-01|Todos los links fallaron
+8975|Prosanctus Inferi|63222|Hypnotic Blood Art|2026-02-01|Todos los links fallaron
+10388|Postmortem Inc|67708|The Conqueror Worm|2026-02-01|Todos los links fallaron
+6749|Pork True|68054|The Indestructible I|2026-02-01|Todos los links fallaron
+9149|Podridão|63121|Revering The Unearthed Corpse|2026-02-01|Todos los links fallaron
+14358|Pharmakeia|67637|Ternary Curse|2026-02-01|Todos los links fallaron
+18424|Beer Breath|74451|Unholy Street Ceremony|2026-02-01|Todos los links fallaron
+13575|Order Of Orias|62100|Ablaze|2026-02-01|Todos los links fallaron
+2766|Macabre|67560|Carnival Of Killers|2026-02-01|Todos los links fallaron
+11059|Lustration|76467|Urges|2026-02-01|Todos los links fallaron
+14374|King Ov Wyrms|67640|Lord Ov Thornes|2026-02-01|Todos los links fallaron
+14129|Jupiterian|66854|Protosapien|2026-02-01|Todos los links fallaron
+14264|Invincible Force|67329|Decomposed Sacramentum|2026-02-01|Todos los links fallaron
+14343|Intrepid Corpse|67582|Desolate|2026-02-01|Todos los links fallaron
+14437|Inhumane Suffering|67740|S/T|2026-02-01|Todos los links fallaron
+10032|Infested Monastery|67676|Awake In Death|2026-02-01|Todos los links fallaron
+19610|In-Conquered|78404|Nor Rivaled, Nor Equalled|2026-02-01|Todos los links fallaron
+2909|Havok|62248|V|2026-02-01|Todos los links fallaron
+13440|Gorified|60764|Reeking Mass Of Festering Remains|2026-02-01|Todos los links fallaron
+14263|Goat Tyrant|67328|Into The Greater Chasm|2026-02-01|Todos los links fallaron
+5224|Foetal Juice|62664|Gluttony|2026-02-01|Todos los links fallaron
+22818|Fatal Error|63054|Vaginal Nasvay|2026-02-01|Todos los links fallaron
+6326|Elegis|78048|Kultus|2026-02-01|Todos los links fallaron
+15029|Divine Death|67887|Divine Death|2026-02-01|Todos los links fallaron
+12406|Dies Holocaustum|54115|Scorched Promised Land|2026-02-01|Todos los links fallaron
+15558|Decimate|67877|Under The Scythe|2026-02-01|Todos los links fallaron
+838|Deadly Vision|67017|Slaughterous Foreplay|2026-02-01|Todos los links fallaron
+14725|Cynicism|62968|Limb Hymns|2026-02-01|Todos los links fallaron
+3585|Crushing Axes|67834|Bloodthirsty Heathen|2026-02-01|Todos los links fallaron
+13578|Chasmdweller|62108|Invoking The Wrath Of The Seventh Circle|2026-02-01|Todos los links fallaron
+5532|Casket Grinder|62630|Fall Into Dementia|2026-02-01|Todos los links fallaron
+14092|Caffas Rain|66764|Impending Death|2026-02-01|Todos los links fallaron
+13911|Bythos|63360|The Womb Of Zero|2026-02-01|Todos los links fallaron
+16310|Beyond Chaos|69344|Home, Sweet Prison|2026-02-01|Todos los links fallaron
+10338|Astyanax|62961|Embalmed With Afterbirth|2026-02-01|Todos los links fallaron
+16457|Amorite|70431|Archaic Faces Of Ecstasy|2026-02-01|Todos los links fallaron
+13696|Acârash|62531|Descend To Purity|2026-02-01|Todos los links fallaron
+15056|Abvulabashy|67893|Atomik Triumphator Elite|2026-02-01|Todos los links fallaron
+49|Aborted Fetus|66770|Pyramids Of Damnation|2026-02-01|Todos los links fallaron
+6435|Abatuar|66692|Mortandad|2026-02-01|Todos los links fallaron
+9262|Autophagia|82097|Spastic Grinding Gore Mayhem (1997-2006)|2026-02-01|Todos los links fallaron
+11113|Towering|27950|Obscuring Manifestation|2026-02-01|Todos los links fallaron
+10747|Skald In Veum|27418|Stridslysten|2026-02-01|Todos los links fallaron
+10602|Ravenous Death|26567|Chapters Of An Evil Transition|2026-02-01|Todos los links fallaron
+11575|Ossuaire|29256|Derniers Chants|2026-02-01|Todos los links fallaron
+10771|Nimerigar|26963|Massacre Of The Savages|2026-02-01|Todos los links fallaron
+10638|Necrochamber|26666|Ceremonies For The Dead|2026-02-01|Todos los links fallaron
+11172|Malformation|28095|A Torn Face Of The Future|2026-02-01|Todos los links fallaron
+12464|Insanity|55263|Psicosis|2026-02-01|Todos los links fallaron
+10527|Immense Suffering|26333|A Disgusting Return|2026-02-01|Todos los links fallaron
+16199|Hex|69196|God Has No Name|2026-02-01|Todos los links fallaron
+1757|Gôr Mörgûl|28173|Elohim|2026-02-01|Todos los links fallaron
+5429|Grafvitnir|27712|Venenum Scorpionis|2026-02-01|Todos los links fallaron
+16462|Fit For An Autopsy|29405|The Sea Of Tragic Beasts|2026-02-01|Todos los links fallaron
+14899|Faecal Putrefaction|28269|Hate, Shit And Vomit|2026-02-01|Todos los links fallaron
+18876|Extreme|76240|Technological Death|2026-02-01|Todos los links fallaron
+16923|Drastus|70315|La Croix De Sang|2026-02-01|Todos los links fallaron
+10643|Downcross|26673|Mysteries Of Left Path|2026-02-01|Todos los links fallaron
+2643|DopeHammer|69158|Spaced: The Final Bluntier|2026-02-01|Todos los links fallaron
+13522|Domedagen|61852|Domedagen|2026-02-01|Todos los links fallaron
+7887|Defecal Of Gerbe|26425|Mothershit|2026-02-01|Todos los links fallaron
+2786|Blade Of Horus|70533|Obliteration|2026-02-01|Todos los links fallaron
+14822|Belzebubs|68188|Pantheon Of The Nightside Gods|2026-02-01|Todos los links fallaron
+18945|Abbinormal|76262|1996|2026-02-01|Todos los links fallaron
+10138|Wroht|25251|Worship Rot|2026-02-01|Todos los links fallaron
+10139|When Plagues Collide|25256|Tutor Of The Dying|2026-02-01|Todos los links fallaron
+9040|Verilun|22429|Through Fire… In The Sun|2026-02-01|Todos los links fallaron
+9099|Thy Feeble Saviour|22582|And Darkness Fell|2026-02-01|Todos los links fallaron
+8147|Thorwald|20107|Sací Reflex|2026-02-01|Todos los links fallaron
+1600|The Grotesquery|21689|The Lupine Anathema|2026-02-01|Todos los links fallaron
+10452|The Absence|26127|A Gift For The Obsessed|2026-02-01|Todos los links fallaron
+8784|Temple|21748|Visage|2026-02-01|Todos los links fallaron
+8150|Sotana|20112|Secta Del Acantilado|2026-02-01|Todos los links fallaron
+3813|Sinsaenum|24080|Repulsion For Humanity|2026-02-01|Todos los links fallaron
+9849|Siege Of Power|24471|Warning Blast|2026-02-01|Todos los links fallaron
+2174|Ravens Creed|23882|Get Killed Or Try Dying|2026-02-01|Todos los links fallaron
+12245|Philip H. Anselmo & The Illegals|43064|Choosing Mental Illness As A Virtue|2026-02-01|Todos los links fallaron
+8772|Pemphigoid|21725|Where Compassion Comes To Die|2026-02-01|Todos los links fallaron
+8947|Oxygen Destroyer|22180|Bestial Manifestations Of Malevolence And Death|2026-02-01|Todos los links fallaron
+8835|Our Place Of Worship Is Silence|21910|With Inexorable Suffering|2026-02-01|Todos los links fallaron
+9509|Nigredo|23571|Flesh Torn - Spirit Pierced|2026-02-01|Todos los links fallaron
+10294|Mørknatt|25646|Victorious Satan|2026-02-01|Todos los links fallaron
+17263|Mutilated Judge|21768|Coldplay Is A Shoegaze Band|2026-02-01|Todos los links fallaron
+8154|Mortuorial Eclipse|22307|Urushdaur|2026-02-01|Todos los links fallaron
+9619|Mongrel's Cross|23880|Psalter Of The Royal Dragon Court|2026-02-01|Todos los links fallaron
+10248|Hrizg|25530|Soterion|2026-02-01|Todos los links fallaron
+4020|HateSphere|25124|Reduced To Flesh|2026-02-01|Todos los links fallaron
+3244|Gutter Instinct|23097|Heirs Of Sisyphus|2026-02-01|Todos los links fallaron
+9276|Grindzilla|23003|Toshinquandon|2026-02-01|Todos los links fallaron
+18106|Ghost Gore|73480|The House Of The Devil|2026-02-01|Todos los links fallaron
+10205|Echoes Of Death|25413|...In The Cemetery|2026-02-01|Todos los links fallaron
+8718|Dirty Dancing Pigs|21592|Crushed Village|2026-02-01|Todos los links fallaron
+10562|Demored|26434|Sickening Dreams|2026-02-01|Todos los links fallaron
+14077|Angerpath|82867|Forgotten World|2026-02-01|Todos los links fallaron
+8869|Commander|22000|Fatalis (The Unbroken Circle)|2026-02-01|Todos los links fallaron
+1239|Churchburn|68034|None Shall Live... The Hymns Of Misery|2026-02-01|Todos los links fallaron
+8554|Burning Flesh|23302|Human Flesh Fertilizer|2026-02-01|Todos los links fallaron
+8061|Brutaliate|19831|Brutaliate|2026-02-01|Todos los links fallaron
+13583|Beyond Deth|62117|The Age Of Darkness|2026-02-01|Todos los links fallaron
+1595|Apophys|19693|Devoratis|2026-02-01|Todos los links fallaron
+13028|Apathy Noir|56855|Black Soil|2026-02-01|Todos los links fallaron
+8468|Abominations|20925|Summoning Death|2026-02-01|Todos los links fallaron
+6431|Догма|14912|Переворот Сознания|2026-02-01|Todos los links fallaron
+6241|Vexovoid|56791|Call Of The Starforger|2026-02-01|Todos los links fallaron
+6978|Unbeheld|17149|Dust|2026-02-01|Todos los links fallaron
+7282|The Stones|17577|Black Lagoon|2026-02-01|Todos los links fallaron
+9656|The Brood|23956|The Truth Behind|2026-02-01|Todos los links fallaron
+15373|Tehom|15517|The Merciless Light|2026-02-01|Todos los links fallaron
+6128|Tanator|14150|Degradation Of Mankind|2026-02-01|Todos los links fallaron
+4665|Svart Crown|14473|Abreaction|2026-02-01|Todos los links fallaron
+7150|Stormhaven|17216|Exodus|2026-02-01|Todos los links fallaron
+7907|Spiritual Holocaust|19386|Feast Of Maggots|2026-02-01|Todos los links fallaron
+5594|Skeptic|12601|Worship The End|2026-02-01|Todos los links fallaron
+803|Sectesy|17058|In The Secretion Of Upcoming Days|2026-02-01|Todos los links fallaron
+21920|Sator Marte|86715|Engulfed By Firestorm|2026-02-01|Todos los links fallaron
+5823|Regress|13213|Rotten Sabbat|2026-02-01|Todos los links fallaron
+4741|Psychotic Defilement|19157|Designed To Die|2026-02-01|Todos los links fallaron
+7412|Primordium|17920|Old Gods|2026-02-01|Todos los links fallaron
+4796|Polterchrist|14196|Badge Of The Assassin|2026-02-01|Todos los links fallaron
+7908|Peristaltic Movement|19387|Anomalies Museum|2026-02-01|Todos los links fallaron
+4817|Overkill|13928|The Grinding Wheel|2026-02-01|Todos los links fallaron
+4966|Once Human|14123|Evolution|2026-02-01|Todos los links fallaron
+2868|Nightbringer|14947|Terra Damnata|2026-02-01|Todos los links fallaron
+7293|Nailed To Obscurity|17603|King Delusion|2026-02-01|Todos los links fallaron
+6992|Mouldered|16721|Chronology Of A Rotten Mind|2026-02-01|Todos los links fallaron
+4303|Mesrine|16653|Source Of Hatred|2026-02-01|Todos los links fallaron
+4703|Maim|16573|Ornaments Of Severity|2026-02-01|Todos los links fallaron
+7275|Magenta Harvest|17560|...And Then Came The Dust|2026-02-01|Todos los links fallaron
+6746|Lying Figures|15942|The Abstract Escape|2026-02-01|Todos los links fallaron
+6737|Lvx Hæresis|15905|Descensŭs Spīrĭtŭs|2026-02-01|Todos los links fallaron
+2077|Lock Up|14617|Demonization|2026-02-01|Todos los links fallaron
+5090|King Parrot|18048|Ugly Produce|2026-02-01|Todos los links fallaron
+6896|Killbrain|16424|The Chronicles Of Satan|2026-02-01|Todos los links fallaron
+7693|Impureza|18677|La Caída De Tonatiuh|2026-02-01|Todos los links fallaron
+7633|Gutted Bride|18520|Sadism|2026-02-01|Todos los links fallaron
+7380|Gorepest|17838|The Aeon Of Horus|2026-02-01|Todos los links fallaron
+2529|Funebre|69728|Children Of The Scorn|2026-02-01|Todos los links fallaron
+1132|Fetal Disgorge|16562|Mass Female Degradation|2026-02-01|Todos los links fallaron
+6450|Extremity|14954|Extremely Fucking Dead|2026-02-01|Todos los links fallaron
+12901|Extravasion|56575|Origins Of Magma|2026-02-01|Todos los links fallaron
+3334|Endocranial|16567|In Presence Of Total Absence|2026-02-01|Todos los links fallaron
+8480|Empty Grace|20951|Subversive Worms|2026-02-01|Todos los links fallaron
+7296|Elegiac|17614|Black Clouds Of War|2026-02-01|Todos los links fallaron
+7705|Dödsrit|18717|Dödsrit|2026-02-01|Todos los links fallaron
+4927|Dodecahedron|14724|Kwintessens|2026-02-01|Todos los links fallaron
+7285|Dirtyprotest|17584|Hellstorm|2026-02-01|Todos los links fallaron
+7876|Devouring|19286|Psalms Of Death|2026-02-01|Todos los links fallaron
+12892|Deathinition|56553|Online|2026-02-01|Todos los links fallaron
+7724|Death Toll 80k|18777|Step Down|2026-02-01|Todos los links fallaron
+1423|Damnation Defaced|18163|Invader From Beyond|2026-02-01|Todos los links fallaron
+3870|Chaosbringer|18488|Turn Into Ruins|2026-02-01|Todos los links fallaron
+6575|Carnal Garden|15355|Where They Are Silent|2026-02-01|Todos los links fallaron
+5663|Black Anvil|12759|As Was|2026-02-01|Todos los links fallaron
+7894|Betalmand|19345|Wüstenplanet|2026-02-01|Todos los links fallaron
+7456|Arallu|18020|Six|2026-02-01|Todos los links fallaron
+2272|Aposento|16540|Bleed To Death|2026-02-01|Todos los links fallaron
+15331|Antidemon|16510|Demonicídio|2026-02-01|Todos los links fallaron
+2339|Animals Killing People|16218|Eat Your Murder|2026-02-01|Todos los links fallaron
+7111|Abhordium|18477|Omega Prayer|2026-02-01|Todos los links fallaron
+7290|5 Star Grave|17591|The Red Room|2026-02-01|Todos los links fallaron
+4850|Zhrine|10699|Unortheta|2026-02-01|Todos los links fallaron
+4727|Vociferatus|10356|Mortenkult|2026-02-01|Todos los links fallaron
+3130|Vibrion|6828|Bacterya|2026-02-01|Todos los links fallaron
+4744|Vermin Womb|10427|Decline|2026-02-01|Todos los links fallaron
+8594|Uncoffined|21253|Ceremonies Of Morbidity|2026-02-01|Todos los links fallaron
+375|The Schoenberg Automaton|7225|Apus|2026-02-01|Todos los links fallaron
+18895|Teethgrinder|11912|Nihilism|2026-02-01|Todos los links fallaron
+4249|Still Falling|9277|Free Of Avidya|2026-02-01|Todos los links fallaron
+12328|Spektr|47809|The Art To Disappear|2026-02-01|Todos los links fallaron
+4809|Sons Of Balaur|10599|Tenebris Deos|2026-02-01|Todos los links fallaron
+15677|Skizopatix|10214|A Volte Ritornano...|2026-02-01|Todos los links fallaron
+46|Six Feet Under|7117|Graveyard Classics IV: The Number Of The Priest|2026-02-01|Todos los links fallaron
+3425|Shed The Skin|7433|Harrowing Faith|2026-02-01|Todos los links fallaron
+4650|Severed Limbs|10162|Collector Of Limbs|2026-02-01|Todos los links fallaron
+4622|Serpent Ascending|10104|Aṇaṅku|2026-02-01|Todos los links fallaron
+4536|Self-Hatred|9940|Theia|2026-02-01|Todos los links fallaron
+6457|Ritual Chamber|22459|Obscurations (To Feast On The Seraphim)|2026-02-01|Todos los links fallaron
+2639|Possessed Entity|5559|Extermination Of Angelic Parasites|2026-02-01|Todos los links fallaron
+4676|Path11|10216|A New Direction Of Life|2026-02-01|Todos los links fallaron
+3280|Oniricous|7136|La Caverna De Fuego|2026-02-01|Todos los links fallaron
+5214|Omnium Gatherum|11657|Grey Heavens|2026-02-01|Todos los links fallaron
+4531|No Reason To Live|9931|Only Death Is Certain|2026-02-01|Todos los links fallaron
+5522|Nazgûl|12440|Enigmatic Tales From The Haunted Realm|2026-02-01|Todos los links fallaron
+2598|Mortem|11444|Deinós Nekrómantis|2026-02-01|Todos los links fallaron
+20356|Morte|80846|Death Surrounds Us|2026-02-01|Todos los links fallaron
+5322|Mora Prokaza|11922|Dark Universe|2026-02-01|Todos los links fallaron
+5334|Misanthropic Rage|11959|Gates No Longer Shut|2026-02-01|Todos los links fallaron
+4803|Master Of Cruelty|10591|Archaic Visions Of The Underworld|2026-02-01|Todos los links fallaron
+6151|Mass Hypnosia|14198|Toxiferous Cyanide|2026-02-01|Todos los links fallaron
+3751|Lost Society|8120|Braindead|2026-02-01|Todos los links fallaron
+4763|Lectern|10617|Precept Of Delator|2026-02-01|Todos los links fallaron
+2549|Krypts|10855|Remnants Of Expansion|2026-02-01|Todos los links fallaron
+7670|Kawir|11716|Πάτερ Ήλιε Μήτερ Σελάνα|2026-02-01|Todos los links fallaron
+14516|Horda Profana|14229|Fornicators Of Jesus Christ|2026-02-01|Todos los links fallaron
+701|Heaven Shall Burn|10159|Wanderer|2026-02-01|Todos los links fallaron
+8265|Gnaw Their Tongues|11985|Hymns For The Broken, Swollen And Silent|2026-02-01|Todos los links fallaron
+15075|Gevurah|7119|Hallelujah!|2026-02-01|Todos los links fallaron
+1504|Gadget|6464|The Great Destroyer|2026-02-01|Todos los links fallaron
+5815|Funeralis|13193|Lvminis Serpens Caeremonia|2026-02-01|Todos los links fallaron
+5320|Fleshmeadow|11919|Umbra|2026-02-01|Todos los links fallaron
+10111|FamishGod|25192|Roots Of Darkness|2026-02-01|Todos los links fallaron
+3516|Endless Sacrifice|7613|Dominio Total|2026-02-01|Todos los links fallaron
+5176|Endless Curse|11524|Slave Breeding Industry|2026-02-01|Todos los links fallaron
+5343|Djevel|11975|Norske Ritualer|2026-02-01|Todos los links fallaron
+1245|Dismorial|56762|Begotten Cul-De-Sac|2026-02-01|Todos los links fallaron
+5618|Diagor|12641|Ненависть К Живому|2026-02-01|Todos los links fallaron
+1642|Dehumanized|10811|Beyond The Mind|2026-02-01|Todos los links fallaron
+4875|Darkrypt|10749|Delirious Excursion|2026-02-01|Todos los links fallaron
+5244|Crimson Moon|11730|Oneironaut|2026-02-01|Todos los links fallaron
+6082|Cordura|14023|Pantheon Of Bionic Gods|2026-02-01|Todos los links fallaron
+10391|Collision|25931|Satanic Surgery|2026-02-01|Todos los links fallaron
+6011|Blood Moon|13676|Through The Scarlet Veil|2026-02-01|Todos los links fallaron
+3389|Beef Conspiracy|7365|A Jigsaw Of A Flock Of Geese|2026-02-01|Todos los links fallaron
+9785|Balance Interruption|24317|Door 218|2026-02-01|Todos los links fallaron
+620|Azooma|10701|The Act Of Eye|2026-02-01|Todos los links fallaron
+5287|Autumn Woods|11847|Doomed By Loneliness|2026-02-01|Todos los links fallaron
+4488|Asguard|9845|Hidden God|2026-02-01|Todos los links fallaron
+6512|Asgrauw|15174|Krater|2026-02-01|Todos los links fallaron
+3621|Ascent|7805|Don't Stop When You Walk Through The Hell|2026-02-01|Todos los links fallaron
+5247|Aryman|11740|Czarne Rytuały Otchłani|2026-02-01|Todos los links fallaron
+6122|Arria Paetus|14138|Arria Paetus|2026-02-01|Todos los links fallaron
+5088|Antaeus|11268|Condemnation|2026-02-01|Todos los links fallaron
+93|Anaal Nathrakh|10578|The Whole Of The Law|2026-02-01|Todos los links fallaron
+13582|Among Disaster|62116|Ecclesiastical Damnation|2026-02-01|Todos los links fallaron
+50|Allegaeon|10329|Proponent For Sentience|2026-02-01|Todos los links fallaron
+4358|Aegeon|9550|Devouring The Sun|2026-02-01|Todos los links fallaron
+2674|Abbath|12428|Abbath|2026-02-01|Todos los links fallaron
+1934|Viscral|4092|Egocentric Underneath Of Horror|2026-02-01|Todos los links fallaron
+9315|Vholdghast|23086|Låt Oss Förbrinna|2026-02-01|Todos los links fallaron
+2797|Totten Korps|6004|Supreme Commanders Of Darkness|2026-02-01|Todos los links fallaron
+22200|Tibosity|4802|Bimbocracia|2026-02-01|Todos los links fallaron
+10867|The Ugly|27242|Decreation|2026-02-01|Todos los links fallaron
+10116|The Order Of Apollyon|62008|The Sword And The Dagger|2026-02-01|Todos los links fallaron
+4460|Thaeon|9790|Mind Descent|2026-02-01|Todos los links fallaron
+1967|Tenval|4151|Tenval|2026-02-01|Todos los links fallaron
+186|Swallow The Sun|15095|Songs From The North I, II & III|2026-02-01|Todos los links fallaron
+353|Sothoth|3741|Rise To Conquer|2026-02-01|Todos los links fallaron
+1511|Sabaoth|3353|Unholy Divinity|2026-02-01|Todos los links fallaron
+205|Rings Of Saturn|17166|Live At The Whiskey A Go-Go (Video)|2026-02-01|Todos los links fallaron
+15529|Revenge|9794|Omega|2026-02-01|Todos los links fallaron
+9061|Rellik|22477|Spiraling Infinite Chaos|2026-02-01|Todos los links fallaron
+2471|Reincarnation|5168|The Beginning Of The End|2026-02-01|Todos los links fallaron
+2124|Reduced|4438|Gradually Executed|2026-02-01|Todos los links fallaron
+14738|Paganus Doctrina|62663|Omnipotence Aeternae Diabolous|2026-02-01|Todos los links fallaron
+876|Ominous Gatekeeper|4518|Lord Of The Pyre|2026-02-01|Todos los links fallaron
+1945|Nekro Drunkz|4108|Absolute Filth|2026-02-01|Todos los links fallaron
+1728|Moloch Letalis|3742|Zgliszcza|2026-02-01|Todos los links fallaron
+1116|Kraanium|4144|Chronicles Of Perversion|2026-02-01|Todos los links fallaron
+1979|Isolated|4174|The Enemy Of Reason|2026-02-01|Todos los links fallaron
+1551|Impure Violation|3435|Lust In A Vulgar Display Of Violence|2026-02-01|Todos los links fallaron
+8079|Human Waste|68497|Human Waste|2026-02-01|Todos los links fallaron
+4606|House Of Atreus|10085|The Spear And The Ichor That Follows|2026-02-01|Todos los links fallaron
+6173|Hellish Outcast|14257|Stay Of Execution|2026-02-01|Todos los links fallaron
+2025|Hatchling|5177|The Sleep Scriptures|2026-02-01|Todos los links fallaron
+17586|Gut Absorber|72082|Gore Rock|2026-02-01|Todos los links fallaron
+5563|GoreМыка|12520|Mrakobes'Ы|2026-02-01|Todos los links fallaron
+4833|Genital Grinder|10672|Abduction|2026-02-01|Todos los links fallaron
+4971|Fog|10998|Mors Atra|2026-02-01|Todos los links fallaron
+8907|Exterminas|22091|Dichotomy|2026-02-01|Todos los links fallaron
+2787|Engrave|5934|Embalmed Soul|2026-02-01|Todos los links fallaron
+4458|Dr. Shrinker|9785|Contorted Dioramic Palette|2026-02-01|Todos los links fallaron
+4603|Decomposing Entity|10081|So It Begins|2026-02-01|Todos los links fallaron
+1658|Continuum|3616|The Hypothesis|2026-02-01|Todos los links fallaron
+10781|Caustic|10064|Hate Generation|2026-02-01|Todos los links fallaron
+5479|Azaghal|12326|Madon Sanat|2026-02-01|Todos los links fallaron
+5708|Abaddon|12888|Abaddon|2026-02-01|Todos los links fallaron
+9668|Vimur|23977|Traversing The Ethereal Current|2026-02-01|Todos los links fallaron
+3768|Vahrzaw|22158|Twin Suns & Wolves' Tongues|2026-02-01|Todos los links fallaron
+6245|Unearthly|22457|The Unearthly|2026-02-01|Todos los links fallaron
+18577|Sinful Carrion|74986|Just-World Hypothesis|2026-02-01|Todos los links fallaron
+4176|Satanic Warmaster|9454|Fimbulwinter|2026-02-01|Todos los links fallaron
+19441|Radement|77829|The Swarm|2026-02-01|Todos los links fallaron
+19487|Tsuris|78026|Longing For Eternal Love|2026-02-01|Todos los links fallaron
+19134|Triangulated|76863|Triangulated Torture|2026-02-01|Todos los links fallaron
+21473|Murdered|84763|Orden Mundial|2026-02-01|Todos los links fallaron
+10033|Liquid Viscera|69497|Cannibalistic Butchery|2026-02-01|Todos los links fallaron
+5082|Khraken|80616|Podredumbre|2026-02-01|Todos los links fallaron
+6323|Nuclearhammer|85730|Serpentine Hermetic Lucifer|2026-02-01|Todos los links fallaron
+4879|No Raza|10758|When Chaos Reigns|2026-02-01|Todos los links fallaron
+21241|Mortals|83967|Cursed To See The Future|2026-02-01|Todos los links fallaron
+10657|Morgue|13339|Eroded Thoughts|2026-02-01|Todos los links fallaron
+16753|Mass Idolatry|70061|Impure|2026-02-01|Todos los links fallaron
+11033|Lavatory|27689|Morbid Terror|2026-02-01|Todos los links fallaron
+636|InnerHate|1437|Anthropoexodus|2026-02-01|Todos los links fallaron
+936|Ingurgitating Oblivion|1983|Continuum Of Absence|2026-02-01|Todos los links fallaron
+3616|Horned Almighty|7796|World Of Tombs|2026-02-01|Todos los links fallaron
+6598|Gjeldrune|15433|Схоронили Мы Свой Край|2026-02-01|Todos los links fallaron
+15190|Funereus|14641|......Return Of The Old Goat|2026-02-01|Todos los links fallaron
+6113|Dissonance|14118|The Intricacies Of Nothingness|2026-02-01|Todos los links fallaron
+754|Disemboweled|1666|Cadavers|2026-02-01|Todos los links fallaron
+13653|Dimorph|62376|Godmode|2026-02-01|Todos los links fallaron
+17801|Diamond|72682|Fuck Your Opinion|2026-02-01|Todos los links fallaron
+4466|Den Saakaldte|13367|Kapittel II: Faen I Helvete|2026-02-01|Todos los links fallaron
+8861|Demonihil|21971|DemonihiL|2026-02-01|Todos los links fallaron
+2367|Dark Fortress|10413|Venereal Dawn|2026-02-01|Todos los links fallaron
+4868|Damage My God|10740|Psychotic Truth|2026-02-01|Todos los links fallaron
+1039|Daedeloth|2187|Thy Will Be Done|2026-02-01|Todos los links fallaron
+4317|Columns|9443|Please Explode|2026-02-01|Todos los links fallaron
+1598|Cognitive|3504|Cognitive|2026-02-01|Todos los links fallaron
+1630|Clitgore|3567|The Final Cuntdown|2026-02-01|Todos los links fallaron
+3059|Burn The Empire|7101|Dethrone|2026-02-01|Todos los links fallaron
+970|Black Crown Initiate|2027|The Wreckage Of Stars|2026-02-01|Todos los links fallaron
+4218|Ulcer|9215|Grant US Death|2026-02-01|Todos los links fallaron
+2748|The Resistance|29226|Scars|2026-02-01|Todos los links fallaron
+6036|The Amenta|13783|Flesh Is Heir|2026-02-01|Todos los links fallaron
+729|Slamophiliac|21671|Aborted Into Absolute Inexistence|2026-02-01|Todos los links fallaron
+7120|Siege Of Hate|10691|Animalism|2026-02-01|Todos los links fallaron
+463|Rivers Of Nihil|1003|The Conscious Seed Of Light|2026-02-01|Todos los links fallaron
+5311|Pentsign|11903|Зов Древних|2026-02-01|Todos los links fallaron
+10627|Onirophagus|27468|Prehuman|2026-02-01|Todos los links fallaron
+4384|Mortal Form|9602|The Reckoning|2026-02-01|Todos los links fallaron
+17799|Morbus Mortifer|72680|Open The Gates|2026-02-01|Todos los links fallaron
+3327|Mephistopheles|7207|Sounds Of The End|2026-02-01|Todos los links fallaron
+9289|Lightning Swords Of Death|23025|Baphometic Chaosium|2026-02-01|Todos los links fallaron
+4635|Killchain|10120|Where Is Your Saviour|2026-02-01|Todos los links fallaron
+16446|Kill Division|69647|Destructive Force|2026-02-01|Todos los links fallaron
+14212|Inferna|67154|Sathanas Regimen Spiritualis|2026-02-01|Todos los links fallaron
+12843|Exence|56447|Tabula Rasa|2026-02-01|Todos los links fallaron
+5001|Et Verbi Sathanus|11066|Satanae Pater Sanguinariv|2026-02-01|Todos los links fallaron
+2630|Diabolical|5528|Neogenesis|2026-02-01|Todos los links fallaron
+16055|Derogatory|7522|Above All Else|2026-02-01|Todos los links fallaron
+5186|Crest Of Darkness|42735|In The Presence Of Death|2026-02-01|Todos los links fallaron
+6485|Craven Idol|15268|Towards Eschaton|2026-02-01|Todos los links fallaron
+8020|Bruthal Ceremony|19718|Atrocius Hope Culminant In The Abyss|2026-02-01|Todos los links fallaron
+14535|Boal|2321|Infinite Deprivation|2026-02-01|Todos los links fallaron
+5333|Atra Vetosus|11958|Voices From The Eternal Night|2026-02-01|Todos los links fallaron
+5982|Abdicated|13610|Virtus Diaboli|2026-02-01|Todos los links fallaron
+16451|Symuran|69668|Syklus Av Helheim|2026-02-01|Todos los links fallaron
+13308|Sexcrement|58715|Sloppy Seconds|2026-02-01|Todos los links fallaron
+5805|Paroxsihzem|13178|Paroxsihzem|2026-02-01|Todos los links fallaron
+4788|Necrovation|10563|Necrovation|2026-02-01|Todos los links fallaron
+523|Lay Down Rotten|22033|Mask Of Malice|2026-02-01|Todos los links fallaron
+1606|Infected Flesh|3515|Concatenation Of Severe Infections|2026-02-01|Todos los links fallaron
+14126|Inanna|66847|Transfigured In A Thousand Delusions|2026-02-01|Todos los links fallaron
+7364|From Beyond|17802|Eternal Sleep|2026-02-01|Todos los links fallaron
+2582|Execration|5431|The Acceptance Of Zero Existence|2026-02-01|Todos los links fallaron
+12346|Dreadlord|48630|Execution Of The Weak|2026-02-01|Todos los links fallaron
+7758|Decomposition Of Humanity|18886|Sadistic Fetal Extraction|2026-02-01|Todos los links fallaron
+2404|Corrosive Carcass|5012|Composition Of Flesh|2026-02-01|Todos los links fallaron
+15759|Cobolt 60|68324|The Grim Defiance|2026-02-01|Todos los links fallaron
+16140|Charon|69053|Sulphur Seraph (The Archon Principle)|2026-02-01|Todos los links fallaron
+9248|Catheter|78003|Southwest Doom Violence|2026-02-01|Todos los links fallaron
+15449|Avatar|14406|Aberraciones|2026-02-01|Todos los links fallaron
+3345|A Million Dead Birds Laughing|26055|Xen|2026-02-01|Todos los links fallaron
+6166|Vreid|14239|V|2026-02-01|Todos los links fallaron
+2562|Undead Creep|27450|The Ever-Burning Torch|2026-02-01|Todos los links fallaron
+7427|The Gurchick Tree|17951|Sadistic Reflections Of Blood|2026-02-01|Todos los links fallaron
+13226|Skirmish|57243|Through The Abacinated Eyes|2026-02-01|Todos los links fallaron
+340|Sectu|9585|Inundate|2026-02-01|Todos los links fallaron
+1469|Scar Symmetry|3116|The Unseen Empire|2026-02-01|Todos los links fallaron
+6114|Ritualization|67343|The Abduction Mass|2026-02-01|Todos los links fallaron
+5049|Noisear|29113|Subvert The Dominant Paradigm|2026-02-01|Todos los links fallaron
+10252|Mass Insanity|25550|The Hypochrist|2026-02-01|Todos los links fallaron
+2323|Maruta|9261|Forward Into Regression|2026-02-01|Todos los links fallaron
+4538|Infernal Legion|25572|The Spear Of Longinus|2026-02-01|Todos los links fallaron
+6699|Infamous|15781|Of Solitude And Silence|2026-02-01|Todos los links fallaron
+12882|From Nowhere|56537|Agony|2026-02-01|Todos los links fallaron
+4045|Forgotten Horror|21358|The Serpent Creation|2026-02-01|Todos los links fallaron
+16068|Fleshred|68874|Bloodtorn|2026-02-01|Todos los links fallaron
+16350|Exsanguination Throne|69423|At The Inside Of The Darkness|2026-02-01|Todos los links fallaron
+5238|Epod|11721|Guttural Garbage|2026-02-01|Todos los links fallaron
+14429|Dominus Xul|72424|To The Glory Of The Ancient Ones|2026-02-01|Todos los links fallaron
+19369|Dislike|77576|Delete|2026-02-01|Todos los links fallaron
+14395|Demise Of God|67679|Human Failure|2026-02-01|Todos los links fallaron
+3264|Dead Carnations|67345|Start The Killing|2026-02-01|Todos los links fallaron
+3098|Criminal|45552|Akelarre|2026-02-01|Todos los links fallaron
+5774|Cipher System|13073|Communicate The Storms|2026-02-01|Todos los links fallaron
+16831|Berserk Revolt|70220|Perception Kills|2026-02-01|Todos los links fallaron
+1271|Baring Teeth|55351|Atrophy|2026-02-01|Todos los links fallaron
+5831|All Shall Perish|13237|This Is Where It Ends|2026-02-01|Todos los links fallaron
+8230|Weltbrand|20325|Control Division|2026-02-01|Todos los links fallaron
+9716|Weapon|24179|From The Devil's Tomb|2026-02-01|Todos los links fallaron
+10948|Warlord U.K.|27460|Evil Within|2026-02-01|Todos los links fallaron
+2681|Uncleansed|5653|Domination Of The Faithful|2026-02-01|Todos los links fallaron
+4711|Spun In Darkness|10312|Feast Of The Undead|2026-02-01|Todos los links fallaron
+8339|Poisonous|20588|Perdition's Den|2026-02-01|Todos los links fallaron
+5034|Plague Angel|11139|Stagnation Of Christ|2026-02-01|Todos los links fallaron
+6061|Nidingr|65581|Wolf-Father|2026-02-01|Todos los links fallaron
+4755|Hellcannon|10458|Infected With Violence|2026-02-01|Todos los links fallaron
+9603|Disiplin|23836|Hostis Humani Generis|2026-02-01|Todos los links fallaron
+8140|Diluvian|56268|Epidemic|2026-02-01|Todos los links fallaron
+8054|Device|19806|Antagonistic|2026-02-01|Todos los links fallaron
+17730|Dehydrated Goat|72473|Genocide Against The Brain Cells|2026-02-01|Todos los links fallaron
+10178|Deathchain|59239|Death Gods|2026-02-01|Todos los links fallaron
+13961|Coprolith|70644|Cold Grief Relief|2026-02-01|Todos los links fallaron
+17072|Caliber 666|70597|Blood Fueled Chaos|2026-02-01|Todos los links fallaron
+6212|Buffalo Grillz|14393|Grind Canyon|2026-02-01|Todos los links fallaron
+11589|Besieged|29322|Victims Beyond All Help|2026-02-01|Todos los links fallaron
+14424|Baked Bomb|67693|Sublime Brutality|2026-02-01|Todos los links fallaron
+6509|Anguished|15159|Cold|2026-02-01|Todos los links fallaron
+8151|Anaalia|20114|Mind Monstrosity|2026-02-01|Todos los links fallaron
+5808|Winterwolf|13183|Cycle Of The Werewolf|2026-02-01|Todos los links fallaron
+391|Trigger The Bloodshed|22873|The Great Depression|2026-02-01|Todos los links fallaron
+12223|Tenet|41944|Sovereign|2026-02-01|Todos los links fallaron
+1781|Sikfuk|3809|Shitfisted Superman... The Man Of Stool|2026-02-01|Todos los links fallaron
+8529|Rehumanize|21081|Resident Apostasy|2026-02-01|Todos los links fallaron
+2590|My Own Grave|5446|Necrology|2026-02-01|Todos los links fallaron
+16308|Exstinctio Vitae|69341|Vile Ritual|2026-02-01|Todos los links fallaron
+572|Miseration|29049|The Mirroring Shadow|2026-02-01|Todos los links fallaron
+2156|Malebolgia|4511|Requiem For The Inexorable|2026-02-01|Todos los links fallaron
+19446|Maggots|77849|Church Of Blasphemy|2026-02-01|Todos los links fallaron
+7390|Infernal Wrath|17872|Inside Of Me|2026-02-01|Todos los links fallaron
+14191|Horde Of Hel|67073|Blodskam|2026-02-01|Todos los links fallaron
+9098|Graves Of Valor|22580|Salarian Gate|2026-02-01|Todos los links fallaron
+1064|Fondlecorpse|10727|Creaturegore|2026-02-01|Todos los links fallaron
+18121|Carnal Deity|76544|2012|2026-02-01|Todos los links fallaron
+7064|Bliss Of Flesh|22141|Emaciated Deity|2026-02-01|Todos los links fallaron
+16525|Axis Powers|76996|Marching Towards Destruction|2026-02-01|Todos los links fallaron
+5181|Archgoat|11544|The Light-Devouring Darkness|2026-02-01|Todos los links fallaron
+12|Antigama|5849|Warning|2026-02-01|Todos los links fallaron
+1555|Visceral Damage|17613|Icon Of Massive Murder|2026-02-01|Todos los links fallaron
+11517|The Rotted|29051|Get Dead Or Die Trying|2026-02-01|Todos los links fallaron
+14008|Panzerfaust|69608|The Dark Age Of Militant Paganism|2026-02-01|Todos los links fallaron
+8679|Panchrysia|21474|Deathcult Salvation|2026-02-01|Todos los links fallaron
+6085|Kill The Client|14044|Cleptocracy|2026-02-01|Todos los links fallaron
+7803|Gruesome Fate|19052|No Prayers|2026-02-01|Todos los links fallaron
+3413|Grave Desecrator|60815|Sign Of Doom|2026-02-01|Todos los links fallaron
+203|Flesh Consumed|3559|…Mutilate, Eviscerate, Decapitate…|2026-02-01|Todos los links fallaron
+16035|Deep Vein|68826|Symbols For The Dead|2026-02-01|Todos los links fallaron
+1571|Cumbeast|3462|Gourmet Of Ill Shit|2026-02-01|Todos los links fallaron
+9545|Crypticus|68444|They Called Me Mad!|2026-02-01|Todos los links fallaron
+12925|Consumned|56639|Manipulation|2026-02-01|Todos los links fallaron
+15173|Belching Beet|77607|Out Of Sight|2026-02-01|Todos los links fallaron
+9621|Baphomets Horns|23885|Perpetrators Of Genocide|2026-02-01|Todos los links fallaron
+9607|Aeba|23845|Kodex V|2026-02-01|Todos los links fallaron
+1812|Vale Of Miscreation|3854|Emergence Within The Corridor Of Unholy Lacerations|2026-02-01|Todos los links fallaron
+367|Synperium|18388|Transfiguration|2026-02-01|Todos los links fallaron
+5861|Sekhmet|13325|Last Stand|2026-02-01|Todos los links fallaron
+8648|Sanguinary|76856|Firestorm|2026-02-01|Todos los links fallaron
+12210|Salem|41307|Necessary Evil|2026-02-01|Todos los links fallaron
+8762|Hacavitz|63299|Katun|2026-02-01|Todos los links fallaron
+1565|Goreality|3454|Perverse Depraved Indifference|2026-02-01|Todos los links fallaron
+2501|Evocation|5234|Tales From The Tomb|2026-02-01|Todos los links fallaron
+10450|Cold Grave|26123|Infernal|2026-02-01|Todos los links fallaron
+16479|Cadaver Incubador|3883|Colección De Humanos|2026-02-01|Todos los links fallaron
+5634|By Brute Force|19144|...With Intent To Destroy...|2026-02-01|Todos los links fallaron
+7547|Attack Of Rage|70219|Grindpeace|2026-02-01|Todos los links fallaron
+5898|Ascoculto|13424|El Comegente|2026-02-01|Todos los links fallaron
+8566|Army Of Flying Robots|21176|Life Is Cheap|2026-02-01|Todos los links fallaron
+15601|Tumour|23038|Stories Of The Undead - Warriors Of The Wasteland|2026-02-01|Todos los links fallaron
+12771|Sulaco|56240|Tearing Through The Roots|2026-02-01|Todos los links fallaron
+11514|Poostew|29037|Plutocracy|2026-02-01|Todos los links fallaron
+20526|Obsidian Aspect|81487|Obsidian Aspect|2026-02-01|Todos los links fallaron
+9405|Mayat|23314|Timoer Democracy|2026-02-01|Todos los links fallaron
+19163|Lightning|78950|Filthy Human Beings|2026-02-01|Todos los links fallaron
+5493|Ingrowing|11726|Cloned & Enforced|2026-02-01|Todos los links fallaron
+16372|Infector|69481|Insane Deliriums|2026-02-01|Todos los links fallaron
+4256|Holder|20744|Eternal Flame|2026-02-01|Todos los links fallaron
+9604|Hekel|23837|De Dodenvaart|2026-02-01|Todos los links fallaron
+10278|Cretin|25608|Freakery|2026-02-01|Todos los links fallaron
+2201|Coldworker|4596|The Contaminated Void|2026-02-01|Todos los links fallaron
+12826|Beheaded Zombie|72688|Линия Жизни (Life Line)|2026-02-01|Todos los links fallaron
+8293|ARV|20486|I.D|2026-02-01|Todos los links fallaron
+10568|21 Lucifers|26450|In The Name Of...|2026-02-01|Todos los links fallaron
+7913|Whore|19406|Doing It For The Kids|2026-02-01|Todos los links fallaron
+15824|Nuclear Senfhauser|68433|Panzerdivision Pitti|2026-02-01|Todos los links fallaron
+16246|Morrah|69291|Experiment In Blood|2026-02-01|Todos los links fallaron
+4581|Maledictive Pigs|10043|Soul Surgery|2026-02-01|Todos los links fallaron
+435|Hypocrisy|6419|Virus|2026-02-01|Todos los links fallaron
+1701|Gathering Darkness|3689|Beholders Of The Pain Planet|2026-02-01|Todos los links fallaron
+1977|Embedded|66522|A Severity Divine|2026-02-01|Todos los links fallaron
+10810|Dark Storm|27063|Infernal Tyrant|2026-02-01|Todos los links fallaron
+19741|Urshurark|78788|Pandemonium Theory|2026-02-01|Todos los links fallaron
+4998|Thy Antichrist|11062|Wicked Testimonies|2026-02-01|Todos los links fallaron
+8530|Severed Head|21082|Fuck Your Bullshit|2026-02-01|Todos los links fallaron
+2666|Serial Butcher|10842|Genocide Landscape|2026-02-01|Todos los links fallaron
+6088|Sanctifier|22187|Awaked By Impurity Rites|2026-02-01|Todos los links fallaron
+4975|Ossuary|11008|Silence Means Gold|2026-02-01|Todos los links fallaron
+15828|Obscene Eulogy|68445|Defining Hate: The Truth Undead|2026-02-01|Todos los links fallaron
+3473|Magwi|72867|Magwi|2026-02-01|Todos los links fallaron
+12242|Legion Of Thor|42972|The 4th Crusade|2026-02-01|Todos los links fallaron
+8995|Killwhitneydead|22297|Never Good Enough For You|2026-02-01|Todos los links fallaron
+3406|Epicedium|70178|Immense Affliction|2026-02-01|Todos los links fallaron
+232|Dismember|10189|Live Blasphemies|2026-02-01|Todos los links fallaron
+10953|Disgrace|27474|Grey Misery|2026-02-01|Todos los links fallaron
+1607|Death Du Jour|3518|Fragments Of Perdition|2026-02-01|Todos los links fallaron
+8346|Council Of The Fallen|20610|Deciphering The Soul|2026-02-01|Todos los links fallaron
+13791|Besieged|62875|Besieged|2026-02-01|Todos los links fallaron
+1892|Anal Stench|13700|Red Revolution|2026-02-01|Todos los links fallaron
+10676|Act Of Gods|26750|Stench Of Centuries|2026-02-01|Todos los links fallaron
+7018|ARMAGGEDON|16826|Kill Yourself Or Die|2026-02-01|Todos los links fallaron
+8233|Warspite|20331|Gallery Of The Macabre|2026-02-01|Todos los links fallaron
+5151|Todesblei|11431|Splittergranatendauerbombardement|2026-02-01|Todos los links fallaron
+5560|Smirnoff|12516|The Deadly Return|2026-02-01|Todos los links fallaron
+18597|Seeds Of Sorrow|75077|Immortal Junkies|2026-02-01|Todos los links fallaron
+1523|Saprogenic|3539|The Wet Sound Of Flesh On Concrete|2026-02-01|Todos los links fallaron
+2374|Putrefied|5029|The Putrid Remains|2026-02-01|Todos los links fallaron
+4983|Mortuary|62320|Agony In Red|2026-02-01|Todos los links fallaron
+15146|Limb From Limb|19972|Nothing Will Survive|2026-02-01|Todos los links fallaron
+22058|Ion Dissonance|90987|Breathing Is Irrelevant|2026-02-01|Todos los links fallaron
+5188|Inmost Dense|11571|Unfold|2026-02-01|Todos los links fallaron
+11516|Indwelling|29040|And My Eye Shall Weep|2026-02-01|Todos los links fallaron
+3682|Hin Onde|7934|Shades Of Solstice|2026-02-01|Todos los links fallaron
+1577|Difer Nom Basta|3473|Bloangen|2026-02-01|Todos los links fallaron
+14242|Cacofonia|75245|Oh No!, Please Not Again!|2026-02-01|Todos los links fallaron
+12745|Barracuda|56170|Humanimal|2026-02-01|Todos los links fallaron
+7912|Yeast Infection|19404|Just Ain't Right|2026-02-01|Todos los links fallaron
+8211|Wind Of The Black Mountains|20277|Black Sun Shall Rise|2026-02-01|Todos los links fallaron
+19127|Welkin|76844|Angel Inside|2026-02-01|Todos los links fallaron
+13361|Unfragment|79574|In Meanderings Of Aïn-Soph|2026-02-01|Todos los links fallaron
+9910|The Stone|24627|Словенска Крв|2026-02-01|Todos los links fallaron
+2757|Tears Of Decay|18293|Saprophyt|2026-02-01|Todos los links fallaron
+2936|Soulburner|69520|Hellfire|2026-02-01|Todos los links fallaron
+15493|Sheolgeenna|12847|The Dark Chambers...(Shukra Kteis, Maher-Salalhas-Baz)|2026-02-01|Todos los links fallaron
+3541|Seirim|25602|Kill. War. Chaos|2026-02-01|Todos los links fallaron
+3690|Ravager|7951|Storm Of Sin|2026-02-01|Todos los links fallaron
+10795|Mind Eclipse|27025|Chaos Chronicles|2026-02-01|Todos los links fallaron
+6735|Kalibas|54630|Product Of Hard Living|2026-02-01|Todos los links fallaron
+7295|Fornicator|17612|Fornicator|2026-02-01|Todos los links fallaron
+5605|Foeticide|13692|War, Domain & Torment|2026-02-01|Todos los links fallaron
+13913|December Wolves|63371|Blasterpiece Theatre|2026-02-01|Todos los links fallaron
+4717|Conqueror|10328|War Cult Supremacy|2026-02-01|Todos los links fallaron
+2226|Commit Suicide|5396|Human Larvae [Earthly Cleansing]|2026-02-01|Todos los links fallaron
+13268|Withered Earth|57828|Into The Deepest Wounds|2026-02-01|Todos los links fallaron
+4643|Spawn|10147|Systems Full Of Victims|2026-02-01|Todos los links fallaron
+17661|Shadowbreed|72263|Only Shadows Remain|2026-02-01|Todos los links fallaron
+12246|Lowbrow|43164|Sex. Violence. Death.|2026-02-01|Todos los links fallaron
+3447|Into The Gore|9265|Pain Must Be Amplified|2026-02-01|Todos los links fallaron
+5453|Gurkkhas|13950|A Life Of Suffering|2026-02-01|Todos los links fallaron
+1247|Grog|17609|Odes To The Carnivorous|2026-02-01|Todos los links fallaron
+2234|Disinfect|22648|Beinspender|2026-02-01|Todos los links fallaron
+1554|Orth|3438|Feed The Flames|2026-02-01|Todos los links fallaron
+304|Origin|4421|Origin|2026-02-01|Todos los links fallaron
+1574|Gorgoroth|11188|Incipit Satan|2026-02-01|Todos los links fallaron
+20565|Cybergrind|81598|Transcend|2026-02-01|Todos los links fallaron
+16958|Turmoil|67062|The Process Of.|2026-02-01|Todos los links fallaron
+2847|The Kovenant|6122|Animatronic|2026-02-01|Todos los links fallaron
+8776|Sardotical Scoundrel|21733|Extinction By The Birth Control|2026-02-01|Todos los links fallaron
+2828|Sacrifist|6094|Liquid Seasons|2026-02-01|Todos los links fallaron
+13533|Posthumous|61941|My Eyes, They Bleed|2026-02-01|Todos los links fallaron
+9824|JEEL|62263|As Morning Turns To Day|2026-02-01|Todos los links fallaron
+7996|Akerbeltz|19642|Therion Rising|2026-02-01|Todos los links fallaron
+12196|Abominator|40144|Damnations Prophecy|2026-02-01|Todos los links fallaron
+7399|Mental Aberration|17893|Victim Of Its Own Sort|2026-02-01|Todos los links fallaron
+16650|Death Oath|69855|Pernicious Conjure|2026-02-01|Todos los links fallaron
+2928|Sodom|11618|Ten Black Years - The Best Of Sodom|2026-02-01|Todos los links fallaron
+13882|Manticore|63224|Integrating The Extreme|2026-02-01|Todos los links fallaron
+14522|Exit-13|14092|Smoking Songs|2026-02-01|Todos los links fallaron
+2515|Desultory|12972|Swallow The Snake|2026-02-01|Todos los links fallaron
+2992|Desaster|11674|A Touch Of Medieval Darkness|2026-02-01|Todos los links fallaron
+12204|Decameron|40784|My Shadow...|2026-02-01|Todos los links fallaron
+10946|Avulsion|27453|Dimensions Of Darkness|2026-02-01|Todos los links fallaron
+3348|Strapping Young Lad|14225|Heavy As A Really Heavy Thing|2026-02-01|Todos los links fallaron
+10959|Mythos|27503|Pain Amplifier|2026-02-01|Todos los links fallaron
+10250|Gomorrah|25546|Reflections Of Inanimate Matter|2026-02-01|Todos los links fallaron
+7992|Comecon|77847|Fable Frolic|2026-02-01|Todos los links fallaron
+5696|Caducity|12852|The Weiliaon Wielder Quest|2026-02-01|Todos los links fallaron
+2224|Undermost|4626|Unaware Difference|2026-02-01|Todos los links fallaron
+14273|Fear Of Darkness|67357|Age Of Brutality|2026-02-01|Todos los links fallaron
+3785|Epidemic|12236|Decameron|2026-02-01|Todos los links fallaron
+12462|Dark|57227|Sex 'N' Death|2026-02-01|Todos los links fallaron
+2040|Pungent Stench|25892|Been Caught Buttering|2026-02-01|Todos los links fallaron
+20242|Veriluola|80796|Demo|2026-02-01|Todos los links fallaron
+19559|Vehexion|78271|The Chaos Supremacy|2026-02-01|Todos los links fallaron
+3401|The Abyss Order|61799|Infected Black Window|2026-02-01|Todos los links fallaron
+20315|Tenebre|80721|Breath Of Living Dead|2026-02-01|Todos los links fallaron
+16929|Sylvester Staline|67601|Discography|2026-02-01|Todos los links fallaron
+8204|Axegrinder|20257|The Rise Of The Serpent Men|2026-02-01|Todos los links fallaron
+9666|Wasted Youth|23975|Black Daze|2026-02-01|Todos los links fallaron
+472|Messiah|38097|Hymn To Abramelin|2026-02-01|Todos los links fallaron
