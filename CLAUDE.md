@@ -6,34 +6,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Web scraping automation for DeathGrind.club music database. Extracts band/album data via API, filters by record labels, validates against YouTube for underground material discovery, extracts download links, and downloads/organizes files automatically.
 
+The entire codebase (variable names, logs, comments, UI) is in Spanish.
+
 ## Tech Stack
 
-- Python 3.13
-- Playwright + playwright-stealth (browser automation with anti-detection)
-- Selenium (YouTube validation)
-- Requests (HTTP/API calls)
-- python-dotenv (credential management)
+- Python 3.13+
+- Playwright + playwright-stealth (async browser automation with anti-detection for YouTube)
+- Requests (HTTP/API calls, threaded with connection pooling)
+- Custom `.env` parser in `modules/utils.py` (not the python-dotenv library)
+- psutil (optional, for system resource detection)
 
 ## Installation
 
 ```bash
-# Create and activate virtual environment
 python -m venv env
 source env/bin/activate
-
-# Install Python dependencies
-pip install playwright requests python-dotenv selenium playwright-stealth
-
-# Install Playwright browsers
+pip install -r requirements.txt
 playwright install chromium
 
-# Install system dependencies (for download/extraction)
-# Arch Linux
-sudo pacman -S unrar p7zip
-yay -S megatools
-
-# Debian/Ubuntu
-sudo apt install unrar p7zip-full megatools
+# System dependencies (download/extraction)
+# Arch: sudo pacman -S unrar p7zip && yay -S megatools
 ```
 
 ## Primary Command
@@ -42,89 +34,88 @@ sudo apt install unrar p7zip-full megatools
 python main.py
 ```
 
-## Pipeline (5 pasos)
+Interactive prompts ask for: disc types, headless mode, resume vs clean start. No CLI flags.
+
+## Architecture
+
+### Pipeline (`main.py`)
 
 ```
-1. Extraer bandas + repertorio (API) - filtra por sellos
-2. Filtrar por YouTube (solo underground)
-3. Extraer links de descarga (API)
-4. Filtrar por ya descargados (omite duplicados)
-5. Descargar, extraer y organizar archivos
+ejecutar_pipeline() — 3 steps:
+  Step 1: extraer_bandas.run()        → API scrape, filter by label/downloaded/failed → data/repertorio.json
+  Step 2: filtrar_youtube.run()       → Playwright async, parallel YouTube search     → data/repertorio_filtrado.json
+  Step 3: extraer_links.run()         → API scrape, parallel link extraction          → data/repertorio_con_links.json
+
+ejecutar_descarga() — separate call after pipeline:
+  Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files
 ```
 
-## Modules
+Each step checks if its output file exists (>2 bytes) to support resume.
 
-| Module | Purpose |
-|--------|---------|
-| `modules/extraer_bandas.py` | Extract bands + repertoire from API, filter by blacklisted labels |
-| `modules/filtrar_youtube.py` | Filter out releases available on YouTube |
-| `modules/extraer_links.py` | Extract download links via API |
-| `modules/descargar_y_organizar.py` | Download, extract, rename and organize files |
+### Module Architecture
+
+| Module                             | Concurrency                            | Purpose                                                                                          |
+| ---------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `modules/extraer_bandas.py`        | ThreadPoolExecutor (3 workers)         | Scrapes posts by genre, filters by label blacklist, already-downloaded, and failed posts         |
+| `modules/filtrar_youtube.py`       | asyncio + Playwright (N browser pages) | Searches YouTube for "full album" streams; if found, marks release as mainstream and excludes it |
+| `modules/extraer_links.py`         | ThreadPoolExecutor (N workers)         | Fetches download links per post via API with thread-local sessions                               |
+| `modules/descargar_y_organizar.py` | Sequential                             | Downloads from multiple services, extracts archives, renames/organizes into destination          |
+| `modules/utils.py`                 | —                                      | Shared constants, auth, rate limiting, resource detection                                        |
+| `modules/logger.py`                | —                                      | Centralized logging with emoji formatter                                                         |
+
+### Key Patterns
+
+- **Rate limiting**: All API modules retry indefinitely on HTTP 429 with exponential backoff (base 30s, max 300s). `delay_con_jitter()` adds randomness to all delays.
+- **Authentication**: `crear_sesion_autenticada()` in `utils.py` handles login, CSRF token extraction, and session setup. All API modules reuse this.
+- **Thread-local sessions**: `extraer_bandas.py` and `extraer_links.py` use `threading.local()` to give each worker its own `requests.Session` with connection pooling.
+- **YouTube cache**: `data/youtube_cache.json` caches results for 14 days (TTL). Expired entries are purged on load.
+- **Failed posts tracking**: `data/fallidos_bandas.txt` tracks posts with broken links, auto-expires after 30 days.
+- **Mega cooldown**: When Mega rate-limits, cooldown timestamp is written to `data/mega_cooldown.txt` and pending downloads saved to `data/mega_pendientes.json`.
 
 ## DeathGrind.club API
 
 ```
 Base URL: https://deathgrind.club/api
 Endpoints:
-  POST /auth/login           - Authentication (returns CSRF token)
-  GET  /posts/filter         - List posts by genre
-       ?genres={id}&offset={page}
-  GET  /posts/{id}/links     - Get download links for a post
+  POST /auth/login             - Auth (returns CSRF token)
+  GET  /posts/filter?genres={id}&offset={page} - List posts by genre
+  GET  /posts/{id}/links       - Get download links for a post
   GET  /bands/{id}/discography - Get band's discography
 
-Auth headers required:
-  x-csrf-token: {token}
-  x-uuid: {uuid}
-  Cookie: authToken, csrfToken
+Auth headers: x-csrf-token, x-uuid, Cookie (authToken, csrfToken)
 ```
 
 ## Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `.env` | Credentials: `DEATHGRIND_EMAIL`, `DEATHGRIND_PASSWORD` |
-| `lista_sello.txt` | Blacklist of record labels to filter out |
-| `generos_activos.txt` | TSV with genre IDs, article counts, and names |
-| `keywords_album.txt` | YouTube keywords for album detection |
-| `keywords_ep.txt` | YouTube keywords for EP detection |
-| `data/descargados.txt` | List of already downloaded releases (persists) |
+| File                                     | Purpose                                                 |
+| ---------------------------------------- | ------------------------------------------------------- |
+| `.env`                                   | `DEATHGRIND_EMAIL`, `DEATHGRIND_PASSWORD`               |
+| `generos_activos.txt`                    | TSV: genre ID, article count, name (header row skipped) |
+| `lista_sello.txt`                        | Label blacklist (one per line)                          |
+| `keywords_album.txt` / `keywords_ep.txt` | YouTube mainstream detection keywords                   |
+
+## Data Files
+
+| File                             | Persists | Purpose                                                      |
+| -------------------------------- | -------- | ------------------------------------------------------------ |
+| `data/descargados.txt`           | Yes      | Already downloaded releases (format: `post_id\|band\|album`) |
+| `data/fallidos_bandas.txt`       | Yes      | Posts with broken links (auto-expires 30 days)               |
+| `data/youtube_cache.json`        | Yes      | YouTube search cache (TTL 14 days)                           |
+| `data/mega_pendientes.json`      | Yes      | Mega downloads deferred due to rate limiting                 |
+| `data/mega_cooldown.txt`         | Yes      | Mega cooldown timestamp                                      |
+| `data/repertorio.json`           | No       | Cleaned each run — intermediate pipeline data                |
+| `data/repertorio_filtrado.json`  | No       | Cleaned each run                                             |
+| `data/repertorio_con_links.json` | No       | Cleaned each run                                             |
 
 ## Disc Type IDs
 
 ```python
-TIPOS_DISCO = {
-    1: "Album",
-    2: "EP",
-    3: "Demo",
-    4: "Single",
-    5: "Split",
-    6: "Compilation",
-    7: "Live"
-}
+TIPOS_DISCO = {1: "Album", 2: "EP", 3: "Demo", 4: "Single", 5: "Split", 6: "Compilation", 7: "Live"}
 ```
 
-## Data Flow
+## Supported Download Services
 
-```
-API → posts[]
-    → FILTRO 1 (sello blacklist) → posts_filtrados[]
-    → FILTRO 2 (tipo disco) → repertorio.json
-    → FILTRO 3 (YouTube) → repertorio_filtrado.json
-    → FILTRO 4 (links disponibles) → repertorio_con_links.json
-    → FILTRO 5 (ya descargados) → omite duplicados
-    → DESCARGA → /destino/Banda - Album (Year)/
-```
-
-## Output Files
-
-| File | Purpose |
-|------|---------|
-| `data/bandas.json` | Unique bands extracted |
-| `data/repertorio.json` | All releases (filtered by label) |
-| `data/repertorio_filtrado.json` | Releases after YouTube filter |
-| `data/repertorio_con_links.json` | Releases with download links |
-| `data/links_descarga.txt` | Plain list of download URLs |
-| `data/descargados.txt` | Already downloaded (persists between runs) |
+Mega.nz (via megadl), Mediafire, Google Drive, Yandex Disk, pCloud, Mail.ru Cloud, Workupload, direct HTTP links (.zip, .rar, .7z)
 
 ## Download Destination
 
@@ -132,15 +123,4 @@ API → posts[]
 /run/media/banar/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas/
 ```
 
-## Supported Download Services
-
-- Mega.nz (via megadl)
-- Mediafire
-- Direct HTTP links (.zip, .rar, .7z)
-
-## Rate Limiting
-
-The scraper uses conservative delays to avoid being blocked:
-- 1 second between API pages
-- 3 seconds between genres
-- 30+ seconds on HTTP 429 (rate limit), never gives up
+Overridable via `DESTINO_BASE` env var. Temp dir: `/tmp/deathgrind_downloads`.
