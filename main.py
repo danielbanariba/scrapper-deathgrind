@@ -222,7 +222,12 @@ def pausa_entre_modulos(segundos=5):
 
 
 def ejecutar_pipeline(tipos_permitidos, headless=True, reanudar=False):
-    """Ejecuta los 3 módulos en secuencia. Si reanudar=True, salta pasos completados."""
+    """Ejecuta los 3 módulos en secuencia.
+
+    Si reanudar=True, solo salta la extracción inicial cuando ya existe
+    `data/repertorio.json`. El filtro de YouTube y la extracción de links
+    siempre se recalculan.
+    """
 
     # Crear directorio data si no existe
     os.makedirs('data', exist_ok=True)
@@ -250,36 +255,34 @@ def ejecutar_pipeline(tipos_permitidos, headless=True, reanudar=False):
     paso_actual += 1
 
     # === MÓDULO 2: FILTRO YOUTUBE ===
-    if reanudar and _paso_completado('data/repertorio_filtrado.json'):
-        logger.info(f"\n⏭️  PASO {paso_actual}/{total_pasos}: FILTRO YOUTUBE — ya completado, saltando")
-    else:
-        logger.info("\n" + "=" * 60)
-        logger.info(f"📦 PASO {paso_actual}/{total_pasos}: FILTRO YOUTUBE")
-        logger.info("=" * 60)
+    logger.info("\n" + "=" * 60)
+    logger.info(f"📦 PASO {paso_actual}/{total_pasos}: FILTRO YOUTUBE")
+    logger.info("=" * 60)
 
-        try:
-            from modules.filtrar_youtube import run as filtrar_yt
-            filtrar_yt(headless=headless, verbose=True, input_file='data/repertorio.json')
-        except Exception as e:
-            logger.error(f"Error en filtro YouTube: {e}")
-            return False
+    try:
+        from modules.filtrar_youtube import run as filtrar_yt
+        filtrar_yt(
+            headless=headless,
+            verbose=True,
+            input_file='data/repertorio.json'
+        )
+    except Exception as e:
+        logger.error(f"Error en filtro YouTube: {e}")
+        return False
 
     paso_actual += 1
 
     # === MÓDULO 3: LINKS ===
-    if reanudar and _paso_completado('data/repertorio_con_links.json'):
-        logger.info(f"\n⏭️  PASO {paso_actual}/{total_pasos}: EXTRACCIÓN DE LINKS — ya completado, saltando")
-    else:
-        logger.info("\n" + "=" * 60)
-        logger.info(f"📦 PASO {paso_actual}/{total_pasos}: EXTRACCIÓN DE LINKS")
-        logger.info("=" * 60)
+    logger.info("\n" + "=" * 60)
+    logger.info(f"📦 PASO {paso_actual}/{total_pasos}: EXTRACCIÓN DE LINKS")
+    logger.info("=" * 60)
 
-        try:
-            from modules.extraer_links import run as extraer_links
-            extraer_links(verbose=True, input_file='data/repertorio_filtrado.json')
-        except Exception as e:
-            logger.error(f"Error en extracción de links: {e}")
-            return False
+    try:
+        from modules.extraer_links import run as extraer_links
+        extraer_links(verbose=True, input_file='data/repertorio_filtrado.json')
+    except Exception as e:
+        logger.error(f"Error en extracción de links: {e}")
+        return False
 
     return True
 
@@ -391,8 +394,9 @@ def main():
     print("📋 CONFIGURACIÓN:")
     print(f"   Tipos: {', '.join(tipos_nombres)}")
     print(f"   Modo: {'Invisible' if headless else 'Visible'}")
+    print("   Filtro YouTube: Revalidar todo (sin caché)")
     if reanudar:
-        print(f"   Modo: REANUDAR (saltará pasos completados)")
+        print("   Reanudar: solo saltará la extracción inicial si ya existe repertorio")
     print("-" * 40)
 
     confirmar = input("\n¿Iniciar extracción? [S/n]: ").strip().lower()

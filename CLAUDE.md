@@ -50,7 +50,7 @@ ejecutar_descarga() — separate call after pipeline:
   Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files
 ```
 
-Each step checks if its output file exists (>2 bytes) to support resume.
+Resume mode only skips the initial extraction step when `data/repertorio.json` already exists; YouTube filtering and link extraction are recalculated each run.
 
 ### Module Architecture
 
@@ -68,7 +68,7 @@ Each step checks if its output file exists (>2 bytes) to support resume.
 - **Rate limiting**: All API modules retry indefinitely on HTTP 429 with exponential backoff (base 30s, max 300s). `delay_con_jitter()` adds randomness to all delays.
 - **Authentication**: `crear_sesion_autenticada()` in `utils.py` handles login, CSRF token extraction, and session setup. All API modules reuse this.
 - **Thread-local sessions**: `extraer_bandas.py` and `extraer_links.py` use `threading.local()` to give each worker its own `requests.Session` with connection pooling.
-- **YouTube cache**: `data/youtube_cache.json` caches results for 14 days (TTL). Expired entries are purged on load.
+- **YouTube filter**: Revalidates the full current repertory on every run; no YouTube cache is used.
 - **Failed posts tracking**: `data/fallidos_bandas.txt` tracks posts with broken links, auto-expires after 30 days.
 - **Mega cooldown**: When Mega rate-limits, cooldown timestamp is written to `data/mega_cooldown.txt` and pending downloads saved to `data/mega_pendientes.json`.
 
@@ -100,7 +100,6 @@ Auth headers: x-csrf-token, x-uuid, Cookie (authToken, csrfToken)
 | -------------------------------- | -------- | ------------------------------------------------------------ |
 | `data/descargados.txt`           | Yes      | Already downloaded releases (format: `post_id\|band\|album`) |
 | `data/fallidos_bandas.txt`       | Yes      | Posts with broken links (auto-expires 30 days)               |
-| `data/youtube_cache.json`        | Yes      | YouTube search cache (TTL 14 days)                           |
 | `data/mega_pendientes.json`      | Yes      | Mega downloads deferred due to rate limiting                 |
 | `data/mega_cooldown.txt`         | Yes      | Mega cooldown timestamp                                      |
 | `data/repertorio.json`           | No       | Cleaned each run — intermediate pipeline data                |
@@ -120,7 +119,7 @@ Mega.nz (via megadl), Mediafire, Google Drive, Yandex Disk, pCloud, Mail.ru Clou
 ## Download Destination
 
 ```
-/run/media/banar/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas/
+/mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas/
 ```
 
 Overridable via `DESTINO_BASE` env var. Temp dir: `/tmp/deathgrind_downloads`.
