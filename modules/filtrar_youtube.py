@@ -35,6 +35,9 @@ NEGATIVE_KEYWORDS = [
     "cover", "reaction", "react", "guitar cover", "drum cover",
     "bass cover", "vocal cover", "karaoke", "lesson", "tutorial",
     "review", "track by track", "interview", "teaser", "trailer",
+    "playthrough", "unboxing", "ranking", "top 10",
+    "first time listening", "breakdown", "analysis",
+    "drum cam", "guitar playthrough", "bass playthrough",
 ]
 
 # Stopwords para tokenización simple
@@ -44,16 +47,13 @@ STOPWORDS = {
     "disc", "cd", "lp", "ep", "demo", "single"
 }
 
-# Duración mínima (segundos) para considerar "álbum completo"
-MIN_DURACION_POR_TIPO = {
-    "album": 25 * 60,
-    "ep": 12 * 60,
-    "demo": 10 * 60,
-    "single": 6 * 60,
-    "split": 12 * 60,
-    "compilation": 25 * 60,
-    "live": 20 * 60,
-}
+
+def _build_neg_words():
+    """Pre-normaliza NEGATIVE_KEYWORDS a un set de palabras individuales"""
+    words = set()
+    for neg in NEGATIVE_KEYWORDS:
+        words.update(_normalizar_texto(neg).split())
+    return words
 
 
 def cargar_keywords():
@@ -81,7 +81,9 @@ def cargar_keywords():
         keywords = [
             "full album", "official album stream", "full album stream", "full length",
             "album stream", "full-album", "album full", "official full stream",
-            "álbum completo", "album completo", "disco completo", "full ep", "ep completo"
+            "álbum completo", "album completo", "disco completo",
+            "full stream", "full release", "complete album",
+            "entire album", "album premiere",
         ]
 
     # Normalizar keywords para comparación estable
@@ -120,31 +122,6 @@ def _contar_coincidencias(tokens, texto_normalizado):
     return hits
 
 
-def _parse_duracion(duracion):
-    """Convierte duración tipo 1:23:45 a segundos"""
-    if not duracion:
-        return 0
-    parts = duracion.split(':')
-    try:
-        if len(parts) == 3:
-            h, m, s = [int(p) for p in parts]
-            return h * 3600 + m * 60 + s
-        if len(parts) == 2:
-            m, s = [int(p) for p in parts]
-            return m * 60 + s
-    except Exception:
-        return 0
-    return 0
-
-
-def _duracion_minima(tipo):
-    """Devuelve duración mínima según tipo de release"""
-    if not tipo:
-        return 15 * 60
-    key = str(tipo).strip().lower()
-    return MIN_DURACION_POR_TIPO.get(key, 15 * 60)
-
-
 def cargar_repertorio(input_file=INPUT_FILE):
     """Carga el repertorio desde JSON"""
     if not os.path.exists(input_file):
@@ -154,15 +131,26 @@ def cargar_repertorio(input_file=INPUT_FILE):
         return json.load(f)
 
 
-def generar_busqueda_youtube(band, album, year=None):
-    """Genera URL de búsqueda en YouTube"""
+def generar_urls_busqueda(band, album, year=None, es_split=False):
+    """Genera 2 URLs de búsqueda en YouTube (doble búsqueda)"""
+    # Query 1: banda + album + año
     if year:
-        query = f"{band} {album} {year}"
+        q1 = f"{band} {album} {year}"
     else:
-        query = f"{band} {album}"
+        q1 = f"{band} {album}"
 
-    encoded = urllib.parse.quote(query)
-    return f"https://www.youtube.com/results?search_query={encoded}"
+    # Query 2: variante con "full album"
+    if es_split and " / " in band:
+        # Para splits, la segunda query usa solo la primera banda
+        primera_banda = band.split(" / ")[0].strip()
+        q2 = f"{primera_banda} {album} full album"
+    else:
+        q2 = f"{band} {album} full album"
+
+    return [
+        f"https://www.youtube.com/results?search_query={urllib.parse.quote(q1)}",
+        f"https://www.youtube.com/results?search_query={urllib.parse.quote(q2)}",
+    ]
 
 
 class YouTubeFilterParallel:
@@ -172,6 +160,7 @@ class YouTubeFilterParallel:
         self.contexts = []
         self.pages = []
         self.keywords = []
+        self.neg_words = set()
         self.num_workers = num_workers
         self.semaphore = None
 
@@ -196,79 +185,79 @@ class YouTubeFilterParallel:
             self.contexts.append(context)
             self.pages.append(page)
 
-    async def verificar_disponibilidad(self, page, url, band, album, tipo, max_videos=5):
-        """Verifica si hay videos con 'full album' en YouTube usando coincidencias de banda/álbum"""
-        try:
-            await page.goto(url, wait_until='domcontentloaded', timeout=30000)
-            await asyncio.sleep(1.5)
+    async def verificar_disponibilidad(self, page, urls, band, album, tipo, max_videos=10):
+        """
+        Verifica si hay videos con 'full album' en YouTube.
+        Recibe lista de URLs (doble búsqueda). Si la primera detecta mainstream,
+        retorna inmediatamente sin visitar la segunda (fast path).
+        """
+        tipo_norm = str(tipo or '').lower()
+        band_tokens = _tokenizar(band)
+        album_tokens = _tokenizar(album)
+        band_req = 1 if len(band_tokens) <= 2 else 2
+        album_req = 1 if len(album_tokens) <= 2 else 2
 
+        for url in urls:
             try:
-                await page.wait_for_selector('ytd-video-renderer', timeout=8000)
-            except:
-                return False, None
+                await page.goto(url, wait_until='domcontentloaded', timeout=30000)
 
-            resultados = await page.evaluate('''() => {
-                const items = [];
-                const elements = Array.from(document.querySelectorAll('ytd-video-renderer')).slice(0, 10);
-                for (const el of elements) {
-                    const titleEl = el.querySelector('#video-title');
-                    const title = titleEl ? (titleEl.textContent || titleEl.getAttribute('title') || '').trim() : '';
-                    const durEl = el.querySelector('ytd-thumbnail-overlay-time-status-renderer #text');
-                    const dur = durEl ? (durEl.textContent || '').trim() : '';
-                    const chEl = el.querySelector('ytd-channel-name #text a');
-                    const channel = chEl ? (chEl.textContent || '').trim() : '';
-                    items.push({title, duration: dur, channel});
-                }
-                return items;
-            }''')
+                try:
+                    await page.wait_for_selector('ytd-video-renderer', timeout=20000)
+                except (asyncio.TimeoutError, Exception):
+                    continue
 
-            band_tokens = _tokenizar(band)
-            album_tokens = _tokenizar(album)
-            band_req = 1 if len(band_tokens) <= 2 else 2
-            album_req = 1 if len(album_tokens) <= 2 else 2
-            tipo_norm = str(tipo or '').lower()
-            min_duracion = _duracion_minima(tipo_norm)
+                resultados = await page.evaluate('''() => {
+                    const items = [];
+                    const elements = Array.from(document.querySelectorAll('ytd-video-renderer')).slice(0, 10);
+                    for (const el of elements) {
+                        const titleEl = el.querySelector('#video-title');
+                        const title = titleEl ? (titleEl.textContent || titleEl.getAttribute('title') || '').trim() : '';
+                        const chEl = el.querySelector('ytd-channel-name #text a');
+                        const channel = chEl ? (chEl.textContent || '').trim() : '';
+                        items.push({title, channel});
+                    }
+                    return items;
+                }''')
 
-            for item in resultados[:max_videos]:
-                titulo = (item.get('title') or '')
-                canal = (item.get('channel') or '')
-                duracion = (item.get('duration') or '')
+                for item in resultados:
+                    titulo = (item.get('title') or '')
+                    canal = (item.get('channel') or '')
 
-                titulo_norm = _normalizar_texto(titulo)
-                canal_norm = _normalizar_texto(canal)
+                    titulo_norm = _normalizar_texto(titulo)
+                    canal_norm = _normalizar_texto(canal)
 
-                # Evitar falsos positivos comunes (excepto si el release es Live)
-                if tipo_norm != "live":
-                    if any(neg in titulo_norm for neg in NEGATIVE_KEYWORDS):
-                        continue
+                    # Evitar falsos positivos comunes (excepto si el release es Live)
+                    if tipo_norm != "live":
+                        titulo_words = set(titulo_norm.split())
+                        if self.neg_words & titulo_words:
+                            continue
 
-                band_hits = max(
-                    _contar_coincidencias(band_tokens, titulo_norm),
-                    _contar_coincidencias(band_tokens, canal_norm)
-                )
-                album_hits = _contar_coincidencias(album_tokens, titulo_norm)
+                    band_hits = max(
+                        _contar_coincidencias(band_tokens, titulo_norm),
+                        _contar_coincidencias(band_tokens, canal_norm)
+                    )
+                    album_hits = _contar_coincidencias(album_tokens, titulo_norm)
 
-                # Si no hay tokens de álbum (títulos muy cortos), solo usar banda + keyword
-                if album_tokens:
-                    if band_hits < band_req or album_hits < album_req:
-                        continue
-                else:
-                    if band_hits < band_req:
-                        continue
+                    # Si no hay tokens de álbum (títulos muy cortos), solo usar banda + keyword
+                    if album_tokens:
+                        if band_hits < band_req or album_hits < album_req:
+                            continue
+                    else:
+                        if band_hits < band_req:
+                            continue
 
-                # Señales de "álbum completo"
-                has_keyword = any(kw in titulo_norm for kw in self.keywords)
-                dur_ok = _parse_duracion(duracion) >= min_duracion if duracion else False
+                    # Solo keywords determinan si es mainstream
+                    has_keyword = any(kw in titulo_norm for kw in self.keywords)
 
-                if has_keyword or dur_ok:
-                    return True, titulo
+                    if has_keyword:
+                        return True, titulo
 
-            return False, None
+            except Exception:
+                continue
 
-        except Exception:
-            return False, None
+        return False, None
 
-    async def procesar_release(self, release, page_idx, max_videos=5):
+    async def procesar_release(self, release, page_idx, max_videos=10):
         """Procesa un release usando una página específica"""
         async with self.semaphore:
             page = self.pages[page_idx % self.num_workers]
@@ -277,8 +266,23 @@ class YouTubeFilterParallel:
             year = release.get('year')
             tipo = release.get('type', '')
 
-            url = generar_busqueda_youtube(band, album, year)
-            es_mainstream, titulo = await self.verificar_disponibilidad(page, url, band, album, tipo, max_videos)
+            es_split = " / " in band
+            es_self_titled = _normalizar_texto(band) == _normalizar_texto(album)
+
+            # Generar URLs de búsqueda
+            urls = generar_urls_busqueda(band, album, year, es_split=es_split)
+
+            # Self-titled: agregar "self titled" a la primera query
+            if es_self_titled:
+                if year:
+                    q_st = f"{band} {album} self titled {year}"
+                else:
+                    q_st = f"{band} {album} self titled"
+                urls[0] = f"https://www.youtube.com/results?search_query={urllib.parse.quote(q_st)}"
+
+            es_mainstream, titulo = await self.verificar_disponibilidad(
+                page, urls, band, album, tipo, max_videos
+            )
 
             return release, es_mainstream, titulo
 
@@ -293,7 +297,7 @@ class YouTubeFilterParallel:
 
 
 async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
-                               max_videos=5, num_workers=5, batch_size=20):
+                               max_videos=10, num_workers=5, batch_size=20):
     """
     Filtra releases verificando disponibilidad en YouTube (PARALELO)
 
@@ -309,8 +313,14 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     Returns:
         tuple: (releases_aprobados, releases_rechazados)
     """
+    aprobados = []
+    rechazados = []
+    if verbose:
+        print("🔄 Sin caché: se verificarán todos los releases del repertorio actual")
+
     filtro = YouTubeFilterParallel(num_workers=num_workers)
     filtro.keywords = keywords
+    filtro.neg_words = _build_neg_words()
 
     if verbose:
         print(f"\n🌐 Iniciando navegador con {num_workers} workers paralelos...")
@@ -321,8 +331,6 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
         print("✓ Navegador listo\n")
 
     total = len(repertorio)
-    aprobados = []
-    rechazados = []
     procesados = 0
 
     # Procesar en lotes
@@ -339,8 +347,11 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         # Procesar resultados
-        for result in results:
+        for i, result in enumerate(results):
             if isinstance(result, Exception):
+                release = batch[i]
+                aprobados.append(release)  # Asumir underground en error
+                procesados += 1
                 continue
 
             release, es_mainstream, titulo = result
@@ -349,9 +360,10 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
             band = release.get('band', 'Unknown')
             album = release.get('album', 'Unknown')
             year = release.get('year', '')
+            razon = titulo[:50] if titulo else 'keyword'
 
             if es_mainstream:
-                rechazados.append({**release, 'razon': titulo[:50] if titulo else 'keyword'})
+                rechazados.append({**release, 'razon': razon})
                 if verbose:
                     year_str = f"({year})" if year else ""
                     print(f"[{procesados}/{total}] {band} - {album} {year_str} ❌ Mainstream")
@@ -394,9 +406,17 @@ def guardar_resultados(aprobados, rechazados, output_file=OUTPUT_FILE,
         print(f"📁 Guardado: {output_rechazados} ({len(rechazados)} excluidos)")
 
 
-def run(headless=True, verbose=True, max_videos=5, num_workers=None):
+def run(headless=True, verbose=True, max_videos=10, num_workers=None,
+        input_file=None):
     """
     Ejecuta el filtrado por YouTube (PARALELO)
+
+    Args:
+        headless: Ejecutar sin ventana
+        verbose: Mostrar progreso
+        max_videos: Cuántos videos analizar por búsqueda
+        num_workers: Número de páginas paralelas
+        input_file: Archivo de entrada (default: INPUT_FILE)
     """
     if verbose:
         print("=" * 60)
@@ -408,8 +428,7 @@ def run(headless=True, verbose=True, max_videos=5, num_workers=None):
         try:
             from modules.utils import detectar_workers_optimos
             num_workers = detectar_workers_optimos()
-        except:
-            import os
+        except ImportError:
             num_workers = min((os.cpu_count() or 4) - 1, 6)
 
     # Cargar keywords
@@ -418,7 +437,7 @@ def run(headless=True, verbose=True, max_videos=5, num_workers=None):
         print(f"\n✓ {len(keywords)} keywords")
 
     # Cargar repertorio
-    repertorio = cargar_repertorio()
+    repertorio = cargar_repertorio(input_file or INPUT_FILE)
     if verbose:
         print(f"✓ {len(repertorio)} releases, {num_workers} workers")
 
@@ -454,4 +473,4 @@ def run(headless=True, verbose=True, max_videos=5, num_workers=None):
 
 
 if __name__ == "__main__":
-    run(headless=False, max_videos=3)
+    run(headless=False, max_videos=10)

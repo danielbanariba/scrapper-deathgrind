@@ -14,77 +14,38 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 
+from modules.utils import (
+    API_URL, DELAY_BASE_429, MAX_BACKOFF_429,
+    REPERTORIO_FILTRADO_FILE, REPERTORIO_CON_LINKS_FILE, LINKS_FILE, DETALLE_FILE,
+    cargar_env, crear_sesion_autenticada,
+    delay_con_jitter,
+)
+
 # Configuración
-BASE_URL = "https://deathgrind.club"
-API_URL = f"{BASE_URL}/api"
-INPUT_FILE = "data/repertorio_filtrado.json"
-OUTPUT_JSON = "data/repertorio_con_links.json"
-OUTPUT_TXT = "data/links_descarga.txt"
-OUTPUT_DETALLE = "data/discografia_detalle.txt"
+INPUT_FILE = REPERTORIO_FILTRADO_FILE
+OUTPUT_JSON = REPERTORIO_CON_LINKS_FILE
+OUTPUT_TXT = LINKS_FILE
+OUTPUT_DETALLE = DETALLE_FILE
 
 # Configuración de rate limiting (ajustable)
 DELAY_ENTRE_REQUESTS = 0.5     # Segundos entre cada request
-DELAY_BASE_429 = 30            # Segundos base cuando hay rate limit
 
 # Lock para thread safety
 print_lock = threading.Lock()
 
-
-def cargar_env():
-    """Carga variables de entorno desde .env"""
-    if os.path.exists('.env'):
-        with open('.env', 'r') as f:
-            for line in f:
-                if '=' in line:
-                    key, val = line.strip().split('=', 1)
-                    os.environ[key] = val
+# Thread-local storage para sesiones HTTP
+_thread_local = threading.local()
 
 
-def crear_sesion_autenticada(max_retries=3):
-    """Login con retry para manejar rate limiting"""
-    email = os.environ.get('DEATHGRIND_EMAIL')
-    password = os.environ.get('DEATHGRIND_PASSWORD')
-
-    if not email or not password:
-        raise ValueError("Faltan credenciales en .env")
-
-    for intento in range(max_retries):
-        try:
-            session = requests.Session()
-            session.headers.update({
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36',
-                'Accept': 'application/json',
-            })
-
-            session.get(f"{BASE_URL}/auth/sign-in")
-            cookies = session.cookies.get_dict()
-            csrf_token = cookies.get('csrfToken', '')
-
-            login_data = {"login": email, "password": password}
-            headers = {'x-csrf-token': csrf_token, 'x-uuid': '12345'}
-            response = session.post(f"{API_URL}/auth/login", json=login_data, headers=headers)
-
-            if response.status_code in [200, 202]:
-                cookies = session.cookies.get_dict()
-                csrf_token = cookies.get('csrfToken', '')
-                session.headers.update({'x-csrf-token': csrf_token, 'x-uuid': '12345'})
-                return session
-
-            if response.status_code == 429:
-                wait = (intento + 1) * 10
-                print(f"   ⚠️ Rate limited, esperando {wait}s...")
-                time.sleep(wait)
-                continue
-
-            raise ConnectionError(f"Error de login: {response.status_code}")
-
-        except requests.exceptions.RequestException as e:
-            if intento < max_retries - 1:
-                time.sleep(5)
-                continue
-            raise
-
-    raise ConnectionError("No se pudo conectar después de varios intentos")
+def _get_thread_session(session_data):
+    """Obtiene o crea una sesión HTTP para el thread actual (connection pooling)"""
+    if not hasattr(_thread_local, 'session'):
+        session = requests.Session()
+        session.headers.update(session_data['headers'])
+        for cookie in session_data['cookies']:
+            session.cookies.set(cookie['name'], cookie['value'])
+        _thread_local.session = session
+    return _thread_local.session
 
 
 def cargar_repertorio(input_file=INPUT_FILE):
@@ -118,11 +79,8 @@ def extraer_links_post(session_data, release, max_retries=10):
     """
     post_id = release.get('post_id')
 
-    # Crear sesión para este request
-    session = requests.Session()
-    session.headers.update(session_data['headers'])
-    for cookie in session_data['cookies']:
-        session.cookies.set(cookie['name'], cookie['value'])
+    # Obtener sesión thread-local (reutiliza conexiones HTTP/TLS)
+    session = _get_thread_session(session_data)
 
     retries_429 = 0
     retries_error = 0
@@ -130,7 +88,7 @@ def extraer_links_post(session_data, release, max_retries=10):
     while retries_error < max_retries:
         try:
             # Pequeña pausa para no saturar
-            time.sleep(DELAY_ENTRE_REQUESTS)
+            delay_con_jitter(DELAY_ENTRE_REQUESTS)
 
             # Obtener links via API
             response = session.get(
@@ -158,7 +116,7 @@ def extraer_links_post(session_data, release, max_retries=10):
             elif response.status_code == 429:
                 # Rate limiting - esperar y reintentar indefinidamente
                 retries_429 += 1
-                wait = DELAY_BASE_429 * retries_429
+                wait = min(DELAY_BASE_429 * retries_429, MAX_BACKOFF_429)
                 with print_lock:
                     print(f"    ⏳ Rate limited en links, esperando {wait}s...")
                 time.sleep(wait)
@@ -236,7 +194,7 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
                             pct = (procesados / total) * 100
                             print(f"[{procesados}/{total}] ({pct:.0f}%) - {con_links} con links")
 
-            except Exception as e:
+            except (requests.RequestException, KeyError, TypeError):
                 pass
 
     if verbose:
@@ -289,9 +247,14 @@ def guardar_resultados(repertorio, output_json=OUTPUT_JSON, output_txt=OUTPUT_TX
         print(f"📁 Guardado: {output_detalle}")
 
 
-def run(verbose=True, num_workers=None):
+def run(verbose=True, num_workers=None, input_file=None):
     """
     Ejecuta la extracción de links (PARALELO via API)
+
+    Args:
+        verbose: Mostrar progreso
+        num_workers: Número de workers paralelos
+        input_file: Archivo de entrada (default: REPERTORIO_FILTRADO_FILE)
     """
     if verbose:
         print("=" * 60)
@@ -303,7 +266,7 @@ def run(verbose=True, num_workers=None):
         try:
             from modules.utils import detectar_workers_api
             num_workers = min(detectar_workers_api(), 5)  # Máximo 5 para ser conservador
-        except:
+        except ImportError:
             num_workers = 3  # Muy conservador por defecto
 
     cargar_env()
@@ -314,7 +277,7 @@ def run(verbose=True, num_workers=None):
     if verbose:
         print("✓ Sesión iniciada")
 
-    repertorio = cargar_repertorio()
+    repertorio = cargar_repertorio(input_file or INPUT_FILE)
     if verbose:
         print(f"✓ {len(repertorio)} releases, {num_workers} workers")
 
