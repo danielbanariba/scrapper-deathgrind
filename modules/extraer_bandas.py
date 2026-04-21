@@ -208,6 +208,8 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
                 time.sleep(wait_time)
                 continue
 
+            if r.status_code == 404:
+                break
             if r.status_code != 200:
                 retries_error += 1
                 if retries_error > max_retries_error:
