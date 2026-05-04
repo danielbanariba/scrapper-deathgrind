@@ -95,11 +95,6 @@
     "found_in_genre": "Atmospheric Death Metal"
   },
   {
-    "bandId": 88,
-    "name": "Ade",
-    "found_in_genre": "Atmospheric Death Metal"
-  },
-  {
     "bandId": 3607,
     "name": "The Extinct Dreams",
     "found_in_genre": "Atmospheric Death Metal"
@@ -182,11 +177,6 @@
   {
     "bandId": 22914,
     "name": "Cepharea",
-    "found_in_genre": "Beatdown Hardcore"
-  },
-  {
-    "bandId": 21182,
-    "name": "Herrementari",
     "found_in_genre": "Beatdown Hardcore"
   },
   {
@@ -780,11 +770,6 @@
     "found_in_genre": "Blasting Brutal Death Metal"
   },
   {
-    "bandId": 2027,
-    "name": "Disgruntled Anthropophagi",
-    "found_in_genre": "Blasting Brutal Death Metal"
-  },
-  {
     "bandId": 10220,
     "name": "Certainly Demented",
     "found_in_genre": "Blasting Brutal Death Metal"
@@ -920,11 +905,6 @@
     "found_in_genre": "Blasting Brutal Death Metal"
   },
   {
-    "bandId": 1335,
-    "name": "Delusional Parasitosis",
-    "found_in_genre": "Blasting Brutal Death Metal"
-  },
-  {
     "bandId": 14549,
     "name": "Propagating The Abomination",
     "found_in_genre": "Blasting Brutal Death Metal"
@@ -993,6 +973,11 @@
     "bandId": 150,
     "name": "Annotations Of An Autopsy",
     "found_in_genre": "Brutal Deathcore"
+  },
+  {
+    "bandId": 23786,
+    "name": "Nequient",
+    "found_in_genre": "Crust"
   },
   {
     "bandId": 23767,
@@ -1237,11 +1222,6 @@
   {
     "bandId": 18734,
     "name": "Slugcrust",
-    "found_in_genre": "Crust"
-  },
-  {
-    "bandId": 19887,
-    "name": "Sonic Poison",
     "found_in_genre": "Crust"
   },
   {
@@ -1705,11 +1685,6 @@
     "found_in_genre": "Crust"
   },
   {
-    "bandId": 4193,
-    "name": "Photian Schism",
-    "found_in_genre": "Crust"
-  },
-  {
     "bandId": 4123,
     "name": "Ataraxia",
     "found_in_genre": "Crust"
@@ -1812,21 +1787,6 @@
   {
     "bandId": 7680,
     "name": "Sisyphean",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 23746,
-    "name": "D.E.R.",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 23743,
-    "name": "Church",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 18591,
-    "name": "Vølus",
     "found_in_genre": "Black Metal"
   },
   {
@@ -1962,11 +1922,6 @@
   {
     "bandId": 20147,
     "name": "Circular Ruin",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 12398,
-    "name": "Destruktor",
     "found_in_genre": "Black Metal"
   },
   {
@@ -2152,11 +2107,6 @@
   {
     "bandId": 19364,
     "name": "Rotting Demise",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 6901,
-    "name": "Ofermod",
     "found_in_genre": "Black Metal"
   },
   {
@@ -2470,11 +2420,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 15645,
-    "name": "Chestcrush",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 10191,
     "name": "Lucifer's Child",
     "found_in_genre": "Black Metal"
@@ -2557,11 +2502,6 @@
   {
     "bandId": 16796,
     "name": "Empty Throne",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 5804,
-    "name": "Sepulchral Curse",
     "found_in_genre": "Black Metal"
   },
   {
@@ -2810,6 +2750,11 @@
     "found_in_genre": "Black Metal"
   },
   {
+    "bandId": 12398,
+    "name": "Destruktor",
+    "found_in_genre": "Black Metal"
+  },
+  {
     "bandId": 9635,
     "name": "Wrathprayer",
     "found_in_genre": "Black Metal"
@@ -2867,6 +2812,11 @@
   {
     "bandId": 21902,
     "name": "Unctoris",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 6901,
+    "name": "Ofermod",
     "found_in_genre": "Black Metal"
   },
   {
@@ -3002,11 +2952,6 @@
   {
     "bandId": 8546,
     "name": "Tsatthoggua",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 401,
-    "name": "Vale Of Pnath",
     "found_in_genre": "Black Metal"
   },
   {
@@ -3385,6 +3330,11 @@
     "found_in_genre": "Black Metal"
   },
   {
+    "bandId": 5804,
+    "name": "Sepulchral Curse",
+    "found_in_genre": "Black Metal"
+  },
+  {
     "bandId": 19361,
     "name": "Selenoplexia",
     "found_in_genre": "Black Metal"
@@ -3480,11 +3430,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 2585,
-    "name": "Cadaver",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 20660,
     "name": "Okkultation",
     "found_in_genre": "Black Metal"
@@ -3540,6 +3485,11 @@
     "found_in_genre": "Black Metal"
   },
   {
+    "bandId": 18028,
+    "name": "Mictlantecuhtli",
+    "found_in_genre": "Black Metal"
+  },
+  {
     "bandId": 17545,
     "name": "Crucifixion BR",
     "found_in_genre": "Black Metal"
@@ -3562,6 +3512,11 @@
   {
     "bandId": 20313,
     "name": "Eiter",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 18591,
+    "name": "Vølus",
     "found_in_genre": "Black Metal"
   },
   {
@@ -3730,11 +3685,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 20048,
-    "name": "Noxium Ferus",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 19245,
     "name": "Corpus Necromanthum",
     "found_in_genre": "Black Metal"
@@ -3887,6 +3837,11 @@
   {
     "bandId": 9302,
     "name": "Kommandant",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 11481,
+    "name": "Nothingness",
     "found_in_genre": "Black Metal"
   },
   {
@@ -4057,6 +4012,11 @@
   {
     "bandId": 6237,
     "name": "Harvest Gulgaltha",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 19537,
+    "name": "Kamra",
     "found_in_genre": "Black Metal"
   },
   {
@@ -4650,6 +4610,11 @@
     "found_in_genre": "Black Metal"
   },
   {
+    "bandId": 17999,
+    "name": "Gog And Magog",
+    "found_in_genre": "Black Metal"
+  },
+  {
     "bandId": 17932,
     "name": "Velka",
     "found_in_genre": "Black Metal"
@@ -4685,6 +4650,11 @@
     "found_in_genre": "Black Metal"
   },
   {
+    "bandId": 15645,
+    "name": "Chestcrush",
+    "found_in_genre": "Black Metal"
+  },
+  {
     "bandId": 17832,
     "name": "Amatrahat",
     "found_in_genre": "Black Metal"
@@ -4707,11 +4677,6 @@
   {
     "bandId": 3768,
     "name": "Vahrzaw",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 17798,
-    "name": "Depravity",
     "found_in_genre": "Black Metal"
   },
   {
@@ -4807,11 +4772,6 @@
   {
     "bandId": 17355,
     "name": "Obscura Qalma",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 17681,
-    "name": "Crooked God",
     "found_in_genre": "Black Metal"
   },
   {
@@ -5112,6 +5072,11 @@
   {
     "bandId": 16678,
     "name": "Cultist",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 7467,
+    "name": "Crypts Of Despair",
     "found_in_genre": "Black Metal"
   },
   {
@@ -5600,11 +5565,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 14489,
-    "name": "The Machinist",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 5604,
     "name": "The Deviant",
     "found_in_genre": "Black Metal"
@@ -5830,11 +5790,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 14629,
-    "name": "Hadez",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 14212,
     "name": "Inferna",
     "found_in_genre": "Black Metal"
@@ -5890,11 +5845,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 14179,
-    "name": "The Last Twilight",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 14177,
     "name": "Extermínio",
     "found_in_genre": "Black Metal"
@@ -5917,11 +5867,6 @@
   {
     "bandId": 14169,
     "name": "Tormentium",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 14167,
-    "name": "Evoke",
     "found_in_genre": "Black Metal"
   },
   {
@@ -6132,11 +6077,6 @@
   {
     "bandId": 14007,
     "name": "Beyond North",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 14006,
-    "name": "Serene Dark",
     "found_in_genre": "Black Metal"
   },
   {
@@ -6450,13 +6390,13 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 14768,
-    "name": "Impalement",
+    "bandId": 13621,
+    "name": "Irdorath",
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 13621,
-    "name": "Irdorath",
+    "bandId": 14773,
+    "name": "Sinistral King",
     "found_in_genre": "Black Metal"
   },
   {
@@ -6727,6 +6667,11 @@
   {
     "bandId": 6023,
     "name": "Blaze Of Perdition",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 13264,
+    "name": "Blackmass",
     "found_in_genre": "Black Metal"
   },
   {
@@ -7180,11 +7125,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 14861,
-    "name": "Havoc Unit",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 5181,
     "name": "Archgoat",
     "found_in_genre": "Black Metal"
@@ -7285,11 +7225,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 2965,
-    "name": "Ragnarok",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 12046,
     "name": "Blood Angel",
     "found_in_genre": "Black Metal"
@@ -7347,6 +7282,11 @@
   {
     "bandId": 11681,
     "name": "Xulub Mitnal",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 2965,
+    "name": "Ragnarok",
     "found_in_genre": "Black Metal"
   },
   {
@@ -7432,6 +7372,11 @@
   {
     "bandId": 1001,
     "name": "Singularity",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 11571,
+    "name": "Deadspace",
     "found_in_genre": "Black Metal"
   },
   {
@@ -8402,6 +8347,11 @@
   {
     "bandId": 10058,
     "name": "Apatheia",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 6043,
+    "name": "Sargeist",
     "found_in_genre": "Black Metal"
   },
   {
@@ -9400,11 +9350,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 7655,
-    "name": "Pink Mass",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 7638,
     "name": "Stahlsarg",
     "found_in_genre": "Black Metal"
@@ -9895,11 +9840,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 6432,
-    "name": "Declared Dead",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 6399,
     "name": "Doedsvangr",
     "found_in_genre": "Black Metal"
@@ -9912,11 +9852,6 @@
   {
     "bandId": 6392,
     "name": "Rebirth Of Nefast",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 6372,
-    "name": "Hastur",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10050,11 +9985,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 6043,
-    "name": "Sargeist",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 6032,
     "name": "Begotten",
     "found_in_genre": "Black Metal"
@@ -10067,6 +9997,11 @@
   {
     "bandId": 5997,
     "name": "Abhor",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 5957,
+    "name": "Black September",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10092,11 +10027,6 @@
   {
     "bandId": 5860,
     "name": "Balfor",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 5855,
-    "name": "Kulto Maldito",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10530,8 +10460,8 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 4897,
-    "name": "Akitsa",
+    "bandId": 4910,
+    "name": "Luror",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10547,11 +10477,6 @@
   {
     "bandId": 4887,
     "name": "Order Of Ennead",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 4863,
-    "name": "Dragged Into Sunlight",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10577,11 +10502,6 @@
   {
     "bandId": 4747,
     "name": "Satanica",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 4736,
-    "name": "Doomsday Machine Schematic",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10617,6 +10537,11 @@
   {
     "bandId": 4620,
     "name": "Tribulation",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 4586,
+    "name": "Path To Ruin",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10740,11 +10665,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 4138,
-    "name": "Book Of Black Earth",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 4110,
     "name": "Sheidim",
     "found_in_genre": "Black Metal"
@@ -10797,11 +10717,6 @@
   {
     "bandId": 4033,
     "name": "Mythological Cold Towers",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 11365,
-    "name": "Belzabet",
     "found_in_genre": "Black Metal"
   },
   {
@@ -10912,11 +10827,6 @@
   {
     "bandId": 3748,
     "name": "Near",
-    "found_in_genre": "Black Metal"
-  },
-  {
-    "bandId": 3723,
-    "name": "Namter",
     "found_in_genre": "Black Metal"
   },
   {
@@ -11042,6 +10952,11 @@
   {
     "bandId": 3163,
     "name": "Wall Of Water",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 3051,
+    "name": "Darkestrah",
     "found_in_genre": "Black Metal"
   },
   {
@@ -11230,11 +11145,6 @@
     "found_in_genre": "Black Metal"
   },
   {
-    "bandId": 1949,
-    "name": "Sangdragon",
-    "found_in_genre": "Black Metal"
-  },
-  {
     "bandId": 1897,
     "name": "Jesus Wept",
     "found_in_genre": "Black Metal"
@@ -11287,6 +11197,11 @@
   {
     "bandId": 1713,
     "name": "Altars Of Grief",
+    "found_in_genre": "Black Metal"
+  },
+  {
+    "bandId": 12157,
+    "name": "Genocide Shrines",
     "found_in_genre": "Black Metal"
   },
   {
@@ -11535,8 +11450,18 @@
     "found_in_genre": "Death 'N' Roll"
   },
   {
-    "bandId": 8079,
-    "name": "Human Waste",
+    "bandId": 1961,
+    "name": "Drain Of Impurity",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 7497,
+    "name": "Boiler",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 1195,
+    "name": "Monument Of Misanthropy",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -11570,28 +11495,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 22509,
-    "name": "Infectious Waste",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 23747,
-    "name": "Diarrea Nuclear",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 17407,
-    "name": "Massacred",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 18419,
     "name": "Mortuary Ghoul",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 1961,
-    "name": "Drain Of Impurity",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -11620,16 +11525,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 22315,
-    "name": "Sudden Infant Death Syndrome",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 23647,
-    "name": "Mangled Limb",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 20215,
     "name": "Protrusion",
     "found_in_genre": "Brutal Death Metal"
@@ -11642,11 +11537,6 @@
   {
     "bandId": 2074,
     "name": "Saprobiontic",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 22962,
-    "name": "Slvt Killer",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -11702,11 +11592,6 @@
   {
     "bandId": 23149,
     "name": "Codex Crudelitas",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 13553,
-    "name": "Immortal Fate",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -11790,8 +11675,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 23331,
-    "name": "Temporum",
+    "bandId": 17407,
+    "name": "Massacred",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -11832,11 +11717,6 @@
   {
     "bandId": 2031,
     "name": "Contempt",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 6814,
-    "name": "Terrorist",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -12137,11 +12017,6 @@
   {
     "bandId": 21532,
     "name": "Insane Desecration",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 7596,
-    "name": "Ruthless Inhumanity",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -12515,11 +12390,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 1195,
-    "name": "Monument Of Misanthropy",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 2671,
     "name": "Fulci",
     "found_in_genre": "Brutal Death Metal"
@@ -12662,11 +12532,6 @@
   {
     "bandId": 19601,
     "name": "Disembowel",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 21538,
-    "name": "Mazaroth",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -13105,11 +12970,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 11032,
-    "name": "Cráneo",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 681,
     "name": "Veiyadra",
     "found_in_genre": "Brutal Death Metal"
@@ -13152,11 +13012,6 @@
   {
     "bandId": 19241,
     "name": "Heretic Plague",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 18069,
-    "name": "Clit Commander",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -13217,6 +13072,11 @@
   {
     "bandId": 2039,
     "name": "Fleshgore",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 10864,
+    "name": "Human Mass Extermination",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -13485,11 +13345,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 13716,
-    "name": "Texas Murder Crew",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 9245,
     "name": "Posthuman Abomination",
     "found_in_genre": "Brutal Death Metal"
@@ -13547,11 +13402,6 @@
   {
     "bandId": 7507,
     "name": "Infester",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 18327,
-    "name": "Martin And The Vampires",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -13900,16 +13750,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 16912,
-    "name": "Skull Collector",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 16841,
-    "name": "Biodroid",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 15820,
     "name": "SledgeHammerGenocide",
     "found_in_genre": "Brutal Death Metal"
@@ -14070,11 +13910,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 7776,
-    "name": "Harmony Fault",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 5756,
     "name": "Detritivor",
     "found_in_genre": "Brutal Death Metal"
@@ -14087,6 +13922,11 @@
   {
     "bandId": 2357,
     "name": "Nomenmortis",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 8079,
+    "name": "Human Waste",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14140,6 +13980,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 9919,
+    "name": "Cockoroch",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 15191,
     "name": "Defiling Humanity",
     "found_in_genre": "Brutal Death Metal"
@@ -14177,6 +14022,11 @@
   {
     "bandId": 14474,
     "name": "Focal Dystonia",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 14437,
+    "name": "Inhumane Suffering",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14295,6 +14145,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 14018,
+    "name": "Visceral Violation",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 17828,
     "name": "Maggot Vomit Afterbirth",
     "found_in_genre": "Brutal Death Metal"
@@ -14375,8 +14230,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 14742,
-    "name": "Cadejo",
+    "bandId": 2178,
+    "name": "Antropofagus",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14515,11 +14370,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 4438,
-    "name": "Chainsaw",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 14868,
     "name": "Dehumanized Behavior",
     "found_in_genre": "Brutal Death Metal"
@@ -14527,11 +14377,6 @@
   {
     "bandId": 12145,
     "name": "Disnormality",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 12126,
-    "name": "Cynical Bastard",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14575,6 +14420,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 2234,
+    "name": "Disinfect",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 95,
     "name": "Apostles Of Perversion",
     "found_in_genre": "Brutal Death Metal"
@@ -14605,8 +14455,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 2411,
-    "name": "Intracerebral Hemorrhage",
+    "bandId": 11561,
+    "name": "Kombenk",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14690,18 +14540,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 5740,
-    "name": "Vesication",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 7711,
     "name": "Rubufaso Mukufo",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 14898,
-    "name": "Hunting The Beast",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -14732,6 +14572,11 @@
   {
     "bandId": 1781,
     "name": "Sikfuk",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 419,
+    "name": "Disentomb",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -15180,11 +15025,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 9919,
-    "name": "Cockoroch",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 4614,
     "name": "Obsolete Mankind",
     "found_in_genre": "Brutal Death Metal"
@@ -15217,6 +15057,11 @@
   {
     "bandId": 5562,
     "name": "Dedth",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 9810,
+    "name": "Infuriate",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -15307,11 +15152,6 @@
   {
     "bandId": 9380,
     "name": "Waste",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 9366,
-    "name": "Suffer In Rot",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -15487,6 +15327,16 @@
   {
     "bandId": 7532,
     "name": "Intracranial Purulency",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 8891,
+    "name": "Depravity",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 8880,
+    "name": "Sexual Atrocities",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -15925,11 +15775,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 7718,
-    "name": "Corpsedecay",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 7717,
     "name": "Dvorhead",
     "found_in_genre": "Brutal Death Metal"
@@ -16065,11 +15910,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 679,
-    "name": "Devangelic",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 7536,
     "name": "Revilement",
     "found_in_genre": "Brutal Death Metal"
@@ -16107,11 +15947,6 @@
   {
     "bandId": 7498,
     "name": "Rotten Penetration",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 7497,
-    "name": "Boiler",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16172,11 +16007,6 @@
   {
     "bandId": 307,
     "name": "Ovarian Despoilment",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 13868,
-    "name": "Abominate",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16295,6 +16125,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 6814,
+    "name": "Terrorist",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 1701,
     "name": "Gathering Darkness",
     "found_in_genre": "Brutal Death Metal"
@@ -16340,13 +16175,13 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 6615,
-    "name": "Cancer Whore",
+    "bandId": 4824,
+    "name": "Vomit Remnants",
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 4824,
-    "name": "Vomit Remnants",
+    "bandId": 6577,
+    "name": "Psychoneurotic Conspiracy",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16375,11 +16210,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 6246,
-    "name": "Slaughtered Remains",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 6234,
     "name": "Arabian Death Mask",
     "found_in_genre": "Brutal Death Metal"
@@ -16397,6 +16227,11 @@
   {
     "bandId": 513,
     "name": "Down From The Wound",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 5453,
+    "name": "Gurkkhas",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16465,6 +16300,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 5740,
+    "name": "Vesication",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 5725,
     "name": "Forced Asphyxiation",
     "found_in_genre": "Brutal Death Metal"
@@ -16492,11 +16332,6 @@
   {
     "bandId": 5632,
     "name": "Toxic Hate",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 5396,
-    "name": "Bolesno Grinje",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16620,16 +16455,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 2178,
-    "name": "Antropofagus",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 4930,
-    "name": "Homizide",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 2666,
     "name": "Serial Butcher",
     "found_in_genre": "Brutal Death Metal"
@@ -16647,11 +16472,6 @@
   {
     "bandId": 1093,
     "name": "Begging For Incest",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 4862,
-    "name": "Bloody Anatomies",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16840,11 +16660,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 2979,
-    "name": "Depraved",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 3757,
     "name": "Sadomasochism",
     "found_in_genre": "Brutal Death Metal"
@@ -16872,16 +16687,6 @@
   {
     "bandId": 3703,
     "name": "Gone Postal",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 3700,
-    "name": "Discharge By Death",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 3630,
-    "name": "Menarca",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -16992,6 +16797,11 @@
   {
     "bandId": 2763,
     "name": "Hybrid Viscery",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 3055,
+    "name": "Human Pesticide",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -17185,11 +16995,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 1732,
-    "name": "Coathanger Abortion",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 2611,
     "name": "Patologicum",
     "found_in_genre": "Brutal Death Metal"
@@ -17230,6 +17035,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 443,
+    "name": "Destroying Divinity",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
     "bandId": 2502,
     "name": "Grisly Amputation",
     "found_in_genre": "Brutal Death Metal"
@@ -17237,6 +17047,11 @@
   {
     "bandId": 2482,
     "name": "Stabwound",
+    "found_in_genre": "Brutal Death Metal"
+  },
+  {
+    "bandId": 2466,
+    "name": "Thirteen Bled Promises",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -17257,11 +17072,6 @@
   {
     "bandId": 2346,
     "name": "Dripping",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 2420,
-    "name": "Gomory",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -17545,11 +17355,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 1842,
-    "name": "Necrovile",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 16479,
     "name": "Cadaver Incubador",
     "found_in_genre": "Brutal Death Metal"
@@ -17582,11 +17387,6 @@
   {
     "bandId": 1784,
     "name": "Waste Mankind",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 1783,
-    "name": "Carnal Lust",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -17970,11 +17770,6 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 419,
-    "name": "Disentomb",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 998,
     "name": "Pus Lactation",
     "found_in_genre": "Brutal Death Metal"
@@ -18045,18 +17840,8 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
-    "bandId": 642,
-    "name": "Abysmal Torment",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
     "bandId": 454,
     "name": "Gorgasm",
-    "found_in_genre": "Brutal Death Metal"
-  },
-  {
-    "bandId": 677,
-    "name": "Twitch Of The Death Nerve",
     "found_in_genre": "Brutal Death Metal"
   },
   {
@@ -18200,6 +17985,11 @@
     "found_in_genre": "Brutal Death Metal"
   },
   {
+    "bandId": 23792,
+    "name": "Carbon Tomb",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 7601,
     "name": "Necrotted",
     "found_in_genre": "Deathcore"
@@ -18295,6 +18085,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 21313,
+    "name": "Poserectomy",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 29,
     "name": "Acrania",
     "found_in_genre": "Deathcore"
@@ -18360,11 +18155,6 @@
     "found_in_genre": "Deathcore"
   },
   {
-    "bandId": 0,
-    "name": "Measmata",
-    "found_in_genre": "Deathcore"
-  },
-  {
     "bandId": 2376,
     "name": "Ivebeenshot",
     "found_in_genre": "Deathcore"
@@ -18417,11 +18207,6 @@
   {
     "bandId": 0,
     "name": "Tortured Souls",
-    "found_in_genre": "Deathcore"
-  },
-  {
-    "bandId": 0,
-    "name": "Ruins Of Perception",
     "found_in_genre": "Deathcore"
   },
   {
@@ -18580,11 +18365,6 @@
     "found_in_genre": "Deathcore"
   },
   {
-    "bandId": 16848,
-    "name": "Hate Priest",
-    "found_in_genre": "Deathcore"
-  },
-  {
     "bandId": 12192,
     "name": "Rose Funeral",
     "found_in_genre": "Deathcore"
@@ -18662,11 +18442,6 @@
   {
     "bandId": 7962,
     "name": "Catatonic Profanation",
-    "found_in_genre": "Deathcore"
-  },
-  {
-    "bandId": 16955,
-    "name": "When Blood Falls Down",
     "found_in_genre": "Deathcore"
   },
   {
@@ -18770,6 +18545,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 12789,
+    "name": "Zerstiren",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 12776,
     "name": "Oblige",
     "found_in_genre": "Deathcore"
@@ -18842,6 +18622,11 @@
   {
     "bandId": 3542,
     "name": "Suffokate",
+    "found_in_genre": "Deathcore"
+  },
+  {
+    "bandId": 16860,
+    "name": "Anhedonia",
     "found_in_genre": "Deathcore"
   },
   {
@@ -18925,11 +18710,6 @@
     "found_in_genre": "Deathcore"
   },
   {
-    "bandId": 17199,
-    "name": "Angelmaker",
-    "found_in_genre": "Deathcore"
-  },
-  {
     "bandId": 0,
     "name": "Traitors",
     "found_in_genre": "Deathcore"
@@ -18972,6 +18752,11 @@
   {
     "bandId": 0,
     "name": "Enterprise Earth",
+    "found_in_genre": "Deathcore"
+  },
+  {
+    "bandId": 16848,
+    "name": "Hate Priest",
     "found_in_genre": "Deathcore"
   },
   {
@@ -19171,6 +18956,11 @@
   },
   {
     "bandId": 0,
+    "name": "Freedom Became Ashes",
+    "found_in_genre": "Deathcore"
+  },
+  {
+    "bandId": 0,
     "name": "An Isle Ate Her",
     "found_in_genre": "Deathcore"
   },
@@ -19212,11 +19002,6 @@
   {
     "bandId": 9257,
     "name": "Reanima",
-    "found_in_genre": "Deathcore"
-  },
-  {
-    "bandId": 865,
-    "name": "Epiphany From The Abyss",
     "found_in_genre": "Deathcore"
   },
   {
@@ -19555,6 +19340,16 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 5418,
+    "name": "Nexilva",
+    "found_in_genre": "Deathcore"
+  },
+  {
+    "bandId": 5417,
+    "name": "Veiled In Sorrow",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 5373,
     "name": "Codex Obscura",
     "found_in_genre": "Deathcore"
@@ -19587,11 +19382,6 @@
   {
     "bandId": 0,
     "name": "ShutUp",
-    "found_in_genre": "Deathcore"
-  },
-  {
-    "bandId": 0,
-    "name": "The Sign Of Four",
     "found_in_genre": "Deathcore"
   },
   {
@@ -19730,11 +19520,6 @@
     "found_in_genre": "Deathcore"
   },
   {
-    "bandId": 3269,
-    "name": "Master Crow",
-    "found_in_genre": "Deathcore"
-  },
-  {
     "bandId": 3263,
     "name": "Spiritual Kaos",
     "found_in_genre": "Deathcore"
@@ -19835,6 +19620,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 2740,
+    "name": "Corrupted Perceptions",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 2735,
     "name": "Sending Artax",
     "found_in_genre": "Deathcore"
@@ -19867,6 +19657,11 @@
   {
     "bandId": 21180,
     "name": "Fulfill The Prophecy",
+    "found_in_genre": "Deathcore"
+  },
+  {
+    "bandId": 0,
+    "name": "Dr. Acula",
     "found_in_genre": "Deathcore"
   },
   {
@@ -20000,6 +19795,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 865,
+    "name": "Epiphany From The Abyss",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 806,
     "name": "Suburban Terrorist",
     "found_in_genre": "Deathcore"
@@ -20035,6 +19835,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 371,
+    "name": "The Faceless",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 0,
     "name": "The Contortionist",
     "found_in_genre": "Deathcore"
@@ -20060,11 +19865,6 @@
     "found_in_genre": "Deathcore"
   },
   {
-    "bandId": 236,
-    "name": "Immersed",
-    "found_in_genre": "Deathcore"
-  },
-  {
     "bandId": 221,
     "name": "Hester Prynne",
     "found_in_genre": "Deathcore"
@@ -20085,6 +19885,11 @@
     "found_in_genre": "Deathcore"
   },
   {
+    "bandId": 156,
+    "name": "Demise Of All Reason",
+    "found_in_genre": "Deathcore"
+  },
+  {
     "bandId": 80,
     "name": "Beneath The Massacre",
     "found_in_genre": "Deathcore"
@@ -20097,6 +19902,11 @@
   {
     "bandId": 13935,
     "name": "Cold Bleeding",
+    "found_in_genre": "Depressive Suicidal Black Metal"
+  },
+  {
+    "bandId": 2852,
+    "name": "Xasthur",
     "found_in_genre": "Depressive Suicidal Black Metal"
   },
   {
@@ -20145,9 +19955,14 @@
     "found_in_genre": "Depressive Suicidal Black Metal"
   },
   {
-    "bandId": 2852,
-    "name": "Xasthur",
-    "found_in_genre": "Depressive Suicidal Black Metal"
+    "bandId": 21057,
+    "name": "Fall Of Gnosis",
+    "found_in_genre": "Doom Metal"
+  },
+  {
+    "bandId": 9724,
+    "name": "Innumerable Forms",
+    "found_in_genre": "Doom Metal"
   },
   {
     "bandId": 11717,
@@ -20157,11 +19972,6 @@
   {
     "bandId": 21901,
     "name": "Hrob",
-    "found_in_genre": "Doom Metal"
-  },
-  {
-    "bandId": 20370,
-    "name": "Furnace Floor",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -20182,11 +19992,6 @@
   {
     "bandId": 21278,
     "name": "Triste",
-    "found_in_genre": "Doom Metal"
-  },
-  {
-    "bandId": 12287,
-    "name": "Funereal",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -20355,11 +20160,6 @@
     "found_in_genre": "Doom Metal"
   },
   {
-    "bandId": 21070,
-    "name": "Collapsed Mainframe",
-    "found_in_genre": "Doom Metal"
-  },
-  {
     "bandId": 21039,
     "name": "Dwelling Below",
     "found_in_genre": "Doom Metal"
@@ -20402,11 +20202,6 @@
   {
     "bandId": 17314,
     "name": "Black Wound",
-    "found_in_genre": "Doom Metal"
-  },
-  {
-    "bandId": 9911,
-    "name": "Eternal Rot",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -20520,11 +20315,6 @@
     "found_in_genre": "Doom Metal"
   },
   {
-    "bandId": 9724,
-    "name": "Innumerable Forms",
-    "found_in_genre": "Doom Metal"
-  },
-  {
     "bandId": 19255,
     "name": "Nihilistic Warfare",
     "found_in_genre": "Doom Metal"
@@ -20607,11 +20397,6 @@
   {
     "bandId": 18030,
     "name": "Viande",
-    "found_in_genre": "Doom Metal"
-  },
-  {
-    "bandId": 11255,
-    "name": "Epitaphe",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -20762,6 +20547,11 @@
   {
     "bandId": 9297,
     "name": "Rites Of Daath",
+    "found_in_genre": "Doom Metal"
+  },
+  {
+    "bandId": 9911,
+    "name": "Eternal Rot",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -21027,11 +20817,6 @@
   {
     "bandId": 2091,
     "name": "Soijl",
-    "found_in_genre": "Doom Metal"
-  },
-  {
-    "bandId": 7470,
-    "name": "Ceased",
     "found_in_genre": "Doom Metal"
   },
   {
@@ -21540,11 +21325,6 @@
     "found_in_genre": "Folk Metal"
   },
   {
-    "bandId": 6045,
-    "name": "Duskmourn",
-    "found_in_genre": "Folk Metal"
-  },
-  {
     "bandId": 5938,
     "name": "Die Apokalyptischen Reiter",
     "found_in_genre": "Folk Metal"
@@ -21610,6 +21390,31 @@
     "found_in_genre": "Folk Metal"
   },
   {
+    "bandId": 88,
+    "name": "Ade",
+    "found_in_genre": "Folk Metal"
+  },
+  {
+    "bandId": 0,
+    "name": "Porno Infantil",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 21718,
+    "name": "Metrorrhagia",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 0,
+    "name": "Empty Grave",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 23785,
+    "name": "Hydropneumothorax",
+    "found_in_genre": "Goregrind"
+  },
+  {
     "bandId": 23774,
     "name": "Hypernatraemia",
     "found_in_genre": "Goregrind"
@@ -21617,11 +21422,6 @@
   {
     "bandId": 14043,
     "name": "Pharmacist",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 21718,
-    "name": "Metrorrhagia",
     "found_in_genre": "Goregrind"
   },
   {
@@ -21787,16 +21587,6 @@
   {
     "bandId": 22922,
     "name": "Hyperemesis",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 20022,
-    "name": "Flax",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 22861,
-    "name": "Feeble Inducer",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22065,6 +21855,11 @@
     "found_in_genre": "Goregrind"
   },
   {
+    "bandId": 7776,
+    "name": "Harmony Fault",
+    "found_in_genre": "Goregrind"
+  },
+  {
     "bandId": 10954,
     "name": "Posthumous Regurgitation",
     "found_in_genre": "Goregrind"
@@ -22072,6 +21867,11 @@
   {
     "bandId": 19955,
     "name": "Corpseater",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 20022,
+    "name": "Flax",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22107,11 +21907,6 @@
   {
     "bandId": 9498,
     "name": "Krueger",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 7297,
-    "name": "Butcher ABC",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22160,11 +21955,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 17474,
-    "name": "Panzram",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 20768,
     "name": "Molecular Disembowelment",
     "found_in_genre": "Goregrind"
@@ -22177,11 +21967,6 @@
   {
     "bandId": 0,
     "name": "Rupture Of The Gastrointestinal Tract",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 0,
-    "name": "Хуй Лопаты",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22215,11 +22000,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 17730,
-    "name": "Dehydrated Goat",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 16863,
     "name": "Sick Sinus Syndrome",
     "found_in_genre": "Goregrind"
@@ -22250,6 +22030,11 @@
     "found_in_genre": "Goregrind"
   },
   {
+    "bandId": 8492,
+    "name": "Necrony",
+    "found_in_genre": "Goregrind"
+  },
+  {
     "bandId": 14120,
     "name": "FesterDecay",
     "found_in_genre": "Goregrind"
@@ -22272,6 +22057,11 @@
   {
     "bandId": 10936,
     "name": "Impetigo",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 19310,
+    "name": "Ear Maggot",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22327,6 +22117,11 @@
   {
     "bandId": 11518,
     "name": "Neuro-Visceral Exhumation",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 14757,
+    "name": "Gut",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22465,11 +22260,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 17682,
-    "name": "Intumescence",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 0,
     "name": "Devoured Flesh Regurgitation",
     "found_in_genre": "Goregrind"
@@ -22547,11 +22337,6 @@
   {
     "bandId": 14311,
     "name": "Miasmatic Necrosis",
-    "found_in_genre": "Goregrind"
-  },
-  {
-    "bandId": 16953,
-    "name": "Take That Vile Fiend",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22645,6 +22430,11 @@
     "found_in_genre": "Goregrind"
   },
   {
+    "bandId": 0,
+    "name": "Fecalator",
+    "found_in_genre": "Goregrind"
+  },
+  {
     "bandId": 1188,
     "name": "Jig-Ai",
     "found_in_genre": "Goregrind"
@@ -22735,11 +22525,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 23498,
-    "name": "Butcher M.D.",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 6949,
     "name": "Heinous",
     "found_in_genre": "Goregrind"
@@ -22785,13 +22570,13 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 15043,
-    "name": "Jaga-Jaga Massacre",
+    "bandId": 17263,
+    "name": "Mutilated Judge",
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 17263,
-    "name": "Mutilated Judge",
+    "bandId": 0,
+    "name": "Innards Deposit",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22865,11 +22650,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 7851,
-    "name": "Cunt Of Depravity",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 7715,
     "name": "Nun Immolation",
     "found_in_genre": "Goregrind"
@@ -22900,8 +22680,8 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 7377,
-    "name": "Consume The Fetus",
+    "bandId": 7297,
+    "name": "Butcher ABC",
     "found_in_genre": "Goregrind"
   },
   {
@@ -22990,11 +22770,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 19125,
-    "name": "Hymen Holocaust",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 4679,
     "name": "Oniku",
     "found_in_genre": "Goregrind"
@@ -23032,6 +22807,16 @@
   {
     "bandId": 3914,
     "name": "666 Shades Of Shit",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 635,
+    "name": "Epitome",
+    "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 3776,
+    "name": "Gore Bash",
     "found_in_genre": "Goregrind"
   },
   {
@@ -23110,11 +22895,6 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 1465,
-    "name": "Deathtopia",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 1434,
     "name": "Go-Zen",
     "found_in_genre": "Goregrind"
@@ -23135,14 +22915,14 @@
     "found_in_genre": "Goregrind"
   },
   {
-    "bandId": 1115,
-    "name": "Dislabia",
-    "found_in_genre": "Goregrind"
-  },
-  {
     "bandId": 1111,
     "name": "CUFF",
     "found_in_genre": "Goregrind"
+  },
+  {
+    "bandId": 23684,
+    "name": "Valar Morghulis",
+    "found_in_genre": "Groove Metal"
   },
   {
     "bandId": 17216,
@@ -23182,6 +22962,11 @@
   {
     "bandId": 20152,
     "name": "Yotuma",
+    "found_in_genre": "Groove Metal"
+  },
+  {
+    "bandId": 19436,
+    "name": "Crown The Beast",
     "found_in_genre": "Groove Metal"
   },
   {
@@ -23310,11 +23095,6 @@
     "found_in_genre": "Groove Metal"
   },
   {
-    "bandId": 10357,
-    "name": "Adrenal Asphyxia",
-    "found_in_genre": "Groove Metal"
-  },
-  {
     "bandId": 10077,
     "name": "As I Destruct",
     "found_in_genre": "Groove Metal"
@@ -23322,11 +23102,6 @@
   {
     "bandId": 10076,
     "name": "Innerte",
-    "found_in_genre": "Groove Metal"
-  },
-  {
-    "bandId": 4274,
-    "name": "All Consumed",
     "found_in_genre": "Groove Metal"
   },
   {
@@ -23375,6 +23150,11 @@
     "found_in_genre": "Groove Metal"
   },
   {
+    "bandId": 7086,
+    "name": "On The Edge",
+    "found_in_genre": "Groove Metal"
+  },
+  {
     "bandId": 0,
     "name": "Flesh Quota",
     "found_in_genre": "Groove Metal"
@@ -23382,11 +23162,6 @@
   {
     "bandId": 6865,
     "name": "Cavalera Conspiracy",
-    "found_in_genre": "Groove Metal"
-  },
-  {
-    "bandId": 6717,
-    "name": "Earth Crawler",
     "found_in_genre": "Groove Metal"
   },
   {
@@ -23550,6 +23325,11 @@
     "found_in_genre": "Groove Metal"
   },
   {
+    "bandId": 5090,
+    "name": "King Parrot",
+    "found_in_genre": "Hardcore"
+  },
+  {
     "bandId": 23765,
     "name": "Xibalba",
     "found_in_genre": "Hardcore"
@@ -23642,6 +23422,11 @@
   {
     "bandId": 16947,
     "name": "Weeping",
+    "found_in_genre": "Hardcore"
+  },
+  {
+    "bandId": 21182,
+    "name": "Herrementari",
     "found_in_genre": "Hardcore"
   },
   {
@@ -23745,11 +23530,6 @@
     "found_in_genre": "Hardcore"
   },
   {
-    "bandId": 18298,
-    "name": "Inner Darkness",
-    "found_in_genre": "Hardcore"
-  },
-  {
     "bandId": 19566,
     "name": "Corpsegrinder",
     "found_in_genre": "Hardcore"
@@ -23831,6 +23611,11 @@
   },
   {
     "bandId": 0,
+    "name": "Mass Worship",
+    "found_in_genre": "Hardcore"
+  },
+  {
+    "bandId": 0,
     "name": "Deathreat",
     "found_in_genre": "Hardcore"
   },
@@ -23845,13 +23630,13 @@
     "found_in_genre": "Hardcore"
   },
   {
-    "bandId": 9865,
-    "name": "Ósserp",
+    "bandId": 3279,
+    "name": "Bea$ters",
     "found_in_genre": "Hardcore"
   },
   {
-    "bandId": 3279,
-    "name": "Bea$ters",
+    "bandId": 9666,
+    "name": "Wasted Youth",
     "found_in_genre": "Hardcore"
   },
   {
@@ -23882,11 +23667,6 @@
   {
     "bandId": 2000,
     "name": "Unravel",
-    "found_in_genre": "Hardcore"
-  },
-  {
-    "bandId": 0,
-    "name": "Death Side",
     "found_in_genre": "Hardcore"
   },
   {
@@ -24035,11 +23815,6 @@
     "found_in_genre": "Hardcore"
   },
   {
-    "bandId": 3484,
-    "name": "Rostok Vampires",
-    "found_in_genre": "Hardcore"
-  },
-  {
     "bandId": 3482,
     "name": "Breed Of Bacchus",
     "found_in_genre": "Hardcore"
@@ -24160,6 +23935,11 @@
     "found_in_genre": "Instrumental"
   },
   {
+    "bandId": 31,
+    "name": "Death",
+    "found_in_genre": "Instrumental"
+  },
+  {
     "bandId": 3376,
     "name": "Axhom",
     "found_in_genre": "Instrumental"
@@ -24167,6 +23947,11 @@
   {
     "bandId": 659,
     "name": "Lost Brethren",
+    "found_in_genre": "Instrumental"
+  },
+  {
+    "bandId": 3344,
+    "name": "Progtronic",
     "found_in_genre": "Instrumental"
   },
   {
@@ -24202,11 +23987,6 @@
   {
     "bandId": 687,
     "name": "Abysmal Dawn",
-    "found_in_genre": "Instrumental"
-  },
-  {
-    "bandId": 339,
-    "name": "Sclera",
     "found_in_genre": "Instrumental"
   },
   {
@@ -24735,6 +24515,11 @@
     "found_in_genre": "Melodic Death Metal"
   },
   {
+    "bandId": 12488,
+    "name": "Geoda",
+    "found_in_genre": "Melodic Death Metal"
+  },
+  {
     "bandId": 13160,
     "name": "Oydis",
     "found_in_genre": "Melodic Death Metal"
@@ -24890,11 +24675,6 @@
     "found_in_genre": "Melodic Death Metal"
   },
   {
-    "bandId": 12804,
-    "name": "Red Horizons",
-    "found_in_genre": "Melodic Death Metal"
-  },
-  {
     "bandId": 12756,
     "name": "Kinnefret",
     "found_in_genre": "Melodic Death Metal"
@@ -24962,11 +24742,6 @@
   {
     "bandId": 0,
     "name": "Nébeda",
-    "found_in_genre": "Melodic Death Metal"
-  },
-  {
-    "bandId": 12488,
-    "name": "Geoda",
     "found_in_genre": "Melodic Death Metal"
   },
   {
@@ -25735,11 +25510,6 @@
     "found_in_genre": "Melodic Death Metal"
   },
   {
-    "bandId": 16244,
-    "name": "Victim's Foretaste",
-    "found_in_genre": "Melodic Death Metal"
-  },
-  {
     "bandId": 3097,
     "name": "Scythe Beast",
     "found_in_genre": "Melodic Death Metal"
@@ -25867,11 +25637,6 @@
   {
     "bandId": 968,
     "name": "Aspherium",
-    "found_in_genre": "Melodic Death Metal"
-  },
-  {
-    "bandId": 720,
-    "name": "Bleak Flesh",
     "found_in_genre": "Melodic Death Metal"
   },
   {
@@ -26090,11 +25855,6 @@
     "found_in_genre": "Powerviolence"
   },
   {
-    "bandId": 14523,
-    "name": "Violent Opposition",
-    "found_in_genre": "Powerviolence"
-  },
-  {
     "bandId": 0,
     "name": "Manhunt",
     "found_in_genre": "Powerviolence"
@@ -26108,6 +25868,31 @@
     "bandId": 14543,
     "name": "UxDxS",
     "found_in_genre": "Powerviolence"
+  },
+  {
+    "bandId": 22470,
+    "name": "Vitrifier",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 0,
+    "name": "Fake Dust",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 23790,
+    "name": "Blood Grave",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 23783,
+    "name": "Kaosquad",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 23781,
+    "name": "Bodygrinder",
+    "found_in_genre": "Grindcore"
   },
   {
     "bandId": 18436,
@@ -26147,11 +25932,6 @@
   {
     "bandId": 23309,
     "name": "Thorazine",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 0,
-    "name": "Blood Grave",
     "found_in_genre": "Grindcore"
   },
   {
@@ -26245,11 +26025,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 635,
-    "name": "Epitome",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 16908,
     "name": "Bestial Tongues",
     "found_in_genre": "Grindcore"
@@ -26302,6 +26077,11 @@
   {
     "bandId": 23047,
     "name": "Ancient Malice",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 19767,
+    "name": "Vøid It",
     "found_in_genre": "Grindcore"
   },
   {
@@ -26377,11 +26157,6 @@
   {
     "bandId": 22753,
     "name": "Sedative",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 4446,
-    "name": "Refusal",
     "found_in_genre": "Grindcore"
   },
   {
@@ -26485,11 +26260,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 22470,
-    "name": "Vitrifier",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 7228,
     "name": "Himura",
     "found_in_genre": "Grindcore"
@@ -26575,6 +26345,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 5396,
+    "name": "Bolesno Grinje",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 16578,
     "name": "Crowpath",
     "found_in_genre": "Grindcore"
@@ -26640,6 +26415,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 19754,
+    "name": "Karnickelmesser",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 22010,
     "name": "Despoil",
     "found_in_genre": "Grindcore"
@@ -26652,11 +26432,6 @@
   {
     "bandId": 22028,
     "name": "Earthburner",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 22001,
-    "name": "Zero Survive",
     "found_in_genre": "Grindcore"
   },
   {
@@ -26707,11 +26482,6 @@
   {
     "bandId": 20531,
     "name": "Sick/Tired",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 0,
-    "name": "Bulbous Fester",
     "found_in_genre": "Grindcore"
   },
   {
@@ -26822,11 +26592,6 @@
   {
     "bandId": 21291,
     "name": "Six-Score",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 21287,
-    "name": "Elder Devil",
     "found_in_genre": "Grindcore"
   },
   {
@@ -27060,11 +26825,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 19491,
-    "name": "Miroed",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 20510,
     "name": "Thanatophagia",
     "found_in_genre": "Grindcore"
@@ -27175,11 +26935,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 5047,
-    "name": "Cryptic Void",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 8838,
     "name": "Embolism",
     "found_in_genre": "Grindcore"
@@ -27207,11 +26962,6 @@
   {
     "bandId": 0,
     "name": "Sejawat",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 20276,
-    "name": "Insane Assholes",
     "found_in_genre": "Grindcore"
   },
   {
@@ -27265,6 +27015,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 20276,
+    "name": "Insane Assholes",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 5082,
     "name": "Khraken",
     "found_in_genre": "Grindcore"
@@ -27272,6 +27027,11 @@
   {
     "bandId": 11958,
     "name": "Warfuck",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 1465,
+    "name": "Deathtopia",
     "found_in_genre": "Grindcore"
   },
   {
@@ -27405,11 +27165,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 19891,
-    "name": "Despised",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 19941,
     "name": "Ape Unit",
     "found_in_genre": "Grindcore"
@@ -27452,11 +27207,6 @@
   {
     "bandId": 1857,
     "name": "Airlines Of Terror",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 19873,
-    "name": "I Refuse",
     "found_in_genre": "Grindcore"
   },
   {
@@ -27760,6 +27510,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 18849,
+    "name": "Crisis Benoit",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 6955,
     "name": "Deaf & Dumb",
     "found_in_genre": "Grindcore"
@@ -27787,11 +27542,6 @@
   {
     "bandId": 22427,
     "name": "Facecutter",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 8147,
-    "name": "Thorwald",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28020,11 +27770,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 13269,
-    "name": "Grimentity",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 18110,
     "name": "Jihad",
     "found_in_genre": "Grindcore"
@@ -28082,6 +27827,11 @@
   {
     "bandId": 17778,
     "name": "Experiment In Terror",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 17730,
+    "name": "Dehydrated Goat",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28150,11 +27900,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 19235,
-    "name": "Matsunaga Was Right",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 17311,
     "name": "Choke Me",
     "found_in_genre": "Grindcore"
@@ -28190,11 +27935,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 9350,
-    "name": "Insistent",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 17034,
     "name": "Test",
     "found_in_genre": "Grindcore"
@@ -28207,6 +27947,11 @@
   {
     "bandId": 7300,
     "name": "Nistikko",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 16990,
+    "name": "Actvs Mortis",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28315,16 +28060,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 16456,
-    "name": "Drag The Dead",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 16375,
-    "name": "Narkan",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 8409,
     "name": "Attack Of The Mad Axeman",
     "found_in_genre": "Grindcore"
@@ -28347,6 +28082,11 @@
   {
     "bandId": 16403,
     "name": "Serrucho",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 16375,
+    "name": "Narkan",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28437,6 +28177,11 @@
   {
     "bandId": 16131,
     "name": "Creative Waste",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 4930,
+    "name": "Homizide",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28595,13 +28340,13 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 13686,
-    "name": "The Breaking Wheel",
+    "bandId": 13637,
+    "name": "Anthropic",
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 13637,
-    "name": "Anthropic",
+    "bandId": 13626,
+    "name": "Depraved",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28735,11 +28480,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 8492,
-    "name": "Necrony",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 12292,
     "name": "Rotting Stiffs",
     "found_in_genre": "Grindcore"
@@ -28747,6 +28487,16 @@
   {
     "bandId": 0,
     "name": "Naked City",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 9350,
+    "name": "Insistent",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 0,
+    "name": "Celebrating Napalm Death's 1987",
     "found_in_genre": "Grindcore"
   },
   {
@@ -28852,6 +28602,11 @@
   {
     "bandId": 11234,
     "name": "Circus Gore",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 5550,
+    "name": "Feeble Minded",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29325,13 +29080,13 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 8627,
-    "name": "Circle Of Defeat",
+    "bandId": 0,
+    "name": "Marginal",
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 0,
-    "name": "Marginal",
+    "bandId": 8589,
+    "name": "A Waking Nightmare",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29400,8 +29155,18 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 15134,
+    "name": "Six Brew Bantha",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 8160,
     "name": "The Decapitated Midgets",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 8147,
+    "name": "Thorwald",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29435,6 +29200,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 14523,
+    "name": "Violent Opposition",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 0,
     "name": "Excrementory Grindfuckers",
     "found_in_genre": "Grindcore"
@@ -29442,6 +29212,11 @@
   {
     "bandId": 7918,
     "name": "Anal Blast",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 7913,
+    "name": "Whore",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29575,6 +29350,11 @@
     "found_in_genre": "Grindcore"
   },
   {
+    "bandId": 5047,
+    "name": "Cryptic Void",
+    "found_in_genre": "Grindcore"
+  },
+  {
     "bandId": 1496,
     "name": "Ghoul",
     "found_in_genre": "Grindcore"
@@ -29690,11 +29470,6 @@
     "found_in_genre": "Grindcore"
   },
   {
-    "bandId": 629,
-    "name": "Goresoerd",
-    "found_in_genre": "Grindcore"
-  },
-  {
     "bandId": 0,
     "name": "Anal Trump",
     "found_in_genre": "Grindcore"
@@ -29727,6 +29502,11 @@
   {
     "bandId": 4370,
     "name": "Neid",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 4307,
+    "name": "Aggressive Tyrants",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29817,11 +29597,6 @@
   {
     "bandId": 3447,
     "name": "Into The Gore",
-    "found_in_genre": "Grindcore"
-  },
-  {
-    "bandId": 3437,
-    "name": "Empty Grave",
     "found_in_genre": "Grindcore"
   },
   {
@@ -29972,6 +29747,11 @@
   {
     "bandId": 636,
     "name": "InnerHate",
+    "found_in_genre": "Grindcore"
+  },
+  {
+    "bandId": 629,
+    "name": "Goresoerd",
     "found_in_genre": "Grindcore"
   },
   {
@@ -30230,6 +30010,11 @@
     "found_in_genre": "Slamming Deathcore"
   },
   {
+    "bandId": 23788,
+    "name": "Jesus Crustus",
+    "found_in_genre": "Sludge"
+  },
+  {
     "bandId": 21527,
     "name": "Black Dregs",
     "found_in_genre": "Sludge"
@@ -30307,11 +30092,6 @@
   {
     "bandId": 1547,
     "name": "Dimmu Borgir",
-    "found_in_genre": "Symphonic Black Metal"
-  },
-  {
-    "bandId": 14604,
-    "name": "Svartghast",
     "found_in_genre": "Symphonic Black Metal"
   },
   {
@@ -30860,6 +30640,11 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
+    "bandId": 677,
+    "name": "Twitch Of The Death Nerve",
+    "found_in_genre": "Technical Brutal Death Metal"
+  },
+  {
     "bandId": 5097,
     "name": "Chaos Catharsis",
     "found_in_genre": "Technical Brutal Death Metal"
@@ -30930,6 +30715,11 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
+    "bandId": 642,
+    "name": "Abysmal Torment",
+    "found_in_genre": "Technical Brutal Death Metal"
+  },
+  {
     "bandId": 9525,
     "name": "Engaged In Mutilating",
     "found_in_genre": "Technical Brutal Death Metal"
@@ -30957,11 +30747,6 @@
   {
     "bandId": 7849,
     "name": "Abolishing The Ignominious",
-    "found_in_genre": "Technical Brutal Death Metal"
-  },
-  {
-    "bandId": 693,
-    "name": "Torn The Fuck Apart",
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
@@ -31015,13 +30800,13 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
-    "bandId": 7468,
-    "name": "Infitar",
+    "bandId": 15073,
+    "name": "Agent 0",
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
-    "bandId": 15073,
-    "name": "Agent 0",
+    "bandId": 7271,
+    "name": "Murder Therapy",
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
@@ -31047,6 +30832,11 @@
   {
     "bandId": 6997,
     "name": "Umbral Torturer",
+    "found_in_genre": "Technical Brutal Death Metal"
+  },
+  {
+    "bandId": 6979,
+    "name": "Neuroma",
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
@@ -31300,11 +31090,6 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
-    "bandId": 2332,
-    "name": "Fungus",
-    "found_in_genre": "Technical Brutal Death Metal"
-  },
-  {
     "bandId": 2327,
     "name": "Ripping Flesh",
     "found_in_genre": "Technical Brutal Death Metal"
@@ -31387,6 +31172,11 @@
   {
     "bandId": 1526,
     "name": "Inveracity",
+    "found_in_genre": "Technical Brutal Death Metal"
+  },
+  {
+    "bandId": 16483,
+    "name": "Stillness' Blade",
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
@@ -31515,11 +31305,6 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
-    "bandId": 331,
-    "name": "Rape Festival",
-    "found_in_genre": "Technical Brutal Death Metal"
-  },
-  {
     "bandId": 327,
     "name": "Psycroptic",
     "found_in_genre": "Technical Brutal Death Metal"
@@ -31630,8 +31415,13 @@
     "found_in_genre": "Technical Brutal Death Metal"
   },
   {
-    "bandId": 23769,
-    "name": "Putrid Disfigurement",
+    "bandId": 22741,
+    "name": "Slamrot",
+    "found_in_genre": "Slamming Brutal Death Metal"
+  },
+  {
+    "bandId": 18414,
+    "name": "Parasitic Encephalitis",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -31642,11 +31432,6 @@
   {
     "bandId": 0,
     "name": "Slegdehammer Vasectomy",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
-    "bandId": 23164,
-    "name": "Gagged",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -31815,11 +31600,6 @@
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
-    "bandId": 0,
-    "name": "Lobotomisation",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
     "bandId": 21257,
     "name": "Hacked Up",
     "found_in_genre": "Slamming Brutal Death Metal"
@@ -31980,11 +31760,6 @@
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
-    "bandId": 17855,
-    "name": "Purity In Perversion",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
     "bandId": 21167,
     "name": "Carniceria",
     "found_in_genre": "Slamming Brutal Death Metal"
@@ -32037,11 +31812,6 @@
   {
     "bandId": 21018,
     "name": "Grotesque Desecration",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
-    "bandId": 21740,
-    "name": "Rancid Nut Sauce",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32315,11 +32085,6 @@
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
-    "bandId": 5741,
-    "name": "Turbidity",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
     "bandId": 7181,
     "name": "Abominable Devourment",
     "found_in_genre": "Slamming Brutal Death Metal"
@@ -32337,6 +32102,11 @@
   {
     "bandId": 16263,
     "name": "Ulo",
+    "found_in_genre": "Slamming Brutal Death Metal"
+  },
+  {
+    "bandId": 16423,
+    "name": "Mohler",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32387,11 +32157,6 @@
   {
     "bandId": 146,
     "name": "Carnal Disfigurement",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
-    "bandId": 16992,
-    "name": "Rigor Mortis",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32455,6 +32220,11 @@
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
+    "bandId": 11309,
+    "name": "Human Menu",
+    "found_in_genre": "Slamming Brutal Death Metal"
+  },
+  {
     "bandId": 167,
     "name": "Remnants Of Tortured",
     "found_in_genre": "Slamming Brutal Death Metal"
@@ -32462,11 +32232,6 @@
   {
     "bandId": 6627,
     "name": "Tracriomy",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
-    "bandId": 10864,
-    "name": "Human Mass Extermination",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32537,6 +32302,11 @@
   {
     "bandId": 5487,
     "name": "Splatterpuss",
+    "found_in_genre": "Slamming Brutal Death Metal"
+  },
+  {
+    "bandId": 5741,
+    "name": "Turbidity",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32632,11 +32402,6 @@
   {
     "bandId": 4499,
     "name": "Intestinal Extirpation",
-    "found_in_genre": "Slamming Brutal Death Metal"
-  },
-  {
-    "bandId": 4279,
-    "name": "Torturor",
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
@@ -32850,6 +32615,16 @@
     "found_in_genre": "Slamming Brutal Death Metal"
   },
   {
+    "bandId": 17061,
+    "name": "Apogean",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 13195,
+    "name": "Devil's Reef",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 22438,
     "name": "Ophidious",
     "found_in_genre": "Technical Death Metal"
@@ -33045,11 +32820,6 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 17061,
-    "name": "Apogean",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
     "bandId": 9699,
     "name": "Spiritual Deception",
     "found_in_genre": "Technical Death Metal"
@@ -33135,11 +32905,6 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 31,
-    "name": "Death",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
     "bandId": 20045,
     "name": "Virtusira",
     "found_in_genre": "Technical Death Metal"
@@ -33217,11 +32982,6 @@
   {
     "bandId": 11697,
     "name": "Hellbore",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 17646,
-    "name": "Erebor",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -33322,6 +33082,11 @@
   {
     "bandId": 3639,
     "name": "Intonate",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 3506,
+    "name": "The Beast Of Nod",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -33492,11 +33257,6 @@
   {
     "bandId": 7693,
     "name": "Impureza",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 12928,
-    "name": "L'Incendio",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -33685,11 +33445,6 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 12322,
-    "name": "Mechanism",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
     "bandId": 197,
     "name": "Essence Of Datum",
     "found_in_genre": "Technical Death Metal"
@@ -33727,6 +33482,16 @@
   {
     "bandId": 1974,
     "name": "The Ritual Aura",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 720,
+    "name": "Bleak Flesh",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 2731,
+    "name": "Human",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -33975,6 +33740,11 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
+    "bandId": 7272,
+    "name": "Karpathian Relict",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 68,
     "name": "Augury",
     "found_in_genre": "Technical Death Metal"
@@ -34080,11 +33850,6 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 371,
-    "name": "The Faceless",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
     "bandId": 3298,
     "name": "Oblivion",
     "found_in_genre": "Technical Death Metal"
@@ -34112,11 +33877,6 @@
   {
     "bandId": 7313,
     "name": "Burning Inside",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 7272,
-    "name": "Karpathian Relict",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34175,6 +33935,11 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
+    "bandId": 6859,
+    "name": "Orbeth",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 6732,
     "name": "Dissolution",
     "found_in_genre": "Technical Death Metal"
@@ -34220,13 +33985,13 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 2731,
-    "name": "Human",
+    "bandId": 6180,
+    "name": "Opposite Extremities",
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 6180,
-    "name": "Opposite Extremities",
+    "bandId": 6145,
+    "name": "Refawn",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34255,6 +34020,11 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
+    "bandId": 4395,
+    "name": "Dawn Of Retaliation",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 10690,
     "name": "兀突骨",
     "found_in_genre": "Technical Death Metal"
@@ -34262,6 +34032,11 @@
   {
     "bandId": 5197,
     "name": "Faust",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 5155,
+    "name": "Hellseek",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34287,6 +34062,11 @@
   {
     "bandId": 107,
     "name": "Banisher",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 4247,
+    "name": "Cortexiphan",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34317,11 +34097,6 @@
   {
     "bandId": 3351,
     "name": "Vacuus",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 6859,
-    "name": "Orbeth",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34382,6 +34157,11 @@
   {
     "bandId": 3284,
     "name": "Shodan",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 3274,
+    "name": "Festival Of Mutilation",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34505,11 +34285,6 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
-    "bandId": 317,
-    "name": "Ouroboros",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
     "bandId": 1912,
     "name": "A Loathing Requiem",
     "found_in_genre": "Technical Death Metal"
@@ -34527,11 +34302,6 @@
   {
     "bandId": 1725,
     "name": "Caress",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 1697,
-    "name": "Symbiotic",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34655,6 +34425,11 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
+    "bandId": 376,
+    "name": "The Shattering",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 367,
     "name": "Synperium",
     "found_in_genre": "Technical Death Metal"
@@ -34690,6 +34465,16 @@
     "found_in_genre": "Technical Death Metal"
   },
   {
+    "bandId": 317,
+    "name": "Ouroboros",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
+    "bandId": 303,
+    "name": "Ordinance",
+    "found_in_genre": "Technical Death Metal"
+  },
+  {
     "bandId": 210,
     "name": "Galgamex",
     "found_in_genre": "Technical Death Metal"
@@ -34717,11 +34502,6 @@
   {
     "bandId": 168,
     "name": "Devilyn",
-    "found_in_genre": "Technical Death Metal"
-  },
-  {
-    "bandId": 119,
-    "name": "Bushwhacker",
     "found_in_genre": "Technical Death Metal"
   },
   {
@@ -34858,16 +34638,6 @@
     "bandId": 101,
     "name": "Azure Emote",
     "found_in_genre": "Industrial Metal"
-  },
-  {
-    "bandId": 21811,
-    "name": "Rise Of Kronos",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 23745,
-    "name": "Decease",
-    "found_in_genre": "Thrash Metal"
   },
   {
     "bandId": 17109,
@@ -35225,6 +34995,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 20756,
+    "name": "Creation Of Death",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 20692,
     "name": "Zero Gravity",
     "found_in_genre": "Thrash Metal"
@@ -35560,11 +35335,6 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 16116,
-    "name": "Devastación",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
     "bandId": 4433,
     "name": "Agretator",
     "found_in_genre": "Thrash Metal"
@@ -35612,11 +35382,6 @@
   {
     "bandId": 17415,
     "name": "Suffering Sights",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 4336,
-    "name": "Rotten",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -35840,6 +35605,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 13705,
+    "name": "Vicious Circle",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 3170,
     "name": "Cerebral Desecration",
     "found_in_genre": "Thrash Metal"
@@ -35950,11 +35720,6 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 13106,
-    "name": "Degrave",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
     "bandId": 13102,
     "name": "Home Style Surgery",
     "found_in_genre": "Thrash Metal"
@@ -35962,11 +35727,6 @@
   {
     "bandId": 13077,
     "name": "Voight Kampff",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 13004,
-    "name": "Epicenter",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -35992,11 +35752,6 @@
   {
     "bandId": 12813,
     "name": "Malicia",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 12766,
-    "name": "Communal Grave",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -36245,11 +36000,6 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 10465,
-    "name": "Repulsive Aggression",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
     "bandId": 9469,
     "name": "Create A Kill",
     "found_in_genre": "Thrash Metal"
@@ -36437,11 +36187,6 @@
   {
     "bandId": 8709,
     "name": "Infector Cell",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 8597,
-    "name": "Merciless Terror",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -36660,6 +36405,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 0,
+    "name": "Ektomorf",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 6587,
     "name": "Anacrusis",
     "found_in_genre": "Thrash Metal"
@@ -36695,11 +36445,6 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 6230,
-    "name": "Final Depravity",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
     "bandId": 6229,
     "name": "Hidden Enemy",
     "found_in_genre": "Thrash Metal"
@@ -36727,11 +36472,6 @@
   {
     "bandId": 5942,
     "name": "Cyclone",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 5915,
-    "name": "Hexecutor",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -36785,13 +36525,13 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 5184,
-    "name": "Wretched Soul",
+    "bandId": 5246,
+    "name": "Unhoped",
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 5076,
-    "name": "Morthifera",
+    "bandId": 5184,
+    "name": "Wretched Soul",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -36995,13 +36735,13 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 15875,
-    "name": "Bloodrocuted",
+    "bandId": 4061,
+    "name": "Nuclear",
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 4060,
-    "name": "Essence",
+    "bandId": 15875,
+    "name": "Bloodrocuted",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -37115,6 +36855,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 3644,
+    "name": "Reactory",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 3576,
     "name": "Nailgun Massacre",
     "found_in_genre": "Thrash Metal"
@@ -37170,6 +36915,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 3184,
+    "name": "Vektor",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 3350,
     "name": "Nuclear Assault",
     "found_in_genre": "Thrash Metal"
@@ -37185,11 +36935,6 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 3184,
-    "name": "Vektor",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
     "bandId": 3153,
     "name": "Howling",
     "found_in_genre": "Thrash Metal"
@@ -37197,6 +36942,11 @@
   {
     "bandId": 3118,
     "name": "Gutter Tactic",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
+    "bandId": 2961,
+    "name": "The Artifice",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -37247,11 +36997,6 @@
   {
     "bandId": 2465,
     "name": "Chronosphere",
-    "found_in_genre": "Thrash Metal"
-  },
-  {
-    "bandId": 2385,
-    "name": "Reborn Damnation",
     "found_in_genre": "Thrash Metal"
   },
   {
@@ -37385,6 +37130,11 @@
     "found_in_genre": "Thrash Metal"
   },
   {
+    "bandId": 748,
+    "name": "Rigor Mortis",
+    "found_in_genre": "Thrash Metal"
+  },
+  {
     "bandId": 576,
     "name": "Extasy Crypt",
     "found_in_genre": "Thrash Metal"
@@ -37400,13 +37150,58 @@
     "found_in_genre": "Thrash Metal"
   },
   {
-    "bandId": 23778,
-    "name": "Evilbreed",
+    "bandId": 17785,
+    "name": "Necrotesque",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 11248,
-    "name": "Pig's Blood",
+    "bandId": 11357,
+    "name": "Necroccultus",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 23793,
+    "name": "Frustration",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 20689,
+    "name": "Coprolith",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 7679,
+    "name": "Creeping Flesh",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 3165,
+    "name": "Grond",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 2325,
+    "name": "Vastum",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 10625,
+    "name": "Astriferous",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 17920,
+    "name": "Grotesque Impalement",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 19517,
+    "name": "Candarian",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 23778,
+    "name": "Evilbreed",
     "found_in_genre": "Death Metal"
   },
   {
@@ -37417,16 +37212,6 @@
   {
     "bandId": 18320,
     "name": "Xorsist",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 11357,
-    "name": "Necroccultus",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 23768,
-    "name": "Bone Storm",
     "found_in_genre": "Death Metal"
   },
   {
@@ -37445,11 +37230,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 23755,
-    "name": "Kharkov",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 16150,
     "name": "Magefa",
     "found_in_genre": "Death Metal"
@@ -37460,11 +37240,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 13599,
-    "name": "Reeking Aura",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 8977,
     "name": "In Pain",
     "found_in_genre": "Death Metal"
@@ -37472,11 +37247,6 @@
   {
     "bandId": 2328,
     "name": "Sabiendas",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 11243,
-    "name": "Necrolord",
     "found_in_genre": "Death Metal"
   },
   {
@@ -37547,11 +37317,6 @@
   {
     "bandId": 23714,
     "name": "Woundead",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 3165,
-    "name": "Grond",
     "found_in_genre": "Death Metal"
   },
   {
@@ -37670,11 +37435,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 7679,
-    "name": "Creeping Flesh",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 9314,
     "name": "Effigy",
     "found_in_genre": "Death Metal"
@@ -37727,16 +37487,6 @@
   {
     "bandId": 23598,
     "name": "Hating Life",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 21860,
-    "name": "Decreation",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 19517,
-    "name": "Candarian",
     "found_in_genre": "Death Metal"
   },
   {
@@ -37905,11 +37655,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 20281,
-    "name": "Sardonic",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 9692,
     "name": "Oraculum",
     "found_in_genre": "Death Metal"
@@ -37957,11 +37702,6 @@
   {
     "bandId": 14300,
     "name": "Funeral Vomit",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 23379,
-    "name": "Zombie Orchestra",
     "found_in_genre": "Death Metal"
   },
   {
@@ -38042,6 +37782,11 @@
   {
     "bandId": 14646,
     "name": "Ghoulhouse",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 2585,
+    "name": "Cadaver",
     "found_in_genre": "Death Metal"
   },
   {
@@ -38142,6 +37887,11 @@
   {
     "bandId": 2693,
     "name": "Ferosity",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 3002,
+    "name": "Symbiotic",
     "found_in_genre": "Death Metal"
   },
   {
@@ -38332,6 +38082,11 @@
   {
     "bandId": 17044,
     "name": "Before Annihilation",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 18298,
+    "name": "Inner Darkness",
     "found_in_genre": "Death Metal"
   },
   {
@@ -38695,11 +38450,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 20345,
-    "name": "Toxik Volcano",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 11085,
     "name": "Intrepid",
     "found_in_genre": "Death Metal"
@@ -38892,11 +38642,6 @@
   {
     "bandId": 22552,
     "name": "Feral Wound",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 7467,
-    "name": "Crypts Of Despair",
     "found_in_genre": "Death Metal"
   },
   {
@@ -39315,11 +39060,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 15454,
-    "name": "Moondark",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 22147,
     "name": "Adrenogore",
     "found_in_genre": "Death Metal"
@@ -39327,11 +39067,6 @@
   {
     "bandId": 20717,
     "name": "Headacheman",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 16757,
-    "name": "Becerus",
     "found_in_genre": "Death Metal"
   },
   {
@@ -40005,11 +39740,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 21618,
-    "name": "Symbiotic Necroticism",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 4401,
     "name": "Gatecreeper",
     "found_in_genre": "Death Metal"
@@ -40120,6 +39850,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 16203,
+    "name": "Last Resistance",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 3404,
     "name": "Replicant",
     "found_in_genre": "Death Metal"
@@ -40132,6 +39867,11 @@
   {
     "bandId": 838,
     "name": "Deadly Vision",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 21466,
+    "name": "Ri'lyth",
     "found_in_genre": "Death Metal"
   },
   {
@@ -40230,6 +39970,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 21375,
+    "name": "Dussage",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 21363,
     "name": "Nekroza",
     "found_in_genre": "Death Metal"
@@ -40317,11 +40062,6 @@
   {
     "bandId": 21267,
     "name": "Lapida",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 21264,
-    "name": "Dalighet",
     "found_in_genre": "Death Metal"
   },
   {
@@ -40540,11 +40280,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 13195,
-    "name": "Devil's Reef",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 9203,
     "name": "Blood Of Christ",
     "found_in_genre": "Death Metal"
@@ -40705,11 +40440,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 20865,
-    "name": "Carniceros Demoníacos",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 20858,
     "name": "Former Human",
     "found_in_genre": "Death Metal"
@@ -40787,11 +40517,6 @@
   {
     "bandId": 20780,
     "name": "Abominated",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 12042,
-    "name": "CockRock Sadistic Petus Pennytration",
     "found_in_genre": "Death Metal"
   },
   {
@@ -40917,11 +40642,6 @@
   {
     "bandId": 20672,
     "name": "Azrael",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 5916,
-    "name": "Corporal Jigsore",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41065,6 +40785,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 17852,
+    "name": "Fleshless Entity",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 13385,
     "name": "Subconscious Terror",
     "found_in_genre": "Death Metal"
@@ -41072,6 +40797,11 @@
   {
     "bandId": 19084,
     "name": "Grotesqueries",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 4274,
+    "name": "All Consumed",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41122,11 +40852,6 @@
   {
     "bandId": 4697,
     "name": "Cemetery Urn",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 6446,
-    "name": "Pandemic Genocide",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41225,11 +40950,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 13794,
-    "name": "Deaf Aid",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 6216,
     "name": "Ascended Dead",
     "found_in_genre": "Death Metal"
@@ -41237,11 +40957,6 @@
   {
     "bandId": 8059,
     "name": "Masacre",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 2467,
-    "name": "Corpsessed",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41367,6 +41082,11 @@
   {
     "bandId": 20205,
     "name": "Corpses Conductor",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 19990,
+    "name": "Omnicidal",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41700,11 +41420,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 17785,
-    "name": "Necrotesque",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 19874,
     "name": "Defense Wound",
     "found_in_genre": "Death Metal"
@@ -41855,13 +41570,13 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 19711,
-    "name": "Simpulmati",
+    "bandId": 19710,
+    "name": "Slowbleed",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 19710,
-    "name": "Slowbleed",
+    "bandId": 15588,
+    "name": "Rotten Coffin",
     "found_in_genre": "Death Metal"
   },
   {
@@ -41870,13 +41585,13 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 9049,
-    "name": "Cremation",
+    "bandId": 11327,
+    "name": "Death Path",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 11327,
-    "name": "Death Path",
+    "bandId": 19674,
+    "name": "Septicem",
     "found_in_genre": "Death Metal"
   },
   {
@@ -42260,11 +41975,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 15116,
-    "name": "Ente",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 19135,
     "name": "Anamorph",
     "found_in_genre": "Death Metal"
@@ -42282,6 +41992,11 @@
   {
     "bandId": 12379,
     "name": "Patricide",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 9865,
+    "name": "Ósserp",
     "found_in_genre": "Death Metal"
   },
   {
@@ -42360,23 +42075,18 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 17551,
-    "name": "Bastard Of Bethlehem",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 3711,
     "name": "Detestation",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 19006,
-    "name": "Chronic Torment",
+    "bandId": 6833,
+    "name": "Triumvir Foul",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 6833,
-    "name": "Triumvir Foul",
+    "bandId": 13599,
+    "name": "Reeking Aura",
     "found_in_genre": "Death Metal"
   },
   {
@@ -42645,11 +42355,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 18712,
-    "name": "Arachnids",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 4801,
     "name": "Cyphonism",
     "found_in_genre": "Death Metal"
@@ -42672,11 +42377,6 @@
   {
     "bandId": 18668,
     "name": "Fate Of Misery",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 18667,
-    "name": "Inhumed",
     "found_in_genre": "Death Metal"
   },
   {
@@ -42765,6 +42465,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 2467,
+    "name": "Corpsessed",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 18581,
     "name": "Sledge Wolf",
     "found_in_genre": "Death Metal"
@@ -42817,11 +42522,6 @@
   {
     "bandId": 11664,
     "name": "Ebullition",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 2325,
-    "name": "Vastum",
     "found_in_genre": "Death Metal"
   },
   {
@@ -42885,11 +42585,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 6572,
-    "name": "GoldenPyre",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 10842,
     "name": "Wynjara",
     "found_in_genre": "Death Metal"
@@ -42945,6 +42640,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 11243,
+    "name": "Necrolord",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 22002,
     "name": "Hellfrost And Fire",
     "found_in_genre": "Death Metal"
@@ -42982,11 +42682,6 @@
   {
     "bandId": 17597,
     "name": "Nihilo",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 18289,
-    "name": "Hatred",
     "found_in_genre": "Death Metal"
   },
   {
@@ -43085,6 +42780,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 1783,
+    "name": "Carnal Lust",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 18106,
     "name": "Ghost Gore",
     "found_in_genre": "Death Metal"
@@ -43107,11 +42807,6 @@
   {
     "bandId": 2418,
     "name": "Abyssus",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 5077,
-    "name": "Epitaph",
     "found_in_genre": "Death Metal"
   },
   {
@@ -43177,11 +42872,6 @@
   {
     "bandId": 11307,
     "name": "Prophetic Scourge",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 11158,
-    "name": "Antheology",
     "found_in_genre": "Death Metal"
   },
   {
@@ -43360,11 +43050,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 17690,
-    "name": "Endart",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 9695,
     "name": "Godless",
     "found_in_genre": "Death Metal"
@@ -43447,11 +43132,6 @@
   {
     "bandId": 581,
     "name": "Giggerotah",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 17579,
-    "name": "Crepitus",
     "found_in_genre": "Death Metal"
   },
   {
@@ -43622,6 +43302,11 @@
   {
     "bandId": 4281,
     "name": "Infected Chaos",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 9335,
+    "name": "Envig",
     "found_in_genre": "Death Metal"
   },
   {
@@ -43880,11 +43565,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 10484,
-    "name": "Gosudar",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 14525,
     "name": "Riexhumation",
     "found_in_genre": "Death Metal"
@@ -43955,6 +43635,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 7468,
+    "name": "Infitar",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 13946,
     "name": "The Dead Youth",
     "found_in_genre": "Death Metal"
@@ -43970,6 +43655,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 16757,
+    "name": "Becerus",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 6671,
     "name": "Helgast",
     "found_in_genre": "Death Metal"
@@ -43982,6 +43672,11 @@
   {
     "bandId": 16728,
     "name": "Axedra",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 20666,
+    "name": "Husqwarnah",
     "found_in_genre": "Death Metal"
   },
   {
@@ -44180,11 +43875,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 16203,
-    "name": "Last Resistance",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 16202,
     "name": "Ankerkeria",
     "found_in_genre": "Death Metal"
@@ -44305,11 +43995,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 16030,
-    "name": "Scourge",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 16024,
     "name": "Zombie Inc.",
     "found_in_genre": "Death Metal"
@@ -44370,6 +44055,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 0,
+    "name": "Portal Of Pazuzu",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 9545,
     "name": "Crypticus",
     "found_in_genre": "Death Metal"
@@ -44410,11 +44100,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 15738,
-    "name": "Hatred Slave",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 15716,
     "name": "Os",
     "found_in_genre": "Death Metal"
@@ -44422,11 +44107,6 @@
   {
     "bandId": 7422,
     "name": "Stass",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 15609,
-    "name": "Enterrador",
     "found_in_genre": "Death Metal"
   },
   {
@@ -44600,6 +44280,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 2449,
+    "name": "Human Destroyer",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 14183,
     "name": "Thrombus",
     "found_in_genre": "Death Metal"
@@ -44722,11 +44407,6 @@
   {
     "bandId": 857,
     "name": "Ton",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 5170,
-    "name": "Thy Final Pain",
     "found_in_genre": "Death Metal"
   },
   {
@@ -44860,11 +44540,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 7359,
-    "name": "Dead Carnage",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 1685,
     "name": "Thornafire",
     "found_in_genre": "Death Metal"
@@ -44985,6 +44660,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 3587,
+    "name": "Neverlight Horizon",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 8177,
     "name": "Medical Negligence",
     "found_in_genre": "Death Metal"
@@ -45007,6 +44687,11 @@
   {
     "bandId": 10487,
     "name": "Azath",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 13553,
+    "name": "Immortal Fate",
     "found_in_genre": "Death Metal"
   },
   {
@@ -45175,11 +44860,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 13308,
-    "name": "Sexcrement",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 13303,
     "name": "Wrathful",
     "found_in_genre": "Death Metal"
@@ -45255,11 +44935,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 3274,
-    "name": "Festival Of Mutilation",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 10490,
     "name": "Venomous Skeleton",
     "found_in_genre": "Death Metal"
@@ -45292,6 +44967,11 @@
   {
     "bandId": 12393,
     "name": "Eutanasia Brutal",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 2694,
+    "name": "Deception",
     "found_in_genre": "Death Metal"
   },
   {
@@ -45357,6 +45037,11 @@
   {
     "bandId": 12289,
     "name": "Kabbal",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 3225,
+    "name": "Sentenced",
     "found_in_genre": "Death Metal"
   },
   {
@@ -45520,6 +45205,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 12042,
+    "name": "CockRock Sadistic Petus Pennytration",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 11834,
     "name": "Gate Of Abydos",
     "found_in_genre": "Death Metal"
@@ -45552,6 +45242,11 @@
   {
     "bandId": 7446,
     "name": "Pentacle",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 11684,
+    "name": "Charred",
     "found_in_genre": "Death Metal"
   },
   {
@@ -45620,6 +45315,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 11596,
+    "name": "Evoke",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 11587,
     "name": "Ghost",
     "found_in_genre": "Death Metal"
@@ -45677,11 +45377,6 @@
   {
     "bandId": 11493,
     "name": "Impetuous Rage",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 11481,
-    "name": "Nothingness",
     "found_in_genre": "Death Metal"
   },
   {
@@ -45875,6 +45570,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 11248,
+    "name": "Pig's Blood",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 11242,
     "name": "Agonija",
     "found_in_genre": "Death Metal"
@@ -45912,6 +45612,11 @@
   {
     "bandId": 11183,
     "name": "Ruthless",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 3218,
+    "name": "Firespawn",
     "found_in_genre": "Death Metal"
   },
   {
@@ -46045,6 +45750,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 10953,
+    "name": "Disgrace",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 10949,
     "name": "Golgotha",
     "found_in_genre": "Death Metal"
@@ -46082,11 +45792,6 @@
   {
     "bandId": 10866,
     "name": "Erebus",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 10863,
-    "name": "Gorefiend",
     "found_in_genre": "Death Metal"
   },
   {
@@ -46455,11 +46160,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 1355,
-    "name": "Chapel Of Disease",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 2556,
     "name": "Obliteration",
     "found_in_genre": "Death Metal"
@@ -46625,6 +46325,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 8533,
+    "name": "Temple",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 9914,
     "name": "Vermis",
     "found_in_genre": "Death Metal"
@@ -46767,11 +46472,6 @@
   {
     "bandId": 9313,
     "name": "Viatrophy",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 4242,
-    "name": "Severance",
     "found_in_genre": "Death Metal"
   },
   {
@@ -46950,6 +46650,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 8864,
+    "name": "Diminishing Breed",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 8849,
     "name": "Nex Carnis",
     "found_in_genre": "Death Metal"
@@ -47060,11 +46765,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 8603,
-    "name": "Broken Gravestones",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 8568,
     "name": "Necrocannibal",
     "found_in_genre": "Death Metal"
@@ -47087,11 +46787,6 @@
   {
     "bandId": 8545,
     "name": "God Forsaken",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 8533,
-    "name": "Temple",
     "found_in_genre": "Death Metal"
   },
   {
@@ -47142,6 +46837,11 @@
   {
     "bandId": 2122,
     "name": "Morbid Illusion",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 8374,
+    "name": "Cremation",
     "found_in_genre": "Death Metal"
   },
   {
@@ -47210,6 +46910,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 8233,
+    "name": "Warspite",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 8232,
     "name": "Weak Aside",
     "found_in_genre": "Death Metal"
@@ -47242,6 +46947,11 @@
   {
     "bandId": 2342,
     "name": "Rise",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 5077,
+    "name": "Epitaph",
     "found_in_genre": "Death Metal"
   },
   {
@@ -47640,16 +47350,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 6502,
-    "name": "Horrible Creatures",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 6471,
-    "name": "Strangers In Death",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 6447,
     "name": "Deus Otiosus",
     "found_in_genre": "Death Metal"
@@ -47875,11 +47575,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 5808,
-    "name": "Winterwolf",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 2483,
     "name": "Demigod",
     "found_in_genre": "Death Metal"
@@ -47887,11 +47582,6 @@
   {
     "bandId": 3589,
     "name": "Rude",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 5738,
-    "name": "Chronic Decay",
     "found_in_genre": "Death Metal"
   },
   {
@@ -47917,11 +47607,6 @@
   {
     "bandId": 5685,
     "name": "Exmortem",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 4555,
-    "name": "Brutal Unrest",
     "found_in_genre": "Death Metal"
   },
   {
@@ -47955,11 +47640,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 5453,
-    "name": "Gurkkhas",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 5452,
     "name": "Porta Daemonium",
     "found_in_genre": "Death Metal"
@@ -47977,11 +47657,6 @@
   {
     "bandId": 5367,
     "name": "Yomi",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 4457,
-    "name": "Inquiring Blood",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48095,13 +47770,13 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 4973,
-    "name": "Burial Ritual",
+    "bandId": 1457,
+    "name": "Valhalla",
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 1457,
-    "name": "Valhalla",
+    "bandId": 4973,
+    "name": "Burial Ritual",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48117,11 +47792,6 @@
   {
     "bandId": 4948,
     "name": "Serpentine Dominion",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 4932,
-    "name": "Nadi",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48210,11 +47880,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 4776,
-    "name": "Meister Scheisze",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 4726,
     "name": "Fatalist",
     "found_in_genre": "Death Metal"
@@ -48240,6 +47905,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 4650,
+    "name": "Severed Limbs",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 4639,
     "name": "Defaced Creation",
     "found_in_genre": "Death Metal"
@@ -48262,11 +47932,6 @@
   {
     "bandId": 4622,
     "name": "Serpent Ascending",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 4613,
-    "name": "Muldjord",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48330,6 +47995,11 @@
     "found_in_genre": "Death Metal"
   },
   {
+    "bandId": 4555,
+    "name": "Brutal Unrest",
+    "found_in_genre": "Death Metal"
+  },
+  {
     "bandId": 4552,
     "name": "Morbid Flesh",
     "found_in_genre": "Death Metal"
@@ -48387,6 +48057,11 @@
   {
     "bandId": 4448,
     "name": "Necrodium",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 4446,
+    "name": "Refusal",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48485,11 +48160,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 4098,
-    "name": "Beyond Hell",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 4091,
     "name": "Sufferage",
     "found_in_genre": "Death Metal"
@@ -48527,11 +48197,6 @@
   {
     "bandId": 4012,
     "name": "Eroded",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 3967,
-    "name": "Mausoleum",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48645,11 +48310,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 3587,
-    "name": "Neverlight Horizon",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 3574,
     "name": "Mental Cell",
     "found_in_genre": "Death Metal"
@@ -48682,11 +48342,6 @@
   {
     "bandId": 3520,
     "name": "Disembarkation",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 3486,
-    "name": "Warhammer",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48752,11 +48407,6 @@
   {
     "bandId": 3265,
     "name": "Effugium",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 3225,
-    "name": "Sentenced",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48840,11 +48490,6 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 2956,
-    "name": "God Syndrome",
-    "found_in_genre": "Death Metal"
-  },
-  {
     "bandId": 2948,
     "name": "Surgikill",
     "found_in_genre": "Death Metal"
@@ -48852,11 +48497,6 @@
   {
     "bandId": 2908,
     "name": "Convulse",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 2875,
-    "name": "Killing For Company",
     "found_in_genre": "Death Metal"
   },
   {
@@ -48950,8 +48590,13 @@
     "found_in_genre": "Death Metal"
   },
   {
-    "bandId": 2449,
-    "name": "Human Destroyer",
+    "bandId": 1355,
+    "name": "Chapel Of Disease",
+    "found_in_genre": "Death Metal"
+  },
+  {
+    "bandId": 2463,
+    "name": "Overtorture",
     "found_in_genre": "Death Metal"
   },
   {
@@ -49007,11 +48652,6 @@
   {
     "bandId": 2078,
     "name": "South Of Hell",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 2044,
-    "name": "Discard The Body",
     "found_in_genre": "Death Metal"
   },
   {
@@ -49197,11 +48837,6 @@
   {
     "bandId": 269,
     "name": "Armoured Angel",
-    "found_in_genre": "Death Metal"
-  },
-  {
-    "bandId": 191,
-    "name": "Eloa Vadaath",
     "found_in_genre": "Death Metal"
   }
 ]
