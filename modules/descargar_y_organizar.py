@@ -52,7 +52,10 @@ MAX_REINTENTOS_PARCIALES = 5  # 0 = infinito, reintentos si hubo descarga parcia
 
 # Configuración de Mega
 MEGA_TIMEOUT_SECONDS = int(os.getenv('MEGA_TIMEOUT_SECONDS', '240'))
+# Cooldown largo para rate-limit explícito de Mega (bandwidth/quota)
 MEGA_COOLDOWN_SECONDS = int(os.getenv('MEGA_COOLDOWN_SECONDS', '1200'))
+# Cooldown corto para timeouts: pueden ser red/archivo grande, no rate-limit real
+MEGA_TIMEOUT_COOLDOWN_SECONDS = int(os.getenv('MEGA_TIMEOUT_COOLDOWN_SECONDS', '300'))
 
 
 class MegaCooldownManager:
@@ -100,10 +103,15 @@ class MegaCooldownManager:
                 return 0
             return int(self._until - time.time())
 
-    def activate(self):
+    def activate(self, seconds=None):
+        """Activa cooldown. Si `seconds` es None usa el cooldown largo."""
+        duration = seconds if seconds is not None else MEGA_COOLDOWN_SECONDS
         with self._lock:
-            self._until = time.time() + MEGA_COOLDOWN_SECONDS
-            self._save_to_disk()
+            # No achicamos un cooldown ya activo: si había uno largo, lo respetamos
+            new_until = time.time() + duration
+            if new_until > self._until:
+                self._until = new_until
+                self._save_to_disk()
 
 
 mega_cooldown = MegaCooldownManager()
@@ -916,7 +924,8 @@ def _priorizar_links(links):
     """Ordena links por prioridad de servicio (más confiable primero) y calidad"""
     def sort_key(link):
         tipo = detectar_tipo_link(link.get('url', ''))
-        return (LINK_PRIORITY.get(tipo, 50), -link.get('quality', 0))
+        # quality puede venir como None en el JSON; tratarlo como 0
+        return (LINK_PRIORITY.get(tipo, 50), -(link.get('quality') or 0))
     return sorted(links, key=sort_key)
 
 
@@ -1021,10 +1030,11 @@ def descargar_mega(url, destino, password=None, verbose=True):
             error_msg = result.stderr.strip() if result.stderr else ""
             error_lower = error_msg.lower()
 
-            # Detectar límite de descarga de Mega
+            # Detectar límite de descarga real de Mega → cooldown largo
             if 'bandwidth' in error_lower or 'limit' in error_lower or 'quota' in error_lower:
+                mins = MEGA_COOLDOWN_SECONDS // 60
                 if verbose:
-                    logger.warning("Mega: límite de descarga alcanzado, probando otros servidores...")
+                    logger.warning(f"Mega: rate-limit alcanzado, cooldown {mins}m")
                 mega_cooldown.activate()
                 return None, True  # Skip Mega para este release
 
@@ -1038,9 +1048,13 @@ def descargar_mega(url, destino, password=None, verbose=True):
             logger.warning("megadl no instalado")
         return None, False
     except subprocess.TimeoutExpired:
+        # Timeout puede ser red lenta o archivo grande, no necesariamente
+        # rate-limit. Cooldown corto para evitar martillar Mega y dar tiempo
+        # a que se recupere si era circunstancial.
+        mins = MEGA_TIMEOUT_COOLDOWN_SECONDS // 60
         if verbose:
-            logger.warning("Mega: timeout, probando otros servidores...")
-        mega_cooldown.activate()
+            logger.warning(f"Mega: timeout tras {MEGA_TIMEOUT_SECONDS}s, cooldown {mins}m")
+        mega_cooldown.activate(MEGA_TIMEOUT_COOLDOWN_SECONDS)
         return None, True  # Skip Mega para este release
     except (subprocess.SubprocessError, OSError) as e:
         if verbose:
@@ -1997,19 +2011,17 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
             continue
 
         tipo = detectar_tipo_link(url)
+
+        # Si Mega está en cooldown, saltamos en silencio: ni "Intentando"
+        # ni "Saltando". El release se encolará abajo si todos los links
+        # restantes son Mega.
+        if tipo == 'mega' and _mega_cooldown_activo():
+            mega_omitido_por_cooldown = True
+            continue
+
         with log_context(log_label):
             if verbose:
                 logger.info(f"→ Intentando {tipo}: {url[:60]}...")
-
-            if tipo == 'mega' and _mega_cooldown_activo():
-                mega_omitido_por_cooldown = True
-                if verbose:
-                    restante = _mega_cooldown_restante()
-                    if restante > 0:
-                        logger.debug(f"⏭️ Saltando Mega (cooldown {restante}s)")
-                    else:
-                        logger.debug("⏭️ Saltando Mega (cooldown activo)")
-                continue
 
             # Crear directorio temporal único
             temp_release = tempfile.mkdtemp(dir=temp_dir)
@@ -2256,37 +2268,75 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
     # === Fase 2: Descargas secuenciales (solo-Mega + pendientes) ===
     all_mega = releases_solo_mega + mega_pendientes
+
+    # Reseteamos la cola: lo que NO se procese (cooldown, interrupt, fallo
+    # con "Mega pendiente") se re-encolará abajo. Los que se procesen con
+    # éxito quedan fuera de la cola implícitamente.
+    mega_pendientes.clear()
+    mega_pendientes_ids.clear()
+
+    def _encolar_pendiente(r):
+        """Agrega un release a la cola Mega de forma idempotente."""
+        pid = str(r.get('post_id', '')).strip()
+        if not pid or pid in mega_pendientes_ids:
+            return False
+        mr = _crear_release_mega(r)
+        if not mr:
+            return False
+        mega_pendientes.append(mr)
+        mega_pendientes_ids.add(pid)
+        return True
+
     if all_mega:
-        if verbose:
-            logger.info(f"🔗 Procesando {len(all_mega)} releases Mega secuencialmente...")
-
-        for i, release in enumerate(all_mega):
+        # Cortocircuito: si Mega ya está en cooldown, no iteramos 675 veces
+        # imprimiendo lo mismo. Encolamos todo y salimos limpio.
+        if _mega_cooldown_activo():
+            restante = _mega_cooldown_restante()
+            mins, segs = divmod(restante, 60)
             if verbose:
-                print(f"\n[MEGA {i+1}/{len(all_mega)}]", end='')
+                logger.info(f"⏸️  Mega en cooldown ({mins}m {segs}s restantes), saltando fase secuencial")
+            for r in all_mega:
+                _encolar_pendiente(r)
+            if verbose:
+                logger.info(f"⏳ {len(mega_pendientes)} releases Mega encolados para próxima corrida")
+        else:
+            if verbose:
+                logger.info(f"🔗 Procesando {len(all_mega)} releases Mega secuencialmente...")
 
-            try:
-                exito, mensaje, info = procesar_release(
-                    release, destino_base, TEMP_DIR, verbose, descargados, fallidos
-                )
-                _handle_result(release, exito, mensaje, info)
+            for i, release in enumerate(all_mega):
+                # Si el cooldown se activó durante el loop (rate-limit real
+                # en plena corrida), encolar el resto y cortar.
+                if _mega_cooldown_activo():
+                    restante = _mega_cooldown_restante()
+                    mins, segs = divmod(restante, 60)
+                    pendientes_nuevos = sum(1 for r in all_mega[i:] if _encolar_pendiente(r))
+                    if verbose:
+                        logger.info(f"⏸️  Mega entró en cooldown ({mins}m {segs}s)")
+                        logger.info(f"⏳ Encolados {pendientes_nuevos} releases restantes")
+                    break
 
-            except KeyboardInterrupt:
-                logger.warning("Interrumpido por el usuario")
-                # Guardar restantes como pendientes
-                remaining = all_mega[i+1:]
-                guardar_mega_pendientes(remaining)
-                _cleanup_playwright()
-                return
-            except Exception as e:
-                fallidos_count += 1
                 if verbose:
-                    logger.error(f"Error inesperado: {e}")
+                    print(f"\n[MEGA {i+1}/{len(all_mega)}]", end='')
 
-            delay_con_jitter(DELAY_ENTRE_DESCARGAS)
+                try:
+                    exito, mensaje, info = procesar_release(
+                        release, destino_base, TEMP_DIR, verbose, descargados, fallidos
+                    )
+                    _handle_result(release, exito, mensaje, info)
 
-        # Limpiar cola procesada
-        mega_pendientes.clear()
-        mega_pendientes_ids.clear()
+                except KeyboardInterrupt:
+                    logger.warning("Interrumpido por el usuario")
+                    for r in all_mega[i+1:]:
+                        _encolar_pendiente(r)
+                    guardar_mega_pendientes(mega_pendientes)
+                    _cleanup_playwright()
+                    return
+                except Exception as e:
+                    fallidos_count += 1
+                    if verbose:
+                        logger.error(f"Error inesperado: {e}")
+
+                delay_con_jitter(DELAY_ENTRE_DESCARGAS)
 
     # Guardar pendientes restantes en disco
     guardar_mega_pendientes(mega_pendientes)

@@ -967,7 +967,6 @@
 27383|Vishurddha|Addiction To Death And Anguish
 70261|Winterwolf|Lycanthropic Metal Of Death
 37753|Visceral Carnage|Perverse Collection Of Mutilated Bodies
-29818|Weeping Sores|False Confession
 28192|Virginity Fraud|Rejected By Death, An Imperishable Torment
 28630|Visceral Disgorge|Slithering Evisceration
 27995|Vile Hex|From The Ashes Of Death
@@ -1493,25 +1492,18 @@
 25265|Deiformity|Corpse Stomper
 24566|Deicide|Overtures Of Blasphemy
 23757|Drawn And Quartered|The One Who Lurks
-22849|Defus|The Time Of Mine
 26189|Deforme|Etchepare: Micronarcosis / Macronecrosis
-19866|Decaying|To Cross The LIne
 22181|Deathmaker|Arise Disciples
 64083|Deathtale|The Origin Of Hate
 28184|DeathPlague|Incineration
-24890|Deathening|Antifascist Death Metal
 25040|Death Scepter|Black Trance
 20817|Dead Alone|Serum
 24182|Defeated Sanity|Chapters Of Repugnance (Deluxe)
-22972|Datura|The Amplitudes Of Pacificacion
-25373|Deathrite|Nightmares Reign
 25031|Cursus Bellum|Ex Nihilo Nihil Fit
 23449|Cursedness|Pure Fucking Metal Invasion
 20252|Death Of Andromeda|Nightmare Of Humanity
 23670|Crypticus|The Nightcomers
 80591|Cuck Lord|Cuckodile Dundee
-25037|Crypteria|Crypteria
-57025|Daedius|Of Chaos And Resurgence
 24398|Cranial Osteotomy|Victim Of Wicked Sickness
 22103|Corpsedecay|Fetish Human Extermination
 25381|Connate Exasperation|Delusional Primacy
@@ -1520,19 +1512,14 @@
 20818|Chronic Hate|The Worst Form Of Life
 25920|Cerebrum|Iridium
 23334|Carrion|Time To Suffer
-24585|Carnage|Inevitable Deliverance
 25371|Cathexia|Complete Obliteration
 22450|Cardiac Arrest|A Parallel Dimension Of Despair
 20597|Cabal|Mark Of Rot
 25507|Crucifier|Thy Sulfur Throne On High
 24903|Carthage|Punic Wars!
 24180|Bæst|Danse Macabre
-57088|Byrum|Leaving This World
 24028|Brutal Sphincter|Analhu Akbar
-20944|Cacotopia|Centuries Of Bloodshed
-24089|Brazen Molok|Demolition Cycle
 23935|Brain Damage|Indulging Cannibalistic For Mutilation
-59292|Bokrug|Pantheon Of Abominations
 21321|Bog Wraith|Omen
 26150|Bodhum|Sobre Homens E Porcos
 29838|Blue Holocaust|Flesh For The Cannibal God
@@ -1541,31 +1528,23 @@
 19761|Bloodshot Dawn|Reanimation
 22372|Bloodland|Chronicles Of Death
 23496|Bookakee|Ignominies
-28225|Blight House|Summer Camp Sex Party Massacre
 40603|Bleeding Gods|Dodekathlon
 25162|Blakteria|Tu Tumba
 26243|Blade Of Horus|Obliteration (2 CD Limited Edition)
 23820|Black Fast|Spectre Of Ruin
-72620|Beraza Chainsaw Massacre|Premeditación Y Alevosía
 25854|Bane|Esoteric Formulae
 25223|Atka|Untitled Album 1
 20460|Astarot|Vaginal Impalement
-20338|Atomwinter|Catacombs
 25269|Arsis|Visitant
 23197|Atrocious|Mental Disorder
 79161|Arkham Circle|Exist To Exit
 65666|Apokalyptic Raids|The Pentagram
 22742|Apocrophex|Æternalis
-23519|Aphelion|Primordial Era
 68247|Arkona|Nocturnal Arkonian Hordes
 19997|Aon|Necropolis
-21832|Angerot|The Splendid Iniquity
-23114|Aparia|Beyond The Walls Of Man
 24668|Ammonium|Act Of War
 23005|Angelic Desolation|Rumpus Time Is Over
-23819|Alukah|Defining Torment
 20750|Agony Of Torture|Bangungot Sa Dilim
-25292|Aethere|Open My Wounds
 23676|Alone With R Kelly|Murdering The Young And Dreaming
 80604|Adaptor|Vengeance To Kill
 27390|Affront|World In Collapse
@@ -6042,11 +6021,8 @@
 24708|Diostooorsion|Abhorrent Screams
 25103|Exxxekutioner|Death Sentence
 25285|Brutal Abyss|Misanthropic Butcher
-25440|Branch Davidian|Slaughter Of The Holy Innocents
-19831|Brutaliate|Brutaliate
 24382|All Misery|Entity Of Revulsion
 47760|Alkaloid|Liquid Anatomy
-20635|6 Weapons|Homonym
 2859|Трупные Черви|Cinomiy Mortuorum
 29821|ghUSa|Öswedeme
 68212|Trapped In The Morgue|Anomaly Carriers
@@ -6788,7 +6764,6 @@
 23732|Facada|Quebrante
 23972|Malevolent Creation|The Ten Commandments
 19951|El Patron|The Alliance
-57000|Degrave|Degrave
 18590|Pink Mass|Necrosexual
 18055|Infitar|Rotation Of The Sun
 74438|GoldenPyre|In Eminent Disgrace
@@ -7117,3 +7092,73 @@
 83464|Serotonin Leakage|Fugue State
 75853|Scranton Strangler|Scranton Strangler
 78767|Rude Thing|Se Viene Galerna
+88804|Ophiolatry|Serpent's Verdict
+92859|Necrotesque|Et Mortui Resurgent
+90399|Cremated Existence|Killing Those Around
+89902|Sothoris|Domus Omnium Mortuorum
+79888|Torsofuck|Postpartum Extasy
+85696|Carnivore Diprosopus|Rise Of The Insurrection
+87124|Immortal Force|Mystic Seance Unrealities
+85954|Devenial Verdict|Blessing Of Despair
+71683|The Oriental Sun|The Majestic Phoenix Arises From Centuries Of Hibernation
+71193|Diskord|Degenerations
+27791|Possessed|Revelations Of Oblivion
+26601|Vanum|Ageless Fire
+66838|Ghoulhouse|Rigor Mortis Intermezzo
+27203|Enterprise Earth|Luciferous
+29693|Charred|Prayers Of Malediction
+21561|Within Destruction|Deathwish
+18987|Genocide Pact|Order Of Torment
+28602|Gamma Sector|Sanctum Of Vivisection
+28097|Feticide|Creation Of Chaos
+21726|Fatuous Rump|Disposing Slobs Of Corporal Fatberg
+24900|Demise|De La Manipulación A La Ignorancia
+18289|The Kennedy Veil|Imperium
+27978|In Shadows And Dust|A Fleur De Peau
+14504|Brute|Henchmen
+58741|Pikodeath|Insane
+17227|Bloodwork|Feed On The Dead
+10010|Infecting The Swarm|Abyss
+4445|Warfield|Seven Skins
+7043|Amnesian|Amnesian
+8844|Veil Of Maya|Matriarch
+7295|Nails|You Will Never Be One Of Us
+5735|Mgła|Exercises In Futility
+24409|Obsequiae|Aria Of Vernal Tombs
+17003|Verthebral|Regeneration
+28118|Nightbringer|Ego Dominus Tuus
+2115|Beyond Creation|Earthborn Evolution
+26664|Denouncement Pyre|Almighty Arcanum
+2693|Cadavoracity|Remnants Of Chaotic Apogee
+9112|Ataraxie|L'être Et La Nausée
+10965|Kataphero|Life
+1970|Exhausted Prayer|Ruined
+6262|Incantation|Vanquish In Vengeance
+11527|Ex Deo|Caligvla
+5339|Black Breath|Sentenced To Life
+1230|Screwrot|Redigested Regurgitation
+20328|Weak Aside|Ghostleader
+946|Ezophagothomia|Instinct Of Inhuman Devourment
+4506|Tools Of Torture|Faith-Purification-Execution
+26118|Nailed|Hatred, Failure & The Extinction Of Mankind
+938|Extinctionist|World Extinction
+5588|Fleshless|Hate Is Born
+6569|Gojira|The Way Of All Flesh
+5431|Execration|The Acceptance Of Zero Existence
+4331|Haemophagia|From Sickness To Cult
+80934|Tengkorak|Civil Emergency
+10316|Demonical|Servants Of The Unlight
+10136|Vehemence|Helping The World To See
+59440|Soilent Green|Confrontation
+27474|Disgrace|Grey Misery
+12731|Resurrected|Blood Spilled
+11803|Fleshcrawl|Soulskinner
+19418|Anal Blast|Vaginal Vempire
+6867|Vuvr|Pilgrimage
+595|Armoured Angel|Angel Of The Sixth Order
+19900|GUT|Odour Of Torture
+74125|Mortification|Scrolls Of The Megilloth
+6200|Marduk|Opus Nocturne
+919|Entombed|Left Hand Path
+43180|Ulcerate Fester|Sonatorrek
+40924|Detest|Dorval
