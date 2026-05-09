@@ -16,6 +16,8 @@ Soporta:
 """
 
 import os
+import sys
+import gc
 import json
 import time
 import re
@@ -35,6 +37,19 @@ from modules.utils import delay_con_jitter
 from modules.logger import setup_logger, log_context
 
 logger = setup_logger(__name__)
+
+
+# Python 3.14+ es estricto cerrando handles HTTP que el GC limpia tarde.
+# Silenciar el ruido cosmético "ValueError: I/O operation on closed file"
+# que aparece al finalizar HTTPResponse en shutdown del threadpool.
+def _unraisablehook_silenciar_http(unraisable):
+    exc = unraisable.exc_value
+    if isinstance(exc, ValueError) and 'closed file' in str(exc):
+        return  # silencio
+    sys.__unraisablehook__(unraisable)
+
+
+sys.unraisablehook = _unraisablehook_silenciar_http
 
 # Configuración
 INPUT_FILE = "data/repertorio_con_links.json"
@@ -115,6 +130,92 @@ class MegaCooldownManager:
 
 
 mega_cooldown = MegaCooldownManager()
+
+
+# Circuit breaker genérico para servicios que se caen (Workupload, Icedrive, etc.)
+SERVICE_CIRCUIT_THRESHOLD = int(os.getenv('SERVICE_CIRCUIT_THRESHOLD', '5'))
+SERVICE_CIRCUIT_COOLDOWN_SECONDS = int(os.getenv('SERVICE_CIRCUIT_COOLDOWN_SECONDS', '600'))
+
+
+class ServiceCircuitBreaker:
+    """Abre el circuito (skip por X tiempo) cuando un servicio acumula N
+    errores de conexión consecutivos. En memoria — no persiste a disco
+    porque los servicios pueden volver entre corridas.
+    """
+    def __init__(self, threshold=SERVICE_CIRCUIT_THRESHOLD, cooldown=SERVICE_CIRCUIT_COOLDOWN_SECONDS):
+        self._lock = threading.Lock()
+        self._failures = {}
+        self._cooldown_until = {}
+        self._threshold = threshold
+        self._cooldown = cooldown
+
+    def is_blocked(self, service):
+        with self._lock:
+            until = self._cooldown_until.get(service, 0)
+            if time.time() < until:
+                return True
+            if until > 0:
+                # Cooldown expiró → reset estado del servicio
+                self._cooldown_until.pop(service, None)
+                self._failures[service] = 0
+            return False
+
+    def remaining(self, service):
+        with self._lock:
+            return max(0, int(self._cooldown_until.get(service, 0) - time.time()))
+
+    def record_failure(self, service):
+        """Registra un fallo. Devuelve True si esto abrió el circuito."""
+        with self._lock:
+            count = self._failures.get(service, 0) + 1
+            self._failures[service] = count
+            if count >= self._threshold and service not in self._cooldown_until:
+                self._cooldown_until[service] = time.time() + self._cooldown
+                return True
+            return False
+
+    def record_success(self, service):
+        """Resetea el contador tras una descarga exitosa."""
+        with self._lock:
+            if self._failures.get(service):
+                self._failures[service] = 0
+
+    def services_in_cooldown(self):
+        """Devuelve [(servicio, segundos_restantes), ...] para los que
+        están en cooldown ahora mismo."""
+        with self._lock:
+            now = time.time()
+            return [(svc, int(until - now))
+                    for svc, until in self._cooldown_until.items()
+                    if until > now]
+
+
+circuit_breaker = ServiceCircuitBreaker()
+
+
+def _es_error_conexion(exc):
+    """Detecta si una excepción indica que el servicio está caído."""
+    if isinstance(exc, (requests.exceptions.ConnectionError,
+                        requests.exceptions.ConnectTimeout)):
+        return True
+    msg = str(exc).lower()
+    return ('connection refused' in msg
+            or 'connection reset' in msg
+            or 'max retries exceeded' in msg
+            or 'failed to establish' in msg
+            or 'name or service not known' in msg)
+
+
+def _registrar_error_servicio(service, exc, verbose=True):
+    """Si el error es de conexión, lo registra en el circuit breaker.
+    Devuelve True si abrió el circuito en esta llamada."""
+    if not _es_error_conexion(exc):
+        return False
+    abrio = circuit_breaker.record_failure(service)
+    if abrio and verbose:
+        mins = SERVICE_CIRCUIT_COOLDOWN_SECONDS // 60
+        logger.warning(f"⏸️  {service} acumuló {SERVICE_CIRCUIT_THRESHOLD} fallas de conexión, cooldown {mins}m")
+    return abrio
 
 # Extensiones de archivos comprimidos
 EXTENSIONES_COMPRIMIDAS = {'.zip', '.rar', '.7z', '.tar', '.tar.gz', '.tgz', '.tar.bz2'}
@@ -216,7 +317,9 @@ def release_ya_descargado(release, descargados):
 
 
 def cargar_fallidos(fallidos_file=FALLIDOS_FILE):
-    """Carga la lista de posts con fallos previos (por post_id, con expiración 30 días)"""
+    """Carga la lista de posts con fallos previos.
+    Entradas con motivo que contiene [PERM] no expiran (links definitivamente
+    muertos). El resto expira a los 30 días para reintentar."""
     from datetime import datetime, timedelta
     fallidos = set()
     lineas_vigentes = []
@@ -235,22 +338,28 @@ def cargar_fallidos(fallidos_file=FALLIDOS_FILE):
                 # Detectar por cantidad de campos y posición de fecha
                 fecha_str = None
                 post_id = None
+                motivo = ''
                 if len(parts) >= 5:
                     # Formato nuevo: parts[3] es fecha
                     if _es_fecha(parts[3]):
                         post_id = parts[0]
                         fecha_str = parts[3]
+                        motivo = parts[4] if len(parts) > 4 else ''
                     # Formato viejo: parts[4] es fecha
                     elif len(parts) >= 6 and _es_fecha(parts[4]):
                         post_id = parts[2]  # post_id está en posición 2
                         fecha_str = parts[4]
+                        motivo = parts[5] if len(parts) > 5 else ''
                     else:
                         post_id = parts[0]
                 elif len(parts) >= 1 and parts[0].isdigit():
                     post_id = parts[0]
 
-                # Filtrar entradas expiradas (>30 días)
-                if fecha_str and post_id:
+                # Marca [PERM] = link definitivamente muerto, no expirar
+                es_permanente = '[PERM]' in motivo
+
+                # Filtrar entradas expiradas (>30 días) salvo las permanentes
+                if fecha_str and post_id and not es_permanente:
                     try:
                         fecha = datetime.strptime(fecha_str, '%Y-%m-%d')
                         if datetime.now() - fecha > timedelta(days=30):
@@ -284,8 +393,10 @@ def _es_fecha(s):
         return False
 
 
-def guardar_fallido(release, fallidos, fallidos_file=FALLIDOS_FILE, motivo="Todos los links fallaron"):
-    """Agrega un post a la lista de fallidos (por post_id)"""
+def guardar_fallido(release, fallidos, fallidos_file=FALLIDOS_FILE,
+                    motivo="Todos los links fallaron", permanente=False):
+    """Agrega un post a la lista de fallidos (por post_id).
+    Si `permanente=True`, marca con [PERM] para que no expire a 30 días."""
     post_id = str(release.get('post_id', '')).strip()
     if not post_id:
         return
@@ -300,14 +411,16 @@ def guardar_fallido(release, fallidos, fallidos_file=FALLIDOS_FILE, motivo="Todo
         with open(fallidos_file, 'w', encoding='utf-8') as f:
             f.write("# Posts con links fallidos\n")
             f.write("# Formato: post_id|band|album|fecha|motivo\n")
+            f.write("# Motivo con [PERM] = link definitivamente muerto (no expira)\n")
             f.write("\n")
 
     band = release.get('band', 'Unknown')
     album = release.get('album', 'Unknown')
     fecha = time.strftime('%Y-%m-%d')
+    motivo_final = f"{motivo} [PERM]" if permanente else motivo
 
     with open(fallidos_file, 'a', encoding='utf-8') as f:
-        f.write(f"{post_id}|{band}|{album}|{fecha}|{motivo}\n")
+        f.write(f"{post_id}|{band}|{album}|{fecha}|{motivo_final}\n")
 
     fallidos.add(post_id)
 
@@ -1414,9 +1527,24 @@ def descargar_icedrive(url, destino, verbose=True, show_progress=True):
 
         html = resp.text
         html_lower = html.lower()
-        if 'page not found' in html_lower or 'the page you have requested could not be found' in html_lower:
+        # Icedrive devuelve HTTP 200 con HTML de error cuando el archivo no existe.
+        # Detectar variantes para no gastar Playwright en confirmar lo obvio.
+        indicadores_404 = (
+            'page not found',
+            'the page you have requested could not be found',
+            'file not available',
+            'no longer available',
+            'has been removed',
+            'has been deleted',
+            'link expired',
+            'link has expired',
+            'invalid link',
+            'file has been deleted',
+            'this file does not exist',
+        )
+        if any(s in html_lower for s in indicadores_404):
             if verbose:
-                logger.warning("Icedrive devolvió una página inexistente")
+                logger.warning("Icedrive: archivo no existe")
             return None, False
 
         patrones = [
@@ -1428,14 +1556,15 @@ def descargar_icedrive(url, destino, verbose=True, show_progress=True):
         ]
         download_url = _buscar_url_en_html(html, patrones, base_url=url)
         if download_url and download_url != url:
-            return descargar_directo(download_url, destino, verbose, headers=_headers_con_referer(url), show_progress=show_progress)
+            # _pw_fallback=False: no gastar Playwright si esta URL también devuelve HTML.
+            return descargar_directo(download_url, destino, verbose, headers=_headers_con_referer(url), _pw_fallback=False, show_progress=show_progress)
 
         # Fallback: buscar URLs embebidas con "download"
         candidatos = re.findall(r'(https?:\\\\/\\\\/[^"\\s]+)', html)
         for cand in candidatos:
             cand = _normalizar_url(cand)
             if cand and 'icedrive.net' in cand and 'download' in cand:
-                return descargar_directo(cand, destino, verbose, headers=_headers_con_referer(url), show_progress=show_progress)
+                return descargar_directo(cand, destino, verbose, headers=_headers_con_referer(url), _pw_fallback=False, show_progress=show_progress)
 
         public_id = _icedrive_extraer_public_id(url)
         if public_id:
@@ -1448,7 +1577,7 @@ def descargar_icedrive(url, destino, verbose=True, show_progress=True):
             for candidato in posibles:
                 if candidato == url:
                     continue
-                archivo, parcial = descargar_directo(candidato, destino, verbose, headers=_headers_con_referer(url), show_progress=show_progress)
+                archivo, parcial = descargar_directo(candidato, destino, verbose, headers=_headers_con_referer(url), _pw_fallback=False, show_progress=show_progress)
                 if archivo:
                     return archivo, parcial
 
@@ -1465,6 +1594,7 @@ def descargar_icedrive(url, destino, verbose=True, show_progress=True):
             logger.warning(f"HTTP {e.response.status_code}")
         return None, False
     except Exception as e:
+        _registrar_error_servicio('icedrive', e, verbose)
         if verbose:
             logger.warning(f"Error Icedrive: {e}")
         return None, False
@@ -1545,17 +1675,24 @@ def descargar_workupload(url, destino, verbose=True, show_progress=True):
             # Fallback: intentar resolver con Playwright (Workupload genera links con JS dinámico)
             download_url = _resolver_playwright_download_url(url, verbose=False)
             if download_url:
-                return descargar_directo(download_url, destino, verbose, show_progress=show_progress)
+                resultado = descargar_directo(download_url, destino, verbose, show_progress=show_progress)
+                if resultado[0]:
+                    circuit_breaker.record_success('workupload')
+                return resultado
             if verbose:
                 logger.warning("No se encontró enlace directo en Workupload")
             return None, False
 
-        return descargar_directo(download_url, destino, verbose, show_progress=show_progress)
+        resultado = descargar_directo(download_url, destino, verbose, show_progress=show_progress)
+        if resultado[0]:
+            circuit_breaker.record_success('workupload')
+        return resultado
     except requests.exceptions.HTTPError as e:
         if verbose:
             logger.warning(f"HTTP {e.response.status_code}")
         return None, False
     except Exception as e:
+        _registrar_error_servicio('workupload', e, verbose)
         if verbose:
             logger.warning(f"Error Workupload: {e}")
         return None, False
@@ -1847,6 +1984,16 @@ def descargar_link(url, destino, password=None, verbose=True, skip_mega=False, s
         return archivo, False, parcial
 
 
+def _calcular_timeout_extraccion(filepath):
+    """Timeout proporcional al tamaño: base 300s + 60s por cada 100MB.
+    Para 738MB → ~743s ≈ 12 min. Tope superior 1800s (30 min)."""
+    try:
+        size_mb = os.path.getsize(filepath) / (1024 * 1024)
+        return min(1800, int(300 + (size_mb / 100) * 60))
+    except OSError:
+        return 300
+
+
 def extraer_archivo(filepath, destino, password=None, verbose=True):
     """Extrae un archivo comprimido"""
     if not os.path.exists(filepath):
@@ -1854,6 +2001,7 @@ def extraer_archivo(filepath, destino, password=None, verbose=True):
 
     ext = _ext_compuesta(filepath)
     os.makedirs(destino, exist_ok=True)
+    timeout_extraccion = _calcular_timeout_extraccion(filepath)
 
     try:
         if ext == '.zip':
@@ -1872,7 +2020,7 @@ def extraer_archivo(filepath, destino, password=None, verbose=True):
                 if password:
                     cmd.append(f'-p{password}')
                 cmd.append(filepath)
-                result = subprocess.run(cmd, capture_output=True, timeout=300)
+                result = subprocess.run(cmd, capture_output=True, timeout=timeout_extraccion)
                 return result.returncode == 0
 
         elif ext == '.rar':
@@ -1884,7 +2032,7 @@ def extraer_archivo(filepath, destino, password=None, verbose=True):
                 cmd.append('-p-')  # No password
             cmd.extend([filepath, destino + '/'])
 
-            result = subprocess.run(cmd, capture_output=True, timeout=300)
+            result = subprocess.run(cmd, capture_output=True, timeout=timeout_extraccion)
             return result.returncode == 0
 
         elif ext == '.7z':
@@ -1894,7 +2042,7 @@ def extraer_archivo(filepath, destino, password=None, verbose=True):
                 cmd.append(f'-p{password}')
             cmd.append(filepath)
 
-            result = subprocess.run(cmd, capture_output=True, timeout=300)
+            result = subprocess.run(cmd, capture_output=True, timeout=timeout_extraccion)
             return result.returncode == 0
 
         elif ext in ['.tar', '.tgz', '.tar.gz', '.tar.bz2']:
@@ -2002,6 +2150,7 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
 
     tuvo_parcial = False
     mega_omitido_por_cooldown = False
+    servicio_caido_omitido = False  # algún link saltado por circuit breaker
 
     for link_info in _priorizar_links(links):
         url = link_info.get('url', '')
@@ -2017,6 +2166,13 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
         # restantes son Mega.
         if tipo == 'mega' and _mega_cooldown_activo():
             mega_omitido_por_cooldown = True
+            continue
+
+        # Circuit breaker: si el servicio acumuló muchas fallas de conexión,
+        # saltarlo en silencio. Evita martillar un servicio caído (Workupload
+        # con Connection refused, por ejemplo).
+        if circuit_breaker.is_blocked(tipo):
+            servicio_caido_omitido = True
             continue
 
         with log_context(log_label):
@@ -2100,7 +2256,13 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
         mega_release = _crear_release_mega(release)
         if mega_release:
             return False, "Mega pendiente", mega_release
-    return False, "Todos los links fallaron", None
+    if servicio_caido_omitido:
+        # Algún link se saltó por circuit breaker → no marcar como definitivo:
+        # cuando el servicio vuelva, el link puede funcionar.
+        return False, "Servicio temporalmente caído", None
+    # Todos los links se intentaron y fallaron sin error transitorio:
+    # asumimos que están definitivamente muertos.
+    return False, "Todos los links fallaron (definitivo)", None
 
 
 def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
@@ -2187,6 +2349,10 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
     # Thread-safe counters and locks
     exitosos = 0
     fallidos_count = 0
+    fallidos_definitivos = 0   # marcados [PERM], no se reintentarán
+    fallidos_temporales = 0    # expirarán a 30 días
+    fallidos_servicio_caido = 0  # circuit breaker activo, sin guardar
+    fallidos_parciales = 0     # descarga incompleta, sin guardar
     omitidos = 0
     pendientes = 0
     total_bytes = 0
@@ -2194,6 +2360,7 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
     def _handle_result(release, exito, mensaje, info):
         nonlocal exitosos, fallidos_count, omitidos, pendientes, total_bytes
+        nonlocal fallidos_definitivos, fallidos_temporales, fallidos_servicio_caido, fallidos_parciales
         with write_lock:
             if exito:
                 if mensaje in ["Ya existe", "Ya descargado", "Fallido previo"]:
@@ -2218,8 +2385,20 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
                                 logger.info("⏳ Encolado para reintento Mega")
                 else:
                     fallidos_count += 1
-                    if mensaje != "Descarga parcial":
-                        guardar_fallido(release, fallidos, motivo=mensaje)
+                    if mensaje == "Descarga parcial":
+                        fallidos_parciales += 1
+                    elif "temporalmente caído" in mensaje.lower():
+                        # No persistimos: el circuit breaker se reabre y vamos a reintentar.
+                        fallidos_servicio_caido += 1
+                    else:
+                        # "(definitivo)" en mensaje → marcar como permanente
+                        # cualquier otro motivo → temporal (expira a 30 días)
+                        es_perm = "definitivo" in mensaje.lower()
+                        if es_perm:
+                            fallidos_definitivos += 1
+                        else:
+                            fallidos_temporales += 1
+                        guardar_fallido(release, fallidos, motivo=mensaje, permanente=es_perm)
 
     # === Fase 1: Descargas paralelas (no-Mega) ===
     if releases_no_mega:
@@ -2347,6 +2526,11 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
     # Limpiar Playwright del thread principal
     _cleanup_playwright()
 
+    # Forzar GC antes del resumen: los HTTPResponse pendientes del threadpool
+    # se finalizan acá (con sys.unraisablehook silenciando el ruido) y no
+    # contaminan la salida después del resumen.
+    gc.collect()
+
     # Limpiar temporal
     try:
         shutil.rmtree(TEMP_DIR, ignore_errors=True)
@@ -2361,6 +2545,23 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
         logger.info(f"✓ Exitosos: {exitosos}")
         logger.info(f"⏭️ Omitidos (ya existían): {omitidos}")
         logger.info(f"✗ Fallidos: {fallidos_count}")
+        if fallidos_definitivos:
+            logger.info(f"   └─ 🪦 definitivos [PERM] (no se reintentarán): {fallidos_definitivos}")
+        if fallidos_temporales:
+            logger.info(f"   └─ 🔄 temporales (reintento en 30 días): {fallidos_temporales}")
+        if fallidos_servicio_caido:
+            logger.info(f"   └─ 🚧 por servicio caído (no persistido): {fallidos_servicio_caido}")
+        if fallidos_parciales:
+            logger.info(f"   └─ ✂️  descarga parcial (no persistido): {fallidos_parciales}")
+
+        # Servicios que el circuit breaker bloqueó durante esta corrida
+        bloqueados = circuit_breaker.services_in_cooldown()
+        if bloqueados:
+            logger.info("🚧 Servicios en cooldown:")
+            for svc, restante in bloqueados:
+                mins, segs = divmod(restante, 60)
+                logger.info(f"   └─ {svc}: {mins}m {segs}s restantes")
+
         if mega_pendientes:
             logger.info(f"⏳ Pendientes Mega: {len(mega_pendientes)} (guardados en {MEGA_PENDIENTES_FILE})")
         if total_bytes > 0:
