@@ -1305,7 +1305,6 @@
 24952|Solium Fatalis|Genetically Engineered To Enslave
 24945|Smile A Velociraptor|Violenceraptor
 21964|Skeletal Remains|Devouring Mortality
-25874|Siege|Spirit Of Agony Pt​.​2 - Autumn Of Earth
 20852|Shiro-Ishii|Zhongma
 20010|Severed Limbs|Sores Galore
 21045|Separatism|Architect Of Consciousness
@@ -1581,7 +1580,6 @@
 22590|To Kill|Sick Minds To Macabre
 56500|Thread Of Omen|Vindicta
 65032|Torture Squad|Far Beyond Existence
-77045|This-Is-Hell|Ecos Del Tiempo
 76402|Weregoat|Pestilential Rites Of Infernal Fornication
 18484|Thy Serpent's Cult|Supremacy Of Chaos
 19892|The Putrefying|Consumed By Pleasure
@@ -1648,7 +1646,6 @@
 20815|Naer Mataron|Lucitherion "Temple Of The Radiant Sun"
 19384|Mouth Of Sauron|Hearken The Echo Of Music
 84703|Morta Skuld|As Humanity Fades
-18343|Monster|Blood-Soaked Restart
 72433|Morfin|Consumed By Evil
 17756|Morbid Art|The Cult Of Flesh
 19024|Moker|Home Invader
@@ -1673,7 +1670,6 @@
 17560|Magenta Harvest|...And Then Came The Dust
 15868|King Of Asgard|Taudr
 18048|King Parrot|Ugly Produce
-16905|Khazaddum|Plagues Upon Arda
 18878|Kremlin|Decimation Of The Elites
 68648|Kalighula|Empire Of Madness
 13433|Infamovs|Under The Seals Of Death
@@ -1683,7 +1679,6 @@
 16678|Incarnator|Argumentum Ad Ignorantiam
 19318|Incinerating Prophecies|Slay The Damned Impostor
 18070|Implore|Subjugate
-13201|Humaniac|Grand Feast Of Prudence
 18386|Hybrid Nightmares|Almagest
 13305|Hour Of Penance|Cast The First Stone
 25724|Hecatomb|Empire Of No Emperor
@@ -1743,7 +1738,6 @@
 16184|Cranial Discharge|Intravaginal Defecation
 18839|Corpse Garden|IAO 269
 19848|Corporate Death|Reborn
-17922|Crafteon|Cosmic Reawakening
 66758|Clitorodectomía|Teen Fucking
 14615|Condemned|His Divine Shadow
 18564|Cryptic Fog|Staring Through The Veil
@@ -1762,7 +1756,6 @@
 14179|Carnal Diafragma|Grind Restaurant Pana Septika
 22383|Bunuh|Tortured Of Brutality Murder
 15513|Bufihimat|I
-14392|Buffalo Grillz|Martin Burger King
 23641|Burial Chamber|Ripping The Dead
 18348|Burning Torment|In The Eyes Of The Impotent God
 12414|Boris The Blade|Warpath
@@ -2063,7 +2056,6 @@
 56131|Turbid North|Eyes Alive
 19627|Troglodyte|Anthropological Curiosities And Unearthed Archaeological Relics
 23398|Tombstalker|Black Crusades
-4286|Time Of Justice|Инфекция Человеческого Разума
 4802|Tibosity|Bimbocracia
 3575|Unhallowed|Enter Damnation
 3660|Unleashed|Dawn Of The Nine
@@ -2124,7 +2116,6 @@
 5667|Putridity|Ignominious Atonement
 68154|Pyrexia|Sermon Of Mockery
 3071|Purulent Rites|Infections And Infestations
-3719|Psychopathologist|Still Rotten, Dirty And Headless
 4181|Putrefuck|Impending Necrophilia In Fresh And Pale Cadavers Arriving To The Morgue
 4993|Pseudonaja|Systemic Decomposition
 90242|Prophecy|Don't Fuckin' Mess With Texas
@@ -2172,7 +2163,6 @@
 3720|McCracken|Road To Oblivion
 4534|Marasmus|Conjuring Enormity
 55958|Lysithea|Realms
-3509|Mortiferous Scorn|Visceral Nemesis
 55974|Livhzuena|Dark Mirror Neurons
 4825|Lost Soul|Atlantis: The New Beginning
 57094|Kyzer Soze|Ascension
@@ -2314,7 +2304,6 @@
 5594|Contentia|Entanglement
 70660|Anus Magulo|Assophilia
 3999|Antropofago|Æra Dementiæ
-3433|Anima Mors|First Injury
 5062|Athiria|Vicious Circle
 3690|Analepsy|Dehumanization By Supremacy
 18796|Anal Fissure|Mind Of A Serial Killer
@@ -2359,7 +2348,6 @@
 22606|Thy Serpent's Cult|Sedition, Sorcery And Blasphemy
 1429|This Eternal Cold|Winterust
 55506|Therapsida|The Demons Reign
-13189|The Seer|Prologue
 4671|There May Be Blood|Absence
 82067|Ulcer|Beat To A Pulp
 1498|The Infinite Within|Bestial Void Inevitability
@@ -2414,7 +2402,6 @@
 16789|Putrefaction Pestilence|Putrefactive Decomposition Of Craneoencephalic And Facial Traumatic Destruction
 69818|Pukelization|Mental Lords
 2479|Puregation|Humans Are Determined To Kill
-2264|Putrefy|Knelt Before The Sarcophagus Of Humanity
 1158|Prostitute Disfigurement|From Crotch To Crown
 1863|Promethean Horde|Ashes Of The Empyrean
 1929|Puerkomorfosis|Vaginal Depravity
@@ -2444,7 +2431,6 @@
 72375|Obituary|Inked In Blood
 2166|Obzidian|Concrete Psychosis
 2146|Obituary|Inked In Blood
-7133|Nekropolis|Ecce Homo
 72612|Necropoli|I
 15135|Necrolatry|Necrolatrine
 28788|Nightfell|The Living Ever Mourn
@@ -2459,7 +2445,6 @@
 22813|Morgroth|Surgical Intervention
 1676|Morbid Crucifixion|Decaying Human Flesh
 72437|Morfin|Inoculation
-1926|Mind Snare|Ancient Cults Supremacy
 1316|Milking The Goatmachine|Greatest Hits - Covered In Milk
 1439|Medic Vomiting Pus|Thoracoabdominal Viscerectomy
 19396|Meat Devourer|Misanthropic Massacre
@@ -2564,7 +2549,6 @@
 12767|Dread Sovereign|All Hell's Martyrs
 55738|Doomsday Mourning|Negligent Acts Of Calculated Recklessness
 27702|Doombringer|The Grand Sabbath
-55610|Dissolve|The World Died Yesterday
 1361|Dividing The Masses|My Roots Will Remain
 7014|Eminent Terror|The Illusion Of Choice
 2348|Disfigurement Of Flesh|Herbarium With Grotesque Necrotic Malformations
@@ -2572,7 +2556,6 @@
 6865|Dissolution|Natural Selection
 69907|Disact|Statecrusher
 1765|Dictated|The Deceived
-82898|Devour The Unborn|Consuming The Morgue Remains
 3611|Dirty Infamous|Die On Pure Adrenaline
 29369|Deus Otiosus|Rise
 91388|Desvirginizagore|Desvircuartizando Genitales Anodiarreicos
@@ -2607,7 +2590,6 @@
 1640|Crescent|Pyramid Slaves
 64619|Coprolith|Death March
 37685|Convictors|Envoys Of Extinction
-2029|Cult Of Violence|Debris
 55660|Condemned To Rot|Awakening
 3756|Compulsive Slaughter|Compulsive Repulsive
 1663|Congenital Anomalies|Human Embryonic Mutilation
@@ -2653,7 +2635,6 @@
 1171|Amputated|Dissect, Molest, Ingest
 46354|Among Gods|Monument
 1308|Alterbeast|Immortal
-20992|Analkholik|After Party - Shit Stinks
 7089|Agony Spawn|Demonstration Of Evisceration
 1309|Ageless Oblivion|Penthos
 1980|Antropomorphia|Rites Ov Perversion
@@ -2830,7 +2811,6 @@
 7631|Divide|Messiah Of Mutilation
 5250|Discreation|The Silence Of The Gods
 54186|Diary About My Nightmares|The Mean Hour
-7179|Dischordia|Project 19
 2197|Devourment|Conceived In Sewage
 17647|Diaroe|Das Eskalat
 73175|Duodildo Vibrator|Acockalypse Now
@@ -3116,12 +3096,10 @@
 89769|We Are The Damned|Holy Beast
 20377|Vomitoma|Coagulated Dialysis Of Partially Disintegrated Viscerosolids
 22149|Venereal Messiah|Bleeding The Humans
-5216|Vanhelgd|Church Of Death
 3962|Undertaker Of The Damned|Lords Of The Extreme Mockery
 3933|Velocidad Absurda|Reborn For The Extermination
 14370|Turbidity|Suffering Of Human Decapitated
 89853|Toforgive|Dead and Buried
-55723|Torment|Pain Is Transient, Failure Forever
 26488|Trifixion|A Utopia For The Damned
 832|Tortured|A Lesson In Holocaust
 22325|Thy Serpent's Cult|Infernal Wings Of Damnation
@@ -3167,7 +3145,6 @@
 11488|Murder Death Kill|Investigate Infiltrate Annihilate
 1643|Nader Sadek|In The Flesh
 86929|Mummified|Embalming The Nazarene
-56728|Molest The Episcopate|Socialistica Nervosa
 21256|Mindly Rotten|Proliferation Of Disaster
 1109|Modus Delicti|Nobody
 1413|Nervecell|Psychogenocide
@@ -3410,16 +3387,13 @@
 66960|Denouncement Pyre|World Cremation
 1670|Deformity BR|AnthroposDeadGoreDisgustingPhagia
 1451|Defloration|Abused With Gods Blessing
-38180|Denial|Crucifixion Of Humanity
 26504|Decimation|The Undead Shall Inherit
 21705|Decapitated Christ|The Vanishment And Extermination Of The Deities
-29241|Devilish Distance|Deathtruction
 89974|Debt Of Nature|Crush, Kill And Burn
 7538|Depths Of Depravity|Inspirritation
 10412|Dark Fortress|Ylem
 56287|De Profundis|A Bleak Reflection
 55943|Cryopsis|Veils Of Psychotic Chaos S.E.
-69280|Cromlech|Postrauma
 5155|Convulse|World Without God
 312|Colonize The Rotting|Composting The Masticated
 6601|Corpus Mors|Abominables Espectros Del Mórbido Y Sádico Placer
@@ -3442,7 +3416,6 @@
 6823|Blood Obsession|Raped And Consumed
 6128|Bokrug|El Matamuertos
 13158|Beneath The Surface|Ocean
-58247|Black Breath|Heavy Breathing
 25701|Blood & Iron|Ritter Der Schwarzen Sonne
 56132|Atria|Sound Of Atria
 6608|Arkhum|Anno Universum
@@ -3685,7 +3658,6 @@
 6194|Infinitum|Behold Eradication
 1080|Intestinal Alien Reflux|Exogenocide
 74720|Infidel|Destruction Of Mecca
-68618|Incineration|A Course In Anger Management
 21805|Infected Flesh|The Ascension Of The Abysmal Aberration
 68929|Imposer|Behold Demons
 10007|Hybrid Heaven|The Textures Of Spirit
@@ -3970,7 +3942,6 @@
 26421|Viral Load|Brutalized Beyond Belief
 16344|Аркона|Во Славу Великим
 18586|Vigilia Mortum|Bloody Remorse
-27146|Truth Corroded|Our Enemy Is The Weapon
 7637|Usurper|Cryptobeast
 17964|Unaussprechlichen Kulten|Wake Up In The Night Of Walpurgis
 57801|Tombthroat|Out Of The Tomb
@@ -4246,7 +4217,6 @@
 20410|Bitch Infection|The Gory Side Of Life
 1576|Belphegor|Lucifer Incestus
 56170|Barracuda|Humanimal
-37983|Baalphegor|The End Of Descent
 17620|Bowel Stew|Necrocannibal Rites
 26877|Avenger|Godless (...Assuming The Throne Of Immortality...)
 18655|Death Of Millions|Statistics And Tragedy
@@ -4557,7 +4527,6 @@
 24433|Quo Vadis|Forever...
 3378|Slayer|Undisputed Attitude
 1511|Massacre|Promise
-21124|Melechesh|As Jerusalem Burns... Al'Intisar (2002, Remaster)
 22432|Legal Butchery|Key To Paradise
 20595|Purgatory|Damage Done By Worms
 11122|Num Skull|When Suffering Comes
@@ -5155,7 +5124,6 @@
 2705|Rottenblast|Pasukan Tak Bertuhan
 12430|Putrified J|Devouring Rotten Viscera
 59393|Perversion|Storm Of Evil
-14799|Puercos|Puercos
 6719|Purtenance|Awaken From Slumber
 14995|Rectal Smegma|Become The Bitch
 5210|Lifeless|Godconstruct
@@ -5339,7 +5307,6 @@
 8647|Mausoleum|Cadaveric Displays Of Ghoulish Ghastliness
 14867|Amoebic Dysentery|Mongoloid Metal
 56426|Wetwork|New Start Human
-9751|Blood|Dysangelium
 3234|Ghoul|Maniaxe
 5851|Satyricon|Volcano
 5809|Putrilage|Devouring The Gutted
@@ -5705,7 +5672,6 @@
 63726|Master Of Cruelty|Spit On The Holy Grail
 19072|The Juliet Massacre|Pray For An Afterlife
 29309|Funeral Whore|Step Into Damnation
-3591|Devour The Unborn|Consuming The Morgue Remains
 6134|Cystic Dysentery|Culture Of Death
 11554|Disastrous|Severe Suffering
 13594|Brutality|Screams Of Anguish
@@ -5790,7 +5756,6 @@
 12857|Disinter|Demonic Portraiture
 27615|Contrastic|Contrastic
 79735|Intense Hammer Rage|Avagoyamugs
-4880|Rise|Divine Aeternum
 4550|Antropofagus|No Waste Of Flesh
 69408|Vomitorial Corpulence|Skin Stripper
 13333|Gehenna|Adimiron Black
@@ -6001,7 +5966,6 @@
 24365|Ævangelist|Matricide In The Temple Of Omega
 25200|Unleashed|The Hunt For White Christ
 53756|Unborn Generation|Vøid
-21133|The Monolith Project|Fleischkvlt
 24569|Putridity|Mental Prolapse Induces Necrophilism
 24340|Stresslord|Imminent Demise
 68857|Paranoid Despire|Majasty
@@ -6102,7 +6066,6 @@
 28877|Atroce|In Obscuritas
 5447|Apnea|The Great Ruiner
 85331|Abysmal Lord|Disciples Of The Inferno
-1705|Silent Descent|Remind Games
 4104|Scat Shack|Carnival Of Scat
 3527|Catastrophic Evolution|The Origin
 10725|Sadism|The Ocularis Domination
@@ -6292,7 +6255,6 @@
 6206|Marduk|Panzer Division Marduk
 7362|Hate Eternal|Conquering The Throne
 4319|Dickless Tracy|The New Domination
-25183|Rudra|Rudra
 9627|Loudblast|Fragments
 21120|Infernäl Mäjesty|Unholier Than Thou
 21516|Purulent Spermcanal|Puaka Balava
@@ -7142,7 +7104,6 @@
 4506|Tools Of Torture|Faith-Purification-Execution
 26118|Nailed|Hatred, Failure & The Extinction Of Mankind
 938|Extinctionist|World Extinction
-5588|Fleshless|Hate Is Born
 6569|Gojira|The Way Of All Flesh
 5431|Execration|The Acceptance Of Zero Existence
 4331|Haemophagia|From Sickness To Cult
@@ -7299,7 +7260,6 @@
 6560|Inbreeding Sick|Sickness And Plagues
 7416|Grave Desecrator|Dust To Lust
 11428|Fetid Zombie|Epicedia
-10853|Exterminance|The Loss
 10139|Dysemblem|Strength Of Giants
 21158|Clawhammer Abortion|Slaughter Campaign
 12535|Cemitério|Oãxiac Odèz
@@ -7332,7 +7292,6 @@
 6871|Howling|A Beast Conceived
 13438|Fleshdoll|Feeding The Pigs
 21703|Decapitated Christ|The Perishing Empire Of Lies
-3902|Cemetery Rapist|Plundering Into Vaginal Demolition
 1725|Avulsed|Ritual Zombi
 2019|Urogenital Macrophage|Perversion And Sickness Destroy The Human Race
 55461|Tribune|Elder Lore / The Dark Arts
@@ -7356,7 +7315,6 @@
 5294|Cruel Force|The Rise Of Satanic Might
 7384|Cephalic Impurity|Unique Brute Revival
 23548|The Boy Will Drown|Fetish
-708|Revocation|Existence Is Futile
 5712|Prejudice|Megalomanic Infest
 22511|Hummingbird Of Death|Show Us The Meaning Of Haste
 23616|Feeble Minded|Pernicious Intergrowth
@@ -7765,7 +7723,6 @@
 24586|Hyperdontia|Nexus Of Teeth
 18855|Butchery|Dungeon Of Execution
 14618|Engulfed|Engulfed In Obscurity
-6394|The Fallen Prophets|Slaughtered At The Altar
 18642|Under The Church|Supernatural Punishment
 7600|Putrid Pile|Paraphiliac Perversions
 6876|Sorcery|Garden Of Bones
@@ -7835,7 +7792,6 @@
 84074|Extreme Noise Terror|Extreme Noise Terror
 72335|Cancer|To The Gory End
 79835|Viogression|Expound And Exhort
-87754|Necrogrinder|Nekromania
 81331|Karras|None More Heretic
 81011|Ivebeenshot|Doza
 85693|Hautajaisyö|On Vain Pimeys
@@ -7863,23 +7819,19 @@
 79341|Conflict Noise|Agur Eta Ohore
 69416|Cancerbero|Reconquering The Throne Of Death
 90073|Adaptor|Arise From The Graveyard
-21053|TxHxIxNxNxExRx|Waifus Post-Mortem
 25165|Symbolical|Allegory Of Death
 23424|Sleep Terror|El Insomne
 81999|Pungent Stench|Masters Of Moral - Servants Of Sin
 19725|Primordial Throne|Eidolon
 92624|Paganizer|Land Of Weeping Souls
 92809|Nequient|Wolves At The Door
-74220|Necrolord|The Demonic Plague
 92930|Males Fecundos|Males Fecundos
 20516|Magnanimus|Impure Ways Beyond Shadows
 21673|Inisans|Transition
 24740|Infernal Faith|Dehumanized
 24843|Fullgore|Followers Of The Black Euphoria
 74415|Endless Genocide|Endless Genocide
-26329|Day of Execution|Inevitable End
 91902|Cerebral Crusher|The World Burn In Shit
-83868|Bomba W Torcie|Anarchia 666
 22926|Big Cock Zombie|Alien Weed
 25337|Agony Face|CXVI Evolving Discharges
 17064|Warborn Waste|The Prophets Of Dishonour
@@ -7903,6 +7855,5 @@
 17056|Perkulatory|Chronic Caffeine Dependence
 17628|Nistikko|Väsy
 83148|Necrocannibalistic Vomitorium|Hvmani Corporis Ossvm
-17493|Last Rites|Nemesis
 17171|Human Drain|Into The Deep Madness Abyss
 17365|Hell Kaiser|Crushing Heads
