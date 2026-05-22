@@ -1,18 +1,5 @@
 [
   {
-    "band": "Primordial Throne",
-    "band_id": 8025,
-    "band_ids": [
-      8025
-    ],
-    "album": "Eidolon",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19725,
-    "post_url": "https://deathgrind.club/posts/19725"
-  },
-  {
     "band": "Centuries Of Decay",
     "band_id": 7219,
     "band_ids": [
@@ -39,45 +26,6 @@
     "post_url": "https://deathgrind.club/posts/4539"
   },
   {
-    "band": "Septicflesh",
-    "band_id": 12172,
-    "band_ids": [
-      12172
-    ],
-    "album": "Revolution DNA",
-    "year": 1999,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 1302,
-    "post_url": "https://deathgrind.club/posts/1302"
-  },
-  {
-    "band": "M-47",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Slamming Ponys",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 27041,
-    "post_url": "https://deathgrind.club/posts/27041"
-  },
-  {
-    "band": "Amazing Grave",
-    "band_id": 7773,
-    "band_ids": [
-      7773
-    ],
-    "album": "Amazing Grave",
-    "year": 2011,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 18951,
-    "post_url": "https://deathgrind.club/posts/18951"
-  },
-  {
     "band": "Swallowed Alive",
     "band_id": 0,
     "band_ids": [
@@ -91,30 +39,17 @@
     "post_url": "https://deathgrind.club/posts/9219"
   },
   {
-    "band": "Ectoplasmorphosis",
-    "band_id": 20708,
+    "band": "Molecular Fragmentation",
+    "band_id": 10417,
     "band_ids": [
-      20708
+      10417
     ],
-    "album": "Vortex Of Possessable Flesh",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81994,
-    "post_url": "https://deathgrind.club/posts/81994"
-  },
-  {
-    "band": "Unborn Salivate",
-    "band_id": 11438,
-    "band_ids": [
-      11438
-    ],
-    "album": "Paraphiliac Orgiastic Atonement",
+    "album": "Recurrence Of Blasphemous Maelstrom",
     "year": 2019,
     "type": "Album",
     "type_id": 1,
-    "post_id": 28808,
-    "post_url": "https://deathgrind.club/posts/28808"
+    "post_id": 28583,
+    "post_url": "https://deathgrind.club/posts/28583"
   },
   {
     "band": "Scatorgy",
@@ -143,43 +78,30 @@
     "post_url": "https://deathgrind.club/posts/10790"
   },
   {
-    "band": "Annotations Of An Autopsy",
-    "band_id": 150,
+    "band": "Screwrot",
+    "band_id": 549,
     "band_ids": [
-      150
+      549
     ],
-    "album": "Before The Throne Of Infection",
-    "year": 2008,
+    "album": "Deranged Genesis",
+    "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 372,
-    "post_url": "https://deathgrind.club/posts/372"
+    "post_id": 4028,
+    "post_url": "https://deathgrind.club/posts/4028"
   },
   {
-    "band": "Nequient",
-    "band_id": 23786,
+    "band": "MxMxMx",
+    "band_id": 0,
     "band_ids": [
-      23786
+      0
     ],
-    "album": "Wolves At The Door",
-    "year": 2018,
+    "album": "8 Éxitos Chacalosos",
+    "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 92809,
-    "post_url": "https://deathgrind.club/posts/92809"
-  },
-  {
-    "band": "Madest",
-    "band_id": 23767,
-    "band_ids": [
-      23767
-    ],
-    "album": "Glitch",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 92722,
-    "post_url": "https://deathgrind.club/posts/92722"
+    "post_id": 93081,
+    "post_url": "https://deathgrind.club/posts/93081"
   },
   {
     "band": "Čad",
@@ -193,32 +115,6 @@
     "type_id": 1,
     "post_id": 92634,
     "post_url": "https://deathgrind.club/posts/92634"
-  },
-  {
-    "band": "Dentellada",
-    "band_id": 23504,
-    "band_ids": [
-      23504
-    ],
-    "album": "Campanades A Morts",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 91829,
-    "post_url": "https://deathgrind.club/posts/91829"
-  },
-  {
-    "band": "Extreme Noise Terror",
-    "band_id": 1462,
-    "band_ids": [
-      1462
-    ],
-    "album": "Extreme Noise Terror",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 84074,
-    "post_url": "https://deathgrind.club/posts/84074"
   },
   {
     "band": "Bomba W Torcie",
@@ -247,56 +143,17 @@
     "post_url": "https://deathgrind.club/posts/82778"
   },
   {
-    "band": "Cancer Spreading",
-    "band_id": 13290,
-    "band_ids": [
-      13290
-    ],
-    "album": "Ghastly Visions",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81349,
-    "post_url": "https://deathgrind.club/posts/81349"
-  },
-  {
-    "band": "Karras",
-    "band_id": 20408,
-    "band_ids": [
-      20408
-    ],
-    "album": "None More Heretic",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81331,
-    "post_url": "https://deathgrind.club/posts/81331"
-  },
-  {
-    "band": "Bones",
-    "band_id": 11456,
-    "band_ids": [
-      11456
-    ],
-    "album": "Diseased",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 28855,
-    "post_url": "https://deathgrind.club/posts/28855"
-  },
-  {
-    "band": "Neoplasia Ocnogénita Testicular",
+    "band": "Illicit",
     "band_id": 0,
     "band_ids": [
       0
     ],
-    "album": "Tumores Cerebrales Causados Por La Repulsiva Y Mortal Irrigación Sanguínea Que Llega Directa Al Cortex Prefrontal",
-    "year": 2018,
+    "album": "Illicit",
+    "year": 2019,
     "type": "Album",
     "type_id": 1,
-    "post_id": 20413,
-    "post_url": "https://deathgrind.club/posts/20413"
+    "post_id": 27985,
+    "post_url": "https://deathgrind.club/posts/27985"
   },
   {
     "band": "Gravehuffer",
@@ -312,19 +169,6 @@
     "post_url": "https://deathgrind.club/posts/17364"
   },
   {
-    "band": "Tsygun",
-    "band_id": 6179,
-    "band_ids": [
-      6179
-    ],
-    "album": "Тлен",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 14272,
-    "post_url": "https://deathgrind.club/posts/14272"
-  },
-  {
     "band": "Extraction",
     "band_id": 5758,
     "band_ids": [
@@ -336,19 +180,6 @@
     "type_id": 1,
     "post_id": 13026,
     "post_url": "https://deathgrind.club/posts/13026"
-  },
-  {
-    "band": "Sator Marte",
-    "band_id": 21920,
-    "band_ids": [
-      21920
-    ],
-    "album": "Omnicide",
-    "year": 2024,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 86683,
-    "post_url": "https://deathgrind.club/posts/86683"
   },
   {
     "band": "Usurper",
@@ -364,19 +195,6 @@
     "post_url": "https://deathgrind.club/posts/84016"
   },
   {
-    "band": "Holocausto",
-    "band_id": 12243,
-    "band_ids": [
-      12243
-    ],
-    "album": "Campo De Extermínio",
-    "year": 1987,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81927,
-    "post_url": "https://deathgrind.club/posts/81927"
-  },
-  {
     "band": "Akercocke",
     "band_id": 4914,
     "band_ids": [
@@ -388,19 +206,6 @@
     "type_id": 1,
     "post_id": 81710,
     "post_url": "https://deathgrind.club/posts/81710"
-  },
-  {
-    "band": "Hurakan",
-    "band_id": 7488,
-    "band_ids": [
-      7488
-    ],
-    "album": "Via Aeterna",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74904,
-    "post_url": "https://deathgrind.club/posts/74904"
   },
   {
     "band": "Watchmaker",
@@ -416,82 +221,30 @@
     "post_url": "https://deathgrind.club/posts/74428"
   },
   {
-    "band": "Watchmaker",
-    "band_id": 18418,
+    "band": "Conquerors",
+    "band_id": 16922,
     "band_ids": [
-      18418
+      16922
     ],
-    "album": "Kill.Fucking.Everyone.",
-    "year": 2003,
+    "album": "Stormbringer",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 74420,
-    "post_url": "https://deathgrind.club/posts/74420"
+    "post_id": 70314,
+    "post_url": "https://deathgrind.club/posts/70314"
   },
   {
-    "band": "Golden Light",
-    "band_id": 14774,
+    "band": "Malakhim",
+    "band_id": 15613,
     "band_ids": [
-      14774
+      15613
     ],
-    "album": "Sacred Colour Of The Source Of Light",
-    "year": 2020,
+    "album": "Theion",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 62161,
-    "post_url": "https://deathgrind.club/posts/62161"
-  },
-  {
-    "band": "Blackmass",
-    "band_id": 13264,
-    "band_ids": [
-      13264
-    ],
-    "album": "Enthroned Legion",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 57824,
-    "post_url": "https://deathgrind.club/posts/57824"
-  },
-  {
-    "band": "Blot Mine",
-    "band_id": 12396,
-    "band_ids": [
-      12396
-    ],
-    "album": "Ashcloud",
-    "year": 2005,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 54084,
-    "post_url": "https://deathgrind.club/posts/54084"
-  },
-  {
-    "band": "Mork",
-    "band_id": 12186,
-    "band_ids": [
-      12186
-    ],
-    "album": "Det Svarte Juv",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 39321,
-    "post_url": "https://deathgrind.club/posts/39321"
-  },
-  {
-    "band": "Ossuaire",
-    "band_id": 11575,
-    "band_ids": [
-      11575
-    ],
-    "album": "Derniers Chants",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 29256,
-    "post_url": "https://deathgrind.club/posts/29256"
+    "post_id": 68141,
+    "post_url": "https://deathgrind.club/posts/68141"
   },
   {
     "band": "Historias Nórdicas De La Abuela Vikinga",
@@ -507,56 +260,43 @@
     "post_url": "https://deathgrind.club/posts/28723"
   },
   {
-    "band": "Hexengrab",
-    "band_id": 11290,
+    "band": "Magoth",
+    "band_id": 10196,
     "band_ids": [
-      11290
+      10196
     ],
-    "album": "Oderint Dum Metuant",
-    "year": 2019,
+    "album": "Anti Terrestrial Black Metal",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 28403,
-    "post_url": "https://deathgrind.club/posts/28403"
+    "post_id": 27485,
+    "post_url": "https://deathgrind.club/posts/27485"
   },
   {
-    "band": "Karmanjaka",
-    "band_id": 11209,
+    "band": "Valkyrja",
+    "band_id": 4994,
     "band_ids": [
-      11209
+      4994
     ],
-    "album": "Seven Names For The Witchqueen",
-    "year": 2019,
+    "album": "Contamination",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 28202,
-    "post_url": "https://deathgrind.club/posts/28202"
+    "post_id": 25896,
+    "post_url": "https://deathgrind.club/posts/25896"
   },
   {
-    "band": "Befallen",
-    "band_id": 9783,
+    "band": "Ampütator",
+    "band_id": 9609,
     "band_ids": [
-      9783
+      9609
     ],
-    "album": "Degeneration",
-    "year": 2012,
+    "album": "Intolerance Deathsquads",
+    "year": 2009,
     "type": "Album",
     "type_id": 1,
-    "post_id": 24602,
-    "post_url": "https://deathgrind.club/posts/24602"
-  },
-  {
-    "band": "Ováte",
-    "band_id": 9450,
-    "band_ids": [
-      9450
-    ],
-    "album": "Ováte",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 23428,
-    "post_url": "https://deathgrind.club/posts/23428"
+    "post_id": 23853,
+    "post_url": "https://deathgrind.club/posts/23853"
   },
   {
     "band": "Drouth",
@@ -572,17 +312,17 @@
     "post_url": "https://deathgrind.club/posts/22036"
   },
   {
-    "band": "Panchrysia",
-    "band_id": 8679,
+    "band": "Akercocke",
+    "band_id": 4914,
     "band_ids": [
-      8679
+      4914
     ],
-    "album": "Deathcult Salvation",
-    "year": 2008,
+    "album": "Rape Of The Bastard Nazarene",
+    "year": 2001,
     "type": "Album",
     "type_id": 1,
-    "post_id": 21474,
-    "post_url": "https://deathgrind.club/posts/21474"
+    "post_id": 20476,
+    "post_url": "https://deathgrind.club/posts/20476"
   },
   {
     "band": "Dadabots",
@@ -598,19 +338,6 @@
     "post_url": "https://deathgrind.club/posts/20185"
   },
   {
-    "band": "Watain",
-    "band_id": 2867,
-    "band_ids": [
-      2867
-    ],
-    "album": "Trident Wolf Eclipse",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19426,
-    "post_url": "https://deathgrind.club/posts/19426"
-  },
-  {
     "band": "Anima Damnata",
     "band_id": 7568,
     "band_ids": [
@@ -622,6 +349,19 @@
     "type_id": 1,
     "post_id": 18375,
     "post_url": "https://deathgrind.club/posts/18375"
+  },
+  {
+    "band": "Crafteon",
+    "band_id": 7414,
+    "band_ids": [
+      7414
+    ],
+    "album": "Cosmic Reawakening",
+    "year": 2017,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 17922,
+    "post_url": "https://deathgrind.club/posts/17922"
   },
   {
     "band": "Gravdal",
@@ -637,19 +377,6 @@
     "post_url": "https://deathgrind.club/posts/17431"
   },
   {
-    "band": "Mordskog",
-    "band_id": 6758,
-    "band_ids": [
-      6758
-    ],
-    "album": "XIII",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 16013,
-    "post_url": "https://deathgrind.club/posts/16013"
-  },
-  {
     "band": "Acrimonious",
     "band_id": 6498,
     "band_ids": [
@@ -663,56 +390,17 @@
     "post_url": "https://deathgrind.club/posts/15105"
   },
   {
-    "band": "Arria Paetus",
-    "band_id": 6122,
+    "band": "Norse",
+    "band_id": 6491,
     "band_ids": [
-      6122
+      6491
     ],
-    "album": "Arria Paetus",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 14138,
-    "post_url": "https://deathgrind.club/posts/14138"
-  },
-  {
-    "band": "Watain",
-    "band_id": 2867,
-    "band_ids": [
-      2867
-    ],
-    "album": "The Wild Hunt",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 13537,
-    "post_url": "https://deathgrind.club/posts/13537"
-  },
-  {
-    "band": "Woe",
-    "band_id": 5169,
-    "band_ids": [
-      5169
-    ],
-    "album": "Quietly, Undramatically",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 12860,
-    "post_url": "https://deathgrind.club/posts/12860"
-  },
-  {
-    "band": "YIG",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Sigil",
+    "album": "The Divine Light Of A New Sun",
     "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 12396,
-    "post_url": "https://deathgrind.club/posts/12396"
+    "post_id": 15085,
+    "post_url": "https://deathgrind.club/posts/15085"
   },
   {
     "band": "Sodom",
@@ -728,19 +416,6 @@
     "post_url": "https://deathgrind.club/posts/12080"
   },
   {
-    "band": "Wolf's Hunger",
-    "band_id": 15576,
-    "band_ids": [
-      15576
-    ],
-    "album": "Освета У Крви",
-    "year": 2007,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 11568,
-    "post_url": "https://deathgrind.club/posts/11568"
-  },
-  {
     "band": "From The Vastland",
     "band_id": 4956,
     "band_ids": [
@@ -752,19 +427,6 @@
     "type_id": 1,
     "post_id": 10958,
     "post_url": "https://deathgrind.club/posts/10958"
-  },
-  {
-    "band": "The Royal Arch Blaspheme",
-    "band_id": 4658,
-    "band_ids": [
-      4658
-    ],
-    "album": "II",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 10180,
-    "post_url": "https://deathgrind.club/posts/10180"
   },
   {
     "band": "Orkan",
@@ -780,56 +442,17 @@
     "post_url": "https://deathgrind.club/posts/8927"
   },
   {
-    "band": "Watain",
-    "band_id": 2867,
+    "band": "Entombed",
+    "band_id": 431,
     "band_ids": [
-      2867
+      431
     ],
-    "album": "Lawless Darkness",
-    "year": 2010,
+    "album": "Inferno",
+    "year": 2003,
     "type": "Album",
     "type_id": 1,
-    "post_id": 7987,
-    "post_url": "https://deathgrind.club/posts/7987"
-  },
-  {
-    "band": "Darkestrah",
-    "band_id": 3051,
-    "band_ids": [
-      3051
-    ],
-    "album": "Turan",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 6666,
-    "post_url": "https://deathgrind.club/posts/6666"
-  },
-  {
-    "band": "Pessimist",
-    "band_id": 14385,
-    "band_ids": [
-      14385
-    ],
-    "album": "Cult Of The Initiated",
-    "year": 1997,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 4178,
-    "post_url": "https://deathgrind.club/posts/4178"
-  },
-  {
-    "band": "Wrathrone",
-    "band_id": 8950,
-    "band_ids": [
-      8950
-    ],
-    "album": "Eve Of Infliction",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 68479,
-    "post_url": "https://deathgrind.club/posts/68479"
+    "post_id": 64076,
+    "post_url": "https://deathgrind.club/posts/64076"
   },
   {
     "band": "Demoria",
@@ -871,56 +494,30 @@
     "post_url": "https://deathgrind.club/posts/92481"
   },
   {
-    "band": "Ivebeenshot",
-    "band_id": 2376,
+    "band": "Molest The Episcopate",
+    "band_id": 12973,
     "band_ids": [
-      2376
+      12973
     ],
-    "album": "Doza",
-    "year": 2020,
+    "album": "Socialistica Nervosa",
+    "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 81011,
-    "post_url": "https://deathgrind.club/posts/81011"
+    "post_id": 56728,
+    "post_url": "https://deathgrind.club/posts/56728"
   },
   {
-    "band": "Bewitched Cadaver",
-    "band_id": 17136,
+    "band": "Denial",
+    "band_id": 14863,
     "band_ids": [
-      17136
+      14863
     ],
-    "album": "Barren And Bewitched (Instrumental)",
-    "year": 2021,
+    "album": "Crucifixion Of Humanity",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 71253,
-    "post_url": "https://deathgrind.club/posts/71253"
-  },
-  {
-    "band": "Cosmophobe",
-    "band_id": 14469,
-    "band_ids": [
-      14469
-    ],
-    "album": "Aberrations",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 67812,
-    "post_url": "https://deathgrind.club/posts/67812"
-  },
-  {
-    "band": "Freedom Became Ashes",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Deathbed Revelations",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 23775,
-    "post_url": "https://deathgrind.club/posts/23775"
+    "post_id": 38180,
+    "post_url": "https://deathgrind.club/posts/38180"
   },
   {
     "band": "Authoritarian",
@@ -936,6 +533,19 @@
     "post_url": "https://deathgrind.club/posts/17679"
   },
   {
+    "band": "The Arcane Hate",
+    "band_id": 6960,
+    "band_ids": [
+      6960
+    ],
+    "album": "Decadencia",
+    "year": 2017,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 16623,
+    "post_url": "https://deathgrind.club/posts/16623"
+  },
+  {
     "band": "A Day To Drink",
     "band_id": 0,
     "band_ids": [
@@ -947,32 +557,6 @@
     "type_id": 1,
     "post_id": 13802,
     "post_url": "https://deathgrind.club/posts/13802"
-  },
-  {
-    "band": "The Sign Of Four",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Sick Of Being",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 11089,
-    "post_url": "https://deathgrind.club/posts/11089"
-  },
-  {
-    "band": "No Reason To Live",
-    "band_id": 4531,
-    "band_ids": [
-      4531
-    ],
-    "album": "Only Death Is Certain",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9931,
-    "post_url": "https://deathgrind.club/posts/9931"
   },
   {
     "band": "Veil Of Maya",
@@ -988,43 +572,56 @@
     "post_url": "https://deathgrind.club/posts/8840"
   },
   {
-    "band": "Raising The Veil",
-    "band_id": 3096,
+    "band": "Sorrowspell",
+    "band_id": 0,
     "band_ids": [
-      3096
+      0
     ],
-    "album": "Bosonic Quantvm Phenomena",
+    "album": "Rebirthing The Aftermath",
     "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 6766,
-    "post_url": "https://deathgrind.club/posts/6766"
+    "post_id": 6741,
+    "post_url": "https://deathgrind.club/posts/6741"
   },
   {
-    "band": "Smashed Face",
-    "band_id": 550,
+    "band": "Misericordiam",
+    "band_id": 2906,
     "band_ids": [
-      550
+      2906
     ],
-    "album": "Misanthropocentric",
-    "year": 2010,
+    "album": "A Thin Line Between Man And Machine",
+    "year": 2006,
     "type": "Album",
     "type_id": 1,
-    "post_id": 1234,
-    "post_url": "https://deathgrind.club/posts/1234"
+    "post_id": 6301,
+    "post_url": "https://deathgrind.club/posts/6301"
   },
   {
-    "band": "Despised Icon",
-    "band_id": 75,
+    "band": "Time Of Justice",
+    "band_id": 2043,
     "band_ids": [
-      75
+      2043
     ],
-    "album": "The Ills Of Modern Man",
-    "year": 2007,
+    "album": "Инфекция Человеческого Разума",
+    "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 459,
-    "post_url": "https://deathgrind.club/posts/459"
+    "post_id": 4286,
+    "post_url": "https://deathgrind.club/posts/4286"
+  },
+  {
+    "band": "Littledidweknow",
+    "band_id": 0,
+    "band_ids": [
+      0
+    ],
+    "album": "Lucid Happenings",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 573,
+    "post_url": "https://deathgrind.club/posts/573"
   },
   {
     "band": "Consecration",
@@ -1040,17 +637,17 @@
     "post_url": "https://deathgrind.club/posts/93005"
   },
   {
-    "band": "Morbid Evils",
-    "band_id": 21138,
+    "band": "Burden Of Despair",
+    "band_id": 23007,
     "band_ids": [
-      21138
+      23007
     ],
-    "album": "Supernaturals",
-    "year": 2022,
+    "album": "Confutatis",
+    "year": 2025,
     "type": "Album",
     "type_id": 1,
-    "post_id": 83601,
-    "post_url": "https://deathgrind.club/posts/83601"
+    "post_id": 90273,
+    "post_url": "https://deathgrind.club/posts/90273"
   },
   {
     "band": "Rune",
@@ -1079,121 +676,108 @@
     "post_url": "https://deathgrind.club/posts/76586"
   },
   {
-    "band": "Temple Of Void",
-    "band_id": 7155,
+    "band": "Extreme Cold Winter",
+    "band_id": 16224,
     "band_ids": [
-      7155
+      16224
     ],
-    "album": "Summoning The Slayer",
-    "year": 2022,
+    "album": "World Exit",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 75760,
-    "post_url": "https://deathgrind.club/posts/75760"
+    "post_id": 73678,
+    "post_url": "https://deathgrind.club/posts/73678"
   },
   {
-    "band": "Urania",
-    "band_id": 16933,
+    "band": "Cult Burial",
+    "band_id": 14314,
     "band_ids": [
-      16933
+      14314
     ],
-    "album": "Hieros Gamos",
+    "album": "Cult Burial",
+    "year": 2020,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 67473,
+    "post_url": "https://deathgrind.club/posts/67473"
+  },
+  {
+    "band": "Decomposed",
+    "band_id": 14156,
+    "band_ids": [
+      14156
+    ],
+    "album": "Hope Finally Died...",
+    "year": 1993,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 66949,
+    "post_url": "https://deathgrind.club/posts/66949"
+  },
+  {
+    "band": "Un",
+    "band_id": 7198,
+    "band_ids": [
+      7198
+    ],
+    "album": "Sentiment",
+    "year": 2018,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 25390,
+    "post_url": "https://deathgrind.club/posts/25390"
+  },
+  {
+    "band": "Chaos Echœs",
+    "band_id": 8295,
+    "band_ids": [
+      8295
+    ],
+    "album": "Transient",
     "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 70331,
-    "post_url": "https://deathgrind.club/posts/70331"
+    "post_id": 22352,
+    "post_url": "https://deathgrind.club/posts/22352"
   },
   {
-    "band": "Confrontation",
-    "band_id": 14367,
+    "band": "Hovert",
+    "band_id": 6861,
     "band_ids": [
-      14367
+      6861
     ],
-    "album": "Aggregat 4",
-    "year": 2015,
+    "album": "Больше Ничего",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 67662,
-    "post_url": "https://deathgrind.club/posts/67662"
+    "post_id": 16318,
+    "post_url": "https://deathgrind.club/posts/16318"
   },
   {
-    "band": "Domedagen",
-    "band_id": 13522,
+    "band": "Khepra",
+    "band_id": 12266,
     "band_ids": [
-      13522
+      12266
     ],
-    "album": "Domedagen",
-    "year": 2019,
+    "album": "Cosmology Divine",
+    "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 61852,
-    "post_url": "https://deathgrind.club/posts/61852"
+    "post_id": 43815,
+    "post_url": "https://deathgrind.club/posts/43815"
   },
   {
-    "band": "Eternal",
-    "band_id": 14904,
+    "band": "Vitam Et Mortem",
+    "band_id": 1581,
     "band_ids": [
-      14904
+      1581
     ],
-    "album": "Entre Cadáveres",
-    "year": 2019,
+    "album": "Life In Death",
+    "year": 2007,
     "type": "Album",
     "type_id": 1,
-    "post_id": 28112,
-    "post_url": "https://deathgrind.club/posts/28112"
-  },
-  {
-    "band": "Trouble",
-    "band_id": 8334,
-    "band_ids": [
-      8334
-    ],
-    "album": "Trouble",
-    "year": 1984,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 20572,
-    "post_url": "https://deathgrind.club/posts/20572"
-  },
-  {
-    "band": "Within The Fall",
-    "band_id": 7232,
-    "band_ids": [
-      7232
-    ],
-    "album": "Beyond The Gate",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17432,
-    "post_url": "https://deathgrind.club/posts/17432"
-  },
-  {
-    "band": "Swallowed",
-    "band_id": 1015,
-    "band_ids": [
-      1015
-    ],
-    "album": "Lunarterial",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 2126,
-    "post_url": "https://deathgrind.club/posts/2126"
-  },
-  {
-    "band": "Opeth",
-    "band_id": 295,
-    "band_ids": [
-      295
-    ],
-    "album": "Blackwater Park",
-    "year": 2001,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 638,
-    "post_url": "https://deathgrind.club/posts/638"
+    "post_id": 19771,
+    "post_url": "https://deathgrind.club/posts/19771"
   },
   {
     "band": "Cyaxares",
@@ -1209,6 +793,19 @@
     "post_url": "https://deathgrind.club/posts/16144"
   },
   {
+    "band": "Duskmourn",
+    "band_id": 6045,
+    "band_ids": [
+      6045
+    ],
+    "album": "Legends",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 13819,
+    "post_url": "https://deathgrind.club/posts/13819"
+  },
+  {
     "band": "Die Apokalyptischen Reiter",
     "band_id": 5938,
     "band_ids": [
@@ -1222,17 +819,17 @@
     "post_url": "https://deathgrind.club/posts/13522"
   },
   {
-    "band": "Bathory",
-    "band_id": 2197,
+    "band": "Sewage",
+    "band_id": 17733,
     "band_ids": [
-      2197
+      17733
     ],
-    "album": "Nordland II",
-    "year": 2003,
+    "album": "Degraded And Scatologically Compromised",
+    "year": 2026,
     "type": "Album",
     "type_id": 1,
-    "post_id": 4590,
-    "post_url": "https://deathgrind.club/posts/4590"
+    "post_id": 93084,
+    "post_url": "https://deathgrind.club/posts/93084"
   },
   {
     "band": "Bleeding",
@@ -1339,6 +936,19 @@
     "post_url": "https://deathgrind.club/posts/92794"
   },
   {
+    "band": "Lust Of Decay",
+    "band_id": 1671,
+    "band_ids": [
+      1671
+    ],
+    "album": "Kingdom Of Corpses",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 92765,
+    "post_url": "https://deathgrind.club/posts/92765"
+  },
+  {
     "band": "Scordatura",
     "band_id": 1938,
     "band_ids": [
@@ -1404,43 +1014,69 @@
     "post_url": "https://deathgrind.club/posts/92177"
   },
   {
-    "band": "Cheese Grater Masturbation",
-    "band_id": 8235,
+    "band": "Death Vomit",
+    "band_id": 901,
     "band_ids": [
-      8235
+      901
     ],
-    "album": "Goremet Human Buffet",
-    "year": 2020,
+    "album": "Thou Shalt Behold",
+    "year": 2026,
     "type": "Album",
     "type_id": 1,
-    "post_id": 92142,
-    "post_url": "https://deathgrind.club/posts/92142"
+    "post_id": 92163,
+    "post_url": "https://deathgrind.club/posts/92163"
   },
   {
-    "band": "Decaying Human",
-    "band_id": 23244,
+    "band": "Corpse Carving",
+    "band_id": 7838,
     "band_ids": [
-      23244
+      7838
     ],
-    "album": "Consume Violent Atrocities",
+    "album": "Grotesque Goratorium: Disemboweled Gorific Feast",
+    "year": 2005,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 91986,
+    "post_url": "https://deathgrind.club/posts/91986"
+  },
+  {
+    "band": "Dr. Gore",
+    "band_id": 946,
+    "band_ids": [
+      946
+    ],
+    "album": "Rotting Remnants",
+    "year": 2012,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 91426,
+    "post_url": "https://deathgrind.club/posts/91426"
+  },
+  {
+    "band": "Tzeentch",
+    "band_id": 23118,
+    "band_ids": [
+      23118
+    ],
+    "album": "At The Gates Of Nar Mattaru",
     "year": 2025,
     "type": "Album",
     "type_id": 1,
-    "post_id": 90656,
-    "post_url": "https://deathgrind.club/posts/90656"
+    "post_id": 90600,
+    "post_url": "https://deathgrind.club/posts/90600"
   },
   {
-    "band": "Souledge",
-    "band_id": 22875,
+    "band": "Fecalizer",
+    "band_id": 6819,
     "band_ids": [
-      22875
+      6819
     ],
-    "album": "Blood Has No Limit",
-    "year": 2006,
+    "album": "Gore Galore",
+    "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 89858,
-    "post_url": "https://deathgrind.club/posts/89858"
+    "post_id": 90586,
+    "post_url": "https://deathgrind.club/posts/90586"
   },
   {
     "band": "Liquified Guts",
@@ -1495,19 +1131,6 @@
     "post_url": "https://deathgrind.club/posts/88182"
   },
   {
-    "band": "Scasm",
-    "band_id": 22308,
-    "band_ids": [
-      22308
-    ],
-    "album": "Bludgeoned Beyond Repair",
-    "year": 2025,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 87905,
-    "post_url": "https://deathgrind.club/posts/87905"
-  },
-  {
     "band": "Manuscriptum",
     "band_id": 22192,
     "band_ids": [
@@ -1521,30 +1144,30 @@
     "post_url": "https://deathgrind.club/posts/87656"
   },
   {
-    "band": "Virulent Gestation",
-    "band_id": 1370,
+    "band": "瘧鬼",
+    "band_id": 11031,
     "band_ids": [
-      1370
+      11031
     ],
-    "album": "Snuff Hysteria",
-    "year": 2017,
+    "album": "怨讐記",
+    "year": 2024,
     "type": "Album",
     "type_id": 1,
-    "post_id": 86612,
-    "post_url": "https://deathgrind.club/posts/86612"
+    "post_id": 85822,
+    "post_url": "https://deathgrind.club/posts/85822"
   },
   {
-    "band": "Dead Twilight",
-    "band_id": 20705,
+    "band": "Binaash",
+    "band_id": 15217,
     "band_ids": [
-      20705
+      15217
     ],
-    "album": "Fall Of Humanity",
+    "album": "Pagalos Bowlamu",
     "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 82261,
-    "post_url": "https://deathgrind.club/posts/82261"
+    "post_id": 83104,
+    "post_url": "https://deathgrind.club/posts/83104"
   },
   {
     "band": "Pigsty",
@@ -1560,32 +1183,6 @@
     "post_url": "https://deathgrind.club/posts/80973"
   },
   {
-    "band": "Brutally Mutilated",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Tortured, Fucked, And Mutilated",
-    "year": 2005,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 80301,
-    "post_url": "https://deathgrind.club/posts/80301"
-  },
-  {
-    "band": "Sadistic Pathology",
-    "band_id": 20058,
-    "band_ids": [
-      20058
-    ],
-    "album": "Decomposed Human Remains",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 79840,
-    "post_url": "https://deathgrind.club/posts/79840"
-  },
-  {
     "band": "Undertakers",
     "band_id": 13339,
     "band_ids": [
@@ -1599,30 +1196,43 @@
     "post_url": "https://deathgrind.club/posts/79267"
   },
   {
-    "band": "Horrified",
-    "band_id": 14802,
+    "band": "Malignant Christ",
+    "band_id": 19814,
     "band_ids": [
-      14802
+      19814
     ],
-    "album": "Crematorium Mist",
-    "year": 2022,
+    "album": "Ageless Reign",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76898,
-    "post_url": "https://deathgrind.club/posts/76898"
+    "post_id": 78988,
+    "post_url": "https://deathgrind.club/posts/78988"
   },
   {
-    "band": "Pesto",
-    "band_id": 18994,
+    "band": "Stabbing",
+    "band_id": 17081,
     "band_ids": [
-      18994
+      17081
     ],
-    "album": "Anthropophagist Cookbook",
+    "album": "Extirpated Mortal Process",
     "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76390,
-    "post_url": "https://deathgrind.club/posts/76390"
+    "post_id": 78588,
+    "post_url": "https://deathgrind.club/posts/78588"
+  },
+  {
+    "band": "Mortician",
+    "band_id": 593,
+    "band_ids": [
+      593
+    ],
+    "album": "Hacked Up For Barbecue / Zombie Apocalypse",
+    "year": 2004,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 77114,
+    "post_url": "https://deathgrind.club/posts/77114"
   },
   {
     "band": "Severe Torture",
@@ -1638,43 +1248,30 @@
     "post_url": "https://deathgrind.club/posts/75729"
   },
   {
-    "band": "Infernal Dominion",
-    "band_id": 1690,
+    "band": "Aborted",
+    "band_id": 590,
     "band_ids": [
-      1690
+      590
     ],
-    "album": "Salvation Through Infinite Suffering",
-    "year": 2009,
+    "album": "Engineering The Dead",
+    "year": 2008,
     "type": "Album",
     "type_id": 1,
-    "post_id": 71686,
-    "post_url": "https://deathgrind.club/posts/71686"
+    "post_id": 71378,
+    "post_url": "https://deathgrind.club/posts/71378"
   },
   {
-    "band": "Postmortem",
-    "band_id": 14464,
+    "band": "Supremacía",
+    "band_id": 10628,
     "band_ids": [
-      14464
+      10628
     ],
-    "album": "Velando La Cabeza",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 70842,
-    "post_url": "https://deathgrind.club/posts/70842"
-  },
-  {
-    "band": "Cerebral Depravity",
-    "band_id": 16823,
-    "band_ids": [
-      16823
-    ],
-    "album": "Decades Of Suffering",
+    "album": "Aberrations Of A Psychotic Mind",
     "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 70312,
-    "post_url": "https://deathgrind.club/posts/70312"
+    "post_id": 71025,
+    "post_url": "https://deathgrind.club/posts/71025"
   },
   {
     "band": "Stickoxydal",
@@ -1690,17 +1287,17 @@
     "post_url": "https://deathgrind.club/posts/69857"
   },
   {
-    "band": "Collapse NR",
-    "band_id": 16447,
+    "band": "Confinement",
+    "band_id": 14872,
     "band_ids": [
-      16447
+      14872
     ],
-    "album": "Faces Of Exploration",
-    "year": 2003,
+    "album": "Despondency At The Hands Of Self",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 69652,
-    "post_url": "https://deathgrind.club/posts/69652"
+    "post_id": 69553,
+    "post_url": "https://deathgrind.club/posts/69553"
   },
   {
     "band": "Postmortem",
@@ -1716,32 +1313,6 @@
     "post_url": "https://deathgrind.club/posts/67797"
   },
   {
-    "band": "Inhumane Suffering",
-    "band_id": 14437,
-    "band_ids": [
-      14437
-    ],
-    "album": "S/T",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 67740,
-    "post_url": "https://deathgrind.club/posts/67740"
-  },
-  {
-    "band": "Blastheory",
-    "band_id": 14640,
-    "band_ids": [
-      14640
-    ],
-    "album": "Anomalous Revelation",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 66913,
-    "post_url": "https://deathgrind.club/posts/66913"
-  },
-  {
     "band": "Lord Piggy",
     "band_id": 4275,
     "band_ids": [
@@ -1755,56 +1326,30 @@
     "post_url": "https://deathgrind.club/posts/62987"
   },
   {
-    "band": "Chancroid",
-    "band_id": 9177,
+    "band": "Baalphegor",
+    "band_id": 3505,
     "band_ids": [
-      9177
+      3505
     ],
-    "album": "Bestial Perverse Of The Anomalies Psychoneurotic",
-    "year": 2020,
+    "album": "The End Of Descent",
+    "year": 2003,
     "type": "Album",
     "type_id": 1,
-    "post_id": 62780,
-    "post_url": "https://deathgrind.club/posts/62780"
+    "post_id": 37983,
+    "post_url": "https://deathgrind.club/posts/37983"
   },
   {
-    "band": "S.C.A.T.",
-    "band_id": 7898,
+    "band": "Predator",
+    "band_id": 11572,
     "band_ids": [
-      7898
+      11572
     ],
-    "album": "Desire Of Ugliness To Live Artistically",
-    "year": 2019,
+    "album": "End Is Misery",
+    "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 62487,
-    "post_url": "https://deathgrind.club/posts/62487"
-  },
-  {
-    "band": "Melektaus",
-    "band_id": 2625,
-    "band_ids": [
-      2625
-    ],
-    "album": "Self Knowledge Disintegrate The Velis",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 54607,
-    "post_url": "https://deathgrind.club/posts/54607"
-  },
-  {
-    "band": "Ayakasi Kagura (妖神楽)",
-    "band_id": 7928,
-    "band_ids": [
-      7928
-    ],
-    "album": "聞シ召シ給ヘ (Kikoshi Meshi Tamae)",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 29692,
-    "post_url": "https://deathgrind.club/posts/29692"
+    "post_id": 29248,
+    "post_url": "https://deathgrind.club/posts/29248"
   },
   {
     "band": "El Amo De Las Putas",
@@ -1820,30 +1365,30 @@
     "post_url": "https://deathgrind.club/posts/28733"
   },
   {
-    "band": "Defecal Of Gerbe",
-    "band_id": 7887,
+    "band": "Rubufaso Mukufo",
+    "band_id": 7711,
     "band_ids": [
-      7887
+      7711
     ],
-    "album": "Mothershit",
-    "year": 2019,
+    "album": "ReMoLAB",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 26425,
-    "post_url": "https://deathgrind.club/posts/26425"
+    "post_id": 28387,
+    "post_url": "https://deathgrind.club/posts/28387"
   },
   {
-    "band": "Cephalalgia",
-    "band_id": 0,
+    "band": "Stigmatuary",
+    "band_id": 3459,
     "band_ids": [
-      0
+      3459
     ],
-    "album": "Necro Vorarephilia Fetish",
-    "year": 2018,
+    "album": "Decimation Of Psyche",
+    "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 24637,
-    "post_url": "https://deathgrind.club/posts/24637"
+    "post_id": 25769,
+    "post_url": "https://deathgrind.club/posts/25769"
   },
   {
     "band": "Sublime Cadaveric Decomposition",
@@ -1857,6 +1402,19 @@
     "type_id": 1,
     "post_id": 24633,
     "post_url": "https://deathgrind.club/posts/24633"
+  },
+  {
+    "band": "Fixation On Suffering",
+    "band_id": 6657,
+    "band_ids": [
+      6657
+    ],
+    "album": "Confined In Obscurity",
+    "year": 2018,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 24513,
+    "post_url": "https://deathgrind.club/posts/24513"
   },
   {
     "band": "Halo Of Leprosy",
@@ -1885,17 +1443,17 @@
     "post_url": "https://deathgrind.club/posts/22749"
   },
   {
-    "band": "Mugre",
-    "band_id": 8764,
+    "band": "Display Of Decay",
+    "band_id": 2082,
     "band_ids": [
-      8764
+      2082
     ],
-    "album": "Obscenidades Inéditas",
-    "year": 2015,
+    "album": "Art In Mutilation",
+    "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 21664,
-    "post_url": "https://deathgrind.club/posts/21664"
+    "post_id": 22708,
+    "post_url": "https://deathgrind.club/posts/22708"
   },
   {
     "band": "Erytrosy",
@@ -1911,30 +1469,17 @@
     "post_url": "https://deathgrind.club/posts/21461"
   },
   {
-    "band": "Visceral",
-    "band_id": 3422,
+    "band": "Dvorhead",
+    "band_id": 7717,
     "band_ids": [
-      3422
+      7717
     ],
-    "album": "Involución Parasitoide",
-    "year": 2017,
+    "album": "House Of Pain",
+    "year": 2005,
     "type": "Album",
     "type_id": 1,
-    "post_id": 19242,
-    "post_url": "https://deathgrind.club/posts/19242"
-  },
-  {
-    "band": "Butchery",
-    "band_id": 7746,
-    "band_ids": [
-      7746
-    ],
-    "album": "Dungeon Of Execution",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 18855,
-    "post_url": "https://deathgrind.club/posts/18855"
+    "post_id": 18749,
+    "post_url": "https://deathgrind.club/posts/18749"
   },
   {
     "band": "Datura",
@@ -1976,19 +1521,6 @@
     "post_url": "https://deathgrind.club/posts/17814"
   },
   {
-    "band": "Rottenness",
-    "band_id": 7319,
-    "band_ids": [
-      7319
-    ],
-    "album": "Inhuman Ways Of Depravity",
-    "year": 2001,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17693,
-    "post_url": "https://deathgrind.club/posts/17693"
-  },
-  {
     "band": "No One Gets Out Alive",
     "band_id": 976,
     "band_ids": [
@@ -2013,19 +1545,6 @@
     "type_id": 1,
     "post_id": 17204,
     "post_url": "https://deathgrind.club/posts/17204"
-  },
-  {
-    "band": "Gorepoflesh",
-    "band_id": 7138,
-    "band_ids": [
-      7138
-    ],
-    "album": "Gore Fucking Corpses",
-    "year": 2009,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17196,
-    "post_url": "https://deathgrind.club/posts/17196"
   },
   {
     "band": "Kill The Whore",
@@ -2054,30 +1573,43 @@
     "post_url": "https://deathgrind.club/posts/16809"
   },
   {
-    "band": "Avatar",
-    "band_id": 15449,
+    "band": "Scordatura",
+    "band_id": 1938,
     "band_ids": [
-      15449
+      1938
     ],
-    "album": "Aberraciones",
-    "year": 2012,
+    "album": "Self-Created Abyss",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 14406,
-    "post_url": "https://deathgrind.club/posts/14406"
+    "post_id": 14730,
+    "post_url": "https://deathgrind.club/posts/14730"
   },
   {
-    "band": "Labium Minora",
-    "band_id": 5542,
+    "band": "Gorerotted",
+    "band_id": 6063,
     "band_ids": [
-      5542
+      6063
     ],
-    "album": "Coryphaeus Spreader Hatred",
-    "year": 2016,
+    "album": "Only Tools And Corpses",
+    "year": 2003,
     "type": "Album",
     "type_id": 1,
-    "post_id": 12480,
-    "post_url": "https://deathgrind.club/posts/12480"
+    "post_id": 13932,
+    "post_url": "https://deathgrind.club/posts/13932"
+  },
+  {
+    "band": "Deflorace",
+    "band_id": 5602,
+    "band_ids": [
+      5602
+    ],
+    "album": "Massacre",
+    "year": 2004,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 12702,
+    "post_url": "https://deathgrind.club/posts/12702"
   },
   {
     "band": "Avgrunn",
@@ -2093,6 +1625,19 @@
     "post_url": "https://deathgrind.club/posts/12206"
   },
   {
+    "band": "ButterButtButler",
+    "band_id": 5350,
+    "band_ids": [
+      5350
+    ],
+    "album": "This Is The Less In Manliness",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 11984,
+    "post_url": "https://deathgrind.club/posts/11984"
+  },
+  {
     "band": "Ordo Obscurantis",
     "band_id": 5290,
     "band_ids": [
@@ -2106,17 +1651,30 @@
     "post_url": "https://deathgrind.club/posts/11851"
   },
   {
-    "band": "Regicide",
-    "band_id": 14839,
+    "band": "Siksakubur",
+    "band_id": 2935,
     "band_ids": [
-      14839
+      2935
     ],
-    "album": "极端意识 致命效应 / Extreme Intent Fatal Effect",
-    "year": 2006,
+    "album": "Siksakubur",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 11307,
-    "post_url": "https://deathgrind.club/posts/11307"
+    "post_id": 11820,
+    "post_url": "https://deathgrind.club/posts/11820"
+  },
+  {
+    "band": "Exterminance",
+    "band_id": 4917,
+    "band_ids": [
+      4917
+    ],
+    "album": "The Loss",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 10853,
+    "post_url": "https://deathgrind.club/posts/10853"
   },
   {
     "band": "Pulmonary Fibrosis",
@@ -2124,51 +1682,12 @@
     "band_ids": [
       2959
     ],
-    "album": "Organ Maggots",
-    "year": 2007,
+    "album": "Interstitial Lung Diseases",
+    "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 11226,
-    "post_url": "https://deathgrind.club/posts/11226"
-  },
-  {
-    "band": "Skewered",
-    "band_id": 1450,
-    "band_ids": [
-      1450
-    ],
-    "album": "Deathmethyltryptamine",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 10837,
-    "post_url": "https://deathgrind.club/posts/10837"
-  },
-  {
-    "band": "Blastomycosis",
-    "band_id": 4561,
-    "band_ids": [
-      4561
-    ],
-    "album": "Covered In Flies And Afterbirth",
-    "year": 2015,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9988,
-    "post_url": "https://deathgrind.club/posts/9988"
-  },
-  {
-    "band": "Infected Flesh",
-    "band_id": 1606,
-    "band_ids": [
-      1606
-    ],
-    "album": "Glorify Bestial Quartering",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9075,
-    "post_url": "https://deathgrind.club/posts/9075"
+    "post_id": 9263,
+    "post_url": "https://deathgrind.club/posts/9263"
   },
   {
     "band": "Soulreaper",
@@ -2184,160 +1703,56 @@
     "post_url": "https://deathgrind.club/posts/8935"
   },
   {
-    "band": "Depraved",
-    "band_id": 2979,
+    "band": "Inhume",
+    "band_id": 2373,
     "band_ids": [
-      2979
+      2373
     ],
-    "album": "Dive Into Psycho Terror",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 8136,
-    "post_url": "https://deathgrind.club/posts/8136"
-  },
-  {
-    "band": "Putrid Pile",
-    "band_id": 1002,
-    "band_ids": [
-      1002
-    ],
-    "album": "Paraphiliac Perversions",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 7600,
-    "post_url": "https://deathgrind.club/posts/7600"
-  },
-  {
-    "band": "Human Pesticide",
-    "band_id": 3055,
-    "band_ids": [
-      3055
-    ],
-    "album": "Mutilated In A Bathtub",
-    "year": 2005,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 6676,
-    "post_url": "https://deathgrind.club/posts/6676"
-  },
-  {
-    "band": "Reprobation",
-    "band_id": 2677,
-    "band_ids": [
-      2677
-    ],
-    "album": "One Final Autopsy...",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 5642,
-    "post_url": "https://deathgrind.club/posts/5642"
-  },
-  {
-    "band": "Christ Denied",
-    "band_id": 1105,
-    "band_ids": [
-      1105
-    ],
-    "album": "...Got What He Deserved",
-    "year": 1996,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 4819,
-    "post_url": "https://deathgrind.club/posts/4819"
-  },
-  {
-    "band": "Rapture",
-    "band_id": 2148,
-    "band_ids": [
-      2148
-    ],
-    "album": "Living Inside Of Death",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 4492,
-    "post_url": "https://deathgrind.club/posts/4492"
-  },
-  {
-    "band": "Cerebral Effusion",
-    "band_id": 672,
-    "band_ids": [
-      672
-    ],
-    "album": "Impulsive Psychopathic Acts",
+    "album": "Moulding The Deformed",
     "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 4229,
-    "post_url": "https://deathgrind.club/posts/4229"
+    "post_id": 5534,
+    "post_url": "https://deathgrind.club/posts/5534"
   },
   {
-    "band": "Psicosis",
-    "band_id": 16474,
+    "band": "Deranged",
+    "band_id": 422,
     "band_ids": [
-      16474
+      422
     ],
-    "album": "Sexo, Fetiche & Gore",
+    "album": "The Redlight Murder Case",
+    "year": 2008,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 4162,
+    "post_url": "https://deathgrind.club/posts/4162"
+  },
+  {
+    "band": "Tenggorokan",
+    "band_id": 1560,
+    "band_ids": [
+      1560
+    ],
+    "album": "Execution Of Death",
     "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 3987,
-    "post_url": "https://deathgrind.club/posts/3987"
+    "post_id": 3445,
+    "post_url": "https://deathgrind.club/posts/3445"
   },
   {
-    "band": "Visceral Dissection",
-    "band_id": 1603,
+    "band": "Vile",
+    "band_id": 1500,
     "band_ids": [
-      1603
+      1500
     ],
-    "album": "Orgy In Autopsy",
-    "year": 2015,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 3511,
-    "post_url": "https://deathgrind.club/posts/3511"
-  },
-  {
-    "band": "Saprogenic",
-    "band_id": 1523,
-    "band_ids": [
-      1523
-    ],
-    "album": "Ichneumonid",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 3387,
-    "post_url": "https://deathgrind.club/posts/3387"
-  },
-  {
-    "band": "Abrasive",
-    "band_id": 2075,
-    "band_ids": [
-      2075
-    ],
-    "album": "The Birth... Born In Sodom",
+    "album": "Metamorphosis",
     "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 3366,
-    "post_url": "https://deathgrind.club/posts/3366"
-  },
-  {
-    "band": "Skinless",
-    "band_id": 1333,
-    "band_ids": [
-      1333
-    ],
-    "album": "Trample The Weak, Hurdle The Dead",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 2688,
-    "post_url": "https://deathgrind.club/posts/2688"
+    "post_id": 3286,
+    "post_url": "https://deathgrind.club/posts/3286"
   },
   {
     "band": "Failed Humanity",
@@ -2353,17 +1768,121 @@
     "post_url": "https://deathgrind.club/posts/2563"
   },
   {
-    "band": "Suicide Of Disaster",
-    "band_id": 1222,
+    "band": "Engulfed In Blackness",
+    "band_id": 1120,
     "band_ids": [
-      1222
+      1120
     ],
-    "album": "Evisceration Of Pregnant Abdomen",
+    "album": "Ceremonial Equinox",
     "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 2498,
-    "post_url": "https://deathgrind.club/posts/2498"
+    "post_id": 2358,
+    "post_url": "https://deathgrind.club/posts/2358"
+  },
+  {
+    "band": "Putrefy",
+    "band_id": 1073,
+    "band_ids": [
+      1073
+    ],
+    "album": "Knelt Before The Sarcophagus Of Humanity",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 2264,
+    "post_url": "https://deathgrind.club/posts/2264"
+  },
+  {
+    "band": "Demon Vomit",
+    "band_id": 981,
+    "band_ids": [
+      981
+    ],
+    "album": "Brutal Blasphemy",
+    "year": 2012,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 2048,
+    "post_url": "https://deathgrind.club/posts/2048"
+  },
+  {
+    "band": "Mind Snare",
+    "band_id": 907,
+    "band_ids": [
+      907
+    ],
+    "album": "Ancient Cults Supremacy",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 1926,
+    "post_url": "https://deathgrind.club/posts/1926"
+  },
+  {
+    "band": "Corpse Cook",
+    "band_id": 752,
+    "band_ids": [
+      752
+    ],
+    "album": "Hell Is Empty, And All The Devils Are Here",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 1664,
+    "post_url": "https://deathgrind.club/posts/1664"
+  },
+  {
+    "band": "Blenorrhagical Spermatocystitis",
+    "band_id": 0,
+    "band_ids": [
+      0
+    ],
+    "album": "Hemorrhagico-Purulent Emanation Through Urethra",
+    "year": 2008,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93078,
+    "post_url": "https://deathgrind.club/posts/93078"
+  },
+  {
+    "band": "Houkago Grind Time",
+    "band_id": 14336,
+    "band_ids": [
+      14336
+    ],
+    "album": "Koncertos Of Kawaiiness: Stealing Jon Chang's Ideas, A Book By Andrew Lee",
+    "year": 2024,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93085,
+    "post_url": "https://deathgrind.club/posts/93085"
+  },
+  {
+    "band": "Houkago Grind Time",
+    "band_id": 14336,
+    "band_ids": [
+      14336
+    ],
+    "album": "Sorry I Am Not From Japan",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93083,
+    "post_url": "https://deathgrind.club/posts/93083"
+  },
+  {
+    "band": "Mutilated Judge",
+    "band_id": 17263,
+    "band_ids": [
+      17263
+    ],
+    "album": "We Ghostwrote Every Tool Album",
+    "year": 2024,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93082,
+    "post_url": "https://deathgrind.club/posts/93082"
   },
   {
     "band": "Torsofuck",
@@ -2418,32 +1937,6 @@
     "post_url": "https://deathgrind.club/posts/92631"
   },
   {
-    "band": "Disgorgement Of Intestinal Lymphatic Suppuration",
-    "band_id": 7510,
-    "band_ids": [
-      7510
-    ],
-    "album": "Axe Maniac Cult",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 92630,
-    "post_url": "https://deathgrind.club/posts/92630"
-  },
-  {
-    "band": "Cerebral Crusher",
-    "band_id": 23528,
-    "band_ids": [
-      23528
-    ],
-    "album": "The World Burn In Shit",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 91902,
-    "post_url": "https://deathgrind.club/posts/91902"
-  },
-  {
     "band": "Repugnance",
     "band_id": 23022,
     "band_ids": [
@@ -2457,17 +1950,17 @@
     "post_url": "https://deathgrind.club/posts/91898"
   },
   {
-    "band": "Floccinaucinihilipilification",
+    "band": "Craniorachischisis",
     "band_id": 0,
     "band_ids": [
       0
     ],
-    "album": "Surgical Humiliation",
-    "year": 2025,
+    "album": "Craniorachischisis",
+    "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 91639,
-    "post_url": "https://deathgrind.club/posts/91639"
+    "post_id": 91825,
+    "post_url": "https://deathgrind.club/posts/91825"
   },
   {
     "band": "Spasm",
@@ -2496,19 +1989,6 @@
     "post_url": "https://deathgrind.club/posts/88114"
   },
   {
-    "band": "Morgue",
-    "band_id": 15065,
-    "band_ids": [
-      15065
-    ],
-    "album": "Anatomía Patológica",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 84778,
-    "post_url": "https://deathgrind.club/posts/84778"
-  },
-  {
     "band": "Lamida Vaginal",
     "band_id": 7684,
     "band_ids": [
@@ -2535,45 +2015,6 @@
     "post_url": "https://deathgrind.club/posts/83593"
   },
   {
-    "band": "Krueger",
-    "band_id": 9498,
-    "band_ids": [
-      9498
-    ],
-    "album": "Fetid Love",
-    "year": 2000,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 83455,
-    "post_url": "https://deathgrind.club/posts/83455"
-  },
-  {
-    "band": "Necrocannibalistic Vomitorium",
-    "band_id": 13384,
-    "band_ids": [
-      13384
-    ],
-    "album": "Hvmani Corporis Ossvm",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 83148,
-    "post_url": "https://deathgrind.club/posts/83148"
-  },
-  {
-    "band": "CrotchRot",
-    "band_id": 20576,
-    "band_ids": [
-      20576
-    ],
-    "album": "Brochas From Hell",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81615,
-    "post_url": "https://deathgrind.club/posts/81615"
-  },
-  {
     "band": "Oxidised Razor",
     "band_id": 999,
     "band_ids": [
@@ -2587,30 +2028,30 @@
     "post_url": "https://deathgrind.club/posts/80958"
   },
   {
-    "band": "Dead Humanity",
-    "band_id": 0,
+    "band": "Necrony",
+    "band_id": 8492,
     "band_ids": [
-      0
+      8492
     ],
-    "album": "Urge Of Absolute Hatred And Disgust",
-    "year": 2021,
+    "album": "Pathological Performances",
+    "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 73096,
-    "post_url": "https://deathgrind.club/posts/73096"
+    "post_id": 79748,
+    "post_url": "https://deathgrind.club/posts/79748"
   },
   {
-    "band": "Inopexia",
-    "band_id": 16936,
+    "band": "Gronibard",
+    "band_id": 10416,
     "band_ids": [
-      16936
+      10416
     ],
-    "album": "Myocardical Biopsy Had A Lethal Outcome",
-    "year": 2012,
+    "album": "We Are French Fukk You",
+    "year": 2008,
     "type": "Album",
     "type_id": 1,
-    "post_id": 72409,
-    "post_url": "https://deathgrind.club/posts/72409"
+    "post_id": 73963,
+    "post_url": "https://deathgrind.club/posts/73963"
   },
   {
     "band": "C.A.R.N.E.",
@@ -2626,134 +2067,17 @@
     "post_url": "https://deathgrind.club/posts/70223"
   },
   {
-    "band": "Malignant Defecation",
-    "band_id": 16037,
+    "band": "Cliteater",
+    "band_id": 4885,
     "band_ids": [
-      16037
+      4885
     ],
-    "album": "Malignant Butchery Maniacs",
-    "year": 2014,
+    "album": "Clit 'Em All",
+    "year": 2004,
     "type": "Album",
     "type_id": 1,
-    "post_id": 68832,
-    "post_url": "https://deathgrind.club/posts/68832"
-  },
-  {
-    "band": "AxCxMxE",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Masiva Destrucción Mental",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 62587,
-    "post_url": "https://deathgrind.club/posts/62587"
-  },
-  {
-    "band": "Alien Cow Abduction",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Putiza Intergaláctica Navideña",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 57863,
-    "post_url": "https://deathgrind.club/posts/57863"
-  },
-  {
-    "band": "Gonorrea",
-    "band_id": 14491,
-    "band_ids": [
-      14491
-    ],
-    "album": "My First Orgy",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 28495,
-    "post_url": "https://deathgrind.club/posts/28495"
-  },
-  {
-    "band": "Necrologyst",
-    "band_id": 16645,
-    "band_ids": [
-      16645
-    ],
-    "album": "Forensic Lust",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 26827,
-    "post_url": "https://deathgrind.club/posts/26827"
-  },
-  {
-    "band": "Necrologyst",
-    "band_id": 16645,
-    "band_ids": [
-      16645
-    ],
-    "album": "Atracction By Decapitation",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 26017,
-    "post_url": "https://deathgrind.club/posts/26017"
-  },
-  {
-    "band": "Necrologyst",
-    "band_id": 16645,
-    "band_ids": [
-      16645
-    ],
-    "album": "Lacerated/Mutilated",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 25827,
-    "post_url": "https://deathgrind.club/posts/25827"
-  },
-  {
-    "band": "Necrologyst",
-    "band_id": 16645,
-    "band_ids": [
-      16645
-    ],
-    "album": "Apendix Auto Operation",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 25412,
-    "post_url": "https://deathgrind.club/posts/25412"
-  },
-  {
-    "band": "Innards Deposit",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Demo",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21720,
-    "post_url": "https://deathgrind.club/posts/21720"
-  },
-  {
-    "band": "Dirty Dancing Pigs",
-    "band_id": 8718,
-    "band_ids": [
-      8718
-    ],
-    "album": "Crushed Village",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21592,
-    "post_url": "https://deathgrind.club/posts/21592"
+    "post_id": 61793,
+    "post_url": "https://deathgrind.club/posts/61793"
   },
   {
     "band": "TxHxIxNxNxExRx",
@@ -2769,6 +2093,19 @@
     "post_url": "https://deathgrind.club/posts/21053"
   },
   {
+    "band": "Analkholik",
+    "band_id": 0,
+    "band_ids": [
+      0
+    ],
+    "album": "After Party - Shit Stinks",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 20992,
+    "post_url": "https://deathgrind.club/posts/20992"
+  },
+  {
     "band": "Big Cock Zombie",
     "band_id": 0,
     "band_ids": [
@@ -2782,32 +2119,6 @@
     "post_url": "https://deathgrind.club/posts/20400"
   },
   {
-    "band": "Matanza",
-    "band_id": 4545,
-    "band_ids": [
-      4545
-    ],
-    "album": "Sangriento",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 20177,
-    "post_url": "https://deathgrind.club/posts/20177"
-  },
-  {
-    "band": "Phalloplasty",
-    "band_id": 1176,
-    "band_ids": [
-      1176
-    ],
-    "album": "Smear",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 18774,
-    "post_url": "https://deathgrind.club/posts/18774"
-  },
-  {
     "band": "Blutrină",
     "band_id": 15245,
     "band_ids": [
@@ -2819,6 +2130,19 @@
     "type_id": 1,
     "post_id": 18365,
     "post_url": "https://deathgrind.club/posts/18365"
+  },
+  {
+    "band": "Butcher ABC",
+    "band_id": 7297,
+    "band_ids": [
+      7297
+    ],
+    "album": "North Of Hell",
+    "year": 2018,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 17618,
+    "post_url": "https://deathgrind.club/posts/17618"
   },
   {
     "band": "Pigto",
@@ -2860,19 +2184,6 @@
     "post_url": "https://deathgrind.club/posts/17170"
   },
   {
-    "band": "Dismenorrea",
-    "band_id": 7132,
-    "band_ids": [
-      7132
-    ],
-    "album": "D.I.S.M.E.N.O.R.R.E.A.",
-    "year": 2009,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17169,
-    "post_url": "https://deathgrind.club/posts/17169"
-  },
-  {
     "band": "Penis Amputator",
     "band_id": 0,
     "band_ids": [
@@ -2886,43 +2197,56 @@
     "post_url": "https://deathgrind.club/posts/12917"
   },
   {
-    "band": "Pulmonary Fibrosis",
-    "band_id": 2959,
+    "band": "Embalming Theatre",
+    "band_id": 5687,
     "band_ids": [
-      2959
+      5687
     ],
-    "album": "Idiopathic Pulmonary Fibrosis",
-    "year": 2016,
+    "album": "Unamused Rancid Flesh",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 6447,
-    "post_url": "https://deathgrind.club/posts/6447"
+    "post_id": 12813,
+    "post_url": "https://deathgrind.club/posts/12813"
   },
   {
-    "band": "Dystonia",
-    "band_id": 13528,
+    "band": "Preschool Tea Party Massacre",
+    "band_id": 16473,
     "band_ids": [
-      13528
+      16473
     ],
-    "album": "Reflection",
-    "year": 2020,
+    "album": "The Bone Concubine",
+    "year": 2004,
     "type": "Album",
     "type_id": 1,
-    "post_id": 61927,
-    "post_url": "https://deathgrind.club/posts/61927"
+    "post_id": 4042,
+    "post_url": "https://deathgrind.club/posts/4042"
   },
   {
-    "band": "Creature Of Exile",
-    "band_id": 10567,
+    "band": "Cemetery Rapist",
+    "band_id": 1839,
     "band_ids": [
-      10567
+      1839
     ],
-    "album": "Age Of Annihilation",
-    "year": 2017,
+    "album": "Plundering Into Vaginal Demolition",
+    "year": 2013,
     "type": "Album",
     "type_id": 1,
-    "post_id": 26449,
-    "post_url": "https://deathgrind.club/posts/26449"
+    "post_id": 3902,
+    "post_url": "https://deathgrind.club/posts/3902"
+  },
+  {
+    "band": "Colosso",
+    "band_id": 4518,
+    "band_ids": [
+      4518
+    ],
+    "album": "Abrasive Peace",
+    "year": 2012,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 20637,
+    "post_url": "https://deathgrind.club/posts/20637"
   },
   {
     "band": "Grimfist",
@@ -2964,71 +2288,6 @@
     "post_url": "https://deathgrind.club/posts/14410"
   },
   {
-    "band": "Burn The Priest",
-    "band_id": 3718,
-    "band_ids": [
-      3718
-    ],
-    "album": "Burn The Priest",
-    "year": 1999,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 8006,
-    "post_url": "https://deathgrind.club/posts/8006"
-  },
-  {
-    "band": "Obscene Execration",
-    "band_id": 2011,
-    "band_ids": [
-      2011
-    ],
-    "album": "Foul Incantation",
-    "year": 2015,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 4224,
-    "post_url": "https://deathgrind.club/posts/4224"
-  },
-  {
-    "band": "Sepultura",
-    "band_id": 1546,
-    "band_ids": [
-      1546
-    ],
-    "album": "Against",
-    "year": 1998,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 3422,
-    "post_url": "https://deathgrind.club/posts/3422"
-  },
-  {
-    "band": "Ruined Nation",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Restart",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 78458,
-    "post_url": "https://deathgrind.club/posts/78458"
-  },
-  {
-    "band": "Texas Ketamine",
-    "band_id": 18382,
-    "band_ids": [
-      18382
-    ],
-    "album": "Texas Ketamine",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74288,
-    "post_url": "https://deathgrind.club/posts/74288"
-  },
-  {
     "band": "G.T.I.",
     "band_id": 16962,
     "band_ids": [
@@ -3042,19 +2301,6 @@
     "post_url": "https://deathgrind.club/posts/70353"
   },
   {
-    "band": "Septic Tank",
-    "band_id": 6484,
-    "band_ids": [
-      6484
-    ],
-    "album": "Rotting Civilisation",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 60782,
-    "post_url": "https://deathgrind.club/posts/60782"
-  },
-  {
     "band": "Beneath The Horror",
     "band_id": 0,
     "band_ids": [
@@ -3066,19 +2312,6 @@
     "type_id": 1,
     "post_id": 22929,
     "post_url": "https://deathgrind.club/posts/22929"
-  },
-  {
-    "band": "Alcatraz",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Smile Now Cry Later",
-    "year": 2011,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19748,
-    "post_url": "https://deathgrind.club/posts/19748"
   },
   {
     "band": "A Death For Every Sin",
@@ -3107,6 +2340,19 @@
     "post_url": "https://deathgrind.club/posts/14744"
   },
   {
+    "band": "Cliterati",
+    "band_id": 0,
+    "band_ids": [
+      0
+    ],
+    "album": "Cliterati",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 14692,
+    "post_url": "https://deathgrind.club/posts/14692"
+  },
+  {
     "band": "Will Haven",
     "band_id": 0,
     "band_ids": [
@@ -3133,19 +2379,6 @@
     "post_url": "https://deathgrind.club/posts/8103"
   },
   {
-    "band": "Sleep Terror",
-    "band_id": 350,
-    "band_ids": [
-      350
-    ],
-    "album": "El Insomne",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 23424,
-    "post_url": "https://deathgrind.club/posts/23424"
-  },
-  {
     "band": "Teramobil",
     "band_id": 0,
     "band_ids": [
@@ -3157,6 +2390,19 @@
     "type_id": 1,
     "post_id": 11589,
     "post_url": "https://deathgrind.club/posts/11589"
+  },
+  {
+    "band": "Exivious",
+    "band_id": 1905,
+    "band_ids": [
+      1905
+    ],
+    "album": "Exivious",
+    "year": 2009,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 4019,
+    "post_url": "https://deathgrind.club/posts/4019"
   },
   {
     "band": "D-Compose",
@@ -3172,6 +2418,19 @@
     "post_url": "https://deathgrind.club/posts/81971"
   },
   {
+    "band": "The Tony Danza Tapdance Extravaganza",
+    "band_id": 0,
+    "band_ids": [
+      0
+    ],
+    "album": "Danza IIII: The Alpha - The Omega",
+    "year": 2012,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 11448,
+    "post_url": "https://deathgrind.club/posts/11448"
+  },
+  {
     "band": "Naglfar",
     "band_id": 5031,
     "band_ids": [
@@ -3185,17 +2444,30 @@
     "post_url": "https://deathgrind.club/posts/90848"
   },
   {
-    "band": "Males Fecundos",
-    "band_id": 23822,
+    "band": "Naglfar",
+    "band_id": 5031,
     "band_ids": [
-      23822
+      5031
     ],
-    "album": "Males Fecundos",
-    "year": 2018,
+    "album": "Harvest",
+    "year": 2007,
     "type": "Album",
     "type_id": 1,
-    "post_id": 92930,
-    "post_url": "https://deathgrind.club/posts/92930"
+    "post_id": 11654,
+    "post_url": "https://deathgrind.club/posts/11654"
+  },
+  {
+    "band": "Dark Fortress",
+    "band_id": 2367,
+    "band_ids": [
+      2367
+    ],
+    "album": "Eidolon",
+    "year": 2008,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 4933,
+    "post_url": "https://deathgrind.club/posts/4933"
   },
   {
     "band": "Disassociate",
@@ -3238,19 +2510,6 @@
     "post_url": "https://deathgrind.club/posts/88759"
   },
   {
-    "band": "Flesh Parade",
-    "band_id": 13655,
-    "band_ids": [
-      13655
-    ],
-    "album": "Dirty Sweet",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 88784,
-    "post_url": "https://deathgrind.club/posts/88784"
-  },
-  {
     "band": "Agathocles",
     "band_id": 8446,
     "band_ids": [
@@ -3262,6 +2521,19 @@
     "type_id": 1,
     "post_id": 88540,
     "post_url": "https://deathgrind.club/posts/88540"
+  },
+  {
+    "band": "Magrudergrind",
+    "band_id": 17201,
+    "band_ids": [
+      17201
+    ],
+    "album": "Rehashed",
+    "year": 2007,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 85675,
+    "post_url": "https://deathgrind.club/posts/85675"
   },
   {
     "band": "Benümb",
@@ -3355,19 +2627,6 @@
     "post_url": "https://deathgrind.club/posts/82564"
   },
   {
-    "band": "Miroed",
-    "band_id": 19491,
-    "band_ids": [
-      19491
-    ],
-    "album": "Miroed",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 82306,
-    "post_url": "https://deathgrind.club/posts/82306"
-  },
-  {
     "band": "Third Degree",
     "band_id": 1082,
     "band_ids": [
@@ -3392,45 +2651,6 @@
     "type_id": 1,
     "post_id": 81678,
     "post_url": "https://deathgrind.club/posts/81678"
-  },
-  {
-    "band": "Cloacal Kiss",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Easter",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81093,
-    "post_url": "https://deathgrind.club/posts/81093"
-  },
-  {
-    "band": "Deathtopia",
-    "band_id": 1465,
-    "band_ids": [
-      1465
-    ],
-    "album": "Beyond The Death",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 80566,
-    "post_url": "https://deathgrind.club/posts/80566"
-  },
-  {
-    "band": "Krupskaya",
-    "band_id": 20472,
-    "band_ids": [
-      20472
-    ],
-    "album": "A Dawn Of Shattered Silence",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 80514,
-    "post_url": "https://deathgrind.club/posts/80514"
   },
   {
     "band": "Ojciec Dyktator",
@@ -3511,17 +2731,17 @@
     "post_url": "https://deathgrind.club/posts/79038"
   },
   {
-    "band": "Raw Noise Apes",
-    "band_id": 0,
+    "band": "Mistress",
+    "band_id": 17793,
     "band_ids": [
-      0
+      17793
     ],
-    "album": "Damnatio Memoriae",
-    "year": 2019,
+    "album": "Mistress",
+    "year": 2005,
     "type": "Album",
     "type_id": 1,
-    "post_id": 78321,
-    "post_url": "https://deathgrind.club/posts/78321"
+    "post_id": 77517,
+    "post_url": "https://deathgrind.club/posts/77517"
   },
   {
     "band": "Mistress",
@@ -3535,19 +2755,6 @@
     "type_id": 1,
     "post_id": 77448,
     "post_url": "https://deathgrind.club/posts/77448"
-  },
-  {
-    "band": "Phobia",
-    "band_id": 6090,
-    "band_ids": [
-      6090
-    ],
-    "album": "Remnants Of Filth",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 77435,
-    "post_url": "https://deathgrind.club/posts/77435"
   },
   {
     "band": "Mistress",
@@ -3615,19 +2822,6 @@
     "post_url": "https://deathgrind.club/posts/76602"
   },
   {
-    "band": "Triac",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Pure Joy - Numb Grief-Stricken Animals",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 75777,
-    "post_url": "https://deathgrind.club/posts/75777"
-  },
-  {
     "band": "Fuck The Facts",
     "band_id": 12296,
     "band_ids": [
@@ -3641,17 +2835,17 @@
     "post_url": "https://deathgrind.club/posts/75300"
   },
   {
-    "band": "Cattle Decapitation",
-    "band_id": 3,
+    "band": "No One Knows What The Dead Think",
+    "band_id": 18440,
     "band_ids": [
-      3
+      18440
     ],
-    "album": "The Anthropocene Extinction",
-    "year": 2015,
+    "album": "No One Knows What The Dead Think",
+    "year": 2019,
     "type": "Album",
     "type_id": 1,
-    "post_id": 74318,
-    "post_url": "https://deathgrind.club/posts/74318"
+    "post_id": 74505,
+    "post_url": "https://deathgrind.club/posts/74505"
   },
   {
     "band": "Exegutor",
@@ -3680,19 +2874,6 @@
     "post_url": "https://deathgrind.club/posts/74050"
   },
   {
-    "band": "Discordance Axis",
-    "band_id": 16565,
-    "band_ids": [
-      16565
-    ],
-    "album": "Jouhou",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 73672,
-    "post_url": "https://deathgrind.club/posts/73672"
-  },
-  {
     "band": "Defeatist",
     "band_id": 18134,
     "band_ids": [
@@ -3704,19 +2885,6 @@
     "type_id": 1,
     "post_id": 73659,
     "post_url": "https://deathgrind.club/posts/73659"
-  },
-  {
-    "band": "Goreskin Coffin",
-    "band_id": 3201,
-    "band_ids": [
-      3201
-    ],
-    "album": "Release My Suffering",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 73198,
-    "post_url": "https://deathgrind.club/posts/73198"
   },
   {
     "band": "Spineless Fuckers",
@@ -3745,43 +2913,17 @@
     "post_url": "https://deathgrind.club/posts/72659"
   },
   {
-    "band": "Blind To Faith",
-    "band_id": 13592,
+    "band": "Eaten",
+    "band_id": 9408,
     "band_ids": [
-      13592
+      9408
     ],
-    "album": "Unstoppable War",
-    "year": 2020,
+    "album": "Eaten",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 62153,
-    "post_url": "https://deathgrind.club/posts/62153"
-  },
-  {
-    "band": "Necrologyst",
-    "band_id": 16645,
-    "band_ids": [
-      16645
-    ],
-    "album": "Necrologyst",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 25113,
-    "post_url": "https://deathgrind.club/posts/25113"
-  },
-  {
-    "band": "Big Cock Zombie",
-    "band_id": 0,
-    "band_ids": [
-      0
-    ],
-    "album": "Alien Weed",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 22926,
-    "post_url": "https://deathgrind.club/posts/22926"
+    "post_id": 23326,
+    "post_url": "https://deathgrind.club/posts/23326"
   },
   {
     "band": "Gridlink",
@@ -3823,32 +2965,6 @@
     "post_url": "https://deathgrind.club/posts/19520"
   },
   {
-    "band": "Pig Companny",
-    "band_id": 7301,
-    "band_ids": [
-      7301
-    ],
-    "album": "Deconstruction Of Resistance",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17629,
-    "post_url": "https://deathgrind.club/posts/17629"
-  },
-  {
-    "band": "Nistikko",
-    "band_id": 7300,
-    "band_ids": [
-      7300
-    ],
-    "album": "Väsy",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17628,
-    "post_url": "https://deathgrind.club/posts/17628"
-  },
-  {
     "band": "Nistikko",
     "band_id": 7300,
     "band_ids": [
@@ -3886,6 +3002,19 @@
     "type_id": 1,
     "post_id": 17494,
     "post_url": "https://deathgrind.club/posts/17494"
+  },
+  {
+    "band": "Blurring",
+    "band_id": 7104,
+    "band_ids": [
+      7104
+    ],
+    "album": "Blurring",
+    "year": 2015,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 17317,
+    "post_url": "https://deathgrind.club/posts/17317"
   },
   {
     "band": "!T.O.O.H.!",
@@ -3927,6 +3056,19 @@
     "post_url": "https://deathgrind.club/posts/16866"
   },
   {
+    "band": "Buffalo Grillz",
+    "band_id": 6212,
+    "band_ids": [
+      6212
+    ],
+    "album": "Martin Burger King",
+    "year": 2017,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 14392,
+    "post_url": "https://deathgrind.club/posts/14392"
+  },
+  {
     "band": "Jesus Cröst",
     "band_id": 6055,
     "band_ids": [
@@ -3938,19 +3080,6 @@
     "type_id": 1,
     "post_id": 13879,
     "post_url": "https://deathgrind.club/posts/13879"
-  },
-  {
-    "band": "Pukat Harimau",
-    "band_id": 5196,
-    "band_ids": [
-      5196
-    ],
-    "album": "Suspicious",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 11598,
-    "post_url": "https://deathgrind.club/posts/11598"
   },
   {
     "band": "Bathtub Shitter",
@@ -3992,19 +3121,6 @@
     "post_url": "https://deathgrind.club/posts/10273"
   },
   {
-    "band": "Brujeria",
-    "band_id": 3800,
-    "band_ids": [
-      3800
-    ],
-    "album": "Brujerizmo",
-    "year": 2000,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 8288,
-    "post_url": "https://deathgrind.club/posts/8288"
-  },
-  {
     "band": "Magrudergrind",
     "band_id": 17201,
     "band_ids": [
@@ -4044,19 +3160,6 @@
     "post_url": "https://deathgrind.club/posts/2277"
   },
   {
-    "band": "Gûlgûta",
-    "band_id": 758,
-    "band_ids": [
-      758
-    ],
-    "album": "Gûlgûta",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 1673,
-    "post_url": "https://deathgrind.club/posts/1673"
-  },
-  {
     "band": "Full Of Hell",
     "band_id": 6653,
     "band_ids": [
@@ -4070,17 +3173,17 @@
     "post_url": "https://deathgrind.club/posts/74755"
   },
   {
-    "band": "Under Threat",
-    "band_id": 12845,
+    "band": "Buried Realm",
+    "band_id": 12984,
     "band_ids": [
-      12845
+      12984
     ],
-    "album": "The Manifested Void",
-    "year": 2013,
+    "album": "Embodiment Of The Divine",
+    "year": 2020,
     "type": "Album",
     "type_id": 1,
-    "post_id": 56456,
-    "post_url": "https://deathgrind.club/posts/56456"
+    "post_id": 63424,
+    "post_url": "https://deathgrind.club/posts/63424"
   },
   {
     "band": "Historias Nórdicas De La Abuela Vikinga",
@@ -4096,19 +3199,6 @@
     "post_url": "https://deathgrind.club/posts/28935"
   },
   {
-    "band": "Coldbound",
-    "band_id": 9343,
-    "band_ids": [
-      9343
-    ],
-    "album": "The Gale",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 23151,
-    "post_url": "https://deathgrind.club/posts/23151"
-  },
-  {
     "band": "Mistyfate",
     "band_id": 8043,
     "band_ids": [
@@ -4120,6 +3210,19 @@
     "type_id": 1,
     "post_id": 19778,
     "post_url": "https://deathgrind.club/posts/19778"
+  },
+  {
+    "band": "The Seer",
+    "band_id": 5812,
+    "band_ids": [
+      5812
+    ],
+    "album": "Prologue",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 13189,
+    "post_url": "https://deathgrind.club/posts/13189"
   },
   {
     "band": "Mist Of Nihil",
@@ -4135,17 +3238,17 @@
     "post_url": "https://deathgrind.club/posts/12873"
   },
   {
-    "band": "Nephilim",
-    "band_id": 5252,
+    "band": "Heaven Shall Burn",
+    "band_id": 701,
     "band_ids": [
-      5252
+      701
     ],
-    "album": "Disciplined",
+    "album": "Wanderer",
     "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 11756,
-    "post_url": "https://deathgrind.club/posts/11756"
+    "post_id": 10159,
+    "post_url": "https://deathgrind.club/posts/10159"
   },
   {
     "band": "MyGrain",
@@ -4161,30 +3264,17 @@
     "post_url": "https://deathgrind.club/posts/9063"
   },
   {
-    "band": "Shades Of Mourning",
-    "band_id": 3515,
+    "band": "Darkane",
+    "band_id": 3752,
     "band_ids": [
-      3515
+      3752
     ],
-    "album": "In Your Image",
-    "year": 2016,
+    "album": "The Sinister Supremacy",
+    "year": 2013,
     "type": "Album",
     "type_id": 1,
-    "post_id": 7612,
-    "post_url": "https://deathgrind.club/posts/7612"
-  },
-  {
-    "band": "Illdisposed",
-    "band_id": 3295,
-    "band_ids": [
-      3295
-    ],
-    "album": "Grey Sky Over Black Town",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 7157,
-    "post_url": "https://deathgrind.club/posts/7157"
+    "post_id": 8121,
+    "post_url": "https://deathgrind.club/posts/8121"
   },
   {
     "band": "The Fallen Prophets",
@@ -4200,6 +3290,32 @@
     "post_url": "https://deathgrind.club/posts/6394"
   },
   {
+    "band": "Cult Of Violence",
+    "band_id": 972,
+    "band_ids": [
+      972
+    ],
+    "album": "Debris",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 2029,
+    "post_url": "https://deathgrind.club/posts/2029"
+  },
+  {
+    "band": "Silent Descent",
+    "band_id": 774,
+    "band_ids": [
+      774
+    ],
+    "album": "Remind Games",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 1705,
+    "post_url": "https://deathgrind.club/posts/1705"
+  },
+  {
     "band": "Maleficent Vigor",
     "band_id": 670,
     "band_ids": [
@@ -4211,6 +3327,19 @@
     "type_id": 1,
     "post_id": 1497,
     "post_url": "https://deathgrind.club/posts/1497"
+  },
+  {
+    "band": "Eternal Tears Of Sorrow",
+    "band_id": 483,
+    "band_ids": [
+      483
+    ],
+    "album": "Saivon Lapsi",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 1091,
+    "post_url": "https://deathgrind.club/posts/1091"
   },
   {
     "band": "Dethklok",
@@ -4226,30 +3355,17 @@
     "post_url": "https://deathgrind.club/posts/479"
   },
   {
-    "band": "Dessiderium",
-    "band_id": 159,
+    "band": "Mental Cruelty",
+    "band_id": 5008,
     "band_ids": [
-      159
+      5008
     ],
-    "album": "Life Was A Blur",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 391,
-    "post_url": "https://deathgrind.club/posts/391"
-  },
-  {
-    "band": "Warcrab",
-    "band_id": 7015,
-    "band_ids": [
-      7015
-    ],
-    "album": "Damned In Endless Night",
+    "album": "Inferis",
     "year": 2019,
     "type": "Album",
     "type_id": 1,
-    "post_id": 80278,
-    "post_url": "https://deathgrind.club/posts/80278"
+    "post_id": 27789,
+    "post_url": "https://deathgrind.club/posts/27789"
   },
   {
     "band": "Mantar",
@@ -4263,19 +3379,6 @@
     "type_id": 1,
     "post_id": 23520,
     "post_url": "https://deathgrind.club/posts/23520"
-  },
-  {
-    "band": "Usurpress",
-    "band_id": 4691,
-    "band_ids": [
-      4691
-    ],
-    "album": "Interregnum",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 20953,
-    "post_url": "https://deathgrind.club/posts/20953"
   },
   {
     "band": "Warcrab",
@@ -4304,19 +3407,6 @@
     "post_url": "https://deathgrind.club/posts/16813"
   },
   {
-    "band": "Mephistopheles",
-    "band_id": 10651,
-    "band_ids": [
-      10651
-    ],
-    "album": "Death Unveiled",
-    "year": 2003,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 26701,
-    "post_url": "https://deathgrind.club/posts/26701"
-  },
-  {
     "band": "Thætas",
     "band_id": 13790,
     "band_ids": [
@@ -4330,43 +3420,17 @@
     "post_url": "https://deathgrind.club/posts/92874"
   },
   {
-    "band": "Decrepit Birth",
-    "band_id": 382,
+    "band": "Unbirth",
+    "band_id": 393,
     "band_ids": [
-      382
+      393
     ],
-    "album": "Axis Mundi",
-    "year": 2017,
+    "album": "Asomatous Besmirchment",
+    "year": 2025,
     "type": "Album",
     "type_id": 1,
-    "post_id": 89646,
-    "post_url": "https://deathgrind.club/posts/89646"
-  },
-  {
-    "band": "Katalepsy",
-    "band_id": 460,
-    "band_ids": [
-      460
-    ],
-    "album": "Gravenous Hour",
-    "year": 2024,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85757,
-    "post_url": "https://deathgrind.club/posts/85757"
-  },
-  {
-    "band": "Deeds Of Flesh",
-    "band_id": 83,
-    "band_ids": [
-      83
-    ],
-    "album": "Inbreeding The Anthropophagi",
-    "year": 2002,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85504,
-    "post_url": "https://deathgrind.club/posts/85504"
+    "post_id": 89114,
+    "post_url": "https://deathgrind.club/posts/89114"
   },
   {
     "band": "Wormed",
@@ -4395,17 +3459,17 @@
     "post_url": "https://deathgrind.club/posts/74251"
   },
   {
-    "band": "Logistic Slaughter",
-    "band_id": 3037,
+    "band": "Khazaddum",
+    "band_id": 7047,
     "band_ids": [
-      3037
+      7047
     ],
-    "album": "Lower Forms Of Life",
-    "year": 2021,
+    "album": "Plagues Upon Arda",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 70078,
-    "post_url": "https://deathgrind.club/posts/70078"
+    "post_id": 16905,
+    "post_url": "https://deathgrind.club/posts/16905"
   },
   {
     "band": "Umbral Torturer",
@@ -4421,95 +3485,95 @@
     "post_url": "https://deathgrind.club/posts/16748"
   },
   {
-    "band": "Detrimentum",
-    "band_id": 2695,
+    "band": "Orphalis",
+    "band_id": 306,
     "band_ids": [
-      2695
+      306
     ],
-    "album": "Embracing This Deformity",
-    "year": 2008,
+    "album": "Human Individual Metamorphosis",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 11424,
-    "post_url": "https://deathgrind.club/posts/11424"
+    "post_id": 657,
+    "post_url": "https://deathgrind.club/posts/657"
   },
   {
-    "band": "Agent 0",
-    "band_id": 15073,
+    "band": "Mutilatrix",
+    "band_id": 23402,
     "band_ids": [
-      15073
+      23402
     ],
-    "album": "Parallel Passage Of The Vile",
-    "year": 2015,
+    "album": "Irreversible Aberration",
+    "year": 2026,
     "type": "Album",
     "type_id": 1,
-    "post_id": 9908,
-    "post_url": "https://deathgrind.club/posts/9908"
+    "post_id": 93102,
+    "post_url": "https://deathgrind.club/posts/93102"
   },
   {
-    "band": "Monumental Torment",
-    "band_id": 271,
+    "band": "Devour The Unborn",
+    "band_id": 1644,
     "band_ids": [
-      271
+      1644
     ],
-    "album": "Element Of Chaos",
-    "year": 2011,
+    "album": "Consuming The Morgue Remains",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 611,
-    "post_url": "https://deathgrind.club/posts/611"
+    "post_id": 82898,
+    "post_url": "https://deathgrind.club/posts/82898"
   },
   {
-    "band": "Nile",
-    "band_id": 43,
+    "band": "Cerebral Incubation",
+    "band_id": 1252,
     "band_ids": [
-      43
+      1252
     ],
-    "album": "Those Whom The Gods Detest",
-    "year": 2009,
+    "album": "Asphyxiating On Excrement",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 105,
-    "post_url": "https://deathgrind.club/posts/105"
+    "post_id": 72180,
+    "post_url": "https://deathgrind.club/posts/72180"
   },
   {
-    "band": "Spume",
-    "band_id": 22272,
+    "band": "Mohler",
+    "band_id": 16423,
     "band_ids": [
-      22272
+      16423
     ],
-    "album": "Spider Birth Reingurgitation",
-    "year": 2025,
+    "album": "Death Is Defeated",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 89079,
-    "post_url": "https://deathgrind.club/posts/89079"
+    "post_id": 69593,
+    "post_url": "https://deathgrind.club/posts/69593"
   },
   {
-    "band": "Gangrenous Flesh Consumption",
-    "band_id": 20207,
+    "band": "Carnal Disfigurement",
+    "band_id": 146,
     "band_ids": [
-      20207
+      146
     ],
-    "album": "Vile Ingurgitation Of Suppurated Limbs",
-    "year": 2023,
+    "album": "An Intense Hatred For Humanity",
+    "year": 2020,
     "type": "Album",
     "type_id": 1,
-    "post_id": 81311,
-    "post_url": "https://deathgrind.club/posts/81311"
+    "post_id": 67804,
+    "post_url": "https://deathgrind.club/posts/67804"
   },
   {
-    "band": "The Dark Prison Massacre",
-    "band_id": 529,
+    "band": "Devour The Unborn",
+    "band_id": 1644,
     "band_ids": [
-      529
+      1644
     ],
-    "album": "Triple Insanity",
-    "year": 2022,
+    "album": "Consuming The Morgue Remains",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76798,
-    "post_url": "https://deathgrind.club/posts/76798"
+    "post_id": 3591,
+    "post_url": "https://deathgrind.club/posts/3591"
   },
   {
     "band": "Phalloplasty",
@@ -4523,19 +3587,6 @@
     "type_id": 1,
     "post_id": 2439,
     "post_url": "https://deathgrind.club/posts/2439"
-  },
-  {
-    "band": "Inferi",
-    "band_id": 638,
-    "band_ids": [
-      638
-    ],
-    "album": "Vile Genesis",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 93066,
-    "post_url": "https://deathgrind.club/posts/93066"
   },
   {
     "band": "Apogean",
@@ -4603,45 +3654,6 @@
     "post_url": "https://deathgrind.club/posts/90613"
   },
   {
-    "band": "Ad Nauseam",
-    "band_id": 3083,
-    "band_ids": [
-      3083
-    ],
-    "album": "Nihil Quam Vacuitas Ordinatum Est",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 86494,
-    "post_url": "https://deathgrind.club/posts/86494"
-  },
-  {
-    "band": "Hypaethral",
-    "band_id": 20942,
-    "band_ids": [
-      20942
-    ],
-    "album": "Hypaethral",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 82942,
-    "post_url": "https://deathgrind.club/posts/82942"
-  },
-  {
-    "band": "Ad Nauseam",
-    "band_id": 3083,
-    "band_ids": [
-      3083
-    ],
-    "album": "Imperative Imperceptible Impulse",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 68523,
-    "post_url": "https://deathgrind.club/posts/68523"
-  },
-  {
     "band": "Diluvian",
     "band_id": 8140,
     "band_ids": [
@@ -4655,17 +3667,30 @@
     "post_url": "https://deathgrind.club/posts/56268"
   },
   {
-    "band": "Fisthammer",
-    "band_id": 3207,
+    "band": "Torment",
+    "band_id": 384,
     "band_ids": [
-      3207
+      384
     ],
-    "album": "Devour All You See",
-    "year": 2012,
+    "album": "Pain Is Transient, Failure Forever",
+    "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 27319,
-    "post_url": "https://deathgrind.club/posts/27319"
+    "post_id": 55723,
+    "post_url": "https://deathgrind.club/posts/55723"
+  },
+  {
+    "band": "Insurrection",
+    "band_id": 249,
+    "band_ids": [
+      249
+    ],
+    "album": "Prototype",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 55385,
+    "post_url": "https://deathgrind.club/posts/55385"
   },
   {
     "band": "Insanity",
@@ -4679,32 +3704,6 @@
     "type_id": 1,
     "post_id": 26647,
     "post_url": "https://deathgrind.club/posts/26647"
-  },
-  {
-    "band": "Agony Face",
-    "band_id": 51,
-    "band_ids": [
-      51
-    ],
-    "album": "CXVI Evolving Discharges",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 25337,
-    "post_url": "https://deathgrind.club/posts/25337"
-  },
-  {
-    "band": "Sutrah",
-    "band_id": 8011,
-    "band_ids": [
-      8011
-    ],
-    "album": "Dunes",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19697,
-    "post_url": "https://deathgrind.club/posts/19697"
   },
   {
     "band": "Perimeter",
@@ -4746,6 +3745,19 @@
     "post_url": "https://deathgrind.club/posts/17465"
   },
   {
+    "band": "Unbeheld",
+    "band_id": 6978,
+    "band_ids": [
+      6978
+    ],
+    "album": "Dust",
+    "year": 2017,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 17149,
+    "post_url": "https://deathgrind.club/posts/17149"
+  },
+  {
     "band": "Requiem For Oblivion",
     "band_id": 6983,
     "band_ids": [
@@ -4759,69 +3771,95 @@
     "post_url": "https://deathgrind.club/posts/16884"
   },
   {
-    "band": "Obliveon",
-    "band_id": 3379,
+    "band": "Refawn",
+    "band_id": 6145,
     "band_ids": [
-      3379
+      6145
     ],
-    "album": "From This Day Forward",
-    "year": 1990,
+    "album": "Lemur Of The Nine",
+    "year": 2009,
     "type": "Album",
     "type_id": 1,
-    "post_id": 7340,
-    "post_url": "https://deathgrind.club/posts/7340"
+    "post_id": 14184,
+    "post_url": "https://deathgrind.club/posts/14184"
   },
   {
-    "band": "Deadborn",
-    "band_id": 2902,
+    "band": "Dischordia",
+    "band_id": 3308,
     "band_ids": [
-      2902
+      3308
     ],
-    "album": "Stigma Eternal",
+    "album": "Project 19",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 7179,
+    "post_url": "https://deathgrind.club/posts/7179"
+  },
+  {
+    "band": "Nekropolis",
+    "band_id": 3277,
+    "band_ids": [
+      3277
+    ],
+    "album": "Ecce Homo",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 7133,
+    "post_url": "https://deathgrind.club/posts/7133"
+  },
+  {
+    "band": "Unbreakable Hatred",
+    "band_id": 394,
+    "band_ids": [
+      394
+    ],
+    "album": "Ruins",
+    "year": 2015,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 6779,
+    "post_url": "https://deathgrind.club/posts/6779"
+  },
+  {
+    "band": "Element",
+    "band_id": 608,
+    "band_ids": [
+      608
+    ],
+    "album": "Aeons Past",
     "year": 2007,
     "type": "Album",
     "type_id": 1,
-    "post_id": 6282,
-    "post_url": "https://deathgrind.club/posts/6282"
+    "post_id": 1387,
+    "post_url": "https://deathgrind.club/posts/1387"
   },
   {
-    "band": "Gory Blister",
-    "band_id": 204,
+    "band": "Revocation",
+    "band_id": 206,
     "band_ids": [
-      204
+      206
     ],
-    "album": "Skymorphosis",
-    "year": 2006,
+    "album": "Existence Is Futile",
+    "year": 2009,
     "type": "Album",
     "type_id": 1,
-    "post_id": 2034,
-    "post_url": "https://deathgrind.club/posts/2034"
+    "post_id": 708,
+    "post_url": "https://deathgrind.club/posts/708"
   },
   {
-    "band": "Psycroptic",
-    "band_id": 327,
+    "band": "Bushwhacker",
+    "band_id": 119,
     "band_ids": [
-      327
+      119
     ],
-    "album": "The Inherited Repression",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 700,
-    "post_url": "https://deathgrind.club/posts/700"
-  },
-  {
-    "band": "Ordinance",
-    "band_id": 303,
-    "band_ids": [
-      303
-    ],
-    "album": "Internal Monologues",
+    "album": "Bushwhacker",
     "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 652,
-    "post_url": "https://deathgrind.club/posts/652"
+    "post_id": 314,
+    "post_url": "https://deathgrind.club/posts/314"
   },
   {
     "band": "Social Deformity",
@@ -4837,43 +3875,17 @@
     "post_url": "https://deathgrind.club/posts/25023"
   },
   {
-    "band": "ID:Vision",
-    "band_id": 9820,
+    "band": "Hellretic",
+    "band_id": 23875,
     "band_ids": [
-      9820
+      23875
     ],
-    "album": "Der Tyrann",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 24395,
-    "post_url": "https://deathgrind.club/posts/24395"
-  },
-  {
-    "band": "Infected Cells",
-    "band_id": 13854,
-    "band_ids": [
-      13854
-    ],
-    "album": "Betrayed By Obedience",
+    "album": "Darkness In Fabula",
     "year": 2026,
     "type": "Album",
     "type_id": 1,
-    "post_id": 93065,
-    "post_url": "https://deathgrind.club/posts/93065"
-  },
-  {
-    "band": "Brain Dead",
-    "band_id": 16439,
-    "band_ids": [
-      16439
-    ],
-    "album": "To The Infamy",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 91816,
-    "post_url": "https://deathgrind.club/posts/91816"
+    "post_id": 93062,
+    "post_url": "https://deathgrind.club/posts/93062"
   },
   {
     "band": "Minion",
@@ -4902,58 +3914,6 @@
     "post_url": "https://deathgrind.club/posts/88108"
   },
   {
-    "band": "Terrör Striker",
-    "band_id": 7131,
-    "band_ids": [
-      7131
-    ],
-    "album": "De Vermis Mysteriis",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 87279,
-    "post_url": "https://deathgrind.club/posts/87279"
-  },
-  {
-    "band": "Hautajaisyö",
-    "band_id": 8372,
-    "band_ids": [
-      8372
-    ],
-    "album": "Hautajaisyö",
-    "year": 2015,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85694,
-    "post_url": "https://deathgrind.club/posts/85694"
-  },
-  {
-    "band": "Hautajaisyö",
-    "band_id": 8372,
-    "band_ids": [
-      8372
-    ],
-    "album": "On Vain Pimeys",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85693,
-    "post_url": "https://deathgrind.club/posts/85693"
-  },
-  {
-    "band": "Peste Negra",
-    "band_id": 20053,
-    "band_ids": [
-      20053
-    ],
-    "album": "Parasita",
-    "year": 2024,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 84486,
-    "post_url": "https://deathgrind.club/posts/84486"
-  },
-  {
     "band": "Atropina",
     "band_id": 20904,
     "band_ids": [
@@ -4967,17 +3927,17 @@
     "post_url": "https://deathgrind.club/posts/82822"
   },
   {
-    "band": "Impious",
-    "band_id": 13272,
+    "band": "Crown Of Malevolence",
+    "band_id": 20600,
     "band_ids": [
-      13272
+      20600
     ],
-    "album": "Hellucinate",
-    "year": 2004,
+    "album": "Throne Of Apathy",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 82562,
-    "post_url": "https://deathgrind.club/posts/82562"
+    "post_id": 81698,
+    "post_url": "https://deathgrind.club/posts/81698"
   },
   {
     "band": "Total Annihilation",
@@ -4993,32 +3953,6 @@
     "post_url": "https://deathgrind.club/posts/81514"
   },
   {
-    "band": "Misanthropy",
-    "band_id": 20494,
-    "band_ids": [
-      20494
-    ],
-    "album": "Path Of Ashes",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81389,
-    "post_url": "https://deathgrind.club/posts/81389"
-  },
-  {
-    "band": "Master",
-    "band_id": 2779,
-    "band_ids": [
-      2779
-    ],
-    "album": "God Of Thunder",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81334,
-    "post_url": "https://deathgrind.club/posts/81334"
-  },
-  {
     "band": "Exoto",
     "band_id": 5888,
     "band_ids": [
@@ -5032,30 +3966,17 @@
     "post_url": "https://deathgrind.club/posts/80967"
   },
   {
-    "band": "Affront",
-    "band_id": 10922,
+    "band": "Leper Colony",
+    "band_id": 19837,
     "band_ids": [
-      10922
+      19837
     ],
-    "album": "Angry Voices",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 80675,
-    "post_url": "https://deathgrind.club/posts/80675"
-  },
-  {
-    "band": "Angelic Desolation",
-    "band_id": 9278,
-    "band_ids": [
-      9278
-    ],
-    "album": "Orchestrionic Abortion",
+    "album": "Leper Colony",
     "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 79792,
-    "post_url": "https://deathgrind.club/posts/79792"
+    "post_id": 79050,
+    "post_url": "https://deathgrind.club/posts/79050"
   },
   {
     "band": "BK 49",
@@ -5084,134 +4005,30 @@
     "post_url": "https://deathgrind.club/posts/77868"
   },
   {
-    "band": "Molder",
-    "band_id": 11496,
+    "band": "Leprosy",
+    "band_id": 11369,
     "band_ids": [
-      11496
+      11369
     ],
-    "album": "Engrossed In Decay",
+    "album": "Impulse To Kill",
     "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76326,
-    "post_url": "https://deathgrind.club/posts/76326"
+    "post_id": 76072,
+    "post_url": "https://deathgrind.club/posts/76072"
   },
   {
-    "band": "Beer Breath",
-    "band_id": 18424,
+    "band": "Dissolve",
+    "band_id": 12563,
     "band_ids": [
-      18424
+      12563
     ],
-    "album": "Story Of A Decayed Life",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74452,
-    "post_url": "https://deathgrind.club/posts/74452"
-  },
-  {
-    "band": "Sacred Sin",
-    "band_id": 7702,
-    "band_ids": [
-      7702
-    ],
-    "album": "Darkside",
+    "album": "The World Died Yesterday",
     "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 73707,
-    "post_url": "https://deathgrind.club/posts/73707"
-  },
-  {
-    "band": "Nocturnal Graves",
-    "band_id": 9346,
-    "band_ids": [
-      9346
-    ],
-    "album": "...From The Bloodline Of Cain",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 71634,
-    "post_url": "https://deathgrind.club/posts/71634"
-  },
-  {
-    "band": "Death Betrayers",
-    "band_id": 16458,
-    "band_ids": [
-      16458
-    ],
-    "album": "Death Betrayers",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 69691,
-    "post_url": "https://deathgrind.club/posts/69691"
-  },
-  {
-    "band": "Invokaos",
-    "band_id": 15841,
-    "band_ids": [
-      15841
-    ],
-    "album": "Retirantes Do Holocausto",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 68472,
-    "post_url": "https://deathgrind.club/posts/68472"
-  },
-  {
-    "band": "Havok",
-    "band_id": 2909,
-    "band_ids": [
-      2909
-    ],
-    "album": "V",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 62248,
-    "post_url": "https://deathgrind.club/posts/62248"
-  },
-  {
-    "band": "M.A.D.",
-    "band_id": 13502,
-    "band_ids": [
-      13502
-    ],
-    "album": "A Plague Caused The Deaths",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 61797,
-    "post_url": "https://deathgrind.club/posts/61797"
-  },
-  {
-    "band": "Halvar",
-    "band_id": 13470,
-    "band_ids": [
-      13470
-    ],
-    "album": "Ancestral Communication",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 60872,
-    "post_url": "https://deathgrind.club/posts/60872"
-  },
-  {
-    "band": "Besieged",
-    "band_id": 11589,
-    "band_ids": [
-      11589
-    ],
-    "album": "Victims Beyond All Help",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 29322,
-    "post_url": "https://deathgrind.club/posts/29322"
+    "post_id": 55610,
+    "post_url": "https://deathgrind.club/posts/55610"
   },
   {
     "band": "Leprosy",
@@ -5227,43 +4044,17 @@
     "post_url": "https://deathgrind.club/posts/28774"
   },
   {
-    "band": "Ulvedharr",
-    "band_id": 7307,
+    "band": "Truth Corroded",
+    "band_id": 10820,
     "band_ids": [
-      7307
+      10820
     ],
-    "album": "World Of Chaos",
-    "year": 2019,
+    "album": "Our Enemy Is The Weapon",
+    "year": 2005,
     "type": "Album",
     "type_id": 1,
-    "post_id": 27928,
-    "post_url": "https://deathgrind.club/posts/27928"
-  },
-  {
-    "band": "Fullgore",
-    "band_id": 9992,
-    "band_ids": [
-      9992
-    ],
-    "album": "Followers Of The Black Euphoria",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 24843,
-    "post_url": "https://deathgrind.club/posts/24843"
-  },
-  {
-    "band": "Infernal Faith",
-    "band_id": 9958,
-    "band_ids": [
-      9958
-    ],
-    "album": "Dehumanized",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 24740,
-    "post_url": "https://deathgrind.club/posts/24740"
+    "post_id": 27146,
+    "post_url": "https://deathgrind.club/posts/27146"
   },
   {
     "band": "Tyrants Blood",
@@ -5279,32 +4070,6 @@
     "post_url": "https://deathgrind.club/posts/23788"
   },
   {
-    "band": "Scythian",
-    "band_id": 9187,
-    "band_ids": [
-      9187
-    ],
-    "album": "Hubris In Excelsis",
-    "year": 2015,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 22796,
-    "post_url": "https://deathgrind.club/posts/22796"
-  },
-  {
-    "band": "Merciless Terror",
-    "band_id": 8597,
-    "band_ids": [
-      8597
-    ],
-    "album": "Vile Extinction",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21257,
-    "post_url": "https://deathgrind.club/posts/21257"
-  },
-  {
     "band": "Abyssion",
     "band_id": 8405,
     "band_ids": [
@@ -5316,19 +4081,6 @@
     "type_id": 1,
     "post_id": 20761,
     "post_url": "https://deathgrind.club/posts/20761"
-  },
-  {
-    "band": "Thanatotic Desire",
-    "band_id": 8012,
-    "band_ids": [
-      8012
-    ],
-    "album": "With Murder In Mind",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19699,
-    "post_url": "https://deathgrind.club/posts/19699"
   },
   {
     "band": "Obzidian",
@@ -5357,17 +4109,17 @@
     "post_url": "https://deathgrind.club/posts/19645"
   },
   {
-    "band": "Under Eden",
-    "band_id": 7450,
+    "band": "Monster",
+    "band_id": 15247,
     "band_ids": [
-      7450
+      15247
     ],
-    "album": "The Savage Circle",
-    "year": 2005,
+    "album": "Blood-Soaked Restart",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 18006,
-    "post_url": "https://deathgrind.club/posts/18006"
+    "post_id": 18343,
+    "post_url": "https://deathgrind.club/posts/18343"
   },
   {
     "band": "Last Rites",
@@ -5396,6 +4148,19 @@
     "post_url": "https://deathgrind.club/posts/17817"
   },
   {
+    "band": "Ulvedharr",
+    "band_id": 7307,
+    "band_ids": [
+      7307
+    ],
+    "album": "Swords Of Midgard",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 17650,
+    "post_url": "https://deathgrind.club/posts/17650"
+  },
+  {
     "band": "Last Rites",
     "band_id": 3537,
     "band_ids": [
@@ -5407,32 +4172,6 @@
     "type_id": 1,
     "post_id": 17493,
     "post_url": "https://deathgrind.club/posts/17493"
-  },
-  {
-    "band": "Phylactery",
-    "band_id": 7252,
-    "band_ids": [
-      7252
-    ],
-    "album": "Necromancy Enthroned",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17492,
-    "post_url": "https://deathgrind.club/posts/17492"
-  },
-  {
-    "band": "Hell Kaiser",
-    "band_id": 7215,
-    "band_ids": [
-      7215
-    ],
-    "album": "Crushing Heads",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17365,
-    "post_url": "https://deathgrind.club/posts/17365"
   },
   {
     "band": "Cleaver",
@@ -5487,56 +4226,30 @@
     "post_url": "https://deathgrind.club/posts/17037"
   },
   {
-    "band": "Seeds Of Perdition",
-    "band_id": 7038,
+    "band": "Pandemmy",
+    "band_id": 5117,
     "band_ids": [
-      7038
+      5117
     ],
-    "album": "Incarnation",
+    "album": "Reflections & Rebellions",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 16873,
+    "post_url": "https://deathgrind.club/posts/16873"
+  },
+  {
+    "band": "Necroheresy",
+    "band_id": 7035,
+    "band_ids": [
+      7035
+    ],
+    "album": "Asylum",
     "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 16885,
-    "post_url": "https://deathgrind.club/posts/16885"
-  },
-  {
-    "band": "Korzus",
-    "band_id": 6803,
-    "band_ids": [
-      6803
-    ],
-    "album": "Mass Illusion",
-    "year": 1991,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 16163,
-    "post_url": "https://deathgrind.club/posts/16163"
-  },
-  {
-    "band": "Announce The Apocalypse",
-    "band_id": 6385,
-    "band_ids": [
-      6385
-    ],
-    "album": "Ruins",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 14791,
-    "post_url": "https://deathgrind.club/posts/14791"
-  },
-  {
-    "band": "Unhoped",
-    "band_id": 5246,
-    "band_ids": [
-      5246
-    ],
-    "album": "Sonic Violence",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 11735,
-    "post_url": "https://deathgrind.club/posts/11735"
+    "post_id": 16872,
+    "post_url": "https://deathgrind.club/posts/16872"
   },
   {
     "band": "Witchtower",
@@ -5552,43 +4265,17 @@
     "post_url": "https://deathgrind.club/posts/11195"
   },
   {
-    "band": "Noctem",
-    "band_id": 4759,
+    "band": "Ripper",
+    "band_id": 4891,
     "band_ids": [
-      4759
+      4891
     ],
-    "album": "Oblivion",
-    "year": 2011,
+    "album": "Raising The Corpse",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 10467,
-    "post_url": "https://deathgrind.club/posts/10467"
-  },
-  {
-    "band": "Izegrim",
-    "band_id": 4575,
-    "band_ids": [
-      4575
-    ],
-    "album": "Congress Of The Insane",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 10170,
-    "post_url": "https://deathgrind.club/posts/10170"
-  },
-  {
-    "band": "Annihilator",
-    "band_id": 3349,
-    "band_ids": [
-      3349
-    ],
-    "album": "Annihilator",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9726,
-    "post_url": "https://deathgrind.club/posts/9726"
+    "post_id": 10783,
+    "post_url": "https://deathgrind.club/posts/10783"
   },
   {
     "band": "Claustrofobia",
@@ -5617,19 +4304,6 @@
     "post_url": "https://deathgrind.club/posts/9181"
   },
   {
-    "band": "Thanatos",
-    "band_id": 888,
-    "band_ids": [
-      888
-    ],
-    "album": "Realm Of Ecstacy",
-    "year": 1992,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 7904,
-    "post_url": "https://deathgrind.club/posts/7904"
-  },
-  {
     "band": "The Wretched End",
     "band_id": 3652,
     "band_ids": [
@@ -5641,6 +4315,32 @@
     "type_id": 1,
     "post_id": 7864,
     "post_url": "https://deathgrind.club/posts/7864"
+  },
+  {
+    "band": "Omnicide",
+    "band_id": 474,
+    "band_ids": [
+      474
+    ],
+    "album": "Constants And Variables",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 7624,
+    "post_url": "https://deathgrind.club/posts/7624"
+  },
+  {
+    "band": "Devils Drunks",
+    "band_id": 3477,
+    "band_ids": [
+      3477
+    ],
+    "album": "Devils Drunks",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 7543,
+    "post_url": "https://deathgrind.club/posts/7543"
   },
   {
     "band": "Havok",
@@ -5656,19 +4356,6 @@
     "post_url": "https://deathgrind.club/posts/7290"
   },
   {
-    "band": "Chronosphere",
-    "band_id": 2465,
-    "band_ids": [
-      2465
-    ],
-    "album": "Envirusment",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 5148,
-    "post_url": "https://deathgrind.club/posts/5148"
-  },
-  {
     "band": "Extasy Crypt",
     "band_id": 576,
     "band_ids": [
@@ -5680,6 +4367,32 @@
     "type_id": 1,
     "post_id": 1320,
     "post_url": "https://deathgrind.club/posts/1320"
+  },
+  {
+    "band": "Membrance",
+    "band_id": 7676,
+    "band_ids": [
+      7676
+    ],
+    "album": "Resa Marciana",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93101,
+    "post_url": "https://deathgrind.club/posts/93101"
+  },
+  {
+    "band": "Formulus",
+    "band_id": 23877,
+    "band_ids": [
+      23877
+    ],
+    "album": "Lessons Learned In Blood",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 93100,
+    "post_url": "https://deathgrind.club/posts/93100"
   },
   {
     "band": "Rotten Tomb",
@@ -5708,19 +4421,6 @@
     "post_url": "https://deathgrind.club/posts/92982"
   },
   {
-    "band": "Yatrogenist",
-    "band_id": 19438,
-    "band_ids": [
-      19438
-    ],
-    "album": "Yatrogenist",
-    "year": 2026,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 92949,
-    "post_url": "https://deathgrind.club/posts/92949"
-  },
-  {
     "band": "Baalzagoth",
     "band_id": 18309,
     "band_ids": [
@@ -5732,6 +4432,19 @@
     "type_id": 1,
     "post_id": 92939,
     "post_url": "https://deathgrind.club/posts/92939"
+  },
+  {
+    "band": "Necroccultus",
+    "band_id": 11357,
+    "band_ids": [
+      11357
+    ],
+    "album": "The Afterdeath Blackness",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 92726,
+    "post_url": "https://deathgrind.club/posts/92726"
   },
   {
     "band": "Coprolith",
@@ -5812,19 +4525,6 @@
     "post_url": "https://deathgrind.club/posts/92627"
   },
   {
-    "band": "Paganizer",
-    "band_id": 1311,
-    "band_ids": [
-      1311
-    ],
-    "album": "Land Of Weeping Souls",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 92624,
-    "post_url": "https://deathgrind.club/posts/92624"
-  },
-  {
     "band": "Maniac",
     "band_id": 23736,
     "band_ids": [
@@ -5851,19 +4551,6 @@
     "post_url": "https://deathgrind.club/posts/92603"
   },
   {
-    "band": "Hedonist",
-    "band_id": 17186,
-    "band_ids": [
-      17186
-    ],
-    "album": "Scapulimancy",
-    "year": 2025,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 92590,
-    "post_url": "https://deathgrind.club/posts/92590"
-  },
-  {
     "band": "Fleshcrawl",
     "band_id": 2793,
     "band_ids": [
@@ -5875,6 +4562,19 @@
     "type_id": 1,
     "post_id": 92584,
     "post_url": "https://deathgrind.club/posts/92584"
+  },
+  {
+    "band": "Desecresy",
+    "band_id": 5156,
+    "band_ids": [
+      5156
+    ],
+    "album": "The Secret Of Death",
+    "year": 2026,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 92544,
+    "post_url": "https://deathgrind.club/posts/92544"
   },
   {
     "band": "Defiled",
@@ -5916,32 +4616,6 @@
     "post_url": "https://deathgrind.club/posts/92170"
   },
   {
-    "band": "Embrace The Maddness",
-    "band_id": 4582,
-    "band_ids": [
-      4582
-    ],
-    "album": "Nightmare Paradox Revisited",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 91804,
-    "post_url": "https://deathgrind.club/posts/91804"
-  },
-  {
-    "band": "Unfragment",
-    "band_id": 13361,
-    "band_ids": [
-      13361
-    ],
-    "album": "Les Courbures De L'âme",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 91658,
-    "post_url": "https://deathgrind.club/posts/91658"
-  },
-  {
     "band": "Creature From...",
     "band_id": 23428,
     "band_ids": [
@@ -5966,19 +4640,6 @@
     "type_id": 1,
     "post_id": 90152,
     "post_url": "https://deathgrind.club/posts/90152"
-  },
-  {
-    "band": "Adaptor",
-    "band_id": 20271,
-    "band_ids": [
-      20271
-    ],
-    "album": "Arise From The Graveyard",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 90073,
-    "post_url": "https://deathgrind.club/posts/90073"
   },
   {
     "band": "Debt Of Nature",
@@ -6020,32 +4681,6 @@
     "post_url": "https://deathgrind.club/posts/89945"
   },
   {
-    "band": "Avulsed",
-    "band_id": 785,
-    "band_ids": [
-      785
-    ],
-    "album": "Phoenix Cryptobiosis",
-    "year": 2025,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 87446,
-    "post_url": "https://deathgrind.club/posts/87446"
-  },
-  {
-    "band": "Hirsipuu",
-    "band_id": 17312,
-    "band_ids": [
-      17312
-    ],
-    "album": "Immentikki",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 88235,
-    "post_url": "https://deathgrind.club/posts/88235"
-  },
-  {
     "band": "Necrogrinder",
     "band_id": 22221,
     "band_ids": [
@@ -6059,17 +4694,43 @@
     "post_url": "https://deathgrind.club/posts/87754"
   },
   {
-    "band": "Scythrow",
-    "band_id": 21289,
+    "band": "Adrenogore",
+    "band_id": 22147,
     "band_ids": [
-      21289
+      22147
     ],
-    "album": "Blameless Severed Extremities",
+    "album": "La Droga De La Élite",
     "year": 2024,
     "type": "Album",
     "type_id": 1,
-    "post_id": 86810,
-    "post_url": "https://deathgrind.club/posts/86810"
+    "post_id": 87500,
+    "post_url": "https://deathgrind.club/posts/87500"
+  },
+  {
+    "band": "Revolting",
+    "band_id": 2557,
+    "band_ids": [
+      2557
+    ],
+    "album": "Night Of The Horrid",
+    "year": 2024,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 86847,
+    "post_url": "https://deathgrind.club/posts/86847"
+  },
+  {
+    "band": "Burning Death",
+    "band_id": 22122,
+    "band_ids": [
+      22122
+    ],
+    "album": "In the Valley of Death",
+    "year": 2024,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 87374,
+    "post_url": "https://deathgrind.club/posts/87374"
   },
   {
     "band": "Grotesque Hysterectomy",
@@ -6085,19 +4746,6 @@
     "post_url": "https://deathgrind.club/posts/87228"
   },
   {
-    "band": "Monastery",
-    "band_id": 22062,
-    "band_ids": [
-      22062
-    ],
-    "album": "From Blood",
-    "year": 2023,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 87184,
-    "post_url": "https://deathgrind.club/posts/87184"
-  },
-  {
     "band": "Karonte",
     "band_id": 10758,
     "band_ids": [
@@ -6111,30 +4759,17 @@
     "post_url": "https://deathgrind.club/posts/86884"
   },
   {
-    "band": "Ancient Malignity",
-    "band_id": 21798,
+    "band": "Abductions",
+    "band_id": 21738,
     "band_ids": [
-      21798
+      21738
     ],
-    "album": "Ancient Malignity",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 86568,
-    "post_url": "https://deathgrind.club/posts/86568"
-  },
-  {
-    "band": "Emaciated",
-    "band_id": 18793,
-    "band_ids": [
-      18793
-    ],
-    "album": "Death From The Southwest",
+    "album": "Failed Humanity",
     "year": 2024,
     "type": "Album",
     "type_id": 1,
-    "post_id": 86345,
-    "post_url": "https://deathgrind.club/posts/86345"
+    "post_id": 85901,
+    "post_url": "https://deathgrind.club/posts/85901"
   },
   {
     "band": "Avulsed",
@@ -6148,45 +4783,6 @@
     "type_id": 1,
     "post_id": 85750,
     "post_url": "https://deathgrind.club/posts/85750"
-  },
-  {
-    "band": "Autopsy",
-    "band_id": 36,
-    "band_ids": [
-      36
-    ],
-    "album": "Shitfun",
-    "year": 2003,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85533,
-    "post_url": "https://deathgrind.club/posts/85533"
-  },
-  {
-    "band": "Scalped",
-    "band_id": 8448,
-    "band_ids": [
-      8448
-    ],
-    "album": "Manufactured Existence Obsolescence",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85518,
-    "post_url": "https://deathgrind.club/posts/85518"
-  },
-  {
-    "band": "Burial Rot",
-    "band_id": 21609,
-    "band_ids": [
-      21609
-    ],
-    "album": "Do Not Desecrate The Sleep Of The Dead",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 85344,
-    "post_url": "https://deathgrind.club/posts/85344"
   },
   {
     "band": "Ascaris",
@@ -6215,30 +4811,30 @@
     "post_url": "https://deathgrind.club/posts/84305"
   },
   {
-    "band": "Amorphity",
-    "band_id": 21305,
+    "band": "Innominate",
+    "band_id": 9369,
     "band_ids": [
-      21305
+      9369
     ],
-    "album": "Watch Me Die",
-    "year": 2024,
+    "album": "Foreboding",
+    "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 84160,
-    "post_url": "https://deathgrind.club/posts/84160"
+    "post_id": 82959,
+    "post_url": "https://deathgrind.club/posts/82959"
   },
   {
-    "band": "Devoured Souls",
-    "band_id": 20886,
+    "band": "Morbid Angel",
+    "band_id": 1438,
     "band_ids": [
-      20886
+      1438
     ],
-    "album": "Extermination Of All Humanity",
-    "year": 2019,
+    "album": "Covenant (Full Dynamic Range Edition)",
+    "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 82777,
-    "post_url": "https://deathgrind.club/posts/82777"
+    "post_id": 82795,
+    "post_url": "https://deathgrind.club/posts/82795"
   },
   {
     "band": "Endless Gloom",
@@ -6254,30 +4850,17 @@
     "post_url": "https://deathgrind.club/posts/82684"
   },
   {
-    "band": "Sevo",
-    "band_id": 20761,
+    "band": "Iniquity",
+    "band_id": 2230,
     "band_ids": [
-      20761
+      2230
     ],
-    "album": "Aurora Do Triunfo Herétiko",
-    "year": 2023,
+    "album": "Five Across The Eyes",
+    "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 82471,
-    "post_url": "https://deathgrind.club/posts/82471"
-  },
-  {
-    "band": "Ulcer",
-    "band_id": 20725,
-    "band_ids": [
-      20725
-    ],
-    "album": "Rules",
-    "year": 2002,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 82069,
-    "post_url": "https://deathgrind.club/posts/82069"
+    "post_id": 82505,
+    "post_url": "https://deathgrind.club/posts/82505"
   },
   {
     "band": "Kill By Numbers",
@@ -6291,19 +4874,6 @@
     "type_id": 1,
     "post_id": 82033,
     "post_url": "https://deathgrind.club/posts/82033"
-  },
-  {
-    "band": "Pungent Stench",
-    "band_id": 2040,
-    "band_ids": [
-      2040
-    ],
-    "album": "Masters Of Moral - Servants Of Sin",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81999,
-    "post_url": "https://deathgrind.club/posts/81999"
   },
   {
     "band": "Zorndyke",
@@ -6345,43 +4915,17 @@
     "post_url": "https://deathgrind.club/posts/81876"
   },
   {
-    "band": "Decay Of Reality",
-    "band_id": 20630,
+    "band": "Deathbed",
+    "band_id": 19132,
     "band_ids": [
-      20630
+      19132
     ],
-    "album": "Reality Of Decay",
-    "year": 2014,
+    "album": "Obsolete Natural Composition",
+    "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 81791,
-    "post_url": "https://deathgrind.club/posts/81791"
-  },
-  {
-    "band": "Cabaret Aberrante",
-    "band_id": 16595,
-    "band_ids": [
-      16595
-    ],
-    "album": "Matadero De Zorras",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81520,
-    "post_url": "https://deathgrind.club/posts/81520"
-  },
-  {
-    "band": "Murder",
-    "band_id": 15821,
-    "band_ids": [
-      15821
-    ],
-    "album": "The Heralds Of The Storm",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 81278,
-    "post_url": "https://deathgrind.club/posts/81278"
+    "post_id": 81425,
+    "post_url": "https://deathgrind.club/posts/81425"
   },
   {
     "band": "Muerte Por Mil Cortes",
@@ -6488,43 +5032,30 @@
     "post_url": "https://deathgrind.club/posts/80238"
   },
   {
-    "band": "Carcass",
-    "band_id": 466,
+    "band": "Death Strike",
+    "band_id": 15702,
     "band_ids": [
-      466
+      15702
     ],
-    "album": "Surgical Steel - Complete Edition",
-    "year": 2015,
+    "album": "Fuckin' Live",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 80168,
-    "post_url": "https://deathgrind.club/posts/80168"
+    "post_id": 80180,
+    "post_url": "https://deathgrind.club/posts/80180"
   },
   {
-    "band": "Viogression",
-    "band_id": 1259,
+    "band": "Montezuma",
+    "band_id": 20040,
     "band_ids": [
-      1259
+      20040
     ],
-    "album": "Expound And Exhort",
-    "year": 2020,
+    "album": "The Creation",
+    "year": 2012,
     "type": "Album",
     "type_id": 1,
-    "post_id": 79835,
-    "post_url": "https://deathgrind.club/posts/79835"
-  },
-  {
-    "band": "Gender Fluids",
-    "band_id": 20011,
-    "band_ids": [
-      20011
-    ],
-    "album": "Different Ways",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 79670,
-    "post_url": "https://deathgrind.club/posts/79670"
+    "post_id": 79762,
+    "post_url": "https://deathgrind.club/posts/79762"
   },
   {
     "band": "Cruenta Venganza",
@@ -6553,19 +5084,6 @@
     "post_url": "https://deathgrind.club/posts/79346"
   },
   {
-    "band": "Conflict Noise",
-    "band_id": 19919,
-    "band_ids": [
-      19919
-    ],
-    "album": "Agur Eta Ohore",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 79341,
-    "post_url": "https://deathgrind.club/posts/79341"
-  },
-  {
     "band": "Detestor",
     "band_id": 19913,
     "band_ids": [
@@ -6579,17 +5097,17 @@
     "post_url": "https://deathgrind.club/posts/79324"
   },
   {
-    "band": "Haxprocess",
-    "band_id": 19909,
+    "band": "Seven Doors",
+    "band_id": 15915,
     "band_ids": [
-      19909
+      15915
     ],
-    "album": "The Caverns Of Duat",
+    "album": "Feast Of The Repulsive Dead",
     "year": 2023,
     "type": "Album",
     "type_id": 1,
-    "post_id": 79314,
-    "post_url": "https://deathgrind.club/posts/79314"
+    "post_id": 79217,
+    "post_url": "https://deathgrind.club/posts/79217"
   },
   {
     "band": "The Seventh Gate",
@@ -6623,12 +5141,12 @@
     "band_ids": [
       19817
     ],
-    "album": "Trinitarian",
-    "year": 2020,
+    "album": "Disappearance",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 78993,
-    "post_url": "https://deathgrind.club/posts/78993"
+    "post_id": 78994,
+    "post_url": "https://deathgrind.club/posts/78994"
   },
   {
     "band": "Hail Of Bullets",
@@ -6644,17 +5162,30 @@
     "post_url": "https://deathgrind.club/posts/78851"
   },
   {
-    "band": "Death Path",
-    "band_id": 11327,
+    "band": "Feral Predator",
+    "band_id": 19652,
     "band_ids": [
-      11327
+      19652
     ],
-    "album": "Hate Within",
+    "album": "New Aeon",
     "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 78605,
-    "post_url": "https://deathgrind.club/posts/78605"
+    "post_id": 78520,
+    "post_url": "https://deathgrind.club/posts/78520"
+  },
+  {
+    "band": "Orki",
+    "band_id": 19641,
+    "band_ids": [
+      19641
+    ],
+    "album": "Orki",
+    "year": 2022,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 78487,
+    "post_url": "https://deathgrind.club/posts/78487"
   },
   {
     "band": "Winds Of Creation",
@@ -6670,32 +5201,6 @@
     "post_url": "https://deathgrind.club/posts/78424"
   },
   {
-    "band": "Rebel Souls",
-    "band_id": 6209,
-    "band_ids": [
-      6209
-    ],
-    "album": "Dawn Of Depravity",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 78319,
-    "post_url": "https://deathgrind.club/posts/78319"
-  },
-  {
-    "band": "Infiltration",
-    "band_id": 7548,
-    "band_ids": [
-      7548
-    ],
-    "album": "Extinct",
-    "year": 2022,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 77654,
-    "post_url": "https://deathgrind.club/posts/77654"
-  },
-  {
     "band": "Cannibal Corpse",
     "band_id": 37,
     "band_ids": [
@@ -6709,30 +5214,30 @@
     "post_url": "https://deathgrind.club/posts/77643"
   },
   {
-    "band": "Mangled",
-    "band_id": 20414,
+    "band": "Grave",
+    "band_id": 456,
     "band_ids": [
-      20414
+      456
     ],
-    "album": "Mangled Beyond Recognition",
+    "album": "You'll Never See...",
+    "year": 2012,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 77555,
+    "post_url": "https://deathgrind.club/posts/77555"
+  },
+  {
+    "band": "Festering",
+    "band_id": 4865,
+    "band_ids": [
+      4865
+    ],
+    "album": "Compendium Of The Horrific",
     "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 77526,
-    "post_url": "https://deathgrind.club/posts/77526"
-  },
-  {
-    "band": "Incantation",
-    "band_id": 2510,
-    "band_ids": [
-      2510
-    ],
-    "album": "Decimate Christendom",
-    "year": 2004,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 77460,
-    "post_url": "https://deathgrind.club/posts/77460"
+    "post_id": 77508,
+    "post_url": "https://deathgrind.club/posts/77508"
   },
   {
     "band": "Decrepid",
@@ -6761,6 +5266,19 @@
     "post_url": "https://deathgrind.club/posts/77103"
   },
   {
+    "band": "This-Is-Hell",
+    "band_id": 19199,
+    "band_ids": [
+      19199
+    ],
+    "album": "Ecos Del Tiempo",
+    "year": 2017,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 77045,
+    "post_url": "https://deathgrind.club/posts/77045"
+  },
+  {
     "band": "The Lurking Fear",
     "band_id": 7226,
     "band_ids": [
@@ -6774,95 +5292,69 @@
     "post_url": "https://deathgrind.club/posts/77027"
   },
   {
-    "band": "Mortis Dei",
-    "band_id": 4884,
+    "band": "Daemonicus",
+    "band_id": 6089,
     "band_ids": [
-      4884
+      6089
     ],
-    "album": "The Loveful Act Of Creation",
-    "year": 2003,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 76902,
-    "post_url": "https://deathgrind.club/posts/76902"
-  },
-  {
-    "band": "Domain",
-    "band_id": 15700,
-    "band_ids": [
-      15700
-    ],
-    "album": "Gat Etemmi",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 76593,
-    "post_url": "https://deathgrind.club/posts/76593"
-  },
-  {
-    "band": "Throneum",
-    "band_id": 5571,
-    "band_ids": [
-      5571
-    ],
-    "album": "Pestilent Death",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 76462,
-    "post_url": "https://deathgrind.club/posts/76462"
-  },
-  {
-    "band": "Eciton",
-    "band_id": 10732,
-    "band_ids": [
-      10732
-    ],
-    "album": "The Autocatalytic Process",
+    "album": "Deadwork",
     "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76414,
-    "post_url": "https://deathgrind.club/posts/76414"
+    "post_id": 76448,
+    "post_url": "https://deathgrind.club/posts/76448"
   },
   {
-    "band": "Gorguts",
-    "band_id": 165,
+    "band": "The Wakedead Gathering",
+    "band_id": 10266,
     "band_ids": [
-      165
+      10266
     ],
-    "album": "The Erosion Of Sanity",
-    "year": 2006,
+    "album": "Parallaxiom",
+    "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76355,
-    "post_url": "https://deathgrind.club/posts/76355"
+    "post_id": 76328,
+    "post_url": "https://deathgrind.club/posts/76328"
   },
   {
-    "band": "Necronosis",
-    "band_id": 15582,
+    "band": "Torturized",
+    "band_id": 6242,
     "band_ids": [
-      15582
+      6242
     ],
-    "album": "Putrid, Twisted And Sick Humanity",
-    "year": 2019,
+    "album": "Aftermath",
+    "year": 2022,
     "type": "Album",
     "type_id": 1,
-    "post_id": 76216,
-    "post_url": "https://deathgrind.club/posts/76216"
+    "post_id": 76225,
+    "post_url": "https://deathgrind.club/posts/76225"
   },
   {
-    "band": "Hate Force",
-    "band_id": 10695,
+    "band": "Bolt Thrower",
+    "band_id": 2461,
     "band_ids": [
-      10695
+      2461
     ],
-    "album": "Hate Force",
-    "year": 2019,
+    "album": "Those Once Loyal",
+    "year": 2014,
     "type": "Album",
     "type_id": 1,
-    "post_id": 75710,
-    "post_url": "https://deathgrind.club/posts/75710"
+    "post_id": 76076,
+    "post_url": "https://deathgrind.club/posts/76076"
+  },
+  {
+    "band": "Skeletal Remains",
+    "band_id": 1935,
+    "band_ids": [
+      1935
+    ],
+    "album": "Beyond The Flesh",
+    "year": 2021,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 76049,
+    "post_url": "https://deathgrind.club/posts/76049"
   },
   {
     "band": "D.V.C.",
@@ -6878,6 +5370,19 @@
     "post_url": "https://deathgrind.club/posts/75156"
   },
   {
+    "band": "Speckmann Project",
+    "band_id": 16200,
+    "band_ids": [
+      16200
+    ],
+    "album": "Fiends Of Emptiness",
+    "year": 2022,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 75002,
+    "post_url": "https://deathgrind.club/posts/75002"
+  },
+  {
     "band": "Flagelation",
     "band_id": 18438,
     "band_ids": [
@@ -6889,45 +5394,6 @@
     "type_id": 1,
     "post_id": 74500,
     "post_url": "https://deathgrind.club/posts/74500"
-  },
-  {
-    "band": "Endless Genocide",
-    "band_id": 18417,
-    "band_ids": [
-      18417
-    ],
-    "album": "Endless Genocide",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74415,
-    "post_url": "https://deathgrind.club/posts/74415"
-  },
-  {
-    "band": "Pungent Stench",
-    "band_id": 2040,
-    "band_ids": [
-      2040
-    ],
-    "album": "Been Caught Buttering",
-    "year": 2001,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74406,
-    "post_url": "https://deathgrind.club/posts/74406"
-  },
-  {
-    "band": "Pungent Stench",
-    "band_id": 2040,
-    "band_ids": [
-      2040
-    ],
-    "album": "For God Your Soul... For Me Your Flesh",
-    "year": 1993,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74360,
-    "post_url": "https://deathgrind.club/posts/74360"
   },
   {
     "band": "Necrolord",
@@ -6943,19 +5409,6 @@
     "post_url": "https://deathgrind.club/posts/74220"
   },
   {
-    "band": "Grave",
-    "band_id": 456,
-    "band_ids": [
-      456
-    ],
-    "album": "Into The Grave",
-    "year": 2001,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 74025,
-    "post_url": "https://deathgrind.club/posts/74025"
-  },
-  {
     "band": "Disma",
     "band_id": 4970,
     "band_ids": [
@@ -6969,17 +5422,17 @@
     "post_url": "https://deathgrind.club/posts/73873"
   },
   {
-    "band": "Disma",
-    "band_id": 4970,
+    "band": "Magwi",
+    "band_id": 3473,
     "band_ids": [
-      4970
+      3473
     ],
-    "album": "Towards The Megalith",
-    "year": 2011,
+    "album": "Magwi",
+    "year": 2004,
     "type": "Album",
     "type_id": 1,
-    "post_id": 73870,
-    "post_url": "https://deathgrind.club/posts/73870"
+    "post_id": 72867,
+    "post_url": "https://deathgrind.club/posts/72867"
   },
   {
     "band": "Ravens Creed",
@@ -7008,82 +5461,30 @@
     "post_url": "https://deathgrind.club/posts/72856"
   },
   {
-    "band": "Detest",
-    "band_id": 12207,
+    "band": "Neter",
+    "band_id": 1777,
     "band_ids": [
-      12207
+      1777
     ],
-    "album": "We Will Get What We Deserve",
-    "year": 2021,
+    "album": "Nec Spe Nec Metu",
+    "year": 2009,
     "type": "Album",
     "type_id": 1,
-    "post_id": 72705,
-    "post_url": "https://deathgrind.club/posts/72705"
+    "post_id": 72673,
+    "post_url": "https://deathgrind.club/posts/72673"
   },
   {
-    "band": "Obituary",
-    "band_id": 48,
+    "band": "Broken Hope",
+    "band_id": 77,
     "band_ids": [
-      48
+      77
     ],
-    "album": "The End Complete",
-    "year": 1998,
+    "album": "Swamped In Gore",
+    "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 72648,
-    "post_url": "https://deathgrind.club/posts/72648"
-  },
-  {
-    "band": "Nordor",
-    "band_id": 17791,
-    "band_ids": [
-      17791
-    ],
-    "album": "Erga Omnes",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 72638,
-    "post_url": "https://deathgrind.club/posts/72638"
-  },
-  {
-    "band": "Eclipse",
-    "band_id": 17026,
-    "band_ids": [
-      17026
-    ],
-    "album": "The Symphonys Of Pathological Love / Calling Our Desires",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 72393,
-    "post_url": "https://deathgrind.club/posts/72393"
-  },
-  {
-    "band": "Endart",
-    "band_id": 17690,
-    "band_ids": [
-      17690
-    ],
-    "album": "Planet Rock",
-    "year": 2000,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 72354,
-    "post_url": "https://deathgrind.club/posts/72354"
-  },
-  {
-    "band": "Cancer",
-    "band_id": 3034,
-    "band_ids": [
-      3034
-    ],
-    "album": "To The Gory End",
-    "year": 2021,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 72335,
-    "post_url": "https://deathgrind.club/posts/72335"
+    "post_id": 72483,
+    "post_url": "https://deathgrind.club/posts/72483"
   },
   {
     "band": "Innsmouth",
@@ -7099,30 +5500,17 @@
     "post_url": "https://deathgrind.club/posts/72291"
   },
   {
-    "band": "Immolation",
-    "band_id": 15,
+    "band": "Point Blank Rage",
+    "band_id": 3575,
     "band_ids": [
-      15
+      3575
     ],
-    "album": "Dawn Of Possession",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 71422,
-    "post_url": "https://deathgrind.club/posts/71422"
-  },
-  {
-    "band": "Envig",
-    "band_id": 9335,
-    "band_ids": [
-      9335
-    ],
-    "album": "Gutwound",
+    "album": "State Of Disaster",
     "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 71396,
-    "post_url": "https://deathgrind.club/posts/71396"
+    "post_id": 72024,
+    "post_url": "https://deathgrind.club/posts/72024"
   },
   {
     "band": "Vorus",
@@ -7130,129 +5518,64 @@
     "band_ids": [
       17111
     ],
-    "album": "Traversing The Non-Existence",
+    "album": "The Wretched Path",
+    "year": 2018,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 71969,
+    "post_url": "https://deathgrind.club/posts/71969"
+  },
+  {
+    "band": "Despising Age",
+    "band_id": 17041,
+    "band_ids": [
+      17041
+    ],
+    "album": "Belligerent",
     "year": 2021,
     "type": "Album",
     "type_id": 1,
-    "post_id": 70734,
-    "post_url": "https://deathgrind.club/posts/70734"
+    "post_id": 70516,
+    "post_url": "https://deathgrind.club/posts/70516"
   },
   {
-    "band": "Psychopathic Terror",
-    "band_id": 17019,
+    "band": "Cromlech",
+    "band_id": 5014,
     "band_ids": [
-      17019
+      5014
     ],
-    "album": "230204",
-    "year": 2008,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 70448,
-    "post_url": "https://deathgrind.club/posts/70448"
-  },
-  {
-    "band": "Cancerbero",
-    "band_id": 11672,
-    "band_ids": [
-      11672
-    ],
-    "album": "Reconquering The Throne Of Death",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 69416,
-    "post_url": "https://deathgrind.club/posts/69416"
-  },
-  {
-    "band": "Theophagist",
-    "band_id": 16225,
-    "band_ids": [
-      16225
-    ],
-    "album": "I Am Abyss",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 69259,
-    "post_url": "https://deathgrind.club/posts/69259"
-  },
-  {
-    "band": "Dysangelium",
-    "band_id": 11325,
-    "band_ids": [
-      11325
-    ],
-    "album": "Mohamord",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 69022,
-    "post_url": "https://deathgrind.club/posts/69022"
-  },
-  {
-    "band": "Dead Beyond Buried",
-    "band_id": 7737,
-    "band_ids": [
-      7737
-    ],
-    "album": "Inheritors Of Hell",
+    "album": "Postrauma",
     "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 68854,
-    "post_url": "https://deathgrind.club/posts/68854"
+    "post_id": 69280,
+    "post_url": "https://deathgrind.club/posts/69280"
   },
   {
-    "band": "Os",
-    "band_id": 15716,
+    "band": "Incineration",
+    "band_id": 15917,
     "band_ids": [
-      15716
+      15917
     ],
-    "album": "Stationes Viae Mortis",
-    "year": 2020,
+    "album": "A Course In Anger Management",
+    "year": 2008,
     "type": "Album",
     "type_id": 1,
-    "post_id": 68244,
-    "post_url": "https://deathgrind.club/posts/68244"
+    "post_id": 68618,
+    "post_url": "https://deathgrind.club/posts/68618"
   },
   {
-    "band": "Twin Force Kill",
-    "band_id": 14347,
+    "band": "Besieged",
+    "band_id": 13791,
     "band_ids": [
-      14347
+      13791
     ],
-    "album": "Cryteria Human Killer",
-    "year": 2019,
+    "album": "Besieged",
+    "year": 2004,
     "type": "Album",
     "type_id": 1,
-    "post_id": 67600,
-    "post_url": "https://deathgrind.club/posts/67600"
-  },
-  {
-    "band": "Insidious Disease",
-    "band_id": 4685,
-    "band_ids": [
-      4685
-    ],
-    "album": "After Death",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 67381,
-    "post_url": "https://deathgrind.club/posts/67381"
-  },
-  {
-    "band": "Carnage",
-    "band_id": 2037,
-    "band_ids": [
-      2037
-    ],
-    "album": "Dark Recollections",
-    "year": 2000,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 66795,
-    "post_url": "https://deathgrind.club/posts/66795"
+    "post_id": 62875,
+    "post_url": "https://deathgrind.club/posts/62875"
   },
   {
     "band": "Abnormal Or Diseased",
@@ -7268,32 +5591,6 @@
     "post_url": "https://deathgrind.club/posts/62716"
   },
   {
-    "band": "Satanik Pussy Impalers",
-    "band_id": 13665,
-    "band_ids": [
-      13665
-    ],
-    "album": "Empalador",
-    "year": 2019,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 62419,
-    "post_url": "https://deathgrind.club/posts/62419"
-  },
-  {
-    "band": "Voices From The Past",
-    "band_id": 13660,
-    "band_ids": [
-      13660
-    ],
-    "album": "Invoking Voices",
-    "year": 2020,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 62395,
-    "post_url": "https://deathgrind.club/posts/62395"
-  },
-  {
     "band": "Mutilation",
     "band_id": 13434,
     "band_ids": [
@@ -7307,17 +5604,30 @@
     "post_url": "https://deathgrind.club/posts/60745"
   },
   {
-    "band": "Helgast",
-    "band_id": 6671,
+    "band": "Black Breath",
+    "band_id": 2132,
     "band_ids": [
-      6671
+      2132
     ],
-    "album": "The Caverns Of Kalte",
-    "year": 2019,
+    "album": "Heavy Breathing",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 59515,
-    "post_url": "https://deathgrind.club/posts/59515"
+    "post_id": 58247,
+    "post_url": "https://deathgrind.club/posts/58247"
+  },
+  {
+    "band": "Abscess",
+    "band_id": 8050,
+    "band_ids": [
+      8050
+    ],
+    "album": "Tormented",
+    "year": 2000,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 41761,
+    "post_url": "https://deathgrind.club/posts/41761"
   },
   {
     "band": "Vaginalmassaker",
@@ -7346,30 +5656,56 @@
     "post_url": "https://deathgrind.club/posts/38517"
   },
   {
-    "band": "Apocryfal",
-    "band_id": 12072,
+    "band": "Revel In Flesh",
+    "band_id": 1308,
     "band_ids": [
-      12072
+      1308
     ],
-    "album": "Crushing Black Death",
+    "album": "The Hour Of The Avenger",
     "year": 2019,
     "type": "Album",
     "type_id": 1,
-    "post_id": 37694,
-    "post_url": "https://deathgrind.club/posts/37694"
+    "post_id": 29766,
+    "post_url": "https://deathgrind.club/posts/29766"
   },
   {
-    "band": "Spine Extraction",
-    "band_id": 11665,
+    "band": "Devilish Distance",
+    "band_id": 11569,
     "band_ids": [
-      11665
+      11569
     ],
-    "album": "Spine Extraction",
-    "year": 2011,
+    "album": "Deathtruction",
+    "year": 2010,
     "type": "Album",
     "type_id": 1,
-    "post_id": 29585,
-    "post_url": "https://deathgrind.club/posts/29585"
+    "post_id": 29241,
+    "post_url": "https://deathgrind.club/posts/29241"
+  },
+  {
+    "band": "Dhwesha",
+    "band_id": 11480,
+    "band_ids": [
+      11480
+    ],
+    "album": "Sthoopa",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 28920,
+    "post_url": "https://deathgrind.club/posts/28920"
+  },
+  {
+    "band": "Unholy Ghost",
+    "band_id": 11427,
+    "band_ids": [
+      11427
+    ],
+    "album": "Torrential Reign",
+    "year": 2004,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 28769,
+    "post_url": "https://deathgrind.club/posts/28769"
   },
   {
     "band": "Desterrador",
@@ -7385,19 +5721,6 @@
     "post_url": "https://deathgrind.club/posts/28735"
   },
   {
-    "band": "Ashen Earth",
-    "band_id": 11142,
-    "band_ids": [
-      11142
-    ],
-    "album": "Ashen Earth",
-    "year": 2013,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 28038,
-    "post_url": "https://deathgrind.club/posts/28038"
-  },
-  {
     "band": "Morbid Symphony",
     "band_id": 11137,
     "band_ids": [
@@ -7409,19 +5732,6 @@
     "type_id": 1,
     "post_id": 28023,
     "post_url": "https://deathgrind.club/posts/28023"
-  },
-  {
-    "band": "Preceptor",
-    "band_id": 10881,
-    "band_ids": [
-      10881
-    ],
-    "album": "Dogmatismo",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 27285,
-    "post_url": "https://deathgrind.club/posts/27285"
   },
   {
     "band": "Horned God",
@@ -7437,17 +5747,17 @@
     "post_url": "https://deathgrind.club/posts/27174"
   },
   {
-    "band": "Condemned To Dream",
-    "band_id": 10825,
+    "band": "Pestilence",
+    "band_id": 1721,
     "band_ids": [
-      10825
+      1721
     ],
-    "album": "Lunacy And Clarity",
-    "year": 2019,
+    "album": "Malleus Maleficarum",
+    "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 27120,
-    "post_url": "https://deathgrind.club/posts/27120"
+    "post_id": 26379,
+    "post_url": "https://deathgrind.club/posts/26379"
   },
   {
     "band": "Day of Execution",
@@ -7489,17 +5799,30 @@
     "post_url": "https://deathgrind.club/posts/26059"
   },
   {
-    "band": "Wings Of Abaddon",
-    "band_id": 10351,
+    "band": "Siege",
+    "band_id": 10373,
     "band_ids": [
-      10351
+      10373
     ],
-    "album": "Built To Collapse",
-    "year": 2015,
+    "album": "Spirit Of Agony Pt​.​2 - Autumn Of Earth",
+    "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 26047,
-    "post_url": "https://deathgrind.club/posts/26047"
+    "post_id": 25874,
+    "post_url": "https://deathgrind.club/posts/25874"
+  },
+  {
+    "band": "Comatose",
+    "band_id": 2595,
+    "band_ids": [
+      2595
+    ],
+    "album": "The Ungodly Lamentations",
+    "year": 2018,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 25513,
+    "post_url": "https://deathgrind.club/posts/25513"
   },
   {
     "band": "Catastrophic",
@@ -7515,17 +5838,17 @@
     "post_url": "https://deathgrind.club/posts/25360"
   },
   {
-    "band": "Symbolical",
-    "band_id": 2134,
+    "band": "Mortify",
+    "band_id": 10171,
     "band_ids": [
-      2134
+      10171
     ],
-    "album": "Allegory Of Death",
+    "album": "Mortuary Remains",
     "year": 2018,
     "type": "Album",
     "type_id": 1,
-    "post_id": 25165,
-    "post_url": "https://deathgrind.club/posts/25165"
+    "post_id": 25326,
+    "post_url": "https://deathgrind.club/posts/25326"
   },
   {
     "band": "Murk Exorbitance",
@@ -7567,19 +5890,6 @@
     "post_url": "https://deathgrind.club/posts/24735"
   },
   {
-    "band": "Hyperdontia",
-    "band_id": 9564,
-    "band_ids": [
-      9564
-    ],
-    "album": "Nexus Of Teeth",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 24586,
-    "post_url": "https://deathgrind.club/posts/24586"
-  },
-  {
     "band": "Profanal",
     "band_id": 4955,
     "band_ids": [
@@ -7591,32 +5901,6 @@
     "type_id": 1,
     "post_id": 22357,
     "post_url": "https://deathgrind.club/posts/22357"
-  },
-  {
-    "band": "Kitchen Knife Conspiracy",
-    "band_id": 8816,
-    "band_ids": [
-      8816
-    ],
-    "album": "A Friend In Need... Is A Friend To Kill",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21855,
-    "post_url": "https://deathgrind.club/posts/21855"
-  },
-  {
-    "band": "Inisans",
-    "band_id": 8752,
-    "band_ids": [
-      8752
-    ],
-    "album": "Transition",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21673,
-    "post_url": "https://deathgrind.club/posts/21673"
   },
   {
     "band": "Fungus Inc.",
@@ -7632,19 +5916,6 @@
     "post_url": "https://deathgrind.club/posts/21276"
   },
   {
-    "band": "Bloodfiend",
-    "band_id": 2227,
-    "band_ids": [
-      2227
-    ],
-    "album": "Under The Evil Command",
-    "year": 2011,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 21154,
-    "post_url": "https://deathgrind.club/posts/21154"
-  },
-  {
     "band": "Abducted Child",
     "band_id": 8456,
     "band_ids": [
@@ -7656,19 +5927,6 @@
     "type_id": 1,
     "post_id": 20891,
     "post_url": "https://deathgrind.club/posts/20891"
-  },
-  {
-    "band": "Magnanimus",
-    "band_id": 8305,
-    "band_ids": [
-      8305
-    ],
-    "album": "Impure Ways Beyond Shadows",
-    "year": 2018,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 20516,
-    "post_url": "https://deathgrind.club/posts/20516"
   },
   {
     "band": "Spiritual Carnage",
@@ -7689,38 +5947,12 @@
     "band_ids": [
       8006
     ],
-    "album": "Onwards Into Darkness",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19678,
-    "post_url": "https://deathgrind.club/posts/19678"
-  },
-  {
-    "band": "Reckless Manslaughter",
-    "band_id": 8006,
-    "band_ids": [
-      8006
-    ],
     "album": "Storm Of Vengeance",
     "year": 2011,
     "type": "Album",
     "type_id": 1,
     "post_id": 19677,
     "post_url": "https://deathgrind.club/posts/19677"
-  },
-  {
-    "band": "Vex",
-    "band_id": 3550,
-    "band_ids": [
-      3550
-    ],
-    "album": "Thanatopsis",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19636,
-    "post_url": "https://deathgrind.club/posts/19636"
   },
   {
     "band": "Gomorrha",
@@ -7788,30 +6020,17 @@
     "post_url": "https://deathgrind.club/posts/19448"
   },
   {
-    "band": "Day Of Doom",
-    "band_id": 644,
+    "band": "Discreation",
+    "band_id": 2509,
     "band_ids": [
-      644
+      2509
     ],
-    "album": "Night Of Horror",
-    "year": 2006,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 19447,
-    "post_url": "https://deathgrind.club/posts/19447"
-  },
-  {
-    "band": "Under The Church",
-    "band_id": 2330,
-    "band_ids": [
-      2330
-    ],
-    "album": "Supernatural Punishment",
+    "album": "End Of Days",
     "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 18642,
-    "post_url": "https://deathgrind.club/posts/18642"
+    "post_id": 18060,
+    "post_url": "https://deathgrind.club/posts/18060"
   },
   {
     "band": "Navalm",
@@ -7840,19 +6059,6 @@
     "post_url": "https://deathgrind.club/posts/17813"
   },
   {
-    "band": "Wachenfeldt",
-    "band_id": 7318,
-    "band_ids": [
-      7318
-    ],
-    "album": "The Interpreter",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17691,
-    "post_url": "https://deathgrind.club/posts/17691"
-  },
-  {
     "band": "Elbow Deep",
     "band_id": 7317,
     "band_ids": [
@@ -7877,19 +6083,6 @@
     "type_id": 1,
     "post_id": 17680,
     "post_url": "https://deathgrind.club/posts/17680"
-  },
-  {
-    "band": "Ursinne",
-    "band_id": 7241,
-    "band_ids": [
-      7241
-    ],
-    "album": "Swim With The Leviathan",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17460,
-    "post_url": "https://deathgrind.club/posts/17460"
   },
   {
     "band": "Profane Order",
@@ -7957,19 +6150,6 @@
     "post_url": "https://deathgrind.club/posts/17192"
   },
   {
-    "band": "Human Drain",
-    "band_id": 7133,
-    "band_ids": [
-      7133
-    ],
-    "album": "Into The Deep Madness Abyss",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17171,
-    "post_url": "https://deathgrind.club/posts/17171"
-  },
-  {
     "band": "Necrocurse",
     "band_id": 7116,
     "band_ids": [
@@ -8035,32 +6215,6 @@
     "post_url": "https://deathgrind.club/posts/17082"
   },
   {
-    "band": "Warborn Waste",
-    "band_id": 7101,
-    "band_ids": [
-      7101
-    ],
-    "album": "The Prophets Of Dishonour",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17064,
-    "post_url": "https://deathgrind.club/posts/17064"
-  },
-  {
-    "band": "Perkulatory",
-    "band_id": 7098,
-    "band_ids": [
-      7098
-    ],
-    "album": "Chronic Caffeine Dependence",
-    "year": 2017,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 17056,
-    "post_url": "https://deathgrind.club/posts/17056"
-  },
-  {
     "band": "Warder",
     "band_id": 7021,
     "band_ids": [
@@ -8113,30 +6267,30 @@
     "post_url": "https://deathgrind.club/posts/16844"
   },
   {
-    "band": "Engulfed",
-    "band_id": 6307,
+    "band": "Bloodphemy",
+    "band_id": 6416,
     "band_ids": [
-      6307
+      6416
     ],
-    "album": "Engulfed In Obscurity",
+    "album": "Bloodline",
     "year": 2017,
     "type": "Album",
     "type_id": 1,
-    "post_id": 14618,
-    "post_url": "https://deathgrind.club/posts/14618"
+    "post_id": 14879,
+    "post_url": "https://deathgrind.club/posts/14879"
   },
   {
-    "band": "Uerberos",
-    "band_id": 6136,
+    "band": "Brutal Unrest",
+    "band_id": 4555,
     "band_ids": [
-      6136
+      4555
     ],
-    "album": "Tormented By Faith",
-    "year": 2017,
+    "album": "Hellcatraz",
+    "year": 2009,
     "type": "Album",
     "type_id": 1,
-    "post_id": 14164,
-    "post_url": "https://deathgrind.club/posts/14164"
+    "post_id": 13776,
+    "post_url": "https://deathgrind.club/posts/13776"
   },
   {
     "band": "The Grotesquery",
@@ -8191,19 +6345,6 @@
     "post_url": "https://deathgrind.club/posts/13626"
   },
   {
-    "band": "Puteraeon",
-    "band_id": 2504,
-    "band_ids": [
-      2504
-    ],
-    "album": "The Crawling Chaos",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 13588,
-    "post_url": "https://deathgrind.club/posts/13588"
-  },
-  {
     "band": "In Utero Cannibalism",
     "band_id": 1993,
     "band_ids": [
@@ -8217,17 +6358,17 @@
     "post_url": "https://deathgrind.club/posts/13465"
   },
   {
-    "band": "Demigod",
-    "band_id": 2483,
+    "band": "Adramelech",
+    "band_id": 4166,
     "band_ids": [
-      2483
+      4166
     ],
-    "album": "Let Chaos Prevail",
-    "year": 2007,
+    "album": "Terror Of Thousand Faces",
+    "year": 2005,
     "type": "Album",
     "type_id": 1,
-    "post_id": 13055,
-    "post_url": "https://deathgrind.club/posts/13055"
+    "post_id": 13053,
+    "post_url": "https://deathgrind.club/posts/13053"
   },
   {
     "band": "Exmortem",
@@ -8256,17 +6397,17 @@
     "post_url": "https://deathgrind.club/posts/12232"
   },
   {
-    "band": "Offence",
-    "band_id": 5098,
+    "band": "Inquiring Blood",
+    "band_id": 4457,
     "band_ids": [
-      5098
+      4457
     ],
-    "album": "Adoration Of Black Kingdom",
+    "album": "Morbid Creation",
     "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 11297,
-    "post_url": "https://deathgrind.club/posts/11297"
+    "post_id": 11894,
+    "post_url": "https://deathgrind.club/posts/11894"
   },
   {
     "band": "Misanthropian",
@@ -8280,6 +6421,32 @@
     "type_id": 1,
     "post_id": 11100,
     "post_url": "https://deathgrind.club/posts/11100"
+  },
+  {
+    "band": "Church Of Disgust",
+    "band_id": 5004,
+    "band_ids": [
+      5004
+    ],
+    "album": "Unworldly Summoning",
+    "year": 2014,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 11072,
+    "post_url": "https://deathgrind.club/posts/11072"
+  },
+  {
+    "band": "Church Of Disgust",
+    "band_id": 5004,
+    "band_ids": [
+      5004
+    ],
+    "album": "Veneration Of Filth",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 11070,
+    "post_url": "https://deathgrind.club/posts/11070"
   },
   {
     "band": "Toxocara",
@@ -8308,19 +6475,6 @@
     "post_url": "https://deathgrind.club/posts/10872"
   },
   {
-    "band": "Unwilling Flesh",
-    "band_id": 4881,
-    "band_ids": [
-      4881
-    ],
-    "album": "Between The Living And The Dead",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 10761,
-    "post_url": "https://deathgrind.club/posts/10761"
-  },
-  {
     "band": "Perturbacion",
     "band_id": 15649,
     "band_ids": [
@@ -8334,56 +6488,30 @@
     "post_url": "https://deathgrind.club/posts/10754"
   },
   {
-    "band": "Construct Of Lethe",
-    "band_id": 4810,
+    "band": "Mercyless",
+    "band_id": 4481,
     "band_ids": [
-      4810
+      4481
     ],
-    "album": "Corpsegod",
-    "year": 2016,
+    "album": "Abject Offerings",
+    "year": 1992,
     "type": "Album",
     "type_id": 1,
-    "post_id": 10600,
-    "post_url": "https://deathgrind.club/posts/10600"
+    "post_id": 9833,
+    "post_url": "https://deathgrind.club/posts/9833"
   },
   {
-    "band": "Krisiun",
-    "band_id": 1930,
+    "band": "Dementor",
+    "band_id": 1057,
     "band_ids": [
-      1930
+      1057
     ],
-    "album": "Bloodshed",
-    "year": 2004,
+    "album": "The Art Of Blasphemy",
+    "year": 1999,
     "type": "Album",
     "type_id": 1,
-    "post_id": 10509,
-    "post_url": "https://deathgrind.club/posts/10509"
-  },
-  {
-    "band": "Brutal Rebirth",
-    "band_id": 4550,
-    "band_ids": [
-      4550
-    ],
-    "album": "Hate Over All",
-    "year": 2008,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9965,
-    "post_url": "https://deathgrind.club/posts/9965"
-  },
-  {
-    "band": "Inquiring Blood",
-    "band_id": 4457,
-    "band_ids": [
-      4457
-    ],
-    "album": "Born In A Grave",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9784,
-    "post_url": "https://deathgrind.club/posts/9784"
+    "post_id": 9637,
+    "post_url": "https://deathgrind.club/posts/9637"
   },
   {
     "band": "Tortharry",
@@ -8399,19 +6527,6 @@
     "post_url": "https://deathgrind.club/posts/9568"
   },
   {
-    "band": "Open Surgery",
-    "band_id": 4333,
-    "band_ids": [
-      4333
-    ],
-    "album": "Experiments Of Excessive Torture",
-    "year": 2014,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 9477,
-    "post_url": "https://deathgrind.club/posts/9477"
-  },
-  {
     "band": "Absurd Universe",
     "band_id": 4261,
     "band_ids": [
@@ -8423,32 +6538,6 @@
     "type_id": 1,
     "post_id": 9303,
     "post_url": "https://deathgrind.club/posts/9303"
-  },
-  {
-    "band": "God Dethroned",
-    "band_id": 4085,
-    "band_ids": [
-      4085
-    ],
-    "album": "The Grand Grimoire",
-    "year": 1997,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 8905,
-    "post_url": "https://deathgrind.club/posts/8905"
-  },
-  {
-    "band": "Drawn And Quartered",
-    "band_id": 2858,
-    "band_ids": [
-      2858
-    ],
-    "album": "Extermination Revelry",
-    "year": 2003,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 8809,
-    "post_url": "https://deathgrind.club/posts/8809"
   },
   {
     "band": "Decubitus",
@@ -8464,17 +6553,43 @@
     "post_url": "https://deathgrind.club/posts/8775"
   },
   {
-    "band": "Toderlebend",
-    "band_id": 3959,
+    "band": "Krisiun",
+    "band_id": 1930,
     "band_ids": [
-      3959
+      1930
     ],
-    "album": "In Stench We Rot",
+    "album": "Assassination",
+    "year": 2006,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 8670,
+    "post_url": "https://deathgrind.club/posts/8670"
+  },
+  {
+    "band": "Mausoleum",
+    "band_id": 3967,
+    "band_ids": [
+      3967
+    ],
+    "album": "Back From The Funeral",
+    "year": 2011,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 8656,
+    "post_url": "https://deathgrind.club/posts/8656"
+  },
+  {
+    "band": "Laconist",
+    "band_id": 3971,
+    "band_ids": [
+      3971
+    ],
+    "album": "Anticosmic Trance",
     "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 8636,
-    "post_url": "https://deathgrind.club/posts/8636"
+    "post_id": 8653,
+    "post_url": "https://deathgrind.club/posts/8653"
   },
   {
     "band": "Sphere",
@@ -8521,64 +6636,38 @@
     "band_ids": [
       3295
     ],
-    "album": "1-800 Vindication",
-    "year": 2004,
+    "album": "Burn Me Wicked",
+    "year": 2006,
     "type": "Album",
     "type_id": 1,
-    "post_id": 8240,
-    "post_url": "https://deathgrind.club/posts/8240"
+    "post_id": 8239,
+    "post_url": "https://deathgrind.club/posts/8239"
   },
   {
-    "band": "Illdisposed",
-    "band_id": 3295,
+    "band": "Oniricous",
+    "band_id": 3280,
     "band_ids": [
-      3295
+      3280
     ],
-    "album": "Sense The Darkness",
-    "year": 2012,
+    "album": "Ritos Diabólicos",
+    "year": 2013,
     "type": "Album",
     "type_id": 1,
-    "post_id": 8235,
-    "post_url": "https://deathgrind.club/posts/8235"
+    "post_id": 7627,
+    "post_url": "https://deathgrind.club/posts/7627"
   },
   {
-    "band": "Blood Red Throne",
-    "band_id": 42,
+    "band": "Warhammer",
+    "band_id": 3486,
     "band_ids": [
-      42
+      3486
     ],
-    "album": "Come Death",
-    "year": 2007,
+    "album": "Visual Antagonism",
+    "year": 2016,
     "type": "Album",
     "type_id": 1,
-    "post_id": 8159,
-    "post_url": "https://deathgrind.club/posts/8159"
-  },
-  {
-    "band": "Engorge",
-    "band_id": 3395,
-    "band_ids": [
-      3395
-    ],
-    "album": "Awaiting To Subside",
-    "year": 1999,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 7375,
-    "post_url": "https://deathgrind.club/posts/7375"
-  },
-  {
-    "band": "Hate Eternal",
-    "band_id": 1880,
-    "band_ids": [
-      1880
-    ],
-    "album": "Phoenix Amongst The Ashes",
-    "year": 2011,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 7363,
-    "post_url": "https://deathgrind.club/posts/7363"
+    "post_id": 7557,
+    "post_url": "https://deathgrind.club/posts/7557"
   },
   {
     "band": "Effugium",
@@ -8594,56 +6683,30 @@
     "post_url": "https://deathgrind.club/posts/7109"
   },
   {
-    "band": "Sorcery",
-    "band_id": 2512,
+    "band": "Discreation",
+    "band_id": 2509,
     "band_ids": [
-      2512
+      2509
     ],
-    "album": "Garden Of Bones",
-    "year": 2016,
+    "album": "Procreation Of The Wretched",
+    "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 6876,
-    "post_url": "https://deathgrind.club/posts/6876"
+    "post_id": 6718,
+    "post_url": "https://deathgrind.club/posts/6718"
   },
   {
-    "band": "Desolate Shrine",
-    "band_id": 3109,
+    "band": "Demonic Manifestation",
+    "band_id": 2998,
     "band_ids": [
-      3109
+      2998
     ],
-    "album": "The Sanctum Of Human Darkness",
-    "year": 2012,
+    "album": "World Of Horror",
+    "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 6795,
-    "post_url": "https://deathgrind.club/posts/6795"
-  },
-  {
-    "band": "The Grotesquery",
-    "band_id": 1600,
-    "band_ids": [
-      1600
-    ],
-    "album": "Tales Of The Coffin Born",
-    "year": 2010,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 6547,
-    "post_url": "https://deathgrind.club/posts/6547"
-  },
-  {
-    "band": "Embalmer",
-    "band_id": 1625,
-    "band_ids": [
-      1625
-    ],
-    "album": "Emanations From The Crypt",
-    "year": 2016,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 6472,
-    "post_url": "https://deathgrind.club/posts/6472"
+    "post_id": 6555,
+    "post_url": "https://deathgrind.club/posts/6555"
   },
   {
     "band": "Soulburner",
@@ -8659,17 +6722,43 @@
     "post_url": "https://deathgrind.club/posts/6382"
   },
   {
-    "band": "Putrevore",
-    "band_id": 2235,
+    "band": "Malevolent Creation",
+    "band_id": 2160,
     "band_ids": [
-      2235
+      2160
     ],
-    "album": "Macabre Kingdom",
-    "year": 2012,
+    "album": "Stillborn",
+    "year": 1993,
     "type": "Album",
     "type_id": 1,
-    "post_id": 5693,
-    "post_url": "https://deathgrind.club/posts/5693"
+    "post_id": 6272,
+    "post_url": "https://deathgrind.club/posts/6272"
+  },
+  {
+    "band": "Killing For Company",
+    "band_id": 2875,
+    "band_ids": [
+      2875
+    ],
+    "album": "House Of Hades",
+    "year": 2016,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 6190,
+    "post_url": "https://deathgrind.club/posts/6190"
+  },
+  {
+    "band": "Bodyfarm",
+    "band_id": 2397,
+    "band_ids": [
+      2397
+    ],
+    "album": "The Coming Scourge",
+    "year": 2013,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 5596,
+    "post_url": "https://deathgrind.club/posts/5596"
   },
   {
     "band": "Coldworker",
@@ -8685,32 +6774,6 @@
     "post_url": "https://deathgrind.club/posts/5317"
   },
   {
-    "band": "Benediction",
-    "band_id": 2508,
-    "band_ids": [
-      2508
-    ],
-    "album": "The Grand Leveller",
-    "year": 1991,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 5308,
-    "post_url": "https://deathgrind.club/posts/5308"
-  },
-  {
-    "band": "Incantation",
-    "band_id": 2510,
-    "band_ids": [
-      2510
-    ],
-    "album": "Diabolical Conquest",
-    "year": 1998,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 5253,
-    "post_url": "https://deathgrind.club/posts/5253"
-  },
-  {
     "band": "Hail Of Bullets",
     "band_id": 2507,
     "band_ids": [
@@ -8724,43 +6787,56 @@
     "post_url": "https://deathgrind.club/posts/5245"
   },
   {
-    "band": "Dismember",
-    "band_id": 232,
+    "band": "Vanhelgd",
+    "band_id": 2494,
     "band_ids": [
-      232
+      2494
     ],
-    "album": "Indecent And Obscene",
-    "year": 1993,
+    "album": "Church Of Death",
+    "year": 2011,
     "type": "Album",
     "type_id": 1,
-    "post_id": 5226,
-    "post_url": "https://deathgrind.club/posts/5226"
+    "post_id": 5216,
+    "post_url": "https://deathgrind.club/posts/5216"
   },
   {
-    "band": "Overtorture",
-    "band_id": 2463,
+    "band": "Hate",
+    "band_id": 2155,
     "band_ids": [
-      2463
+      2155
     ],
-    "album": "A Trail Of Death",
+    "album": "Erebos",
+    "year": 2010,
+    "type": "Album",
+    "type_id": 1,
+    "post_id": 5204,
+    "post_url": "https://deathgrind.club/posts/5204"
+  },
+  {
+    "band": "Mortiferous Scorn",
+    "band_id": 1601,
+    "band_ids": [
+      1601
+    ],
+    "album": "Visceral Nemesis",
     "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 5141,
-    "post_url": "https://deathgrind.club/posts/5141"
+    "post_id": 3509,
+    "post_url": "https://deathgrind.club/posts/3509"
   },
   {
-    "band": "Ghoul Patrol",
-    "band_id": 1717,
+    "band": "Anima Mors",
+    "band_id": 1550,
     "band_ids": [
-      1717
+      1550
     ],
-    "album": "The Undying",
+    "album": "First Injury",
     "year": 2015,
     "type": "Album",
     "type_id": 1,
-    "post_id": 3718,
-    "post_url": "https://deathgrind.club/posts/3718"
+    "post_id": 3433,
+    "post_url": "https://deathgrind.club/posts/3433"
   },
   {
     "band": "Morbid Angel",
@@ -8768,37 +6844,11 @@
     "band_ids": [
       1438
     ],
-    "album": "Formulas Fatal To The Flesh",
-    "year": 1998,
+    "album": "Abominations Of Desolation",
+    "year": 1991,
     "type": "Album",
     "type_id": 1,
-    "post_id": 3004,
-    "post_url": "https://deathgrind.club/posts/3004"
-  },
-  {
-    "band": "Sinister",
-    "band_id": 217,
-    "band_ids": [
-      217
-    ],
-    "album": "The Carnage Ending",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 490,
-    "post_url": "https://deathgrind.club/posts/490"
-  },
-  {
-    "band": "Cannibal Corpse",
-    "band_id": 37,
-    "band_ids": [
-      37
-    ],
-    "album": "Torture",
-    "year": 2012,
-    "type": "Album",
-    "type_id": 1,
-    "post_id": 219,
-    "post_url": "https://deathgrind.club/posts/219"
+    "post_id": 2999,
+    "post_url": "https://deathgrind.club/posts/2999"
   }
 ]
