@@ -4815,7 +4815,6 @@
 87702|Necronos|Charred Tongue
 89240|Mortual|Altar Of Brutality
 89938|Manfiïsh|From The Swamp
-87324|Insane Desecration|Super Market Shooting Spree
 89593|Innumerable Forms|Pain Effulgence
 88438|Hate Inclination|Maritime Depredation
 88558|Gutrectomy|Angst
@@ -7485,7 +7484,6 @@
 92886|Flystrike|Saprogenic Sarcoidosis
 81035|Visceral Slaughter|Hell On Earth MMXXIII
 82552|Ion Dissonance|Solace
-86969|Insane Desecration|Hallucinogenic Annihilation Of Female Bodies
 80819|Face Pulp|Eye Grabbing Detail
 88559|Intoxicated|Watch You Burn
 78843|Gorekaust|Ancient Halls Of Emptiness
@@ -8397,3 +8395,43 @@
 80732|Depression|Dekade(nz)
 11013|Crucifyre|Infernal Earthly Divine
 17135|Milking The Goatmachine|Back From The Goats... A GoatEborg Fairy Tale
+86026|El Kaso Urkijo|La bañera fue su nicho
+77809|Withered|Folie Circulaire
+73644|Watain|Rabid Death's Curse
+17137|Vaulting|Epilog
+17373|Ultra Vomit|Objectif: Thunes
+77545|Krisiun|Works Of Carnage
+77544|Krisiun|Conquerors Of Armageddon
+76480|Disgod|Sanguine Scales
+89228|Difenacum|País de Sordos
+87617|Crowpath|One With Filth
+73011|Vortex Of End|In Satan And Plutonium We Trust
+18002|The Right Wing Conspiracy|Give War A Chance!
+81668|Leng Tch'e|Marasmus
+17768|Impiety|Formidonis Nex Cultus
+80804|Goregast|La Revancha
+92397|Cattle Extermination|Hours To Collision
+17130|29/09|La Violence Thérapeutique
+25347|Sickbag|Bushido Codex
+17462|Scumfusion|Under Exoriant Light
+79074|L6B6T6MY|Legions Of Beelzebub
+17746|Dead|Whorehouse Of The Freaks
+14238|Bestial Mockery|Gospel Of The Insane
+76962|Pyuria|Calliphora Vomitoria Introitus
+13111|Infernal War|Terrorfront
+87618|Crowpath|Son Of Sulphur
+74401|Apoplexy|Medical Malpractitioners Of Pathological Perversions And Clinical Cannibalism
+87619|Crowpath|Red On Chrome
+78413|Black Flame|Torment And Glory
+87589|Abortion|Gonna Be Worse
+85108|Difenacum|Autoconflicto
+91035|Gorerotted|Mutilated In Minutes
+79552|Extreme Decay|Sampah Dunia Ketiga
+81060|Genocide|Blood Spilled
+89882|Alienacja|...In My Eyes
+79559|Swarrrm|Against Again
+8362|Malevolent Creation|Envenomed
+78043|Centinex|Hellbrigade
+24724|Blood Duster|Cunt
+17030|Dead|You'll Never Know Pleasure - Until You've Tasted Pain
+88173|Resuscitator|Iniciation

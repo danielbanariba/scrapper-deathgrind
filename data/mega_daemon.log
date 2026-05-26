@@ -6450,3 +6450,547 @@
 2026-05-22 01:01:00 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
 2026-05-22 01:01:00 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
 2026-05-22 01:01:02 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:06:04 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:06:04 [mega_daemon] [44 pendientes] 🎵 El Kaso Urkijo — La bañera fue su nicho (post 86026)
+2026-05-22 01:06:04 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:06:04 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/BHNWDA7A#91MnjByS893ZxHC3hlFghMhgXT_X_W...
+2026-05-22 01:10:04 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:10:04 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:10:06 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:15:08 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:15:08 [mega_daemon] [44 pendientes] 🎵 El Kaso Urkijo — La bañera fue su nicho (post 86026)
+2026-05-22 01:15:08 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:15:08 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/BHNWDA7A#91MnjByS893ZxHC3hlFghMhgXT_X_W...
+2026-05-22 01:19:08 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:19:08 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:19:10 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:24:12 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:24:12 [mega_daemon] [44 pendientes] 🎵 El Kaso Urkijo — La bañera fue su nicho (post 86026)
+2026-05-22 01:24:12 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:24:12 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/BHNWDA7A#91MnjByS893ZxHC3hlFghMhgXT_X_W...
+2026-05-22 01:28:12 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:28:12 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:28:14 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:33:16 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:33:16 [mega_daemon] [44 pendientes] 🎵 El Kaso Urkijo — La bañera fue su nicho (post 86026)
+2026-05-22 01:33:16 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:33:16 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/BHNWDA7A#91MnjByS893ZxHC3hlFghMhgXT_X_W...
+2026-05-22 01:35:32 [modules.descargar_y_organizar] ✓ Descargado: 68.1 MB
+2026-05-22 01:35:32 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:35:33 [modules.descargar_y_organizar] ✓ Guardado en: El Kaso Urkijo - La bañera fue su nicho (2009)
+2026-05-22 01:35:33 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:35:35 [mega_daemon] [43 pendientes] 🎵 Withered — Folie Circulaire (post 77809)
+2026-05-22 01:35:35 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:35:35 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/KfYB1aTL#XAi5kyLBstHhGcwDzpaAORtBh2yxOX...
+2026-05-22 01:35:41 [modules.descargar_y_organizar] ✓ Descargado: 105.9 MB
+2026-05-22 01:35:41 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:35:43 [modules.descargar_y_organizar] ✓ Guardado en: Withered - Folie Circulaire (2008)
+2026-05-22 01:35:43 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:35:45 [mega_daemon] [42 pendientes] 🎵 Watain — Rabid Death's Curse (post 73644)
+2026-05-22 01:35:45 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:35:45 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/41sExZyB#BFw9YWIYlzF04OwkO0PnvP2N-a6k8Q...
+2026-05-22 01:35:51 [modules.descargar_y_organizar] ✓ Descargado: 98.6 MB
+2026-05-22 01:35:51 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:35:53 [modules.descargar_y_organizar] ✓ Guardado en: Watain - Rabid Death's Curse (2008)
+2026-05-22 01:35:53 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:35:55 [mega_daemon] [41 pendientes] 🎵 Vaulting — Epilog (post 17137)
+2026-05-22 01:35:55 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:35:55 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!kDwARRpK!6L8VXd5_ITDMoHg4E_l9BkWPnxEZnNfN_...
+2026-05-22 01:35:58 [modules.descargar_y_organizar] ✓ Descargado: 26.7 MB
+2026-05-22 01:35:59 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:35:59 [modules.descargar_y_organizar] ✓ Guardado en: Vaulting - Epilog (2008)
+2026-05-22 01:35:59 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:36:01 [mega_daemon] [40 pendientes] 🎵 Ultra Vomit — Objectif: Thunes (post 17373)
+2026-05-22 01:36:01 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:36:01 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!8TpyjZyD!nAfMMsi8hkhUqubMR7XepMpawuY9Z0wH8...
+2026-05-22 01:36:06 [modules.descargar_y_organizar] ✓ Descargado: 81.0 MB
+2026-05-22 01:36:06 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:36:07 [modules.descargar_y_organizar] ✓ Guardado en: Ultra Vomit - Objectif Thunes (2008)
+2026-05-22 01:36:07 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:36:09 [mega_daemon] [39 pendientes] 🎵 Plague Bringer — Life Songs In A Land Of Death (post 82356)
+2026-05-22 01:36:09 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:36:09 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/l7cWlLzI#4huqpsIBJ40hITKFuVEbMo5uEI-IiS...
+2026-05-22 01:36:09 [modules.descargar_y_organizar] megadl: ERROR: Download failed for 'https://mega.nz/file/l7cWlLzI#4h
+2026-05-22 01:36:09 [modules.descargar_y_organizar] Descarga fallida
+2026-05-22 01:36:09 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-05-22 01:36:11 [mega_daemon] [38 pendientes] 🎵 Krisiun — Works Of Carnage (post 77545)
+2026-05-22 01:36:11 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:36:11 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/NPFkwb6D#_xoaq6vtd-a5MNvEURWQCxyCXEF20i...
+2026-05-22 01:36:18 [modules.descargar_y_organizar] ✓ Descargado: 138.1 MB
+2026-05-22 01:36:18 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 01:36:20 [modules.descargar_y_organizar] ✓ Guardado en: Krisiun - Works Of Carnage (2008)
+2026-05-22 01:36:20 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 01:36:22 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 01:36:22 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:36:22 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 01:40:22 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:40:22 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:40:24 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:45:26 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:45:26 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 01:45:26 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:45:26 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 01:49:27 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:49:27 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:49:29 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 01:54:31 [mega_daemon] ⏯️  Reanudando
+2026-05-22 01:54:31 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 01:54:31 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 01:54:31 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 01:58:31 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 01:58:31 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 01:58:33 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:03:35 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:03:35 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 02:03:35 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:03:35 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 02:07:35 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:07:35 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:07:37 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:12:39 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:12:39 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 02:12:39 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:12:39 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 02:16:39 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:16:39 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:16:41 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:21:43 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:21:43 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 02:21:43 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:21:43 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 02:25:43 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:25:43 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:25:45 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:30:47 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:30:47 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 02:30:47 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:30:47 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 02:34:47 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:34:47 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:34:49 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:39:51 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:39:51 [mega_daemon] [37 pendientes] 🎵 Krisiun — Conquerors Of Armageddon (post 77544)
+2026-05-22 02:39:51 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:39:51 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0PEQlLjZ#0lOk3jI7plJgtUbECTu6iB1_OBh0qQ...
+2026-05-22 02:39:59 [modules.descargar_y_organizar] ✓ Descargado: 165.0 MB
+2026-05-22 02:39:59 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:03 [modules.descargar_y_organizar] ✓ Guardado en: Krisiun - Conquerors Of Armageddon (2008)
+2026-05-22 02:40:03 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:05 [mega_daemon] [36 pendientes] 🎵 Disgod — Sanguine Scales (post 76480)
+2026-05-22 02:40:05 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:05 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/STpH2ISQ#qtyq2FZc8V2O0-FWod7MBqvFYT0i5Z...
+2026-05-22 02:40:09 [modules.descargar_y_organizar] ✓ Descargado: 73.9 MB
+2026-05-22 02:40:09 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:12 [modules.descargar_y_organizar] ✓ Guardado en: Disgod - Sanguine Scales (2008)
+2026-05-22 02:40:12 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:14 [mega_daemon] [35 pendientes] 🎵 Difenacum — País de Sordos (post 89228)
+2026-05-22 02:40:14 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:14 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/E2N2SCBR#u10jKqiMgvrvHobIvabRa7VrQmeQNL...
+2026-05-22 02:40:20 [modules.descargar_y_organizar] ✓ Descargado: 84.3 MB
+2026-05-22 02:40:20 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:22 [modules.descargar_y_organizar] ✓ Guardado en: Difenacum - País de Sordos (2008)
+2026-05-22 02:40:22 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:24 [mega_daemon] [34 pendientes] 🎵 Crowpath — One With Filth (post 87617)
+2026-05-22 02:40:24 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:24 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/ImEy0QhA#Q_cZPq1reUKHNISxiUZMykb6rtzRzI...
+2026-05-22 02:40:29 [modules.descargar_y_organizar] ✓ Descargado: 74.8 MB
+2026-05-22 02:40:29 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:31 [modules.descargar_y_organizar] ✓ Guardado en: Crowpath - One With Filth (2008)
+2026-05-22 02:40:31 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:33 [mega_daemon] [33 pendientes] 🎵 Vortex Of End — In Satan And Plutonium We Trust (post 73011)
+2026-05-22 02:40:33 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:33 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/dxUEjbDS#rGA68ePfHRo89KWTNaChq-HTZ_z8_P...
+2026-05-22 02:40:38 [modules.descargar_y_organizar] ✓ Descargado: 80.1 MB
+2026-05-22 02:40:38 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:40 [modules.descargar_y_organizar] ✓ Guardado en: Vortex Of End - In Satan And Plutonium We Trust (2007)
+2026-05-22 02:40:40 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:42 [mega_daemon] [32 pendientes] 🎵 The Right Wing Conspiracy — Give War A Chance! (post 18002)
+2026-05-22 02:40:42 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:42 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!0HR3wCrZ!R6yza2eSZKwdj7EJWUy4sZNHh4uRFLt6X...
+2026-05-22 02:40:45 [modules.descargar_y_organizar] ✓ Descargado: 41.0 MB
+2026-05-22 02:40:45 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:46 [modules.descargar_y_organizar] ✓ Guardado en: The Right Wing Conspiracy - Give War A Chance! (2007)
+2026-05-22 02:40:46 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:48 [mega_daemon] [31 pendientes] 🎵 Leng Tch'e — Marasmus (post 81668)
+2026-05-22 02:40:48 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:48 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/wqc0DJRJ#hhpYMjqIfRVWg0CAJWl_h1xP7sb8rd...
+2026-05-22 02:40:54 [modules.descargar_y_organizar] ✓ Descargado: 101.6 MB
+2026-05-22 02:40:54 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:40:55 [modules.descargar_y_organizar] ✓ Guardado en: Leng Tch'e - Marasmus (2007)
+2026-05-22 02:40:55 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:40:57 [mega_daemon] [30 pendientes] 🎵 Impiety — Formidonis Nex Cultus (post 17768)
+2026-05-22 02:40:57 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:40:57 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/yEFXEKRY#SnFxdefqq79NOW5ppzUvX63nk7b7VW...
+2026-05-22 02:41:02 [modules.descargar_y_organizar] ✓ Descargado: 81.4 MB
+2026-05-22 02:41:02 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:41:02 [modules.descargar_y_organizar] ✓ Guardado en: Impiety - Formidonis Nex Cultus (2007)
+2026-05-22 02:41:02 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:41:04 [mega_daemon] [29 pendientes] 🎵 Goregast — La Revancha (post 80804)
+2026-05-22 02:41:04 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:41:04 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/nZV2ARAI#XauqDpWzKZaLkx8VZG0jB09hpveKuw...
+2026-05-22 02:41:10 [modules.descargar_y_organizar] ✓ Descargado: 84.5 MB
+2026-05-22 02:41:10 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 02:41:10 [modules.descargar_y_organizar] ✓ Guardado en: Goregast - La Revancha (2007)
+2026-05-22 02:41:10 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 02:41:12 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 02:41:12 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:41:12 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 02:45:13 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:45:13 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:45:15 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:50:17 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:50:17 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 02:50:17 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:50:17 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 02:54:17 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 02:54:17 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 02:54:19 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 02:59:21 [mega_daemon] ⏯️  Reanudando
+2026-05-22 02:59:21 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 02:59:21 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 02:59:21 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 03:03:21 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:03:21 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:03:23 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:08:25 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:08:25 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 03:08:25 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:08:25 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 03:12:25 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:12:25 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:12:27 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:17:29 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:17:29 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 03:17:29 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:17:29 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 03:21:29 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:21:29 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:21:31 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:26:33 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:26:33 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 03:26:33 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:26:33 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 03:30:33 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:30:33 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:30:35 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:35:37 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:35:37 [mega_daemon] [28 pendientes] 🎵 Cattle Extermination — Hours To Collision (post 92397)
+2026-05-22 03:35:37 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:35:37 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/qZ9GhSzb#PVrAIVxO6CH9zrEBpOzhnbnH0awyMQ...
+2026-05-22 03:35:43 [modules.descargar_y_organizar] ✓ Descargado: 87.1 MB
+2026-05-22 03:35:43 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:35:43 [modules.descargar_y_organizar] ✓ Guardado en: Cattle Extermination - Hours To Collision (2007)
+2026-05-22 03:35:43 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:35:45 [mega_daemon] [27 pendientes] 🎵 29/09 — La Violence Thérapeutique (post 17130)
+2026-05-22 03:35:45 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:35:45 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!dGoWSQjT!BzeMk1R5LEgGLWLpi3U2O0PvFN-aJphtR...
+2026-05-22 03:35:49 [modules.descargar_y_organizar] ✓ Descargado: 34.9 MB
+2026-05-22 03:35:49 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:35:49 [modules.descargar_y_organizar] ✓ Guardado en: 2909 - La Violence Thérapeutique (2007)
+2026-05-22 03:35:49 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:35:51 [mega_daemon] [26 pendientes] 🎵 Sickbag — Bushido Codex (post 25347)
+2026-05-22 03:35:51 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:35:51 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!NWBmXIYB!Uco5MLh3F3Z78nl2yqyU7To1hAEPwTAOO...
+2026-05-22 03:35:56 [modules.descargar_y_organizar] ✓ Descargado: 67.7 MB
+2026-05-22 03:35:56 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:35:57 [modules.descargar_y_organizar] ✓ Guardado en: Sickbag - Bushido Codex (2006)
+2026-05-22 03:35:57 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:35:59 [mega_daemon] [25 pendientes] 🎵 Scumfusion — Under Exoriant Light (post 17462)
+2026-05-22 03:35:59 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:35:59 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!8SR23RgK!FQ0gPuBbwLfmw7SKSjGE9eJ2BSjIZWIot...
+2026-05-22 03:36:18 [modules.descargar_y_organizar] ✓ Descargado: 16.5 MB
+2026-05-22 03:36:18 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:36:18 [modules.descargar_y_organizar] ✓ Guardado en: Scumfusion - Under Exoriant Light (2006)
+2026-05-22 03:36:18 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:36:20 [mega_daemon] [24 pendientes] 🎵 L6B6T6MY — Legions Of Beelzebub (post 79074)
+2026-05-22 03:36:20 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:36:20 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/aU4nwbLR#ilSXhTJxho2gEF_JeJhfVPIeVzZhVO...
+2026-05-22 03:36:27 [modules.descargar_y_organizar] ✓ Descargado: 91.3 MB
+2026-05-22 03:36:27 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:36:27 [modules.descargar_y_organizar] ✓ Guardado en: L6B6T6MY - Legions Of Beelzebub (2006)
+2026-05-22 03:36:27 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:36:29 [mega_daemon] [23 pendientes] 🎵 Dead — Whorehouse Of The Freaks (post 17746)
+2026-05-22 03:36:29 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:36:29 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!IfxjQYaT!iRxMh0P2OvHnHeRDnOno9uLa2bUM2EQf9...
+2026-05-22 03:36:34 [modules.descargar_y_organizar] ✓ Descargado: 74.8 MB
+2026-05-22 03:36:34 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:36:35 [modules.descargar_y_organizar] ✓ Guardado en: Dead - Whorehouse Of The Freaks (2006)
+2026-05-22 03:36:35 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:36:37 [mega_daemon] [22 pendientes] 🎵 Bestial Mockery — Gospel Of The Insane (post 14238)
+2026-05-22 03:36:37 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:36:37 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!Q5YXmK5Y!5enR9_AJxmvsy-JP2UMFTbE0FpS9Lue4H...
+2026-05-22 03:36:43 [modules.descargar_y_organizar] ✓ Descargado: 81.7 MB
+2026-05-22 03:36:43 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:36:44 [modules.descargar_y_organizar] ✓ Guardado en: Bestial Mockery - Gospel Of The Insane (2006)
+2026-05-22 03:36:44 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:36:46 [mega_daemon] [21 pendientes] 🎵 Pyuria — Calliphora Vomitoria Introitus (post 76962)
+2026-05-22 03:36:46 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:36:46 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/rSx1kDKI#CHEy6J20ZLGhO-h720fe6hqcMwHASR...
+2026-05-22 03:36:52 [modules.descargar_y_organizar] ✓ Descargado: 79.8 MB
+2026-05-22 03:36:52 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:36:53 [modules.descargar_y_organizar] ✓ Guardado en: Pyuria - Calliphora Vomitoria Introitus (2005)
+2026-05-22 03:36:53 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:36:55 [mega_daemon] [20 pendientes] 🎵 Infernal War — Terrorfront (post 13111)
+2026-05-22 03:36:55 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:36:55 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/GJ9klBJb#uJ1vvLuf9Ep8d68AnYScGwk6a_slfB...
+2026-05-22 03:37:08 [modules.descargar_y_organizar] ✓ Descargado: 75.7 MB
+2026-05-22 03:37:08 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:37:09 [modules.descargar_y_organizar] ✓ Guardado en: Infernal War - Terrorfront (2005)
+2026-05-22 03:37:09 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:37:11 [mega_daemon] [19 pendientes] 🎵 Crowpath — Son Of Sulphur (post 87618)
+2026-05-22 03:37:11 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:37:11 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/0vFVwQTZ#mBk5SlQz6Bexejvei_d09bk4FPQ321...
+2026-05-22 03:37:17 [modules.descargar_y_organizar] ✓ Descargado: 81.8 MB
+2026-05-22 03:37:17 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:37:17 [modules.descargar_y_organizar] ✓ Guardado en: Crowpath - Son Of Sulphur (2005)
+2026-05-22 03:37:17 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:37:19 [mega_daemon] [18 pendientes] 🎵 Apoplexy — Medical Malpractitioners Of Pathological Perversions And Clinical Cannibalism (post 74401)
+2026-05-22 03:37:19 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:37:19 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/U5FTlTBI#xJ_BrfoMIpmzuHOakoSCwikoFGxiJh...
+2026-05-22 03:37:25 [modules.descargar_y_organizar] ✓ Descargado: 86.6 MB
+2026-05-22 03:37:25 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:37:25 [modules.descargar_y_organizar] ✓ Guardado en: Apoplexy - Medical Malpractitioners Of Pathological Perversions And Clinical Cannibalism (2005)
+2026-05-22 03:37:25 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:37:27 [mega_daemon] [17 pendientes] 🎵 Violador — Torturando Vaginas (post 84663)
+2026-05-22 03:37:27 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:37:27 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/folder/dTInTSZC#HgtuKfrIZtlM-UVCjfZf7w...
+2026-05-22 03:37:28 [modules.descargar_y_organizar] Descarga fallida
+2026-05-22 03:37:28 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-05-22 03:37:30 [mega_daemon] [16 pendientes] 🎵 Crowpath — Red On Chrome (post 87619)
+2026-05-22 03:37:30 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:37:30 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/J28QVKCZ#NzS5S10702jHLmgd9Z1s2KP5H_3Afo...
+2026-05-22 03:37:34 [modules.descargar_y_organizar] ✓ Descargado: 69.8 MB
+2026-05-22 03:37:34 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:37:35 [modules.descargar_y_organizar] ✓ Guardado en: Crowpath - Red On Chrome (2004)
+2026-05-22 03:37:35 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:37:37 [mega_daemon] [15 pendientes] 🎵 Black Flame — Torment And Glory (post 78413)
+2026-05-22 03:37:37 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:37:37 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/s4kjSSAK#xOWPkW-zbV-MVopHiaHYljCXT5xt5r...
+2026-05-22 03:37:56 [modules.descargar_y_organizar] ✓ Descargado: 97.8 MB
+2026-05-22 03:37:56 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:37:58 [modules.descargar_y_organizar] ✓ Guardado en: Black Flame - Torment And Glory (2004)
+2026-05-22 03:37:58 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:38:00 [mega_daemon] [14 pendientes] 🎵 Abortion — Gonna Be Worse (post 87589)
+2026-05-22 03:38:00 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:38:00 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/y8Bj0BjR#KjDC4fIkam0rgiXLrzWNEO2o6v_Inb...
+2026-05-22 03:38:06 [modules.descargar_y_organizar] ✓ Descargado: 95.9 MB
+2026-05-22 03:38:06 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:38:06 [modules.descargar_y_organizar] ✓ Guardado en: Abortion - Gonna Be Worse (2004)
+2026-05-22 03:38:06 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:38:08 [mega_daemon] [13 pendientes] 🎵 Difenacum — Autoconflicto (post 85108)
+2026-05-22 03:38:08 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:38:08 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/Aigw1A5K#iJWqz76vB6uRvgc5sey0y351vZYS3q...
+2026-05-22 03:38:15 [modules.descargar_y_organizar] ✓ Descargado: 100.5 MB
+2026-05-22 03:38:15 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 03:38:15 [modules.descargar_y_organizar] ✓ Guardado en: Difenacum - Autoconflicto (2003)
+2026-05-22 03:38:15 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 03:38:17 [mega_daemon] [12 pendientes] 🎵 Bloody Sign — Vana Vigala Loïts (post 73662)
+2026-05-22 03:38:17 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:38:17 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/NoNyhJ5Q#dPSmCfD2629QU0i0EPVZLsgkYitrw0...
+2026-05-22 03:38:18 [modules.descargar_y_organizar] megadl: ERROR: Download failed for 'https://mega.nz/file/NoNyhJ5Q#dP
+2026-05-22 03:38:18 [modules.descargar_y_organizar] Descarga fallida
+2026-05-22 03:38:18 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-05-22 03:38:20 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 03:38:20 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:38:20 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 03:42:20 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:42:20 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:42:22 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:47:24 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:47:24 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 03:47:24 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:47:24 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 03:51:25 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 03:51:25 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 03:51:27 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 03:56:29 [mega_daemon] ⏯️  Reanudando
+2026-05-22 03:56:29 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 03:56:29 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 03:56:29 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:00:29 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:00:29 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:00:31 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:05:33 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:05:33 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:05:33 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:05:33 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:09:33 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:09:33 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:09:35 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:14:37 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:14:37 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:14:37 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:14:37 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:18:37 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:18:37 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:18:39 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:23:41 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:23:41 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:23:41 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:23:41 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:27:41 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:27:41 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:27:43 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:32:45 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:32:45 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:32:45 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:32:45 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:36:45 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:36:45 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:36:47 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:41:49 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:41:49 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:41:49 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:41:49 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:45:49 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:45:49 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:45:51 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:50:53 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:50:53 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:50:53 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:50:53 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 04:54:53 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 04:54:53 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 04:54:55 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 04:59:57 [mega_daemon] ⏯️  Reanudando
+2026-05-22 04:59:57 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 04:59:57 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 04:59:57 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 05:03:57 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 05:03:57 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 05:03:59 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 05:09:01 [mega_daemon] ⏯️  Reanudando
+2026-05-22 05:09:01 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 05:09:01 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:09:01 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 05:13:01 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 05:13:01 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 05:13:03 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 05:18:05 [mega_daemon] ⏯️  Reanudando
+2026-05-22 05:18:05 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 05:18:05 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:18:05 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 05:22:05 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 05:22:05 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 05:22:07 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 05:27:09 [mega_daemon] ⏯️  Reanudando
+2026-05-22 05:27:09 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 05:27:09 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:27:09 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 05:31:10 [modules.descargar_y_organizar] Mega: timeout tras 240s, cooldown 5m
+2026-05-22 05:31:10 [mega_daemon] ⏸️  Mega entró en cooldown durante el intento; queda en cola
+2026-05-22 05:31:12 [mega_daemon] ⏸️  Mega en cooldown (4m 57s). Durmiendo…
+2026-05-22 05:36:14 [mega_daemon] ⏯️  Reanudando
+2026-05-22 05:36:14 [mega_daemon] [11 pendientes] 🎵 Gorerotted — Mutilated In Minutes (post 91035)
+2026-05-22 05:36:14 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:14 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/9i9nBajI#Yr6LRiBg-6iva8lLkreyfc0jEtePVS...
+2026-05-22 05:36:19 [modules.descargar_y_organizar] ✓ Descargado: 60.6 MB
+2026-05-22 05:36:19 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:19 [modules.descargar_y_organizar] ✓ Guardado en: Gorerotted - Mutilated In Minutes (2002)
+2026-05-22 05:36:19 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:36:21 [mega_daemon] [10 pendientes] 🎵 Extreme Decay — Sampah Dunia Ketiga (post 79552)
+2026-05-22 05:36:21 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:21 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/73xQFKiQ#plbk8OjMNXfReVZBCgyoKZY8H8vJU7...
+2026-05-22 05:36:28 [modules.descargar_y_organizar] ✓ Descargado: 110.3 MB
+2026-05-22 05:36:28 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:28 [modules.descargar_y_organizar] ✓ Guardado en: Extreme Decay - Sampah Dunia Ketiga (2002)
+2026-05-22 05:36:28 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:36:30 [mega_daemon] [9 pendientes] 🎵 Genocide — Blood Spilled (post 81060)
+2026-05-22 05:36:30 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:30 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/7Qdl3bQb#R7ATboDX3aOuGuqJYS6MOIqV1l9k8M...
+2026-05-22 05:36:35 [modules.descargar_y_organizar] ✓ Descargado: 55.5 MB
+2026-05-22 05:36:35 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:36 [modules.descargar_y_organizar] ✓ Guardado en: Genocide - Blood Spilled (2001)
+2026-05-22 05:36:36 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:36:38 [mega_daemon] [8 pendientes] 🎵 Alienacja — ...In My Eyes (post 89882)
+2026-05-22 05:36:38 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:38 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/EM5XxJxZ#S2-CytKMpvQ4G32tYOXzFFd2NgD3Zl...
+2026-05-22 05:36:43 [modules.descargar_y_organizar] ✓ Descargado: 78.5 MB
+2026-05-22 05:36:43 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:43 [modules.descargar_y_organizar] ✓ Guardado en: Alienacja - ...In My Eyes (2001)
+2026-05-22 05:36:43 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:36:45 [mega_daemon] [7 pendientes] 🎵 Swarrrm — Against Again (post 79559)
+2026-05-22 05:36:45 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:45 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/jPp0WJYJ#UgIGd-WpbOrY9AYOwI1D9_U7QkHd1K...
+2026-05-22 05:36:50 [modules.descargar_y_organizar] ✓ Descargado: 75.7 MB
+2026-05-22 05:36:50 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:51 [modules.descargar_y_organizar] ✓ Guardado en: Swarrrm - Against Again (2000)
+2026-05-22 05:36:51 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:36:53 [mega_daemon] [6 pendientes] 🎵 Malevolent Creation — Envenomed (post 8362)
+2026-05-22 05:36:53 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:36:53 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/rM9lhaTY#8nc9OyLOZRnhjnTzpyJxZSg46-iauv...
+2026-05-22 05:36:58 [modules.descargar_y_organizar] ✓ Descargado: 96.8 MB
+2026-05-22 05:36:58 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:36:59 [modules.descargar_y_organizar] ✓ Guardado en: Malevolent Creation - Envenomed (2000)
+2026-05-22 05:36:59 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:37:01 [mega_daemon] [5 pendientes] 🎵 Centinex — Hellbrigade (post 78043)
+2026-05-22 05:37:01 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:37:01 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/LAYSlCoY#zXq1_YWaO8ZAeBKv7mXH_-89dsNzoJ...
+2026-05-22 05:37:10 [modules.descargar_y_organizar] ✓ Descargado: 180.7 MB
+2026-05-22 05:37:10 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:37:11 [modules.descargar_y_organizar] ✓ Guardado en: Centinex - Hellbrigade (2000)
+2026-05-22 05:37:11 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:37:13 [mega_daemon] [4 pendientes] 🎵 Blood Duster — Cunt (post 24724)
+2026-05-22 05:37:13 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:37:13 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!JDQVDQqI!6q5TPbjbuqzC8AusmnuvgGD4w_Lye8Gn9...
+2026-05-22 05:37:18 [modules.descargar_y_organizar] ✓ Descargado: 63.3 MB
+2026-05-22 05:37:18 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:37:19 [modules.descargar_y_organizar] ✓ Guardado en: Blood Duster - Cunt (2000)
+2026-05-22 05:37:19 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:37:21 [mega_daemon] [3 pendientes] 🎵 Dead — You'll Never Know Pleasure - Until You've Tasted Pain (post 17030)
+2026-05-22 05:37:21 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:37:21 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!Uf5x3BqB!HeRtjfvp3-win30hDho7hp4KuP30w3GFQ...
+2026-05-22 05:37:27 [modules.descargar_y_organizar] ✓ Descargado: 106.2 MB
+2026-05-22 05:37:27 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:37:28 [modules.descargar_y_organizar] ✓ Guardado en: Dead - You'll Never Know Pleasure - Until You've Tasted Pain (1995)
+2026-05-22 05:37:28 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:37:30 [mega_daemon] [2 pendientes] 🎵 Pulmons Negres — Pulmons Negres (post 80363)
+2026-05-22 05:37:30 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:37:30 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/GLgmyT7Z#DwEVFjxC83e1Xg9Ok1ygYNuFgbVlhv...
+2026-05-22 05:37:30 [modules.descargar_y_organizar] megadl: ERROR: Download failed for 'https://mega.nz/file/GLgmyT7Z#Dw
+2026-05-22 05:37:30 [modules.descargar_y_organizar] Descarga fallida
+2026-05-22 05:37:30 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-05-22 05:37:32 [mega_daemon] [1 pendientes] 🎵 Resuscitator — Iniciation (post 88173)
+2026-05-22 05:37:32 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-05-22 05:37:32 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/WgIVUTxa#BoX6tSb0nngi6dCpPA4biTgvRV8AOL...
+2026-05-22 05:37:37 [modules.descargar_y_organizar] ✓ Descargado: 64.6 MB
+2026-05-22 05:37:37 [modules.descargar_y_organizar] Extrayendo...
+2026-05-22 05:37:37 [modules.descargar_y_organizar] ✓ Guardado en: Resuscitator - Iniciation (1993)
+2026-05-22 05:37:37 [mega_daemon] ✓ Descargado OK (OK)
+2026-05-22 05:37:39 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-05-22 05:37:39 [mega_daemon] ============================================================
+2026-05-22 05:37:39 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-05-22 05:37:39 [mega_daemon] ✓ Exitosos:  423
+2026-05-22 05:37:39 [mega_daemon] ⏭️ Omitidos: 224
+2026-05-22 05:37:39 [mega_daemon] ✗ Fallidos:  76
+2026-05-22 05:37:39 [mega_daemon] 📦 Total:    37.54 GB
+2026-05-22 05:37:39 [mega_daemon] 📋 Quedan en cola: 0
+2026-05-22 05:37:39 [mega_daemon] ============================================================
+2026-05-22 21:20:43 [mega_daemon] ============================================================
+2026-05-22 21:20:43 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-05-22 21:20:43 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-05-22 21:20:43 [mega_daemon]    log:     data/mega_daemon.log
+2026-05-22 21:20:43 [mega_daemon] ============================================================
+2026-05-22 21:20:43 [mega_daemon] 📋 8439 ya descargados | 3667 fallidos previos
+2026-05-22 21:20:43 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-05-22 21:20:43 [mega_daemon] ============================================================
+2026-05-22 21:20:43 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-05-22 21:20:43 [mega_daemon] ✓ Exitosos:  0
+2026-05-22 21:20:43 [mega_daemon] ⏭️ Omitidos: 0
+2026-05-22 21:20:43 [mega_daemon] ✗ Fallidos:  0
+2026-05-22 21:20:43 [mega_daemon] 📋 Quedan en cola: 0
+2026-05-22 21:20:43 [mega_daemon] ============================================================
+2026-05-24 13:29:14 [mega_daemon] ============================================================
+2026-05-24 13:29:14 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-05-24 13:29:14 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-05-24 13:29:14 [mega_daemon]    log:     data/mega_daemon.log
+2026-05-24 13:29:14 [mega_daemon] ============================================================
+2026-05-24 13:29:14 [mega_daemon] 📋 8437 ya descargados | 3667 fallidos previos
+2026-05-24 13:29:14 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-05-24 13:29:14 [mega_daemon] ============================================================
+2026-05-24 13:29:14 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-05-24 13:29:14 [mega_daemon] ✓ Exitosos:  0
+2026-05-24 13:29:14 [mega_daemon] ⏭️ Omitidos: 0
+2026-05-24 13:29:14 [mega_daemon] ✗ Fallidos:  0
+2026-05-24 13:29:14 [mega_daemon] 📋 Quedan en cola: 0
+2026-05-24 13:29:14 [mega_daemon] ============================================================
