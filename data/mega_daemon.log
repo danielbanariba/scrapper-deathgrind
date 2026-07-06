@@ -7106,3 +7106,394 @@
 2026-05-31 13:12:31 [mega_daemon] ✗ Fallidos:  0
 2026-05-31 13:12:31 [mega_daemon] 📋 Quedan en cola: 0
 2026-05-31 13:12:31 [mega_daemon] ============================================================
+2026-06-01 15:58:38 [mega_daemon] ============================================================
+2026-06-01 15:58:38 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-01 15:58:38 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-01 15:58:38 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-01 15:58:38 [mega_daemon] ============================================================
+2026-06-01 15:58:38 [mega_daemon] 📋 8521 ya descargados | 3717 fallidos previos
+2026-06-01 15:58:38 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-01 15:58:38 [mega_daemon] ============================================================
+2026-06-01 15:58:38 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-01 15:58:38 [mega_daemon] ✓ Exitosos:  0
+2026-06-01 15:58:38 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-01 15:58:38 [mega_daemon] ✗ Fallidos:  0
+2026-06-01 15:58:38 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-01 15:58:38 [mega_daemon] ============================================================
+2026-06-02 00:26:23 [mega_daemon] ============================================================
+2026-06-02 00:26:23 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-02 00:26:23 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-02 00:26:23 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-02 00:26:23 [mega_daemon] ============================================================
+2026-06-02 00:26:23 [mega_daemon] 📋 8521 ya descargados | 3717 fallidos previos
+2026-06-02 00:26:23 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-02 00:26:23 [mega_daemon] ============================================================
+2026-06-02 00:26:23 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-02 00:26:23 [mega_daemon] ✓ Exitosos:  0
+2026-06-02 00:26:23 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-02 00:26:23 [mega_daemon] ✗ Fallidos:  0
+2026-06-02 00:26:23 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-02 00:26:23 [mega_daemon] ============================================================
+2026-06-03 08:58:15 [mega_daemon] ============================================================
+2026-06-03 08:58:15 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-03 08:58:15 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-03 08:58:15 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-03 08:58:15 [mega_daemon] ============================================================
+2026-06-03 08:58:15 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-03 08:58:15 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-03 08:58:15 [mega_daemon] ============================================================
+2026-06-03 08:58:15 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-03 08:58:15 [mega_daemon] ✓ Exitosos:  0
+2026-06-03 08:58:15 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-03 08:58:15 [mega_daemon] ✗ Fallidos:  0
+2026-06-03 08:58:15 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-03 08:58:15 [mega_daemon] ============================================================
+2026-06-03 17:14:08 [mega_daemon] ============================================================
+2026-06-03 17:14:08 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-03 17:14:08 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-03 17:14:08 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-03 17:14:08 [mega_daemon] ============================================================
+2026-06-03 17:14:08 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-03 17:14:08 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-03 17:14:08 [mega_daemon] ============================================================
+2026-06-03 17:14:08 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-03 17:14:08 [mega_daemon] ✓ Exitosos:  0
+2026-06-03 17:14:08 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-03 17:14:08 [mega_daemon] ✗ Fallidos:  0
+2026-06-03 17:14:08 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-03 17:14:08 [mega_daemon] ============================================================
+2026-06-03 18:42:09 [mega_daemon] ============================================================
+2026-06-03 18:42:09 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-03 18:42:09 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-03 18:42:09 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-03 18:42:09 [mega_daemon] ============================================================
+2026-06-03 18:42:09 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-03 18:42:09 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-03 18:42:09 [mega_daemon] ============================================================
+2026-06-03 18:42:09 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-03 18:42:09 [mega_daemon] ✓ Exitosos:  0
+2026-06-03 18:42:09 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-03 18:42:09 [mega_daemon] ✗ Fallidos:  0
+2026-06-03 18:42:09 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-03 18:42:09 [mega_daemon] ============================================================
+2026-06-04 13:46:25 [mega_daemon] ============================================================
+2026-06-04 13:46:25 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-04 13:46:25 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-04 13:46:25 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-04 13:46:25 [mega_daemon] ============================================================
+2026-06-04 13:46:25 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-04 13:46:25 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-04 13:46:25 [mega_daemon] ============================================================
+2026-06-04 13:46:25 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-04 13:46:25 [mega_daemon] ✓ Exitosos:  0
+2026-06-04 13:46:25 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-04 13:46:25 [mega_daemon] ✗ Fallidos:  0
+2026-06-04 13:46:25 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-04 13:46:25 [mega_daemon] ============================================================
+2026-06-05 16:22:44 [mega_daemon] ============================================================
+2026-06-05 16:22:44 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-05 16:22:44 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-05 16:22:44 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-05 16:22:44 [mega_daemon] ============================================================
+2026-06-05 16:22:44 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-05 16:22:44 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-05 16:22:44 [mega_daemon] ============================================================
+2026-06-05 16:22:44 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-05 16:22:44 [mega_daemon] ✓ Exitosos:  0
+2026-06-05 16:22:44 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-05 16:22:44 [mega_daemon] ✗ Fallidos:  0
+2026-06-05 16:22:44 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-05 16:22:44 [mega_daemon] ============================================================
+2026-06-07 11:48:21 [mega_daemon] ============================================================
+2026-06-07 11:48:21 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-07 11:48:21 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-07 11:48:21 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-07 11:48:21 [mega_daemon] ============================================================
+2026-06-07 11:48:21 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-07 11:48:21 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-07 11:48:21 [mega_daemon] ============================================================
+2026-06-07 11:48:21 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-07 11:48:21 [mega_daemon] ✓ Exitosos:  0
+2026-06-07 11:48:21 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-07 11:48:21 [mega_daemon] ✗ Fallidos:  0
+2026-06-07 11:48:21 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-07 11:48:21 [mega_daemon] ============================================================
+2026-06-07 11:53:48 [mega_daemon] ============================================================
+2026-06-07 11:53:48 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-07 11:53:48 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-07 11:53:48 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-07 11:53:48 [mega_daemon] ============================================================
+2026-06-07 11:53:48 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-07 11:53:48 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-07 11:53:48 [mega_daemon] ============================================================
+2026-06-07 11:53:48 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-07 11:53:48 [mega_daemon] ✓ Exitosos:  0
+2026-06-07 11:53:48 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-07 11:53:48 [mega_daemon] ✗ Fallidos:  0
+2026-06-07 11:53:48 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-07 11:53:48 [mega_daemon] ============================================================
+2026-06-07 17:13:15 [mega_daemon] ============================================================
+2026-06-07 17:13:15 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-07 17:13:15 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-07 17:13:15 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-07 17:13:15 [mega_daemon] ============================================================
+2026-06-07 17:13:15 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-07 17:13:15 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-07 17:13:15 [mega_daemon] ============================================================
+2026-06-07 17:13:15 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-07 17:13:15 [mega_daemon] ✓ Exitosos:  0
+2026-06-07 17:13:15 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-07 17:13:15 [mega_daemon] ✗ Fallidos:  0
+2026-06-07 17:13:15 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-07 17:13:15 [mega_daemon] ============================================================
+2026-06-07 23:58:42 [mega_daemon] ============================================================
+2026-06-07 23:58:42 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-07 23:58:42 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-07 23:58:42 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-07 23:58:42 [mega_daemon] ============================================================
+2026-06-07 23:58:42 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-07 23:58:43 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-07 23:58:43 [mega_daemon] ============================================================
+2026-06-07 23:58:43 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-07 23:58:43 [mega_daemon] ✓ Exitosos:  0
+2026-06-07 23:58:43 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-07 23:58:43 [mega_daemon] ✗ Fallidos:  0
+2026-06-07 23:58:43 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-07 23:58:43 [mega_daemon] ============================================================
+2026-06-08 01:12:20 [mega_daemon] ============================================================
+2026-06-08 01:12:20 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-08 01:12:20 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-08 01:12:20 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-08 01:12:20 [mega_daemon] ============================================================
+2026-06-08 01:12:20 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-08 01:12:20 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-08 01:12:20 [mega_daemon] ============================================================
+2026-06-08 01:12:20 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-08 01:12:20 [mega_daemon] ✓ Exitosos:  0
+2026-06-08 01:12:20 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-08 01:12:20 [mega_daemon] ✗ Fallidos:  0
+2026-06-08 01:12:20 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-08 01:12:20 [mega_daemon] ============================================================
+2026-06-08 02:16:12 [mega_daemon] ============================================================
+2026-06-08 02:16:12 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-08 02:16:12 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-08 02:16:12 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-08 02:16:12 [mega_daemon] ============================================================
+2026-06-08 02:16:12 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-08 02:16:12 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-08 02:16:12 [mega_daemon] ============================================================
+2026-06-08 02:16:12 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-08 02:16:12 [mega_daemon] ✓ Exitosos:  0
+2026-06-08 02:16:12 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-08 02:16:12 [mega_daemon] ✗ Fallidos:  0
+2026-06-08 02:16:12 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-08 02:16:12 [mega_daemon] ============================================================
+2026-06-08 02:27:03 [mega_daemon] ============================================================
+2026-06-08 02:27:03 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-08 02:27:03 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-08 02:27:03 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-08 02:27:03 [mega_daemon] ============================================================
+2026-06-08 02:27:03 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-08 02:27:03 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-08 02:27:03 [mega_daemon] ============================================================
+2026-06-08 02:27:03 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-08 02:27:03 [mega_daemon] ✓ Exitosos:  0
+2026-06-08 02:27:03 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-08 02:27:03 [mega_daemon] ✗ Fallidos:  0
+2026-06-08 02:27:03 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-08 02:27:03 [mega_daemon] ============================================================
+2026-06-08 10:21:50 [mega_daemon] ============================================================
+2026-06-08 10:21:50 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-08 10:21:50 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-08 10:21:50 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-08 10:21:50 [mega_daemon] ============================================================
+2026-06-08 10:21:50 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-08 10:21:50 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-08 10:21:50 [mega_daemon] ============================================================
+2026-06-08 10:21:50 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-08 10:21:50 [mega_daemon] ✓ Exitosos:  0
+2026-06-08 10:21:50 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-08 10:21:50 [mega_daemon] ✗ Fallidos:  0
+2026-06-08 10:21:50 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-08 10:21:50 [mega_daemon] ============================================================
+2026-06-11 13:36:55 [mega_daemon] ============================================================
+2026-06-11 13:36:55 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-11 13:36:55 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-11 13:36:55 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-11 13:36:55 [mega_daemon] ============================================================
+2026-06-11 13:36:55 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-11 13:36:55 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-11 13:36:55 [mega_daemon] ============================================================
+2026-06-11 13:36:55 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-11 13:36:55 [mega_daemon] ✓ Exitosos:  0
+2026-06-11 13:36:55 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-11 13:36:55 [mega_daemon] ✗ Fallidos:  0
+2026-06-11 13:36:55 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-11 13:36:55 [mega_daemon] ============================================================
+2026-06-11 20:58:52 [mega_daemon] ============================================================
+2026-06-11 20:58:52 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-11 20:58:52 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-11 20:58:52 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-11 20:58:52 [mega_daemon] ============================================================
+2026-06-11 20:58:52 [mega_daemon] 📋 8521 ya descargados | 601 fallidos previos
+2026-06-11 20:58:52 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-11 20:58:52 [mega_daemon] ============================================================
+2026-06-11 20:58:52 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-11 20:58:52 [mega_daemon] ✓ Exitosos:  0
+2026-06-11 20:58:52 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-11 20:58:52 [mega_daemon] ✗ Fallidos:  0
+2026-06-11 20:58:52 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-11 20:58:52 [mega_daemon] ============================================================
+2026-06-18 01:11:46 [mega_daemon] ============================================================
+2026-06-18 01:11:46 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-18 01:11:46 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-18 01:11:46 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-18 01:11:46 [mega_daemon] ============================================================
+2026-06-18 01:11:46 [mega_daemon] 📋 8727 ya descargados | 2848 fallidos previos
+2026-06-18 01:11:46 [mega_daemon] [6 pendientes] 🎵 The Decapitated Midgets — Gurgling Olympics (post 93403)
+2026-06-18 01:11:46 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:11:46 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/niB2BIAQ#pg48k24ibE6k4JJTLm5iFxOWnfDmTu...
+2026-06-18 01:11:46 [modules.descargar_y_organizar] megadl: ERROR: Download failed for 'https://mega.nz/file/niB2BIAQ#pg
+2026-06-18 01:11:46 [modules.descargar_y_organizar] Descarga fallida
+2026-06-18 01:11:46 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-06-18 01:11:48 [mega_daemon] [5 pendientes] 🎵 Smashhead — Rotten Corpse Lacerated (post 93449)
+2026-06-18 01:11:48 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:11:48 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/ThZ1iTLb#d1gFrwmY0tMOESY4aB6h3NSMWra5DU...
+2026-06-18 01:11:48 [modules.descargar_y_organizar] megadl: ERROR: Download failed for 'https://mega.nz/file/ThZ1iTLb#d1
+2026-06-18 01:11:48 [modules.descargar_y_organizar] Descarga fallida
+2026-06-18 01:11:48 [mega_daemon] ✗ Fallido: Todos los links fallaron (definitivo) [PERM]
+2026-06-18 01:11:50 [mega_daemon] [4 pendientes] 🎵 Pernicious Hate — Disgrace World (post 93391)
+2026-06-18 01:11:50 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:11:50 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/Lj5XWLDK#ARINExiKMw3_snV6Jr5eD4jTHCMZPX...
+2026-06-18 01:11:55 [modules.descargar_y_organizar] ✓ Descargado: 67.1 MB
+2026-06-18 01:11:55 [modules.descargar_y_organizar] Extrayendo...
+2026-06-18 01:11:58 [modules.descargar_y_organizar] ✓ Guardado en: Pernicious Hate - Disgrace World (2005)
+2026-06-18 01:11:58 [mega_daemon] ✓ Descargado OK (OK)
+2026-06-18 01:12:00 [mega_daemon] [3 pendientes] 🎵 Scent Of Flesh — Valor In Hatred (post 21980)
+2026-06-18 01:12:00 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:12:00 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/76R1VTyY#iHWb50zHXmxR9mNoxiS0DRb9SheCiQ...
+2026-06-18 01:12:06 [modules.descargar_y_organizar] ✓ Descargado: 101.2 MB
+2026-06-18 01:12:06 [modules.descargar_y_organizar] Extrayendo...
+2026-06-18 01:12:10 [modules.descargar_y_organizar] ✓ Guardado en: Scent Of Flesh - Valor In Hatred (2004)
+2026-06-18 01:12:10 [mega_daemon] ✓ Descargado OK (OK)
+2026-06-18 01:12:12 [mega_daemon] [2 pendientes] 🎵 F.U.B.A.R. — Justification of criminal behaviour (post 93277)
+2026-06-18 01:12:12 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:12:12 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/file/7nhVVALR#CkNC5kv9GQTMDgSKiNVu1oaOG2R8IW...
+2026-06-18 01:12:16 [modules.descargar_y_organizar] ✓ Descargado: 50.8 MB
+2026-06-18 01:12:16 [modules.descargar_y_organizar] Extrayendo...
+2026-06-18 01:12:18 [modules.descargar_y_organizar] ✓ Guardado en: F.U.B.A.R - Justification of criminal behaviour (2004)
+2026-06-18 01:12:18 [mega_daemon] ✓ Descargado OK (OK)
+2026-06-18 01:12:20 [mega_daemon] [1 pendientes] 🎵 Canker — Physical (post 19470)
+2026-06-18 01:12:20 [modules.descargar_y_organizar] 📥 Iniciando descarga
+2026-06-18 01:12:20 [modules.descargar_y_organizar] → Intentando mega: https://mega.nz/#!8fBV0AAa!E-cdeE6HBd7RKTTnhMEBDqNxUz6Qe006A...
+2026-06-18 01:12:28 [modules.descargar_y_organizar] ✓ Descargado: 103.7 MB
+2026-06-18 01:12:28 [modules.descargar_y_organizar] Extrayendo...
+2026-06-18 01:12:30 [modules.descargar_y_organizar] ✓ Guardado en: Canker - Physical (1994)
+2026-06-18 01:12:30 [mega_daemon] ✓ Descargado OK (OK)
+2026-06-18 01:12:32 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-18 01:12:32 [mega_daemon] ============================================================
+2026-06-18 01:12:32 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-18 01:12:32 [mega_daemon] ✓ Exitosos:  4
+2026-06-18 01:12:32 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-18 01:12:32 [mega_daemon] ✗ Fallidos:  2
+2026-06-18 01:12:32 [mega_daemon] 📦 Total:    322.7 MB
+2026-06-18 01:12:32 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-18 01:12:32 [mega_daemon] ============================================================
+2026-06-19 23:46:33 [mega_daemon] ============================================================
+2026-06-19 23:46:33 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-19 23:46:33 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-19 23:46:33 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-19 23:46:33 [mega_daemon] ============================================================
+2026-06-19 23:46:33 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-19 23:46:33 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-19 23:46:33 [mega_daemon] ============================================================
+2026-06-19 23:46:33 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-19 23:46:33 [mega_daemon] ✓ Exitosos:  0
+2026-06-19 23:46:33 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-19 23:46:33 [mega_daemon] ✗ Fallidos:  0
+2026-06-19 23:46:33 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-19 23:46:33 [mega_daemon] ============================================================
+2026-06-19 23:51:14 [mega_daemon] ============================================================
+2026-06-19 23:51:14 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-19 23:51:14 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-19 23:51:14 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-19 23:51:14 [mega_daemon] ============================================================
+2026-06-19 23:51:14 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-19 23:51:14 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-19 23:51:14 [mega_daemon] ============================================================
+2026-06-19 23:51:14 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-19 23:51:14 [mega_daemon] ✓ Exitosos:  0
+2026-06-19 23:51:14 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-19 23:51:14 [mega_daemon] ✗ Fallidos:  0
+2026-06-19 23:51:14 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-19 23:51:14 [mega_daemon] ============================================================
+2026-06-27 09:27:22 [mega_daemon] ============================================================
+2026-06-27 09:27:22 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-27 09:27:22 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-27 09:27:22 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-27 09:27:22 [mega_daemon] ============================================================
+2026-06-27 09:27:22 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-27 09:27:22 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-27 09:27:22 [mega_daemon] ============================================================
+2026-06-27 09:27:22 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-27 09:27:22 [mega_daemon] ✓ Exitosos:  0
+2026-06-27 09:27:22 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-27 09:27:22 [mega_daemon] ✗ Fallidos:  0
+2026-06-27 09:27:22 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-27 09:27:22 [mega_daemon] ============================================================
+2026-06-27 09:34:59 [mega_daemon] ============================================================
+2026-06-27 09:34:59 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-27 09:34:59 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-27 09:34:59 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-27 09:34:59 [mega_daemon] ============================================================
+2026-06-27 09:34:59 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-27 09:34:59 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-27 09:34:59 [mega_daemon] ============================================================
+2026-06-27 09:34:59 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-27 09:34:59 [mega_daemon] ✓ Exitosos:  0
+2026-06-27 09:34:59 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-27 09:34:59 [mega_daemon] ✗ Fallidos:  0
+2026-06-27 09:34:59 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-27 09:34:59 [mega_daemon] ============================================================
+2026-06-30 00:07:07 [mega_daemon] ============================================================
+2026-06-30 00:07:07 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-30 00:07:07 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-30 00:07:07 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-30 00:07:07 [mega_daemon] ============================================================
+2026-06-30 00:07:07 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-30 00:07:07 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-30 00:07:07 [mega_daemon] ============================================================
+2026-06-30 00:07:07 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-30 00:07:07 [mega_daemon] ✓ Exitosos:  0
+2026-06-30 00:07:07 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-30 00:07:07 [mega_daemon] ✗ Fallidos:  0
+2026-06-30 00:07:07 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-30 00:07:07 [mega_daemon] ============================================================
+2026-06-30 00:17:58 [mega_daemon] ============================================================
+2026-06-30 00:17:58 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-06-30 00:17:58 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-06-30 00:17:58 [mega_daemon]    log:     data/mega_daemon.log
+2026-06-30 00:17:58 [mega_daemon] ============================================================
+2026-06-30 00:17:58 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-06-30 00:17:58 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-06-30 00:17:58 [mega_daemon] ============================================================
+2026-06-30 00:17:58 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-06-30 00:17:58 [mega_daemon] ✓ Exitosos:  0
+2026-06-30 00:17:58 [mega_daemon] ⏭️ Omitidos: 0
+2026-06-30 00:17:58 [mega_daemon] ✗ Fallidos:  0
+2026-06-30 00:17:58 [mega_daemon] 📋 Quedan en cola: 0
+2026-06-30 00:17:58 [mega_daemon] ============================================================
+2026-07-02 09:30:04 [mega_daemon] ============================================================
+2026-07-02 09:30:04 [mega_daemon] 🌙 MEGA DAEMON iniciado
+2026-07-02 09:30:04 [mega_daemon]    destino: /mnt/Entretenimiento/01_edicion_automatizada/01_limpieza_de_impurezas
+2026-07-02 09:30:04 [mega_daemon]    log:     data/mega_daemon.log
+2026-07-02 09:30:04 [mega_daemon] ============================================================
+2026-07-02 09:30:04 [mega_daemon] 📋 8731 ya descargados | 2850 fallidos previos
+2026-07-02 09:30:04 [mega_daemon] ✅ Cola Mega vacía, trabajo terminado
+2026-07-02 09:30:04 [mega_daemon] ============================================================
+2026-07-02 09:30:04 [mega_daemon] 📊 RESUMEN DEL RUN
+2026-07-02 09:30:04 [mega_daemon] ✓ Exitosos:  0
+2026-07-02 09:30:04 [mega_daemon] ⏭️ Omitidos: 0
+2026-07-02 09:30:04 [mega_daemon] ✗ Fallidos:  0
+2026-07-02 09:30:04 [mega_daemon] 📋 Quedan en cola: 0
+2026-07-02 09:30:04 [mega_daemon] ============================================================
