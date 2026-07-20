@@ -131,21 +131,24 @@ def cargar_repertorio(input_file=INPUT_FILE):
         return json.load(f)
 
 
-def generar_urls_busqueda(band, album, year=None, es_split=False):
+def generar_urls_busqueda(band, album, year=None, es_split=False, tipo=None):
     """Genera 2 URLs de búsqueda en YouTube (doble búsqueda)"""
+    # Sufijo de la query 2 según tipo de disco: EP busca "full ep", el resto "full album"
+    sufijo = "full ep" if str(tipo or '').lower() == "ep" else "full album"
+
     # Query 1: banda + album + año
     if year:
         q1 = f"{band} {album} {year}"
     else:
         q1 = f"{band} {album}"
 
-    # Query 2: variante con "full album"
+    # Query 2: variante con sufijo por tipo
     if es_split and " / " in band:
         # Para splits, la segunda query usa solo la primera banda
         primera_banda = band.split(" / ")[0].strip()
-        q2 = f"{primera_banda} {album} full album"
+        q2 = f"{primera_banda} {album} {sufijo}"
     else:
-        q2 = f"{band} {album} full album"
+        q2 = f"{band} {album} {sufijo}"
 
     return [
         f"https://www.youtube.com/results?search_query={urllib.parse.quote(q1)}",
@@ -162,13 +165,12 @@ class YouTubeFilterParallel:
         self.keywords = []
         self.neg_words = set()
         self.num_workers = num_workers
-        self.semaphore = None
+        self.page_pool = None
 
     async def iniciar_browser(self, headless=True):
         """Inicializa Playwright con múltiples páginas"""
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch(headless=headless)
-        self.semaphore = asyncio.Semaphore(self.num_workers)
 
         # Crear múltiples contextos y páginas
         for i in range(self.num_workers):
@@ -184,6 +186,11 @@ class YouTubeFilterParallel:
 
             self.contexts.append(context)
             self.pages.append(page)
+
+        # Pool de páginas: cada tarea toma una página en exclusiva y la devuelve al terminar
+        self.page_pool = asyncio.Queue()
+        for page in self.pages:
+            self.page_pool.put_nowait(page)
 
     async def verificar_disponibilidad(self, page, urls, band, album, tipo, max_videos=10):
         """
@@ -202,22 +209,39 @@ class YouTubeFilterParallel:
                 await page.goto(url, wait_until='domcontentloaded', timeout=30000)
 
                 try:
-                    await page.wait_for_selector('ytd-video-renderer', timeout=20000)
+                    await page.wait_for_selector('ytd-video-renderer, yt-lockup-view-model', timeout=20000)
                 except (asyncio.TimeoutError, Exception):
                     continue
 
-                resultados = await page.evaluate('''() => {
+                # YouTube mezcla el DOM viejo (ytd-video-renderer) con el nuevo
+                # (yt-lockup-view-model, usado para videos y playlists); hay que
+                # extraer de ambos en orden de aparición
+                resultados = await page.evaluate('''(maxVideos) => {
                     const items = [];
-                    const elements = Array.from(document.querySelectorAll('ytd-video-renderer')).slice(0, 10);
+                    const elements = Array.from(
+                        document.querySelectorAll('ytd-video-renderer, yt-lockup-view-model')
+                    ).slice(0, maxVideos);
                     for (const el of elements) {
-                        const titleEl = el.querySelector('#video-title');
-                        const title = titleEl ? (titleEl.textContent || titleEl.getAttribute('title') || '').trim() : '';
-                        const chEl = el.querySelector('ytd-channel-name #text a');
-                        const channel = chEl ? (chEl.textContent || '').trim() : '';
+                        let title = '', channel = '';
+                        if (el.tagName.toLowerCase() === 'ytd-video-renderer') {
+                            const titleEl = el.querySelector('#video-title');
+                            title = titleEl ? (titleEl.textContent || titleEl.getAttribute('title') || '').trim() : '';
+                            const chEl = el.querySelector('ytd-channel-name #text a');
+                            channel = chEl ? (chEl.textContent || '').trim() : '';
+                        } else {
+                            const titleEl = el.querySelector('h3');
+                            title = titleEl ? (titleEl.textContent || '').trim() : '';
+                            const chEl = el.querySelector('yt-content-metadata-view-model a');
+                            channel = chEl ? (chEl.textContent || '').trim() : '';
+                            if (!channel) {
+                                const meta = el.querySelector('yt-content-metadata-view-model');
+                                channel = meta ? (meta.textContent || '').split('•')[0].trim() : '';
+                            }
+                        }
                         items.push({title, channel});
                     }
                     return items;
-                }''')
+                }''', max_videos)
 
                 for item in resultados:
                     titulo = (item.get('title') or '')
@@ -257,10 +281,10 @@ class YouTubeFilterParallel:
 
         return False, None
 
-    async def procesar_release(self, release, page_idx, max_videos=10):
-        """Procesa un release usando una página específica"""
-        async with self.semaphore:
-            page = self.pages[page_idx % self.num_workers]
+    async def procesar_release(self, release, max_videos=10):
+        """Procesa un release con una página exclusiva del pool"""
+        page = await self.page_pool.get()
+        try:
             band = release.get('band', 'Unknown')
             album = release.get('album', 'Unknown')
             year = release.get('year')
@@ -270,7 +294,7 @@ class YouTubeFilterParallel:
             es_self_titled = _normalizar_texto(band) == _normalizar_texto(album)
 
             # Generar URLs de búsqueda
-            urls = generar_urls_busqueda(band, album, year, es_split=es_split)
+            urls = generar_urls_busqueda(band, album, year, es_split=es_split, tipo=tipo)
 
             # Self-titled: agregar "self titled" a la primera query
             if es_self_titled:
@@ -285,6 +309,8 @@ class YouTubeFilterParallel:
             )
 
             return release, es_mainstream, titulo
+        finally:
+            self.page_pool.put_nowait(page)
 
     async def cerrar(self):
         """Cierra el navegador"""
@@ -339,8 +365,8 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
 
         # Crear tareas para el lote
         tasks = []
-        for idx, release in enumerate(batch):
-            task = filtro.procesar_release(release, batch_start + idx, max_videos)
+        for release in batch:
+            task = filtro.procesar_release(release, max_videos)
             tasks.append(task)
 
         # Ejecutar lote en paralelo
