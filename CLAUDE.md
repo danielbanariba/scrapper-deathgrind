@@ -46,7 +46,7 @@ stdlib `unittest` with fakes: no test logs in or asks for links. `PYTHONDONTWRIT
 
 ## Commits and PRs
 
-Commits in English, Gitmoji + Conventional Commits, following `templates/commit-template.en.git.txt`. PR bodies follow `.github/pull_request_template.md`.
+Commits in English, Gitmoji + Conventional Commits, following `templates/commit-template.en.git.txt`. PR bodies follow `.github/pull_request_template.md`. Issues use the form `.github/ISSUE_TEMPLATE/pendiente.yml` (a bug, risk or improvement left for later).
 
 ## Architecture
 
