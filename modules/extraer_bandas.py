@@ -177,6 +177,7 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
     posts_filtrados_sello = 0
     posts_filtrados_descargados = 0
     posts_filtrados_fallidos = 0
+    posts_filtrados_tipo = 0
     offset = None
     retries_429 = 0
     retries_error = 0
@@ -252,6 +253,7 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
                 type_ids = post.get('type', [])
                 if tipos_permitidos:
                     if not any(tid in tipos_permitidos for tid in type_ids):
+                        posts_filtrados_tipo += 1
                         continue
                 album = post.get('album', 'Unknown')
                 year = post.get('releaseDate', [None])[0] if post.get('releaseDate') else None
@@ -324,7 +326,7 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
             time.sleep(wait_time)
 
     return (releases, bandas_encontradas, posts_total, posts_filtrados_sello,
-            posts_filtrados_descargados, posts_filtrados_fallidos)
+            posts_filtrados_descargados, posts_filtrados_fallidos, posts_filtrados_tipo)
 
 
 def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
@@ -340,6 +342,7 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
     posts_filtrados_sello = 0
     posts_filtrados_descargados = 0
     posts_filtrados_fallidos = 0
+    posts_filtrados_tipo = 0
     posts_ids_vistos = set()  # Para evitar duplicados entre géneros
     lock = threading.Lock()
 
@@ -358,10 +361,10 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
 
     def procesar_genero(args):
         idx, genre_id, genre_name = args
-        releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos = extraer_posts_genero(
+        releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos, filtrados_tipo = extraer_posts_genero(
             session_data, genre_id, genre_name, sellos_blacklist, tipos_permitidos, descargados, fallidos_posts, verbose
         )
-        return (idx, genre_name, releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos)
+        return (idx, genre_name, releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos, filtrados_tipo)
 
     tareas = [(i, gid, gname) for i, (gid, gname) in enumerate(generos)]
 
@@ -369,13 +372,14 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
         futures = {executor.submit(procesar_genero, t): t for t in tareas}
 
         for future in as_completed(futures):
-            idx, genre_name, releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos = future.result()
+            idx, genre_name, releases, bandas, posts, filtrados_sello, filtrados_desc, filtrados_fallidos, filtrados_tipo = future.result()
 
             with lock:
                 posts_total += posts
                 posts_filtrados_sello += filtrados_sello
                 posts_filtrados_descargados += filtrados_desc
                 posts_filtrados_fallidos += filtrados_fallidos
+                posts_filtrados_tipo += filtrados_tipo
 
                 nuevas_bandas = 0
                 for nombre, info in bandas.items():
@@ -394,13 +398,14 @@ def extraer_todo(session, generos, sellos_blacklist, tipos_permitidos,
                 completados[0] += 1
 
                 if verbose:
-                    filtrados_total = filtrados_sello + filtrados_desc + filtrados_fallidos
+                    filtrados_total = filtrados_sello + filtrados_desc + filtrados_fallidos + filtrados_tipo
                     print(f"\n[{completados[0]}/{len(generos)}] {genre_name}")
                     print(f"  → {posts} posts, {filtrados_total} filtrados, +{nuevas_bandas} bandas, +{nuevos_releases} releases")
                     print(f"     Total: {len(todas_bandas)} bandas, {len(todos_releases)} releases")
 
     return (todos_releases, list(todas_bandas.values()), posts_total,
-            posts_filtrados_sello, posts_filtrados_descargados, posts_filtrados_fallidos)
+            posts_filtrados_sello, posts_filtrados_descargados, posts_filtrados_fallidos,
+            posts_filtrados_tipo)
 
 
 def guardar_datos(bandas, releases, verbose=True):
@@ -453,10 +458,10 @@ def run(tipos_permitidos=None, verbose=True):
         print(f"✓ {len(sellos_blacklist)} sellos en blacklist")
         print(f"✓ {len(descargados)} releases ya descargados")
         print(f"✓ {len(fallidos_posts)} posts con links fallidos")
-        tipos_nombres = [TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos]
+        tipos_nombres = list(dict.fromkeys(TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos))
         print(f"✓ Tipos: {', '.join(tipos_nombres)}")
 
-    releases, bandas, posts_total, posts_filtrados_sello, posts_filtrados_desc, posts_filtrados_fallidos = extraer_todo(
+    releases, bandas, posts_total, posts_filtrados_sello, posts_filtrados_desc, posts_filtrados_fallidos, posts_filtrados_tipo = extraer_todo(
         session, generos, sellos_blacklist, tipos_permitidos, descargados, fallidos_posts, verbose
     )
 
@@ -470,6 +475,7 @@ def run(tipos_permitidos=None, verbose=True):
         print(f"Filtrados (sellos): {posts_filtrados_sello:,}")
         print(f"Filtrados (ya descargados): {posts_filtrados_desc:,}")
         print(f"Filtrados (bandas fallidas): {posts_filtrados_fallidos:,}")
+        print(f"Filtrados (tipo no seleccionado): {posts_filtrados_tipo:,}")
         print(f"Bandas únicas: {len(bandas):,}")
         print(f"Releases nuevos: {len(releases):,}")
 
