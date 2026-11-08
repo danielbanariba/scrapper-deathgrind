@@ -23,6 +23,7 @@ from modules.logger import setup_logger
 logger = setup_logger(__name__)
 
 # Tipos de disco disponibles
+# Nota: La API usa ID 9 como alias de EP (mismo tipo que ID 2)
 TIPOS_DISCO = {
     1: "Album",
     2: "EP",
@@ -30,7 +31,9 @@ TIPOS_DISCO = {
     4: "Single",
     5: "Split",
     6: "Compilation",
-    7: "Live"
+    7: "Live",
+    8: "Boxset",
+    9: "EP"
 }
 
 # Archivos a limpiar antes de cada ejecución
@@ -41,7 +44,8 @@ ARCHIVOS_LIMPIAR = [
     'data/releases_mainstream.txt',
     'data/repertorio_con_links.json',
     'data/links_descarga.txt',
-    'data/discografia_detalle.txt'
+    'data/discografia_detalle.txt',
+    'data/youtube_checkpoint.jsonl'
 ]
 
 
@@ -170,13 +174,13 @@ def seleccionar_tipos_disco():
     opcion = input("Opción [a]: ").strip().lower() or 'a'
 
     if opcion == 'a':
-        return [1, 2]
+        return [1, 2, 9]
     elif opcion == 'b':
         return [1]
     elif opcion == 'c':
-        return [2]
+        return [2, 9]
     elif opcion == 'd':
-        return [1, 2, 3, 5, 6, 7]
+        return [t for t in TIPOS_DISCO if t != 4]
     elif opcion == 'e':
         return list(TIPOS_DISCO.keys())
     elif opcion == 'f':
@@ -186,7 +190,7 @@ def seleccionar_tipos_disco():
         ids = input("IDs separados por coma (ej: 1,2,3): ").strip()
         return [int(x.strip()) for x in ids.split(',') if x.strip().isdigit()]
 
-    return [1, 2]
+    return [1, 2, 9]
 
 
 def preguntar_headless():
@@ -380,7 +384,7 @@ def main():
 
     # Seleccionar tipos
     tipos_permitidos = seleccionar_tipos_disco()
-    tipos_nombres = [TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos]
+    tipos_nombres = list(dict.fromkeys(TIPOS_DISCO.get(t, str(t)) for t in tipos_permitidos))
     print(f"\n✓ Tipos seleccionados: {', '.join(tipos_nombres)}")
 
     # Preguntar modo headless
