@@ -36,6 +36,18 @@ python main.py
 
 Interactive prompts ask for: disc types, headless mode, resume vs clean start. No CLI flags.
 
+## Tests
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 env/bin/python -m unittest discover -s tests -t .
+```
+
+stdlib `unittest` with fakes: no test logs in or asks for links. `PYTHONDONTWRITEBYTECODE=1` keeps the tracked `modules/__pycache__/*.pyc` unchanged.
+
+## Commits and PRs
+
+Commits in English, Gitmoji + Conventional Commits, following `templates/commit-template.en.git.txt`. PR bodies follow `.github/pull_request_template.md`.
+
 ## Architecture
 
 ### Pipeline (`main.py`)
