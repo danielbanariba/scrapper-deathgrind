@@ -3,9 +3,13 @@
 Utilidades compartidas para el scraper de DeathGrind.club
 """
 
+import importlib.util
 import os
+import re
 import time
 import random
+from pathlib import Path
+
 import requests
 
 from modules.logger import setup_logger
@@ -41,6 +45,12 @@ MAX_BACKOFF_429 = 300
 DEFAULT_USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) Chrome/131.0.0.0 Safari/537.36"
 DEFAULT_UUID = "12345"
 
+# El login valida el token impreso en la página de sign-in, no el de la cookie (si no, 419)
+P_CSRF_DE_LA_PAGINA = re.compile(r'"csrfToken"\s*:\s*"([^"]+)"')
+
+# click-auto-editor guarda el registro de los álbumes ya publicados en el canal
+DIR_CLICK_AUTO_EDITOR = Path.home() / "Desktop" / "click-auto-editor"
+
 
 # =============================================================================
 # Funciones compartidas
@@ -65,6 +75,12 @@ def cargar_env():
                     os.environ[key] = val
 
 
+def token_csrf_de_la_pagina(session, html):
+    """El token de window.__USER_DATA__ en la página; el de la cookie si no está."""
+    coincidencia = P_CSRF_DE_LA_PAGINA.search(html or "")
+    return coincidencia.group(1) if coincidencia else session.cookies.get_dict().get("csrfToken", "")
+
+
 def crear_sesion_autenticada(max_retries=3):
     """Login con retry y retorna sesión autenticada"""
     email = os.environ.get('DEATHGRIND_EMAIL')
@@ -81,9 +97,8 @@ def crear_sesion_autenticada(max_retries=3):
                 'Accept': 'application/json',
             })
 
-            session.get(f"{BASE_URL}/auth/sign-in")
-            cookies = session.cookies.get_dict()
-            csrf_token = cookies.get('csrfToken', '')
+            pagina = session.get(f"{BASE_URL}/auth/sign-in")
+            csrf_token = token_csrf_de_la_pagina(session, pagina.text)
 
             login_data = {"login": email, "password": password}
             headers = {'x-csrf-token': csrf_token, 'x-uuid': DEFAULT_UUID}
@@ -122,6 +137,22 @@ def cargar_sellos_blacklist():
                 if sello:
                     sellos.add(sello)
     return sellos
+
+
+def cargar_publicados():
+    """El registro de álbumes ya publicados de click-auto-editor, o None si no está su código.
+
+    Usa su propio registro_publicados.py para que la clave "banda|álbum" sea la misma.
+    La carpeta sale de CLICK_AUTO_EDITOR_DIR (por defecto ~/Desktop/click-auto-editor).
+    """
+    base = Path(os.environ.get("CLICK_AUTO_EDITOR_DIR") or DIR_CLICK_AUTO_EDITOR).expanduser()
+    codigo = base / "registro_publicados.py"
+    if not codigo.is_file():
+        return None
+    spec = importlib.util.spec_from_file_location("registro_publicados", codigo)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+    return modulo.leer(base / "data" / "agente" / "ya_publicados.tsv")
 
 
 def delay_con_jitter(base, factor=0.3):
