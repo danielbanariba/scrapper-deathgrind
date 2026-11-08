@@ -36,6 +36,23 @@ print_lock = threading.Lock()
 # Thread-local storage para sesiones HTTP
 _thread_local = threading.local()
 
+# Lo que responde /posts/<id>/links (403) cuando la cuenta se queda sin créditos de descarga
+ERROR_SIN_CREDITOS = "DOWNLOAD_CREDITS_EXHAUSTED"
+
+
+class SinCreditosError(Exception):
+    """DeathGrind no da más links: la cuenta se quedó sin créditos de descarga."""
+
+
+def _sin_creditos(response):
+    if response.status_code != 403:
+        return False
+    try:
+        cuerpo = response.json()
+    except ValueError:
+        return False
+    return isinstance(cuerpo, dict) and cuerpo.get('errorCode') == ERROR_SIN_CREDITOS
+
 
 def _get_thread_session(session_data):
     """Obtiene o crea una sesión HTTP para el thread actual (connection pooling)"""
@@ -65,7 +82,7 @@ def preparar_session_data(session):
     }
 
 
-def extraer_links_post(session_data, release, max_retries=10):
+def extraer_links_post(session_data, release, max_retries=10, sin_creditos=None):
     """
     Extrae links de descarga de un post via API
 
@@ -73,9 +90,13 @@ def extraer_links_post(session_data, release, max_retries=10):
         session_data: Datos de sesión para crear la conexión
         release: Diccionario con datos del release
         max_retries: Número de reintentos en caso de error
+        sin_creditos: threading.Event que se marca al quedarse sin créditos
 
     Returns:
         tuple: (release_actualizado, num_links)
+
+    Raises:
+        SinCreditosError: sin créditos de descarga; el release queda sin download_links
     """
     post_id = release.get('post_id')
 
@@ -89,6 +110,10 @@ def extraer_links_post(session_data, release, max_retries=10):
         try:
             # Pequeña pausa para no saturar
             delay_con_jitter(DELAY_ENTRE_REQUESTS)
+
+            # Justo antes del pedido: otro worker pudo quedarse sin créditos durante la pausa
+            if sin_creditos is not None and sin_creditos.is_set():
+                raise SinCreditosError()
 
             # Obtener links via API
             response = session.get(
@@ -127,6 +152,12 @@ def extraer_links_post(session_data, release, max_retries=10):
                 release['download_links'] = []
                 return release, 0
 
+            elif _sin_creditos(response):
+                # Reintentar no sirve: se avisa a los demás workers y se para
+                if sin_creditos is not None:
+                    sin_creditos.set()
+                raise SinCreditosError()
+
             else:
                 retries_error += 1
                 time.sleep(5)
@@ -155,10 +186,12 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
         list: Repertorio con links agregados
     """
     session_data = preparar_session_data(session)
+    sin_creditos = threading.Event()
 
     total = len(repertorio)
     procesados = 0
     con_links = 0
+    sin_pedir = 0
 
     if verbose:
         print(f"\n🔗 Extrayendo links con {num_workers} workers...")
@@ -166,7 +199,7 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         # Crear tareas
         futures = {
-            executor.submit(extraer_links_post, session_data, release): idx
+            executor.submit(extraer_links_post, session_data, release, sin_creditos=sin_creditos): idx
             for idx, release in enumerate(repertorio)
         }
 
@@ -194,8 +227,15 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
                             pct = (procesados / total) * 100
                             print(f"[{procesados}/{total}] ({pct:.0f}%) - {con_links} con links")
 
+            except SinCreditosError:
+                sin_pedir += 1
             except (requests.RequestException, KeyError, TypeError):
                 pass
+
+    if sin_pedir:
+        # Siempre se avisa, también sin verbose: si no, parece que no había links
+        print(f"\n❌ DeathGrind no da más links: la cuenta se quedó sin créditos de descarga. "
+              f"{sin_pedir} releases quedan sin pedir (no se marcan como sin links).")
 
     if verbose:
         print(f"\n✓ {procesados} releases procesados")

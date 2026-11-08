@@ -1,0 +1,87 @@
+"""Link extraction against fakes: the site is never contacted and no credit is spent."""
+
+import json
+import os
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
+from unittest import mock
+
+from modules import extraer_links, utils
+
+
+class _Respuesta:
+    def __init__(self, status_code, cuerpo):
+        self.status_code = status_code
+        self._cuerpo = cuerpo
+
+    def json(self):
+        return self._cuerpo
+
+
+class _SesionLinks:
+    """Gives one link per post until `con_creditos` posts were asked, then 403 like the site."""
+
+    def __init__(self, con_creditos):
+        self.con_creditos = con_creditos
+        self.pedidos = []
+
+    def get(self, url, **kwargs):
+        self.pedidos.append(url)
+        if len(self.pedidos) > self.con_creditos:
+            return _Respuesta(403, {"error": "", "errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"})
+        post_id = url.rstrip("/").split("/")[-2]
+        return _Respuesta(200, {"links": [{"href": f"https://mega.nz/file/{post_id}"}]})
+
+
+class _SesionLogin:
+    headers = {}
+    cookies = {}
+
+
+def _release(post_id, band, album):
+    return {"post_id": post_id, "band": band, "album": album, "year": 2024,
+            "type": "Album", "post_url": f"https://deathgrind.club/posts/{post_id}"}
+
+
+class ExtraerLinks(unittest.TestCase):
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp)
+        cwd = os.getcwd()
+        os.chdir(self.tmp)  # run() writes to data/ under the current directory
+        self.addCleanup(os.chdir, cwd)
+        for objetivo, valor in (
+            ("crear_sesion_autenticada", lambda: _SesionLogin()),
+            ("cargar_env", lambda: None),
+            ("delay_con_jitter", lambda *a, **k: None),
+        ):
+            parche = mock.patch.object(extraer_links, objetivo, valor)
+            parche.start()
+            self.addCleanup(parche.stop)
+        parche = mock.patch.object(extraer_links.time, "sleep", lambda s: None)
+        parche.start()
+        self.addCleanup(parche.stop)
+
+    def _correr(self, repertorio, sesion):
+        entrada = self.tmp / "repertorio_filtrado.json"
+        entrada.write_text(json.dumps(repertorio), encoding="utf-8")
+        with mock.patch.object(extraer_links, "_get_thread_session", return_value=sesion):
+            extraer_links.run(verbose=False, num_workers=1, input_file=str(entrada))
+        salida = self.tmp / utils.REPERTORIO_CON_LINKS_FILE
+        return json.loads(salida.read_text(encoding="utf-8"))
+
+    def test_sin_creditos_deja_de_pedir_links_y_no_marca_lo_que_no_pidio(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
+        sesion = _SesionLinks(con_creditos=1)
+
+        resultado = self._correr(repertorio, sesion)
+
+        self.assertEqual(len(sesion.pedidos), 2)
+        self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
+        self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
+
+
+if __name__ == "__main__":
+    unittest.main()
