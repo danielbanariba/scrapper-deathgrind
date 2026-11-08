@@ -44,7 +44,7 @@ Interactive prompts ask for: disc types, headless mode, resume vs clean start. N
 ejecutar_pipeline() — 3 steps:
   Step 1: extraer_bandas.run()        → API scrape, filter by label/downloaded/failed → data/repertorio.json
   Step 2: filtrar_youtube.run()       → Playwright async, parallel YouTube search     → data/repertorio_filtrado.json
-  Step 3: extraer_links.run()         → API scrape, parallel link extraction          → data/repertorio_con_links.json
+  Step 3: extraer_links.run()         → skip published albums, parallel link extraction → data/repertorio_con_links.json
 
 ejecutar_descarga() — separate call after pipeline:
   Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files
@@ -68,6 +68,7 @@ Resume mode only skips the initial extraction step when `data/repertorio.json` a
 - **Rate limiting**: All API modules retry indefinitely on HTTP 429 with exponential backoff (base 30s, max 300s). `delay_con_jitter()` adds randomness to all delays.
 - **Authentication**: `crear_sesion_autenticada()` in `utils.py` handles login, CSRF token extraction, and session setup. All API modules reuse this. The login sends the `csrfToken` printed in the sign-in page (`window.__USER_DATA__`), not the `csrfToken` cookie: the cookie one gets HTTP 419. It falls back to the cookie when the page has no token. Several logins in a row lock the account for a while (403), so tests use fakes and never log in.
 - **Download credits**: `GET /posts/{id}/links` depends on the account's download credits (the site says a like adds 1, a repaired link 5 and a donated dollar 10). With none left the site answers 403 `{"errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"}`. `extraer_links.py` then stops asking for links in every worker and prints how many releases were not asked; those keep no `download_links` key (they are not marked as having no links). The links already obtained are saved and downloaded.
+- **Published albums**: before asking for links, `extraer_links.run()` drops the releases already in click-auto-editor's registry (`data/agente/ya_publicados.tsv`) and prints up to 10 of them. It loads click-auto-editor's own `registro_publicados.py` (`utils.cargar_publicados()`), so the "band\|album" key is the same one the publishing service uses (no case, accents, signs, year or type tag). If that code is not found it warns and skips nothing.
 - **Thread-local sessions**: `extraer_bandas.py` and `extraer_links.py` use `threading.local()` to give each worker its own `requests.Session` with connection pooling.
 - **YouTube filter**: Revalidates the full current repertory on every run; no YouTube cache is used.
 - **Failed posts tracking**: `data/fallidos_bandas.txt` tracks posts with broken links, auto-expires after 30 days.
@@ -90,7 +91,7 @@ Auth headers: x-csrf-token, x-uuid, Cookie (authToken, csrfToken)
 
 | File                                     | Purpose                                                 |
 | ---------------------------------------- | ------------------------------------------------------- |
-| `.env`                                   | `DEATHGRIND_EMAIL`, `DEATHGRIND_PASSWORD`               |
+| `.env`                                   | `DEATHGRIND_EMAIL`, `DEATHGRIND_PASSWORD`; optional `CLICK_AUTO_EDITOR_DIR` (default `~/Desktop/click-auto-editor`) |
 | `generos_activos.txt`                    | TSV: genre ID, article count, name (header row skipped) |
 | `lista_sello.txt`                        | Label blacklist (one per line)                          |
 | `keywords_album.txt` / `keywords_ep.txt` | YouTube mainstream detection keywords                   |

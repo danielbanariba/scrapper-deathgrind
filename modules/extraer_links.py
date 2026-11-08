@@ -17,7 +17,7 @@ import threading
 from modules.utils import (
     API_URL, DELAY_BASE_429, MAX_BACKOFF_429,
     REPERTORIO_FILTRADO_FILE, REPERTORIO_CON_LINKS_FILE, LINKS_FILE, DETALLE_FILE,
-    cargar_env, crear_sesion_autenticada,
+    cargar_env, cargar_publicados, crear_sesion_autenticada,
     delay_con_jitter,
 )
 
@@ -243,6 +243,29 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
     return repertorio
 
 
+def sacar_publicados(repertorio, verbose=True):
+    """Saca los releases que ya están en el canal, para no gastar créditos en ellos."""
+    registro = cargar_publicados()
+    if registro is None:
+        print("⚠️ No encontré registro_publicados.py de click-auto-editor "
+              "(CLICK_AUTO_EDITOR_DIR): no se saltea lo ya publicado")
+        return repertorio
+    quedan, publicados = [], []
+    for release in repertorio:
+        nombre = f"{release.get('band', '')} - {release.get('album', '')}"
+        if registro.buscar(nombre):
+            publicados.append(nombre)
+        else:
+            quedan.append(release)
+    if verbose and publicados:
+        print(f"⏭️  {len(publicados)} releases ya publicados en el canal, no se piden sus links:")
+        for nombre in publicados[:10]:
+            print(f"   • {nombre}")
+        if len(publicados) > 10:
+            print(f"   … y {len(publicados) - 10} más")
+    return quedan
+
+
 def guardar_resultados(repertorio, output_json=OUTPUT_JSON, output_txt=OUTPUT_TXT,
                        output_detalle=OUTPUT_DETALLE, verbose=True):
     """Guarda los resultados en múltiples formatos"""
@@ -318,6 +341,7 @@ def run(verbose=True, num_workers=None, input_file=None):
         print("✓ Sesión iniciada")
 
     repertorio = cargar_repertorio(input_file or INPUT_FILE)
+    repertorio = sacar_publicados(repertorio, verbose=verbose)
     if verbose:
         print(f"✓ {len(repertorio)} releases, {num_workers} workers")
 

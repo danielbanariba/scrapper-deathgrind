@@ -1,5 +1,6 @@
 """Link extraction against fakes: the site is never contacted and no credit is spent."""
 
+import importlib.util
 import json
 import os
 import shutil
@@ -63,6 +64,10 @@ class ExtraerLinks(unittest.TestCase):
         parche = mock.patch.object(extraer_links.time, "sleep", lambda s: None)
         parche.start()
         self.addCleanup(parche.stop)
+        # No click-auto-editor next to the tests unless a test puts one there.
+        parche = mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(self.tmp / "sin-editor")})
+        parche.start()
+        self.addCleanup(parche.stop)
 
     def _correr(self, repertorio, sesion):
         entrada = self.tmp / "repertorio_filtrado.json"
@@ -81,6 +86,28 @@ class ExtraerLinks(unittest.TestCase):
         self.assertEqual(len(sesion.pedidos), 2)
         self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
+
+    def test_no_pide_links_de_lo_ya_publicado(self):
+        origen = Path(os.environ.get("CLICK_AUTO_EDITOR_REAL", utils.DIR_CLICK_AUTO_EDITOR))
+        codigo = origen.expanduser() / "registro_publicados.py"
+        if not codigo.is_file():
+            self.skipTest(f"no está {codigo}")
+        editor = self.tmp / "editor"
+        editor.mkdir()
+        shutil.copy(codigo, editor / "registro_publicados.py")
+        spec = importlib.util.spec_from_file_location("registro_de_prueba", editor / "registro_publicados.py")
+        registro = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(registro)
+        registro.anotar(editor / "data" / "agente" / "ya_publicados.tsv",
+                        [("Pigto - The Collector", "subir", "abc123")])
+        repertorio = [_release(7, "PIGTO", "The Collector"), _release(8, "Otra Banda", "Disco")]
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}):
+            resultado = self._correr(repertorio, sesion)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/8/links"])
+        self.assertEqual([r["post_id"] for r in resultado], [8])
 
 
 if __name__ == "__main__":
