@@ -155,13 +155,15 @@ def _es_fecha(s):
 
 def post_en_blacklist(post, sellos_blacklist):
     """Verifica si un post está en un sello problemático"""
-    labels = post.get('label', [])
-    if isinstance(labels, str):
+    # La API da `labels` como [{"name": ..., "labelId": ...}]; antes era `label` con textos
+    labels = post.get('labels') or post.get('label') or []
+    if isinstance(labels, (str, dict)):
         labels = [labels]
 
     for label in labels:
-        if str(label).strip().lower() in sellos_blacklist:
-            return True, label
+        nombre = label.get('name', '') if isinstance(label, dict) else label
+        if str(nombre).strip().lower() in sellos_blacklist:
+            return True, nombre
     return False, None
 
 
@@ -178,7 +180,7 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
     posts_filtrados_descargados = 0
     posts_filtrados_fallidos = 0
     posts_filtrados_tipo = 0
-    offset = None
+    cursor = None
     retries_429 = 0
     retries_error = 0
     max_retries_error = 5
@@ -191,8 +193,8 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
     while True:
         try:
             params = {'genres': genre_id}
-            if offset is not None:
-                params['offset'] = offset
+            if cursor is not None:
+                params['cursor'] = cursor
 
             r = session.get(
                 f"{API_URL}/posts/filter",
@@ -249,8 +251,8 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
                     posts_filtrados_sello += 1
                     continue
 
-                # Filtrar por tipo de disco
-                type_ids = post.get('type', [])
+                # Filtrar por tipo de disco (la API lo da en `releaseTypes`; antes era `type`)
+                type_ids = post.get('releaseTypes') or post.get('type') or []
                 if tipos_permitidos:
                     if not any(tid in tipos_permitidos for tid in type_ids):
                         posts_filtrados_tipo += 1
@@ -304,12 +306,12 @@ def extraer_posts_genero(session_data, genre_id, genre_name, sellos_blacklist, t
                     'post_url': f"{BASE_URL}/posts/{post_id}"
                 })
 
-            # Verificar si hay más páginas
+            # Verificar si hay más páginas: la siguiente se pide con el `nextCursor` de esta
             if not data.get('hasMore', False):
                 break
 
-            offset = data.get('offset')
-            if offset is None:
+            cursor = data.get('nextCursor')
+            if cursor is None:
                 break
 
             delay_con_jitter(DELAY_ENTRE_PAGINAS)
