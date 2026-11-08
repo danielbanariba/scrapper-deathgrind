@@ -66,7 +66,7 @@ Resume mode only skips the initial extraction step when `data/repertorio.json` a
 ### Key Patterns
 
 - **Rate limiting**: All API modules retry indefinitely on HTTP 429 with exponential backoff (base 30s, max 300s). `delay_con_jitter()` adds randomness to all delays.
-- **Authentication**: `crear_sesion_autenticada()` in `utils.py` handles login, CSRF token extraction, and session setup. All API modules reuse this.
+- **Authentication**: `crear_sesion_autenticada()` in `utils.py` handles login, CSRF token extraction, and session setup. All API modules reuse this. The login sends the `csrfToken` printed in the sign-in page (`window.__USER_DATA__`), not the `csrfToken` cookie: the cookie one gets HTTP 419. It falls back to the cookie when the page has no token. Several logins in a row lock the account for a while (403), so tests use fakes and never log in.
 - **Thread-local sessions**: `extraer_bandas.py` and `extraer_links.py` use `threading.local()` to give each worker its own `requests.Session` with connection pooling.
 - **YouTube filter**: Revalidates the full current repertory on every run; no YouTube cache is used.
 - **Failed posts tracking**: `data/fallidos_bandas.txt` tracks posts with broken links, auto-expires after 30 days.
