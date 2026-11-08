@@ -27,6 +27,20 @@ INPUT_FILE = "data/repertorio.json"
 OUTPUT_FILE = "data/repertorio_filtrado.json"
 OUTPUT_RECHAZADOS = "data/releases_mainstream.txt"
 
+# Checkpoint de reanudación DENTRO de una misma corrida: persiste el progreso
+# release por release para que un corte (freeze, Ctrl+C, crash) no obligue a
+# re-verificar todo desde cero. Se BORRA al terminar OK, por lo que cada corrida
+# nueva vuelve a revalidar el repertorio (no es un caché entre corridas).
+CHECKPOINT_FILE = "data/youtube_checkpoint.jsonl"
+
+# Topes de tiempo: ninguna verificación puede colgar el proceso para siempre.
+EVALUATE_TIMEOUT = 15   # seg. máx. para extraer resultados del DOM de YouTube
+RELEASE_TIMEOUT = 120   # seg. máx. por release (red de seguridad dura)
+
+# Tope de páginas paralelas: más que esto dispara detección de bots de YouTube
+# y presión de memoria (cada contexto Chromium pesa varios cientos de MB).
+MAX_WORKERS_YT = 5
+
 # Keywords que indican que el album está disponible (mainstream)
 KEYWORDS_MAINSTREAM = []
 
@@ -131,6 +145,38 @@ def cargar_repertorio(input_file=INPUT_FILE):
         return json.load(f)
 
 
+def _cargar_checkpoint(repertorio_ids):
+    """Reconstruye el progreso de una corrida cortada desde CHECKPOINT_FILE.
+
+    Devuelve (aprobados, rechazados, procesados_ids). Solo considera releases
+    cuyo post_id sigue en el repertorio actual e ignora líneas corruptas (p. ej.
+    la última a medio escribir si hubo un corte abrupto).
+    """
+    aprobados, rechazados, procesados_ids = [], [], set()
+    if not os.path.exists(CHECKPOINT_FILE):
+        return aprobados, rechazados, procesados_ids
+
+    with open(CHECKPOINT_FILE, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            pid = str(obj.get('post_id'))
+            release = obj.get('release')
+            if release is None or pid in procesados_ids or pid not in repertorio_ids:
+                continue
+            procesados_ids.add(pid)
+            if obj.get('mainstream'):
+                rechazados.append({**release, 'razon': obj.get('razon', '')})
+            else:
+                aprobados.append(release)
+    return aprobados, rechazados, procesados_ids
+
+
 def generar_urls_busqueda(band, album, year=None, es_split=False, tipo=None):
     """Genera 2 URLs de búsqueda en YouTube (doble búsqueda)"""
     # Sufijo de la query 2 según tipo de disco: EP busca "full ep", el resto "full album"
@@ -187,10 +233,8 @@ class YouTubeFilterParallel:
             self.contexts.append(context)
             self.pages.append(page)
 
-        # Pool de páginas: cada tarea toma una página en exclusiva y la devuelve al terminar
-        self.page_pool = asyncio.Queue()
-        for page in self.pages:
-            self.page_pool.put_nowait(page)
+        # Cada worker usa su propia página de self.pages (una por worker); ya no
+        # hay pool compartido ni contención entre tareas.
 
     async def verificar_disponibilidad(self, page, urls, band, album, tipo, max_videos=10):
         """
@@ -216,7 +260,7 @@ class YouTubeFilterParallel:
                 # YouTube mezcla el DOM viejo (ytd-video-renderer) con el nuevo
                 # (yt-lockup-view-model, usado para videos y playlists); hay que
                 # extraer de ambos en orden de aparición
-                resultados = await page.evaluate('''(maxVideos) => {
+                resultados = await asyncio.wait_for(page.evaluate('''(maxVideos) => {
                     const items = [];
                     const elements = Array.from(
                         document.querySelectorAll('ytd-video-renderer, yt-lockup-view-model')
@@ -241,7 +285,7 @@ class YouTubeFilterParallel:
                         items.push({title, channel});
                     }
                     return items;
-                }''', max_videos)
+                }''', max_videos), timeout=EVALUATE_TIMEOUT)
 
                 for item in resultados:
                     titulo = (item.get('title') or '')
@@ -281,36 +325,32 @@ class YouTubeFilterParallel:
 
         return False, None
 
-    async def procesar_release(self, release, max_videos=10):
-        """Procesa un release con una página exclusiva del pool"""
-        page = await self.page_pool.get()
-        try:
-            band = release.get('band', 'Unknown')
-            album = release.get('album', 'Unknown')
-            year = release.get('year')
-            tipo = release.get('type', '')
+    async def procesar_release(self, release, page, max_videos=10):
+        """Procesa un release usando la página asignada a su worker"""
+        band = release.get('band', 'Unknown')
+        album = release.get('album', 'Unknown')
+        year = release.get('year')
+        tipo = release.get('type', '')
 
-            es_split = " / " in band
-            es_self_titled = _normalizar_texto(band) == _normalizar_texto(album)
+        es_split = " / " in band
+        es_self_titled = _normalizar_texto(band) == _normalizar_texto(album)
 
-            # Generar URLs de búsqueda
-            urls = generar_urls_busqueda(band, album, year, es_split=es_split, tipo=tipo)
+        # Generar URLs de búsqueda
+        urls = generar_urls_busqueda(band, album, year, es_split=es_split, tipo=tipo)
 
-            # Self-titled: agregar "self titled" a la primera query
-            if es_self_titled:
-                if year:
-                    q_st = f"{band} {album} self titled {year}"
-                else:
-                    q_st = f"{band} {album} self titled"
-                urls[0] = f"https://www.youtube.com/results?search_query={urllib.parse.quote(q_st)}"
+        # Self-titled: agregar "self titled" a la primera query
+        if es_self_titled:
+            if year:
+                q_st = f"{band} {album} self titled {year}"
+            else:
+                q_st = f"{band} {album} self titled"
+            urls[0] = f"https://www.youtube.com/results?search_query={urllib.parse.quote(q_st)}"
 
-            es_mainstream, titulo = await self.verificar_disponibilidad(
-                page, urls, band, album, tipo, max_videos
-            )
+        es_mainstream, titulo = await self.verificar_disponibilidad(
+            page, urls, band, album, tipo, max_videos
+        )
 
-            return release, es_mainstream, titulo
-        finally:
-            self.page_pool.put_nowait(page)
+        return release, es_mainstream, titulo
 
     async def cerrar(self):
         """Cierra el navegador"""
@@ -323,26 +363,37 @@ class YouTubeFilterParallel:
 
 
 async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
-                               max_videos=10, num_workers=5, batch_size=20):
+                               max_videos=10, num_workers=5):
     """
-    Filtra releases verificando disponibilidad en YouTube (PARALELO)
+    Filtra releases verificando disponibilidad en YouTube (PARALELO).
 
-    Args:
-        repertorio: Lista de releases
-        keywords: Lista de keywords que indican mainstream
-        headless: Ejecutar sin ventana
-        verbose: Mostrar progreso
-        max_videos: Cuántos videos analizar por búsqueda
-        num_workers: Número de páginas paralelas
-        batch_size: Tamaño del lote para procesar
+    Modelo de workers: se crea UNA página por worker y cada worker consume
+    releases de una cola hasta vaciarla. No hay barrera por lote: si un release
+    tarda o se cuelga, no frena a los demás. Cada release tiene un tope duro de
+    tiempo (RELEASE_TIMEOUT) para que nada bloquee el proceso indefinidamente.
+
+    El progreso se persiste release por release en CHECKPOINT_FILE, así un corte
+    (freeze, Ctrl+C, crash) se reanuda sin re-verificar lo ya hecho.
 
     Returns:
         tuple: (releases_aprobados, releases_rechazados)
     """
-    aprobados = []
-    rechazados = []
+    # Reanudar desde checkpoint si una corrida previa quedó a medias
+    repertorio_ids = {str(r.get('post_id')) for r in repertorio}
+    aprobados, rechazados, procesados_ids = _cargar_checkpoint(repertorio_ids)
+
+    total = len(repertorio)
     if verbose:
-        print("🔄 Sin caché: se verificarán todos los releases del repertorio actual")
+        if procesados_ids:
+            print(f"🔁 Reanudando corrida previa: {len(procesados_ids)}/{total} ya verificados")
+        else:
+            print("🔄 Corrida nueva: se verificarán todos los releases del repertorio")
+
+    pendientes = [r for r in repertorio if str(r.get('post_id')) not in procesados_ids]
+    if not pendientes:
+        if verbose:
+            print("✓ No hay releases pendientes; todo estaba verificado")
+        return aprobados, rechazados
 
     filtro = YouTubeFilterParallel(num_workers=num_workers)
     filtro.keywords = keywords
@@ -350,61 +401,62 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
 
     if verbose:
         print(f"\n🌐 Iniciando navegador con {num_workers} workers paralelos...")
-
     await filtro.iniciar_browser(headless=headless)
-
     if verbose:
-        print("✓ Navegador listo\n")
+        print(f"✓ Navegador listo — {len(pendientes)} pendientes\n")
 
-    total = len(repertorio)
-    procesados = 0
+    cola = asyncio.Queue()
+    for release in pendientes:
+        cola.put_nowait(release)
 
-    # Procesar en lotes
-    for batch_start in range(0, total, batch_size):
-        batch = repertorio[batch_start:batch_start + batch_size]
+    lock = asyncio.Lock()
+    progreso = {'n': len(procesados_ids)}
+    checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
 
-        # Crear tareas para el lote
-        tasks = []
-        for release in batch:
-            task = filtro.procesar_release(release, max_videos)
-            tasks.append(task)
-
-        # Ejecutar lote en paralelo
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-
-        # Procesar resultados
-        for i, result in enumerate(results):
-            if isinstance(result, Exception):
-                release = batch[i]
-                aprobados.append(release)  # Asumir underground en error
-                procesados += 1
-                continue
-
-            release, es_mainstream, titulo = result
-            procesados += 1
-
-            band = release.get('band', 'Unknown')
-            album = release.get('album', 'Unknown')
-            year = release.get('year', '')
-            razon = titulo[:50] if titulo else 'keyword'
-
+    async def registrar(release, es_mainstream, titulo):
+        razon = (titulo[:50] if titulo else 'keyword')
+        async with lock:
             if es_mainstream:
                 rechazados.append({**release, 'razon': razon})
-                if verbose:
-                    year_str = f"({year})" if year else ""
-                    print(f"[{procesados}/{total}] {band} - {album} {year_str} ❌ Mainstream")
             else:
                 aprobados.append(release)
-                if verbose:
-                    year_str = f"({year})" if year else ""
-                    print(f"[{procesados}/{total}] {band} - {album} {year_str} ✓ Underground")
+            checkpoint.write(json.dumps({
+                'post_id': release.get('post_id'),
+                'mainstream': bool(es_mainstream),
+                'razon': razon if es_mainstream else '',
+                'release': release,
+            }, ensure_ascii=False) + '\n')
+            checkpoint.flush()
+            progreso['n'] += 1
+            if verbose:
+                band = release.get('band', 'Unknown')
+                album = release.get('album', 'Unknown')
+                year = release.get('year', '')
+                year_str = f"({year})" if year else ""
+                estado = "❌ Mainstream" if es_mainstream else "✓ Underground"
+                print(f"[{progreso['n']}/{total}] {band} - {album} {year_str} {estado}")
 
-        # Mostrar progreso del lote
-        if verbose:
-            pct = (procesados / total) * 100
-            print(f"\n📊 Progreso: {procesados}/{total} ({pct:.1f}%) - Underground: {len(aprobados)}, Mainstream: {len(rechazados)}\n")
+    async def worker(page):
+        while True:
+            try:
+                release = cola.get_nowait()
+            except asyncio.QueueEmpty:
+                return
+            try:
+                _, es_mainstream, titulo = await asyncio.wait_for(
+                    filtro.procesar_release(release, page, max_videos),
+                    timeout=RELEASE_TIMEOUT,
+                )
+            except Exception:
+                # Timeout o cualquier error → se asume underground y se sigue
+                es_mainstream, titulo = False, None
+            await registrar(release, es_mainstream, titulo)
 
-    await filtro.cerrar()
+    try:
+        await asyncio.gather(*[asyncio.create_task(worker(p)) for p in filtro.pages])
+    finally:
+        checkpoint.close()
+        await filtro.cerrar()
 
     return aprobados, rechazados
 
@@ -457,6 +509,10 @@ def run(headless=True, verbose=True, max_videos=10, num_workers=None,
         except ImportError:
             num_workers = min((os.cpu_count() or 4) - 1, 6)
 
+    # Tope duro: con muchos workers YouTube detecta el patrón de bot y la RAM
+    # sufre (cada contexto Chromium pesa). 5 es el punto sano para este filtro.
+    num_workers = max(1, min(num_workers, MAX_WORKERS_YT))
+
     # Cargar keywords
     keywords = cargar_keywords()
     if verbose:
@@ -481,6 +537,11 @@ def run(headless=True, verbose=True, max_videos=10, num_workers=None,
 
     # Guardar
     guardar_resultados(aprobados, rechazados, verbose=verbose)
+
+    # Corrida completada OK → borrar checkpoint para que la próxima sea fresca
+    # (no es un caché entre corridas: solo sirve para reanudar cortes)
+    if os.path.exists(CHECKPOINT_FILE):
+        os.remove(CHECKPOINT_FILE)
 
     # Estadísticas
     if verbose:

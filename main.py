@@ -44,7 +44,8 @@ ARCHIVOS_LIMPIAR = [
     'data/releases_mainstream.txt',
     'data/repertorio_con_links.json',
     'data/links_descarga.txt',
-    'data/discografia_detalle.txt'
+    'data/discografia_detalle.txt',
+    'data/youtube_checkpoint.jsonl'
 ]
 
 
