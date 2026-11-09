@@ -177,6 +177,31 @@ def _cargar_checkpoint(repertorio_ids):
     return aprobados, rechazados, procesados_ids
 
 
+def _abrir_checkpoint():
+    """Abre CHECKPOINT_FILE para agregar registros.
+
+    Si un corte dejó la última línea a medias (sin salto de línea), la cierra
+    antes de agregar: si no, el primer registro nuevo quedaría pegado al
+    fragmento y _cargar_checkpoint lo descartaría como línea corrupta.
+    """
+    termina_en_salto = True
+    if os.path.exists(CHECKPOINT_FILE) and os.path.getsize(CHECKPOINT_FILE) > 0:
+        with open(CHECKPOINT_FILE, 'rb') as f:
+            f.seek(-1, os.SEEK_END)
+            termina_en_salto = f.read(1) == b'\n'
+    checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
+    if not termina_en_salto:
+        checkpoint.write('\n')
+    return checkpoint
+
+
+def _ordenar_como_el_repertorio(repertorio, *listas):
+    """Deja cada lista en el orden del repertorio (no en el de término de las tareas)."""
+    posicion = {str(r.get('post_id')): i for i, r in enumerate(repertorio)}
+    for lista in listas:
+        lista.sort(key=lambda r: posicion[str(r.get('post_id'))])
+
+
 def generar_urls_busqueda(band, album, year=None, es_split=False, tipo=None):
     """Genera 2 URLs de búsqueda en YouTube (doble búsqueda)"""
     # Sufijo de la query 2 según tipo de disco: EP busca "full ep", el resto "full album"
@@ -247,6 +272,7 @@ class YouTubeFilterParallel:
         album_tokens = _tokenizar(album)
         band_req = 1 if len(band_tokens) <= 2 else 2
         album_req = 1 if len(album_tokens) <= 2 else 2
+        busquedas_fallidas = 0
 
         for url in urls:
             try:
@@ -321,7 +347,16 @@ class YouTubeFilterParallel:
                         return True, titulo
 
             except Exception:
+                # goto/evaluate fallaron: esta búsqueda no verificó nada
+                busquedas_fallidas += 1
                 continue
+
+        if busquedas_fallidas:
+            # Sin coincidencia y con búsquedas rotas, "no encontré nada" no es
+            # un veredicto: el worker lo registra como release sin verificar
+            raise RuntimeError(
+                f"{busquedas_fallidas} de {len(urls)} búsquedas fallaron sin coincidencia"
+            )
 
         return False, None
 
@@ -393,6 +428,7 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     if not pendientes:
         if verbose:
             print("✓ No hay releases pendientes; todo estaba verificado")
+        _ordenar_como_el_repertorio(repertorio, aprobados, rechazados)
         return aprobados, rechazados
 
     filtro = YouTubeFilterParallel(num_workers=num_workers)
@@ -411,29 +447,38 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
 
     lock = asyncio.Lock()
     progreso = {'n': len(procesados_ids)}
-    checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
+    sin_verificar = []
+    checkpoint = _abrir_checkpoint()
 
-    async def registrar(release, es_mainstream, titulo):
+    async def registrar(release, es_mainstream, titulo, fallo=None):
         razon = (titulo[:50] if titulo else 'keyword')
         async with lock:
             if es_mainstream:
                 rechazados.append({**release, 'razon': razon})
             else:
                 aprobados.append(release)
-            checkpoint.write(json.dumps({
-                'post_id': release.get('post_id'),
-                'mainstream': bool(es_mainstream),
-                'razon': razon if es_mainstream else '',
-                'release': release,
-            }, ensure_ascii=False) + '\n')
-            checkpoint.flush()
+            if fallo is None:
+                checkpoint.write(json.dumps({
+                    'post_id': release.get('post_id'),
+                    'mainstream': bool(es_mainstream),
+                    'razon': razon if es_mainstream else '',
+                    'release': release,
+                }, ensure_ascii=False) + '\n')
+                checkpoint.flush()
+            else:
+                # Un fallo no es un veredicto: queda fuera del checkpoint para
+                # que una reanudación lo vuelva a verificar
+                sin_verificar.append(release)
             progreso['n'] += 1
             if verbose:
                 band = release.get('band', 'Unknown')
                 album = release.get('album', 'Unknown')
                 year = release.get('year', '')
                 year_str = f"({year})" if year else ""
-                estado = "❌ Mainstream" if es_mainstream else "✓ Underground"
+                if fallo is not None:
+                    estado = f"⚠️ sin verificar ({fallo})"
+                else:
+                    estado = "❌ Mainstream" if es_mainstream else "✓ Underground"
                 print(f"[{progreso['n']}/{total}] {band} - {album} {year_str} {estado}")
 
     async def worker(page):
@@ -447,17 +492,31 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
                     filtro.procesar_release(release, page, max_videos),
                     timeout=RELEASE_TIMEOUT,
                 )
-            except Exception:
-                # Timeout o cualquier error → se asume underground y se sigue
-                es_mainstream, titulo = False, None
+            except Exception as e:
+                # Timeout o cualquier error → se aprueba sin verificar y se sigue
+                # (fail-open), pero sin guardarlo en el checkpoint como veredicto
+                await registrar(release, False, None, fallo=type(e).__name__)
+                continue
             await registrar(release, es_mainstream, titulo)
 
+    tareas = [asyncio.create_task(worker(p)) for p in filtro.pages]
     try:
-        await asyncio.gather(*[asyncio.create_task(worker(p)) for p in filtro.pages])
+        await asyncio.gather(*tareas)
     finally:
+        # Si un worker falla, gather propaga el error con los demás todavía
+        # corriendo: se cancelan y se espera a que terminen antes de cerrar el
+        # archivo y el navegador, para que no escriban en uno ya cerrado
+        for tarea in tareas:
+            if not tarea.done():
+                tarea.cancel()
+        await asyncio.gather(*tareas, return_exceptions=True)
         checkpoint.close()
         await filtro.cerrar()
 
+    if sin_verificar:
+        print(f"⚠️ {len(sin_verificar)} releases sin verificar (aprobados sin chequear)")
+
+    _ordenar_como_el_repertorio(repertorio, aprobados, rechazados)
     return aprobados, rechazados
 
 
@@ -511,6 +570,8 @@ def run(headless=True, verbose=True, max_videos=10, num_workers=None,
 
     # Tope duro: con muchos workers YouTube detecta el patrón de bot y la RAM
     # sufre (cada contexto Chromium pesa). 5 es el punto sano para este filtro.
+    if verbose and num_workers > MAX_WORKERS_YT:
+        print(f"⚠️ Se pidieron {num_workers} workers; el filtro de YouTube usa como máximo {MAX_WORKERS_YT}")
     num_workers = max(1, min(num_workers, MAX_WORKERS_YT))
 
     # Cargar keywords
