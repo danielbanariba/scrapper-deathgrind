@@ -570,6 +570,8 @@ def run(headless=True, verbose=True, max_videos=10, num_workers=None,
 
     # Tope duro: con muchos workers YouTube detecta el patrón de bot y la RAM
     # sufre (cada contexto Chromium pesa). 5 es el punto sano para este filtro.
+    if verbose and num_workers > MAX_WORKERS_YT:
+        print(f"⚠️ Se pidieron {num_workers} workers; el filtro de YouTube usa como máximo {MAX_WORKERS_YT}")
     num_workers = max(1, min(num_workers, MAX_WORKERS_YT))
 
     # Cargar keywords
