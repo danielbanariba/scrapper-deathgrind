@@ -256,6 +256,16 @@ def _close_session():
         del _thread_local.session
 
 
+def _anotar_error_http(error, verbose):
+    """Loguea un HTTPError. Un 429 o un 5xx es el servidor, no el link: lo anota
+    en el thread para que procesar_release no marque el release como definitivo."""
+    status = getattr(error.response, 'status_code', None)
+    if status == 429 or (status or 0) >= 500:
+        _thread_local.error_temporal = True
+    if verbose:
+        logger.warning(f"HTTP {status}")
+
+
 def cargar_repertorio(input_file=INPUT_FILE):
     """Carga el repertorio con links"""
     if not os.path.exists(input_file):
@@ -1302,8 +1312,7 @@ def descargar_vk_doc(url, destino, verbose=True, show_progress=True):
         return descargar_directo(dl_url, destino, verbose, show_progress=show_progress)
 
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         if verbose:
@@ -1396,8 +1405,7 @@ def descargar_google_drive(url, destino, verbose=True, show_progress=True):
             return None, False
 
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         if verbose:
@@ -1406,21 +1414,43 @@ def descargar_google_drive(url, destino, verbose=True, show_progress=True):
 
 
 def descargar_yandex_disk(url, destino, verbose=True, show_progress=True):
-    """Descarga un archivo público de Yandex Disk usando su API pública"""
+    """Descarga un archivo público de Yandex Disk por su página pública.
+
+    La API pública (cloud-api.yandex.net) responde 429 a todo pedido sin cuenta.
+    Se hace lo mismo que la página: se leen sus datos (store-prefetch) y se pide
+    el link a /public/api/download-url. Un link borrado responde 404 en la página."""
     try:
-        api_url = 'https://cloud-api.yandex.net/v1/disk/public/resources/download'
-        resp = _get_session().get(api_url, params={'public_key': url}, timeout=(10, 30))
+        session = _get_session()
+        pagina = session.get(url, timeout=(10, 30))
+        pagina.raise_for_status()
+        datos = re.search(r'<script[^>]+id="store-prefetch"[^>]*>(.*?)</script>', pagina.text, re.S)
+        if not datos:
+            if verbose:
+                logger.warning("No se encontraron los datos de la página de Yandex Disk")
+            return None, False
+        estado = json.loads(datos.group(1))
+        recurso = (estado.get('resources') or {}).get(estado.get('rootResourceId'), {})
+        sk = (estado.get('environment') or {}).get('sk')
+        if not recurso.get('hash') or not sk:
+            # Sin hash: el archivo está bloqueado o la página no lo ofrece
+            if verbose:
+                logger.warning("Archivo no disponible en Yandex Disk")
+            return None, False
+        resp = session.post(
+            f"https://{urlparse(pagina.url).netloc}/public/api/download-url",
+            data=json.dumps({'hash': recurso['hash'], 'sk': sk}),
+            headers={'Content-Type': 'text/plain', 'Referer': pagina.url},
+            timeout=(10, 30),
+        )
         resp.raise_for_status()
-        data = resp.json()
-        href = data.get('href')
+        href = (resp.json().get('data') or {}).get('url')
         if not href:
             if verbose:
                 logger.warning("No se encontró link directo en Yandex Disk")
             return None, False
         return descargar_directo(href, destino, verbose, show_progress=show_progress)
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         if verbose:
@@ -1590,8 +1620,7 @@ def descargar_icedrive(url, destino, verbose=True, show_progress=True):
             logger.warning("No se encontró enlace directo en Icedrive")
         return None, False
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         _registrar_error_servicio('icedrive', e, verbose)
@@ -1647,8 +1676,7 @@ def descargar_krakenfiles(url, destino, verbose=True, show_progress=True):
             logger.warning("No se encontró enlace directo en Krakenfiles")
         return None, False
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         if verbose:
@@ -1688,8 +1716,7 @@ def descargar_workupload(url, destino, verbose=True, show_progress=True):
             circuit_breaker.record_success('workupload')
         return resultado
     except requests.exceptions.HTTPError as e:
-        if verbose:
-            logger.warning(f"HTTP {e.response.status_code}")
+        _anotar_error_http(e, verbose)
         return None, False
     except Exception as e:
         _registrar_error_servicio('workupload', e, verbose)
@@ -1901,8 +1928,7 @@ def descargar_directo(url, destino, verbose=True, headers=None, _pw_fallback=Tru
             return None, False
 
         except requests.exceptions.HTTPError as e:
-            if verbose:
-                logger.warning(f"HTTP {e.response.status_code}")
+            _anotar_error_http(e, verbose)
             return None, False
         except Exception as e:
             if verbose:
@@ -2151,6 +2177,7 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
     tuvo_parcial = False
     mega_omitido_por_cooldown = False
     servicio_caido_omitido = False  # algún link saltado por circuit breaker
+    _thread_local.error_temporal = False  # algún link respondió 429 o 5xx
 
     for link_info in _priorizar_links(links):
         url = link_info.get('url', '')
@@ -2260,6 +2287,9 @@ def procesar_release(release, destino_base=DESTINO_BASE, temp_dir=TEMP_DIR, verb
         # Algún link se saltó por circuit breaker → no marcar como definitivo:
         # cuando el servicio vuelva, el link puede funcionar.
         return False, "Servicio temporalmente caído", None
+    if _thread_local.error_temporal:
+        # Un 429 o un 5xx puede pasar: se guarda sin [PERM] y expira a 30 días.
+        return False, "Error temporal del servidor", None
     # Todos los links se intentaron y fallaron sin error transitorio:
     # asumimos que están definitivamente muertos.
     return False, "Todos los links fallaron (definitivo)", None
