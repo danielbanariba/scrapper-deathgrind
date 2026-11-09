@@ -235,6 +235,24 @@ class CheckpointDelFiltro(unittest.TestCase):
         _, _, procesados = filtrar_youtube._cargar_checkpoint({"1", "2"})
         self.assertEqual(procesados, {"1", "2"})
 
+    def test_si_un_worker_falla_los_otros_se_cancelan_antes_de_cerrar(self):
+        # json.dumps cannot write this release to the checkpoint, so its worker dies
+        # in registrar while the other one is still verifying release 1
+        inescribible = {**_release(2), "extra": object()}
+
+        async def procesar(release):
+            if release["post_id"] == 1:
+                await asyncio.sleep(3600)
+            return False, None
+
+        falso = _filtro_falso(procesar)
+        with self.assertRaises(TypeError):
+            self._correr(falso, [_release(1), inescribible])
+
+        filtro = falso.creados[0]
+        self.assertTrue(filtro.cerrado)
+        self.assertEqual(filtro.tareas_vivas, [])
+
 
 class VerificarDisponibilidad(unittest.TestCase):
     URLS = ["https://youtube.test/busqueda-1", "https://youtube.test/busqueda-2"]

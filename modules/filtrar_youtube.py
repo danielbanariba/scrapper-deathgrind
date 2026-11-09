@@ -499,9 +499,17 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
                 continue
             await registrar(release, es_mainstream, titulo)
 
+    tareas = [asyncio.create_task(worker(p)) for p in filtro.pages]
     try:
-        await asyncio.gather(*[asyncio.create_task(worker(p)) for p in filtro.pages])
+        await asyncio.gather(*tareas)
     finally:
+        # Si un worker falla, gather propaga el error con los demás todavía
+        # corriendo: se cancelan y se espera a que terminen antes de cerrar el
+        # archivo y el navegador, para que no escriban en uno ya cerrado
+        for tarea in tareas:
+            if not tarea.done():
+                tarea.cancel()
+        await asyncio.gather(*tareas, return_exceptions=True)
         checkpoint.close()
         await filtro.cerrar()
 
