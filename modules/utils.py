@@ -6,6 +6,7 @@ Utilidades compartidas para el scraper de DeathGrind.club
 import importlib.util
 import os
 import re
+import sys
 import time
 import random
 from pathlib import Path
@@ -144,15 +145,23 @@ def cargar_publicados():
 
     Usa su propio registro_publicados.py para que la clave "banda|álbum" sea la misma.
     La carpeta sale de CLICK_AUTO_EDITOR_DIR (por defecto ~/Desktop/click-auto-editor).
+
+    Si ese código está pero no carga, frena con un solo mensaje (sin traceback): devolver None
+    haría pedir los links de todo, también de lo ya publicado, y eso gasta créditos de descarga.
     """
     base = Path(os.environ.get("CLICK_AUTO_EDITOR_DIR") or DIR_CLICK_AUTO_EDITOR).expanduser()
     codigo = base / "registro_publicados.py"
     if not codigo.is_file():
         return None
-    spec = importlib.util.spec_from_file_location("registro_publicados", codigo)
-    modulo = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(modulo)
-    return modulo.leer(base / "data" / "agente" / "ya_publicados.tsv")
+    try:
+        spec = importlib.util.spec_from_file_location("registro_publicados", codigo)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+        return modulo.leer(base / "data" / "agente" / "ya_publicados.tsv")
+    except (SyntaxError, ImportError, AttributeError, OSError) as exc:
+        sys.exit(f"❌ No se pudo cargar {codigo} ({type(exc).__name__}: {exc}). "
+                 "Se frena el paso de links para no gastar créditos de descarga en lo ya "
+                 "publicado; arregla ese archivo y vuelve a correr.")
 
 
 def delay_con_jitter(base, factor=0.3):
