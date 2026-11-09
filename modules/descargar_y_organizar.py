@@ -1414,13 +1414,36 @@ def descargar_google_drive(url, destino, verbose=True, show_progress=True):
 
 
 def descargar_yandex_disk(url, destino, verbose=True, show_progress=True):
-    """Descarga un archivo público de Yandex Disk usando su API pública"""
+    """Descarga un archivo público de Yandex Disk por su página pública.
+
+    La API pública (cloud-api.yandex.net) responde 429 a todo pedido sin cuenta.
+    Se hace lo mismo que la página: se leen sus datos (store-prefetch) y se pide
+    el link a /public/api/download-url. Un link borrado responde 404 en la página."""
     try:
-        api_url = 'https://cloud-api.yandex.net/v1/disk/public/resources/download'
-        resp = _get_session().get(api_url, params={'public_key': url}, timeout=(10, 30))
+        session = _get_session()
+        pagina = session.get(url, timeout=(10, 30))
+        pagina.raise_for_status()
+        datos = re.search(r'<script[^>]+id="store-prefetch"[^>]*>(.*?)</script>', pagina.text, re.S)
+        if not datos:
+            if verbose:
+                logger.warning("No se encontraron los datos de la página de Yandex Disk")
+            return None, False
+        estado = json.loads(datos.group(1))
+        recurso = (estado.get('resources') or {}).get(estado.get('rootResourceId'), {})
+        sk = (estado.get('environment') or {}).get('sk')
+        if not recurso.get('hash') or not sk:
+            # Sin hash: el archivo está bloqueado o la página no lo ofrece
+            if verbose:
+                logger.warning("Archivo no disponible en Yandex Disk")
+            return None, False
+        resp = session.post(
+            f"https://{urlparse(pagina.url).netloc}/public/api/download-url",
+            data=json.dumps({'hash': recurso['hash'], 'sk': sk}),
+            headers={'Content-Type': 'text/plain', 'Referer': pagina.url},
+            timeout=(10, 30),
+        )
         resp.raise_for_status()
-        data = resp.json()
-        href = data.get('href')
+        href = (resp.json().get('data') or {}).get('url')
         if not href:
             if verbose:
                 logger.warning("No se encontró link directo en Yandex Disk")
