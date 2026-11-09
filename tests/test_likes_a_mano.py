@@ -3,15 +3,93 @@
 import contextlib
 import importlib.util
 import io
+import tempfile
 import unittest
 import urllib.error
 from pathlib import Path
 from unittest import mock
 
+import requests
+
 RAIZ = Path(__file__).resolve().parent.parent
 _spec = importlib.util.spec_from_file_location("likes_a_mano", RAIZ / "scripts" / "likes_a_mano.py")
 likes = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(likes)
+
+
+class _Respuesta:
+    def __init__(self, status_code, cuerpo=None):
+        self.status_code = status_code
+        self.cuerpo = cuerpo
+
+    def json(self):
+        if self.cuerpo is ValueError:
+            raise ValueError("no es JSON")
+        return self.cuerpo
+
+
+class _Sesion:
+    """Answers every GET with `respuesta`, or raises it when it is an exception."""
+
+    def __init__(self, respuesta):
+        self.respuesta = respuesta
+
+    def get(self, url, **kwargs):
+        if isinstance(self.respuesta, Exception):
+            raise self.respuesta
+        return self.respuesta
+
+
+class EstadoDelPost(unittest.TestCase):
+    def test_lee_el_status_y_el_like_de_la_cuenta_en_la_api_del_post(self):
+        con_like = {"post": {"myReactions": [{"emoji": "👍"}]}}
+        casos = (
+            ("un post borrado responde 200 pero cuenta como 404, aunque traiga el like",
+             _Respuesta(200, {"isDeleted": True, **con_like}), (404, False)),
+            ("un 429 no se confunde con un post sin respuesta", _Respuesta(429), (429, False)),
+            ("un 404 se devuelve tal cual", _Respuesta(404), (404, False)),
+            ("un JSON roto no es un post", _Respuesta(200, ValueError), (0, False)),
+            ("sin la API no hay respuesta", requests.ConnectionError("sin red"), (0, False)),
+            ("el 👍 en myReactions", _Respuesta(200, con_like), (200, True)),
+            ("otra reacción no es el like", _Respuesta(200, {"post": {"myReactions": ["❤️"]}}), (200, False)),
+            ("sin reacciones", _Respuesta(200, {"post": {"myReactions": None}}), (200, False)),
+        )
+        for nombre, respuesta, esperado in casos:
+            with self.subTest(nombre):
+                self.assertEqual(likes.estado_del_post(_Sesion(respuesta), "77"), esperado)
+
+
+class _Registro:
+    def __init__(self, nombres):
+        self.nombres = nombres
+
+    def buscar(self, nombre):
+        return nombre in self.nombres
+
+
+class PostsPublicados(unittest.TestCase):
+    def test_solo_los_del_canal_sin_repetidos_ni_lineas_rotas_y_con_el_album_entero(self):
+        descargados = "\n".join([
+            "# Releases descargados exitosamente",
+            "# Formato: post_id|band|album",
+            "",
+            "10|Banda Uno|Disco Uno",
+            "11|Banda Dos|Disco Que No Esta En El Canal",
+            "10|Banda Uno|Disco Uno",
+            "abc|Banda Tres|Disco Tres",
+            "12|Banda Sin Album",
+            "13|Banda Pipe|Parte A|Parte B",
+        ])
+        registro = _Registro({"Banda Uno - Disco Uno", "Banda Tres - Disco Tres", "Banda Pipe - Parte A|Parte B"})
+        with tempfile.TemporaryDirectory() as tmp:
+            archivo = Path(tmp) / likes.DESCARGADOS_FILE
+            archivo.parent.mkdir(parents=True)
+            archivo.write_text(descargados, encoding="utf-8")
+            with mock.patch.object(likes, "RAIZ", Path(tmp)), \
+                    mock.patch.object(likes, "cargar_publicados", return_value=registro):
+                posts = likes.posts_publicados()
+
+        self.assertEqual(posts, [("10", "Banda Uno", "Disco Uno"), ("13", "Banda Pipe", "Parte A|Parte B")])
 
 
 class _ProcesoBrave:
