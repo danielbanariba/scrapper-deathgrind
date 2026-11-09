@@ -7,6 +7,7 @@ import json
 import os
 import shutil
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -23,15 +24,28 @@ class _Respuesta:
         return self._cuerpo
 
 
-class _SesionLinks:
-    """Gives one link per post until `con_creditos` posts were asked, then 403 like the site."""
+class _RespuestaHtml(_Respuesta):
+    """A page that is not JSON, like the one Cloudflare puts in front of the site."""
 
-    def __init__(self, con_creditos):
+    def json(self):
+        raise ValueError("no es JSON")
+
+
+class _SesionLinks:
+    """Gives one link per post until `con_creditos` posts were asked, then 403 like the site.
+
+    `latencia` makes each answer wait, so several workers overlap as they do on the network.
+    """
+
+    def __init__(self, con_creditos, latencia=0):
         self.con_creditos = con_creditos
+        self.latencia = latencia
         self.pedidos = []
 
     def get(self, url, **kwargs):
         self.pedidos.append(url)
+        if self.latencia:
+            threading.Event().wait(self.latencia)
         if len(self.pedidos) > self.con_creditos:
             return _Respuesta(403, {"error": "", "errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"})
         post_id = url.rstrip("/").split("/")[-2]
@@ -68,6 +82,18 @@ def leer(ruta):
 """
 
 
+class SinCreditos(unittest.TestCase):
+    def test_solo_un_403_con_el_error_de_creditos_corta_la_corrida(self):
+        casos = (
+            ("una pagina HTML con 403", _RespuestaHtml(403, None), False),
+            ("un 403 con otro errorCode", _Respuesta(403, {"errorCode": "FORBIDDEN"}), False),
+            ("un 403 sin creditos", _Respuesta(403, {"errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"}), True),
+        )
+        for nombre, respuesta, esperado in casos:
+            with self.subTest(nombre):
+                self.assertIs(extraer_links._sin_creditos(respuesta), esperado)
+
+
 class ExtraerLinks(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
@@ -91,14 +117,14 @@ class ExtraerLinks(unittest.TestCase):
         parche.start()
         self.addCleanup(parche.stop)
 
-    def _correr(self, repertorio, sesion, verbose=False):
+    def _correr(self, repertorio, sesion, num_workers=1, verbose=False):
         """Runs the step; what it prints stays in self.salida."""
         entrada = self.tmp / "repertorio_filtrado.json"
         entrada.write_text(json.dumps(repertorio), encoding="utf-8")
         self.salida = io.StringIO()
         with mock.patch.object(extraer_links, "_get_thread_session", return_value=sesion), \
                 contextlib.redirect_stdout(self.salida):
-            extraer_links.run(verbose=verbose, num_workers=1, input_file=str(entrada))
+            extraer_links.run(verbose=verbose, num_workers=num_workers, input_file=str(entrada))
         salida = self.tmp / utils.REPERTORIO_CON_LINKS_FILE
         return json.loads(salida.read_text(encoding="utf-8"))
 
@@ -120,6 +146,16 @@ class ExtraerLinks(unittest.TestCase):
         self.assertEqual(len(sesion.pedidos), 2)
         self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
+
+    def test_sin_creditos_avisa_con_varios_workers_y_no_pide_todos_los_releases(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 21)]
+        sesion = _SesionLinks(con_creditos=2, latencia=0.01)
+
+        self._correr(repertorio, sesion, num_workers=5)
+
+        self.assertIn("❌", self.salida.getvalue())
+        self.assertIn("sin créditos", self.salida.getvalue())
+        self.assertLess(len(sesion.pedidos), len(repertorio))
 
     def test_con_la_cuenta_sin_creditos_los_que_quedan_en_cola_no_esperan_su_pausa(self):
         repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
