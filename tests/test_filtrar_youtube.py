@@ -224,6 +224,17 @@ class CheckpointDelFiltro(unittest.TestCase):
         self.assertEqual([r["post_id"] for r in aprobados], [1, 4, 5])
         self.assertEqual([r["post_id"] for r in rechazados], [2, 3])
 
+    def test_un_checkpoint_cortado_a_medias_no_pierde_el_registro_nuevo(self):
+        repertorio = [_release(1), _release(2)]
+        completo = json.dumps(_registro(repertorio[0], False), ensure_ascii=False)
+        corte = '{"post_id": 2, "mainstream": fal'  # the process died mid-write, no newline
+        Path(filtrar_youtube.CHECKPOINT_FILE).write_text(completo + "\n" + corte, encoding="utf-8")
+
+        self._correr(_filtro_falso(_underground), repertorio)
+
+        _, _, procesados = filtrar_youtube._cargar_checkpoint({"1", "2"})
+        self.assertEqual(procesados, {"1", "2"})
+
 
 class VerificarDisponibilidad(unittest.TestCase):
     URLS = ["https://youtube.test/busqueda-1", "https://youtube.test/busqueda-2"]

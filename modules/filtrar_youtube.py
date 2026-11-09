@@ -177,6 +177,24 @@ def _cargar_checkpoint(repertorio_ids):
     return aprobados, rechazados, procesados_ids
 
 
+def _abrir_checkpoint():
+    """Abre CHECKPOINT_FILE para agregar registros.
+
+    Si un corte dejó la última línea a medias (sin salto de línea), la cierra
+    antes de agregar: si no, el primer registro nuevo quedaría pegado al
+    fragmento y _cargar_checkpoint lo descartaría como línea corrupta.
+    """
+    termina_en_salto = True
+    if os.path.exists(CHECKPOINT_FILE) and os.path.getsize(CHECKPOINT_FILE) > 0:
+        with open(CHECKPOINT_FILE, 'rb') as f:
+            f.seek(-1, os.SEEK_END)
+            termina_en_salto = f.read(1) == b'\n'
+    checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
+    if not termina_en_salto:
+        checkpoint.write('\n')
+    return checkpoint
+
+
 def _ordenar_como_el_repertorio(repertorio, *listas):
     """Deja cada lista en el orden del repertorio (no en el de término de las tareas)."""
     posicion = {str(r.get('post_id')): i for i, r in enumerate(repertorio)}
@@ -430,7 +448,7 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     lock = asyncio.Lock()
     progreso = {'n': len(procesados_ids)}
     sin_verificar = []
-    checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
+    checkpoint = _abrir_checkpoint()
 
     async def registrar(release, es_mainstream, titulo, fallo=None):
         razon = (titulo[:50] if titulo else 'keyword')
