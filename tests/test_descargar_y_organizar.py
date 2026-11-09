@@ -112,6 +112,29 @@ class FallosDeDescargaTest(unittest.TestCase):
     def test_un_404_sigue_marcando_el_release_como_definitivo(self):
         self.assertIn("[PERM]", _descargar(_Sesion(404), "https://files.example.org/disco.zip").fallido)
 
+    def test_un_404_despues_de_un_429_en_el_mismo_thread_sigue_siendo_definitivo(self):
+        # run() reparte los releases entre threads que reutilizan su estado: el 429 del primero
+        # no debe teñir al segundo
+        sesion = _Sesion(404, rutas={"https://files.example.org/uno.zip": _Respuesta(429)})
+        primero = {"post_id": "1", "band": "Banda", "album": "Uno",
+                   "download_links": [{"url": "https://files.example.org/uno.zip"}]}
+        segundo = {"post_id": "2", "band": "Banda", "album": "Dos",
+                   "download_links": [{"url": "https://files.example.org/dos.zip"}]}
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(descarga, "_get_session", return_value=sesion), \
+                mock.patch.object(descarga.time, "sleep"):
+            destino, temporal = Path(tmp) / "destino", Path(tmp) / "temp"
+            destino.mkdir()
+            temporal.mkdir()
+            resultados = [
+                descarga.procesar_release(release, destino_base=str(destino),
+                                          temp_dir=str(temporal), verbose=False)
+                for release in (primero, segundo)
+            ]
+
+        self.assertEqual(resultados[0][1], "Error temporal del servidor")
+        self.assertEqual(resultados[1][1], "Todos los links fallaron (definitivo)")
+
 
 class YandexDiskTest(unittest.TestCase):
     """The public API of Yandex Disk answers 429 to everything; the public page still works."""
@@ -133,6 +156,20 @@ class YandexDiskTest(unittest.TestCase):
         self.assertEqual(len(resultado.archivos), 1)
         self.assertTrue(resultado.archivos[0].endswith("01 - Tema.mp3"))
         self.assertEqual(json.loads(sesion.posts[0][1]["data"]), {"hash": "hash-del-disco", "sk": "clave-sk"})
+
+    def test_un_429_o_un_5xx_al_pedir_el_link_de_yandex_no_marca_el_release_como_definitivo(self):
+        archivo = {"type": "file", "hash": "hash-del-disco", "name": "Disco.zip"}
+        for status_code in (429, 502):
+            with self.subTest(status_code=status_code):
+                sesion = _Sesion(429, rutas={
+                    "https://yadi.sk/d/disco123": _Respuesta(200, url=PAGINA_YANDEX, text=_pagina_yandex(archivo)),
+                    API_WEB_YANDEX: _Respuesta(status_code),
+                })
+
+                fallido = _descargar(sesion, "https://yadi.sk/d/disco123").fallido
+
+                self.assertIsNotNone(fallido)
+                self.assertNotIn("[PERM]", fallido)
 
     def test_un_link_de_yandex_borrado_queda_como_definitivo(self):
         sesion = _Sesion(429, rutas={"https://yadi.sk/d/disco123": _Respuesta(404, url=PAGINA_YANDEX)})
