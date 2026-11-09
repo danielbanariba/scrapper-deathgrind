@@ -247,6 +247,7 @@ class YouTubeFilterParallel:
         album_tokens = _tokenizar(album)
         band_req = 1 if len(band_tokens) <= 2 else 2
         album_req = 1 if len(album_tokens) <= 2 else 2
+        busquedas_fallidas = 0
 
         for url in urls:
             try:
@@ -321,7 +322,16 @@ class YouTubeFilterParallel:
                         return True, titulo
 
             except Exception:
+                # goto/evaluate fallaron: esta búsqueda no verificó nada
+                busquedas_fallidas += 1
                 continue
+
+        if busquedas_fallidas:
+            # Sin coincidencia y con búsquedas rotas, "no encontré nada" no es
+            # un veredicto: el worker lo registra como release sin verificar
+            raise RuntimeError(
+                f"{busquedas_fallidas} de {len(urls)} búsquedas fallaron sin coincidencia"
+            )
 
         return False, None
 
@@ -411,29 +421,38 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
 
     lock = asyncio.Lock()
     progreso = {'n': len(procesados_ids)}
+    sin_verificar = []
     checkpoint = open(CHECKPOINT_FILE, 'a', encoding='utf-8')
 
-    async def registrar(release, es_mainstream, titulo):
+    async def registrar(release, es_mainstream, titulo, fallo=None):
         razon = (titulo[:50] if titulo else 'keyword')
         async with lock:
             if es_mainstream:
                 rechazados.append({**release, 'razon': razon})
             else:
                 aprobados.append(release)
-            checkpoint.write(json.dumps({
-                'post_id': release.get('post_id'),
-                'mainstream': bool(es_mainstream),
-                'razon': razon if es_mainstream else '',
-                'release': release,
-            }, ensure_ascii=False) + '\n')
-            checkpoint.flush()
+            if fallo is None:
+                checkpoint.write(json.dumps({
+                    'post_id': release.get('post_id'),
+                    'mainstream': bool(es_mainstream),
+                    'razon': razon if es_mainstream else '',
+                    'release': release,
+                }, ensure_ascii=False) + '\n')
+                checkpoint.flush()
+            else:
+                # Un fallo no es un veredicto: queda fuera del checkpoint para
+                # que una reanudación lo vuelva a verificar
+                sin_verificar.append(release)
             progreso['n'] += 1
             if verbose:
                 band = release.get('band', 'Unknown')
                 album = release.get('album', 'Unknown')
                 year = release.get('year', '')
                 year_str = f"({year})" if year else ""
-                estado = "❌ Mainstream" if es_mainstream else "✓ Underground"
+                if fallo is not None:
+                    estado = f"⚠️ sin verificar ({fallo})"
+                else:
+                    estado = "❌ Mainstream" if es_mainstream else "✓ Underground"
                 print(f"[{progreso['n']}/{total}] {band} - {album} {year_str} {estado}")
 
     async def worker(page):
@@ -447,9 +466,11 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
                     filtro.procesar_release(release, page, max_videos),
                     timeout=RELEASE_TIMEOUT,
                 )
-            except Exception:
-                # Timeout o cualquier error → se asume underground y se sigue
-                es_mainstream, titulo = False, None
+            except Exception as e:
+                # Timeout o cualquier error → se aprueba sin verificar y se sigue
+                # (fail-open), pero sin guardarlo en el checkpoint como veredicto
+                await registrar(release, False, None, fallo=type(e).__name__)
+                continue
             await registrar(release, es_mainstream, titulo)
 
     try:
@@ -457,6 +478,9 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     finally:
         checkpoint.close()
         await filtro.cerrar()
+
+    if sin_verificar:
+        print(f"⚠️ {len(sin_verificar)} releases sin verificar (aprobados sin chequear)")
 
     return aprobados, rechazados
 
