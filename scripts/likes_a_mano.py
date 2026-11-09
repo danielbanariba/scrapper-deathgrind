@@ -257,8 +257,10 @@ def main():
         print("✓ No quedan posts por revisar.", flush=True)
     except BraveCerrado:
         print("La ventana de Brave se cerró.", flush=True)
-    if brave.poll() is None:
-        brave.terminate()
+    finally:
+        # También con Ctrl+C u otro error: si no, Brave sigue abierto con el puerto y el perfil
+        if brave.poll() is None:
+            brave.terminate()
     print(f"Likes nuevos: {dados}; ya estaban: {ya_estaban}. Anotados en {LIKES_FILE}", flush=True)
 
 
