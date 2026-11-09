@@ -4,6 +4,7 @@ import contextlib
 import importlib.util
 import io
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest import mock
 
@@ -60,6 +61,44 @@ class CierreDeBrave(unittest.TestCase):
         self.assertTrue(brave.terminado)
         self.assertIn("La ventana de Brave se cerró.", self.salida.getvalue())
         self.assertIn("Likes nuevos: 0; ya estaban: 0.", self.salida.getvalue())
+
+
+class _Abierta:
+    """What urlopen returns: a context manager with the body."""
+
+    def __init__(self, texto):
+        self.texto = texto
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+    def read(self):
+        return self.texto.encode("utf-8")
+
+
+class Depuracion(unittest.TestCase):
+    def test_un_timeout_aislado_no_se_toma_por_un_brave_cerrado(self):
+        urlopen = mock.Mock(side_effect=[TimeoutError("timed out"), _Abierta("[]")])
+
+        with mock.patch.object(likes.urllib.request, "urlopen", urlopen), \
+                mock.patch.object(likes.time, "sleep"):
+            respuesta = likes.depuracion("list")
+
+        self.assertEqual(respuesta, "[]")
+        self.assertEqual(urlopen.call_count, 2)
+
+    def test_dos_fallos_seguidos_si_son_un_brave_cerrado(self):
+        urlopen = mock.Mock(side_effect=[urllib.error.URLError("rechazado"), urllib.error.URLError("rechazado")])
+
+        with mock.patch.object(likes.urllib.request, "urlopen", urlopen), \
+                mock.patch.object(likes.time, "sleep"), \
+                self.assertRaises(likes.BraveCerrado):
+            likes.depuracion("list")
+
+        self.assertEqual(urlopen.call_count, 2)
 
 
 if __name__ == "__main__":
