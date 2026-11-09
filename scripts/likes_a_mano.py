@@ -44,6 +44,7 @@ PUERTO = 9333
 ESPERA_BRAVE_S = 30
 PAUSA_CONSULTA_S = 2.5
 PAUSA_429_S = 60  # "Too many requests": seguir consultando solo alarga el bloqueo
+PAUSA_REINTENTO_S = 0.5  # Brave ocupado tarda en contestar: un pedido que falla se repite una vez
 VOLVER_AL_POST_S = 8  # fuera del post (p. ej. después del login), se vuelve a abrir
 TITULO_CLOUDFLARE = "Just a moment..."
 LIKE = "👍"
@@ -128,11 +129,15 @@ def creditos(sesion, usuario):
 
 def depuracion(ruta, metodo="GET"):
     pedido = urllib.request.Request(f"http://127.0.0.1:{PUERTO}/json/{ruta}", method=metodo)
-    try:
-        with urllib.request.urlopen(pedido, timeout=5) as respuesta:
-            return respuesta.read().decode("utf-8")
-    except (urllib.error.URLError, OSError) as exc:
-        raise BraveCerrado() from exc
+    for intento in (1, 2):
+        try:
+            with urllib.request.urlopen(pedido, timeout=5) as respuesta:
+                return respuesta.read().decode("utf-8")
+        except (urllib.error.URLError, OSError) as exc:
+            # Un solo pedido lento (Brave ocupado) no es una ventana cerrada
+            if intento == 2:
+                raise BraveCerrado() from exc
+            time.sleep(PAUSA_REINTENTO_S)
 
 
 def pestanas():
@@ -257,8 +262,10 @@ def main():
         print("✓ No quedan posts por revisar.", flush=True)
     except BraveCerrado:
         print("La ventana de Brave se cerró.", flush=True)
-    if brave.poll() is None:
-        brave.terminate()
+    finally:
+        # También con Ctrl+C u otro error: si no, Brave sigue abierto con el puerto y el perfil
+        if brave.poll() is None:
+            brave.terminate()
     print(f"Likes nuevos: {dados}; ya estaban: {ya_estaban}. Anotados en {LIKES_FILE}", flush=True)
 
 

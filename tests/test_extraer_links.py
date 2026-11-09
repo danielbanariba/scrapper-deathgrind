@@ -1,10 +1,13 @@
 """Link extraction against fakes: the site is never contacted and no credit is spent."""
 
+import contextlib
 import importlib.util
+import io
 import json
 import os
 import shutil
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -21,15 +24,28 @@ class _Respuesta:
         return self._cuerpo
 
 
-class _SesionLinks:
-    """Gives one link per post until `con_creditos` posts were asked, then 403 like the site."""
+class _RespuestaHtml(_Respuesta):
+    """A page that is not JSON, like the one Cloudflare puts in front of the site."""
 
-    def __init__(self, con_creditos):
+    def json(self):
+        raise ValueError("no es JSON")
+
+
+class _SesionLinks:
+    """Gives one link per post until `con_creditos` posts were asked, then 403 like the site.
+
+    `latencia` makes each answer wait, so several workers overlap as they do on the network.
+    """
+
+    def __init__(self, con_creditos, latencia=0):
         self.con_creditos = con_creditos
+        self.latencia = latencia
         self.pedidos = []
 
     def get(self, url, **kwargs):
         self.pedidos.append(url)
+        if self.latencia:
+            threading.Event().wait(self.latencia)
         if len(self.pedidos) > self.con_creditos:
             return _Respuesta(403, {"error": "", "errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"})
         post_id = url.rstrip("/").split("/")[-2]
@@ -44,6 +60,38 @@ class _SesionLogin:
 def _release(post_id, band, album):
     return {"post_id": post_id, "band": band, "album": album, "year": 2024,
             "type": "Album", "post_url": f"https://deathgrind.club/posts/{post_id}"}
+
+
+# Same contract as click-auto-editor's registro_publicados.py: leer(ruta) -> objeto con buscar(nombre)
+REGISTRO_FALSO = """
+from pathlib import Path
+
+
+class _Registro:
+    def __init__(self, nombres):
+        self.nombres = nombres
+
+    def buscar(self, nombre):
+        return nombre.lower() in self.nombres
+
+
+def leer(ruta):
+    ruta = Path(ruta)
+    lineas = ruta.read_text(encoding="utf-8").splitlines() if ruta.exists() else []
+    return _Registro({linea.split("\\t")[0] for linea in lineas if linea})
+"""
+
+
+class SinCreditos(unittest.TestCase):
+    def test_solo_un_403_con_el_error_de_creditos_corta_la_corrida(self):
+        casos = (
+            ("una pagina HTML con 403", _RespuestaHtml(403, None), False),
+            ("un 403 con otro errorCode", _Respuesta(403, {"errorCode": "FORBIDDEN"}), False),
+            ("un 403 sin creditos", _Respuesta(403, {"errorCode": "DOWNLOAD_CREDITS_EXHAUSTED"}), True),
+        )
+        for nombre, respuesta, esperado in casos:
+            with self.subTest(nombre):
+                self.assertIs(extraer_links._sin_creditos(respuesta), esperado)
 
 
 class ExtraerLinks(unittest.TestCase):
@@ -69,13 +117,25 @@ class ExtraerLinks(unittest.TestCase):
         parche.start()
         self.addCleanup(parche.stop)
 
-    def _correr(self, repertorio, sesion):
+    def _correr(self, repertorio, sesion, num_workers=1, verbose=False):
+        """Runs the step; what it prints stays in self.salida."""
         entrada = self.tmp / "repertorio_filtrado.json"
         entrada.write_text(json.dumps(repertorio), encoding="utf-8")
-        with mock.patch.object(extraer_links, "_get_thread_session", return_value=sesion):
-            extraer_links.run(verbose=False, num_workers=1, input_file=str(entrada))
+        self.salida = io.StringIO()
+        with mock.patch.object(extraer_links, "_get_thread_session", return_value=sesion), \
+                contextlib.redirect_stdout(self.salida):
+            extraer_links.run(verbose=verbose, num_workers=num_workers, input_file=str(entrada))
         salida = self.tmp / utils.REPERTORIO_CON_LINKS_FILE
         return json.loads(salida.read_text(encoding="utf-8"))
+
+    def _poner_registro(self, codigo, filas=()):
+        """A click-auto-editor folder whose registro_publicados.py is `codigo`; returns it."""
+        editor = self.tmp / "editor"
+        (editor / "data" / "agente").mkdir(parents=True, exist_ok=True)
+        (editor / "registro_publicados.py").write_text(codigo, encoding="utf-8")
+        (editor / "data" / "agente" / "ya_publicados.tsv").write_text(
+            "".join(f"{fila}\n" for fila in filas), encoding="utf-8")
+        return editor
 
     def test_sin_creditos_deja_de_pedir_links_y_no_marca_lo_que_no_pidio(self):
         repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
@@ -86,6 +146,64 @@ class ExtraerLinks(unittest.TestCase):
         self.assertEqual(len(sesion.pedidos), 2)
         self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
+
+    def test_sin_creditos_avisa_con_varios_workers_y_no_pide_todos_los_releases(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 21)]
+        sesion = _SesionLinks(con_creditos=2, latencia=0.01)
+
+        self._correr(repertorio, sesion, num_workers=5)
+
+        self.assertIn("❌", self.salida.getvalue())
+        self.assertIn("sin créditos", self.salida.getvalue())
+        self.assertLess(len(sesion.pedidos), len(repertorio))
+
+    def test_con_la_cuenta_sin_creditos_los_que_quedan_en_cola_no_esperan_su_pausa(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
+
+        with mock.patch.object(extraer_links, "delay_con_jitter") as pausa:
+            self._correr(repertorio, _SesionLinks(con_creditos=1))
+
+        self.assertEqual(pausa.call_count, 2)
+
+    def test_el_resumen_no_cuenta_los_releases_que_no_se_pidieron(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
+
+        self._correr(repertorio, _SesionLinks(con_creditos=1), verbose=True)
+
+        self.assertIn("✓ 1 releases procesados", self.salida.getvalue())
+
+    def test_no_pide_links_de_lo_ya_publicado_con_un_registro_falso(self):
+        editor = self._poner_registro(REGISTRO_FALSO, filas=["pigto - the collector\tsubir\tabc123"])
+        repertorio = [_release(7, "PIGTO", "The Collector"), _release(8, "Otra Banda", "Disco")]
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}):
+            resultado = self._correr(repertorio, sesion)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/8/links"])
+        self.assertEqual([r["post_id"] for r in resultado], [8])
+
+    def test_un_registro_que_no_carga_frena_el_paso_sin_pedir_links(self):
+        for causa, codigo in (
+            ("SyntaxError", "def leer(:\n"),
+            ("ModuleNotFoundError", "import modulo_que_solo_existe_en_otro_entorno\n"),
+            ("AttributeError", "x = 1\n"),
+            ("OSError", "def leer(ruta):\n    raise OSError('disco ilegible')\n"),
+        ):
+            with self.subTest(causa=causa):
+                editor = self._poner_registro(codigo)
+                repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 4)]
+                sesion = _SesionLinks(con_creditos=10)
+
+                with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}), \
+                        self.assertRaises(SystemExit) as parada:
+                    self._correr(repertorio, sesion)
+
+                # A text exit code is printed as one line, without a traceback
+                self.assertIsInstance(parada.exception.code, str)
+                self.assertIn(str(editor / "registro_publicados.py"), parada.exception.code)
+                self.assertIn(causa, parada.exception.code)
+                self.assertEqual(sesion.pedidos, [])
 
     def test_no_pide_links_de_lo_ya_publicado(self):
         origen = Path(os.environ.get("CLICK_AUTO_EDITOR_REAL", utils.DIR_CLICK_AUTO_EDITOR))
