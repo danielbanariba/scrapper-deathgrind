@@ -177,6 +177,13 @@ def _cargar_checkpoint(repertorio_ids):
     return aprobados, rechazados, procesados_ids
 
 
+def _ordenar_como_el_repertorio(repertorio, *listas):
+    """Deja cada lista en el orden del repertorio (no en el de término de las tareas)."""
+    posicion = {str(r.get('post_id')): i for i, r in enumerate(repertorio)}
+    for lista in listas:
+        lista.sort(key=lambda r: posicion[str(r.get('post_id'))])
+
+
 def generar_urls_busqueda(band, album, year=None, es_split=False, tipo=None):
     """Genera 2 URLs de búsqueda en YouTube (doble búsqueda)"""
     # Sufijo de la query 2 según tipo de disco: EP busca "full ep", el resto "full album"
@@ -403,6 +410,7 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     if not pendientes:
         if verbose:
             print("✓ No hay releases pendientes; todo estaba verificado")
+        _ordenar_como_el_repertorio(repertorio, aprobados, rechazados)
         return aprobados, rechazados
 
     filtro = YouTubeFilterParallel(num_workers=num_workers)
@@ -482,6 +490,7 @@ async def filtrar_por_youtube(repertorio, keywords, headless=True, verbose=True,
     if sin_verificar:
         print(f"⚠️ {len(sin_verificar)} releases sin verificar (aprobados sin chequear)")
 
+    _ordenar_como_el_repertorio(repertorio, aprobados, rechazados)
     return aprobados, rechazados
 
 

@@ -94,10 +94,10 @@ class CheckpointDelFiltro(unittest.TestCase):
         lineas = [json.dumps(r, ensure_ascii=False) + "\n" for r in registros]
         Path(filtrar_youtube.CHECKPOINT_FILE).write_text("".join(lineas), encoding="utf-8")
 
-    def _correr(self, falso, repertorio, verbose=False):
+    def _correr(self, falso, repertorio, verbose=False, num_workers=2):
         with mock.patch.object(filtrar_youtube, "YouTubeFilterParallel", falso):
             return asyncio.run(filtrar_youtube.filtrar_por_youtube(
-                repertorio, ["full album"], verbose=verbose, num_workers=2))
+                repertorio, ["full album"], verbose=verbose, num_workers=num_workers))
 
     def _ids_en_checkpoint(self):
         lineas = Path(filtrar_youtube.CHECKPOINT_FILE).read_text(encoding="utf-8").splitlines()
@@ -201,6 +201,28 @@ class CheckpointDelFiltro(unittest.TestCase):
         self.assertNotIn("Underground", sin_verificar)
         self.assertIn("Underground", verificado)
         self.assertIn("1 releases sin verificar", salida.getvalue())
+
+    def test_las_listas_salen_en_el_orden_del_repertorio(self):
+        repertorio = [_release(i) for i in range(1, 6)]
+        # 2 and 4 were done before the cut; 5, 3 and 1 finish in reverse order
+        self._escribir_checkpoint([_registro(repertorio[3], False), _registro(repertorio[1], True)])
+        espera = {5: 0, 3: 0.05, 1: 0.1}
+
+        async def procesar(release):
+            await asyncio.sleep(espera[release["post_id"]])
+            return release["post_id"] == 3, "Banda 3 - Disco 3 (Full Album)"
+
+        aprobados, rechazados = self._correr(_filtro_falso(procesar), repertorio, num_workers=3)
+
+        # the scenario is real only if the checkpoint kept the completion order
+        self.assertEqual(self._ids_en_checkpoint(), [4, 2, 5, 3, 1])
+        self.assertEqual([r["post_id"] for r in aprobados], [1, 4, 5])
+        self.assertEqual([r["post_id"] for r in rechazados], [2, 3])
+
+        # nothing pending now: the lists rebuilt from the checkpoint keep the order too
+        aprobados, rechazados = self._correr(_filtro_falso(_underground), repertorio)
+        self.assertEqual([r["post_id"] for r in aprobados], [1, 4, 5])
+        self.assertEqual([r["post_id"] for r in rechazados], [2, 3])
 
 
 class VerificarDisponibilidad(unittest.TestCase):
