@@ -108,6 +108,10 @@ def extraer_links_post(session_data, release, max_retries=10, sin_creditos=None)
 
     while retries_error < max_retries:
         try:
+            # Sin créditos no hay nada que pedir: los que quedan en cola no esperan su pausa
+            if sin_creditos is not None and sin_creditos.is_set():
+                raise SinCreditosError()
+
             # Pequeña pausa para no saturar
             delay_con_jitter(DELAY_ENTRE_REQUESTS)
 
@@ -238,7 +242,7 @@ def extraer_links_paralelo(session, repertorio, num_workers=10, verbose=True):
               f"{sin_pedir} releases quedan sin pedir (no se marcan como sin links).")
 
     if verbose:
-        print(f"\n✓ {procesados} releases procesados")
+        print(f"\n✓ {procesados - sin_pedir} releases procesados")
 
     return repertorio
 

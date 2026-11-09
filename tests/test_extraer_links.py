@@ -91,14 +91,14 @@ class ExtraerLinks(unittest.TestCase):
         parche.start()
         self.addCleanup(parche.stop)
 
-    def _correr(self, repertorio, sesion):
+    def _correr(self, repertorio, sesion, verbose=False):
         """Runs the step; what it prints stays in self.salida."""
         entrada = self.tmp / "repertorio_filtrado.json"
         entrada.write_text(json.dumps(repertorio), encoding="utf-8")
         self.salida = io.StringIO()
         with mock.patch.object(extraer_links, "_get_thread_session", return_value=sesion), \
                 contextlib.redirect_stdout(self.salida):
-            extraer_links.run(verbose=False, num_workers=1, input_file=str(entrada))
+            extraer_links.run(verbose=verbose, num_workers=1, input_file=str(entrada))
         salida = self.tmp / utils.REPERTORIO_CON_LINKS_FILE
         return json.loads(salida.read_text(encoding="utf-8"))
 
@@ -120,6 +120,21 @@ class ExtraerLinks(unittest.TestCase):
         self.assertEqual(len(sesion.pedidos), 2)
         self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
+
+    def test_con_la_cuenta_sin_creditos_los_que_quedan_en_cola_no_esperan_su_pausa(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
+
+        with mock.patch.object(extraer_links, "delay_con_jitter") as pausa:
+            self._correr(repertorio, _SesionLinks(con_creditos=1))
+
+        self.assertEqual(pausa.call_count, 2)
+
+    def test_el_resumen_no_cuenta_los_releases_que_no_se_pidieron(self):
+        repertorio = [_release(i, f"Banda {i}", f"Disco {i}") for i in range(1, 6)]
+
+        self._correr(repertorio, _SesionLinks(con_creditos=1), verbose=True)
+
+        self.assertIn("✓ 1 releases procesados", self.salida.getvalue())
 
     def test_no_pide_links_de_lo_ya_publicado_con_un_registro_falso(self):
         editor = self._poner_registro(REGISTRO_FALSO, filas=["pigto - the collector\tsubir\tabc123"])
