@@ -11,13 +11,20 @@ El script no se conecta a las pestañas: la verificación de Cloudflare del logi
 hay un programa conectado a la página. Brave abre con un perfil propio, y su puerto de
 depuración (solo en 127.0.0.1) se usa nada más para abrir, listar y cerrar pestañas.
 
+Los álbumes del canal salen de dos listas de posts: los que bajó el scraper (data/descargados.txt)
+y el catálogo de DeathGrind (data/catalogo_posts.txt), con todos los posts de los géneros de
+generos_activos.txt, sin filtros. El catálogo encuentra los videos del canal que no vinieron del
+scraper. Se arma la primera vez (recorrer DeathGrind tarda unos minutos y no gasta créditos) y
+se vuelve a armar con --actualizar-catalogo.
+
 Uso, desde la raíz del repo:
-    env/bin/python scripts/likes_a_mano.py
+    env/bin/python scripts/likes_a_mano.py [--actualizar-catalogo]
 
 La primera vez hay que iniciar sesión en la ventana con la cuenta del .env: el perfil queda
 guardado en ~/.local/share/deathgrind-likes/brave. Cerrar la ventana termina, y la próxima
 vez sigue con los que faltan.
 """
+import argparse
 import json
 import re
 import subprocess
@@ -33,11 +40,14 @@ import requests
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 
+from modules.extraer_bandas import cargar_generos, extraer_todo  # noqa: E402
 from modules.utils import (  # noqa: E402
-    API_URL, BASE_URL, DESCARGADOS_FILE, cargar_env, cargar_publicados, crear_sesion_autenticada,
+    API_URL, BASE_URL, DATA_DIR, DESCARGADOS_FILE, cargar_env, cargar_publicados,
+    crear_sesion_autenticada,
 )
 
 LIKES_FILE = RAIZ / "data" / "likes_dados.txt"
+CATALOGO_FILE = f"{DATA_DIR}/catalogo_posts.txt"
 PERFIL = Path.home() / ".local" / "share" / "deathgrind-likes" / "brave"
 BRAVE = "/usr/bin/brave"
 PUERTO = 9333
@@ -56,20 +66,41 @@ class BraveCerrado(Exception):
 
 
 def posts_publicados():
-    """(post_id, banda, álbum) de los releases descargados que ya están en el canal."""
+    """(post_id, banda, álbum) de los posts descargados o del catálogo que ya están en el canal."""
     registro = cargar_publicados()
     if registro is None:
         sys.exit("No encontré el registro de publicados de click-auto-editor (CLICK_AUTO_EDITOR_DIR)")
     posts, vistos = [], set()
-    for linea in (RAIZ / DESCARGADOS_FILE).read_text(encoding="utf-8", errors="replace").splitlines():
-        partes = linea.strip().split("|")
-        if len(partes) < 3 or not partes[0].isdigit() or partes[0] in vistos:
+    for archivo in (RAIZ / DESCARGADOS_FILE, RAIZ / CATALOGO_FILE):
+        if not archivo.exists():
             continue
-        vistos.add(partes[0])
-        banda, album = partes[1], "|".join(partes[2:])
-        if registro.buscar(f"{banda} - {album}"):
-            posts.append((partes[0], banda, album))
+        for linea in archivo.read_text(encoding="utf-8", errors="replace").splitlines():
+            partes = linea.strip().split("|")
+            if len(partes) < 3 or not partes[0].isdigit() or partes[0] in vistos:
+                continue
+            vistos.add(partes[0])
+            banda, album = partes[1], "|".join(partes[2:])
+            if registro.buscar(f"{banda} - {album}"):
+                posts.append((partes[0], banda, album))
     return posts
+
+
+def hay_catalogo():
+    return (RAIZ / CATALOGO_FILE).exists()
+
+
+def guardar_catalogo(sesion):
+    """Guarda todos los posts de los géneros activos, sin filtros, como post_id|banda|álbum."""
+    generos = cargar_generos()
+    print(f"Leyendo el catálogo de DeathGrind ({len(generos)} géneros); tarda unos minutos...",
+          flush=True)
+    releases = extraer_todo(sesion, generos, set(), None, verbose=False)[0]
+    archivo = RAIZ / CATALOGO_FILE
+    archivo.parent.mkdir(parents=True, exist_ok=True)
+    lineas = [f"{r['post_id']}|{r['band']}|{r['album']}" for r in releases]
+    archivo.write_text("# Catálogo de DeathGrind para likes_a_mano.py\n# Formato: post_id|band|album\n\n"
+                       + "\n".join(lineas) + "\n", encoding="utf-8")
+    print(f"Catálogo: {len(lineas)} posts en {CATALOGO_FILE}", flush=True)
 
 
 def likes_anotados():
@@ -214,15 +245,26 @@ def esperar_like(sesion, post_id, pestana, url):
             pestana, fuera_desde = nueva, None
 
 
-def main():
+def main(argv=()):
+    parser = argparse.ArgumentParser(
+        description="Abre los posts de DeathGrind de los álbumes del canal para darles like.")
+    parser.add_argument("--actualizar-catalogo", action="store_true",
+                        help="vuelve a recorrer DeathGrind y rehace data/catalogo_posts.txt")
+    args = parser.parse_args(argv)
+    sesion = None
+    if args.actualizar_catalogo or not hay_catalogo():
+        cargar_env()
+        sesion = crear_sesion_autenticada()
+        guardar_catalogo(sesion)
     posts = posts_publicados()
     anotados = likes_anotados()
     faltan = [post for post in posts if post[0] not in anotados]
     print(f"{len(posts)} álbumes del canal tienen post en DeathGrind; faltan {len(faltan)}.", flush=True)
     if not faltan:
         return
-    cargar_env()
-    sesion = crear_sesion_autenticada()
+    if sesion is None:
+        cargar_env()
+        sesion = crear_sesion_autenticada()
     usuario = usuario_de_la_sesion(sesion)
     if not usuario:
         sys.exit("La sesión del scraper no tiene usuario: revisa DEATHGRIND_EMAIL y DEATHGRIND_PASSWORD")
@@ -270,4 +312,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

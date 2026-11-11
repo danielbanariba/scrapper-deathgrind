@@ -91,6 +91,43 @@ class PostsPublicados(unittest.TestCase):
 
         self.assertEqual(posts, [("10", "Banda Uno", "Disco Uno"), ("13", "Banda Pipe", "Parte A|Parte B")])
 
+    def test_suma_los_posts_del_catalogo_que_estan_en_el_canal_sin_repetir_los_descargados(self):
+        registro = _Registro({"Banda Uno - Disco Uno", "Banda Vieja - Disco Viejo"})
+        with tempfile.TemporaryDirectory() as tmp:
+            for nombre, texto in ((likes.DESCARGADOS_FILE, "10|Banda Uno|Disco Uno\n"),
+                                  (likes.CATALOGO_FILE, "10|Banda Uno|Disco Uno\n20|Banda Vieja|Disco Viejo\n"
+                                                        "21|Banda Ajena|Disco Ajeno\n")):
+                archivo = Path(tmp) / nombre
+                archivo.parent.mkdir(parents=True, exist_ok=True)
+                archivo.write_text(texto, encoding="utf-8")
+            with mock.patch.object(likes, "RAIZ", Path(tmp)), \
+                    mock.patch.object(likes, "cargar_publicados", return_value=registro):
+                posts = likes.posts_publicados()
+
+        self.assertEqual(posts, [("10", "Banda Uno", "Disco Uno"), ("20", "Banda Vieja", "Disco Viejo")])
+
+
+class Catalogo(unittest.TestCase):
+    def test_guarda_todos_los_posts_de_los_generos_sin_filtrar_y_posts_publicados_los_lee(self):
+        releases = [{"post_id": 20, "band": "Banda Vieja", "album": "Disco Viejo"},
+                    {"post_id": 30, "band": "Uno / Otro", "album": "Split|Raro"}]
+        extraer_todo = mock.Mock(return_value=(releases, [], 2, 0, 0, 0, 0))
+        registro = _Registro({"Banda Vieja - Disco Viejo", "Uno / Otro - Split|Raro"})
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(likes, "RAIZ", Path(tmp)), \
+                mock.patch.object(likes, "cargar_generos", return_value=[(2, "Grind")]), \
+                mock.patch.object(likes, "extraer_todo", extraer_todo), \
+                mock.patch.object(likes, "cargar_publicados", return_value=registro), \
+                contextlib.redirect_stdout(io.StringIO()):
+            (Path(tmp) / likes.DESCARGADOS_FILE).parent.mkdir(parents=True)
+            (Path(tmp) / likes.DESCARGADOS_FILE).write_text("", encoding="utf-8")
+            likes.guardar_catalogo(sesion=object())
+            posts = likes.posts_publicados()
+
+        sesion, generos, sellos, tipos = extraer_todo.call_args.args[:4]
+        self.assertEqual((generos, sellos, tipos), ([(2, "Grind")], set(), None))
+        self.assertEqual(posts, [("20", "Banda Vieja", "Disco Viejo"), ("30", "Uno / Otro", "Split|Raro")])
+
 
 class _ProcesoBrave:
     def __init__(self):
@@ -108,6 +145,8 @@ class CierreDeBrave(unittest.TestCase):
         """Runs main() with the site and Brave faked; what it prints stays in self.salida."""
         self.salida = io.StringIO()
         base = {
+            "hay_catalogo": mock.Mock(return_value=True),
+            "guardar_catalogo": mock.Mock(),
             "posts_publicados": mock.Mock(return_value=[("1", "Banda", "Disco")]),
             "likes_anotados": mock.Mock(return_value=set()),
             "cargar_env": mock.Mock(),
@@ -139,6 +178,33 @@ class CierreDeBrave(unittest.TestCase):
         self.assertTrue(brave.terminado)
         self.assertIn("La ventana de Brave se cerró.", self.salida.getvalue())
         self.assertIn("Likes nuevos: 0; ya estaban: 0.", self.salida.getvalue())
+
+
+class CatalogoEnMain(unittest.TestCase):
+    def test_arma_el_catalogo_si_falta_o_si_se_pide_y_si_no_hay_nada_que_hacer_no_inicia_sesion(self):
+        casos = (
+            ("sin catálogo se arma antes de la lista", False, [], 1, 1),
+            ("con catálogo no se vuelve a recorrer DeathGrind", True, [], 0, 0),
+            ("--actualizar-catalogo lo vuelve a armar", True, ["--actualizar-catalogo"], 1, 1),
+        )
+        for nombre, hay, argv, armados, sesiones in casos:
+            with self.subTest(nombre), contextlib.ExitStack() as pila:
+                guardar = mock.Mock()
+                login = mock.Mock(return_value=object())
+                parches = {
+                    "hay_catalogo": mock.Mock(return_value=hay),
+                    "guardar_catalogo": guardar,
+                    "posts_publicados": mock.Mock(return_value=[]),
+                    "cargar_env": mock.Mock(),
+                    "crear_sesion_autenticada": login,
+                }
+                for atributo, valor in parches.items():
+                    pila.enter_context(mock.patch.object(likes, atributo, valor))
+                pila.enter_context(contextlib.redirect_stdout(io.StringIO()))
+                likes.main(argv)
+
+                self.assertEqual(guardar.call_count, armados)
+                self.assertEqual(login.call_count, sesiones)
 
 
 class _Abierta:
