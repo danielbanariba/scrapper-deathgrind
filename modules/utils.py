@@ -149,19 +149,67 @@ def cargar_publicados():
     Si ese código está pero no carga, frena con un solo mensaje (sin traceback): devolver None
     haría pedir los links de todo, también de lo ya publicado, y eso gasta créditos de descarga.
     """
-    base = Path(os.environ.get("CLICK_AUTO_EDITOR_DIR") or DIR_CLICK_AUTO_EDITOR).expanduser()
+    base = _dir_click_auto_editor()
     codigo = base / "registro_publicados.py"
     if not codigo.is_file():
         return None
     try:
-        spec = importlib.util.spec_from_file_location("registro_publicados", codigo)
-        modulo = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(modulo)
-        return modulo.leer(base / "data" / "agente" / "ya_publicados.tsv")
+        return _cargar_modulo(codigo, "registro_publicados").leer(base / "data" / "agente" / "ya_publicados.tsv")
     except (SyntaxError, ImportError, AttributeError, OSError) as exc:
         sys.exit(f"❌ No se pudo cargar {codigo} ({type(exc).__name__}: {exc}). "
                  "Se frena el paso de links para no gastar créditos de descarga en lo ya "
                  "publicado; arregla ese archivo y vuelve a correr.")
+
+
+def cargar_cola():
+    """Busca un release en las carpetas que click-auto-editor tiene en cola, o None si no está su código.
+
+    Devuelve una función: nombre "Banda - Álbum" -> la carpeta de la cola con ese álbum, o None.
+    Las carpetas son las de origen del render (01_limpieza_de_impurezas, Album/, EP/),
+    Renderizando/, upload_video/ y Censura/, como las define su config.py, y la clave
+    "banda|álbum" es la de su registro_publicados.py: la misma que usa el servicio.
+
+    Una carpeta que no se puede leer (el SSD sin montar) se avisa y no cuenta. Si ese código
+    está pero no carga, frena con un solo mensaje, igual que cargar_publicados.
+    """
+    base = _dir_click_auto_editor()
+    config_py, registro_py = base / "config.py", base / "registro_publicados.py"
+    if not (config_py.is_file() and registro_py.is_file()):
+        return None
+    codigo = config_py
+    try:
+        config = _cargar_modulo(config_py, "config_click_auto_editor")
+        carpetas = [*config.DIRS_ORIGEN_RENDER, config.DIR_RENDERIZANDO, config.DIR_UPLOAD, config.DIR_CENSURA]
+        codigo = registro_py
+        clave = _cargar_modulo(registro_py, "registro_publicados").clave
+    except (SyntaxError, ImportError, AttributeError, OSError) as exc:
+        sys.exit(f"❌ No se pudo cargar {codigo} ({type(exc).__name__}: {exc}). "
+                 "Se frena el paso de links para no gastar créditos de descarga en lo que ya "
+                 "está en la cola; arregla ese archivo y vuelve a correr.")
+    en_cola = {}
+    for carpeta in carpetas:
+        try:
+            albumes = sorted(c for c in Path(carpeta).iterdir() if c.is_dir())
+        except OSError as exc:
+            print(f"⚠️ No pude leer {carpeta} ({type(exc).__name__}): lo que esté ahí no se saltea")
+            continue
+        for album in albumes:
+            k = clave(album.name)
+            if k:
+                en_cola.setdefault(k, album)
+    return lambda nombre: en_cola.get(clave(nombre))
+
+
+def _dir_click_auto_editor():
+    """La carpeta de click-auto-editor: CLICK_AUTO_EDITOR_DIR, o ~/Desktop/click-auto-editor."""
+    return Path(os.environ.get("CLICK_AUTO_EDITOR_DIR") or DIR_CLICK_AUTO_EDITOR).expanduser()
+
+
+def _cargar_modulo(codigo, nombre):
+    spec = importlib.util.spec_from_file_location(nombre, codigo)
+    modulo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modulo)
+    return modulo
 
 
 def delay_con_jitter(base, factor=0.3):

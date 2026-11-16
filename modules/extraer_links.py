@@ -17,7 +17,7 @@ import threading
 from modules.utils import (
     API_URL, DELAY_BASE_429, MAX_BACKOFF_429,
     REPERTORIO_FILTRADO_FILE, REPERTORIO_CON_LINKS_FILE, LINKS_FILE, DETALLE_FILE,
-    cargar_env, cargar_publicados, crear_sesion_autenticada,
+    cargar_cola, cargar_env, cargar_publicados, crear_sesion_autenticada,
     delay_con_jitter,
 )
 
@@ -270,6 +270,34 @@ def sacar_publicados(repertorio, verbose=True):
     return quedan
 
 
+def sacar_en_cola(repertorio, verbose=True):
+    """Saca los releases que click-auto-editor ya tiene en una carpeta de la cola, sin publicar.
+
+    Son álbumes que ya están en el disco (bajados antes o por otro lado): pedir sus links
+    gastaría créditos de descarga en algo que ya tenemos.
+    """
+    buscar = cargar_cola()
+    if buscar is None:
+        print("⚠️ No encontré config.py y registro_publicados.py de click-auto-editor "
+              "(CLICK_AUTO_EDITOR_DIR): no se saltea lo que ya está en la cola")
+        return repertorio
+    quedan, en_cola = [], []
+    for release in repertorio:
+        nombre = f"{release.get('band', '')} - {release.get('album', '')}"
+        carpeta = buscar(nombre)
+        if carpeta:
+            en_cola.append((nombre, carpeta))
+        else:
+            quedan.append(release)
+    if verbose and en_cola:
+        print(f"⏭️  {len(en_cola)} releases ya están en la cola de click-auto-editor, no se piden sus links:")
+        for nombre, carpeta in en_cola[:10]:
+            print(f"   • {nombre} → {carpeta.parent.name}/{carpeta.name}")
+        if len(en_cola) > 10:
+            print(f"   … y {len(en_cola) - 10} más")
+    return quedan
+
+
 def guardar_resultados(repertorio, output_json=OUTPUT_JSON, output_txt=OUTPUT_TXT,
                        output_detalle=OUTPUT_DETALLE, verbose=True):
     """Guarda los resultados en múltiples formatos"""
@@ -346,6 +374,7 @@ def run(verbose=True, num_workers=None, input_file=None):
 
     repertorio = cargar_repertorio(input_file or INPUT_FILE)
     repertorio = sacar_publicados(repertorio, verbose=verbose)
+    repertorio = sacar_en_cola(repertorio, verbose=verbose)
     if verbose:
         print(f"✓ {len(repertorio)} releases, {num_workers} workers")
 
