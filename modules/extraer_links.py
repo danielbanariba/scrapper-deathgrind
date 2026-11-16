@@ -298,6 +298,16 @@ def sacar_en_cola(repertorio, verbose=True):
     return quedan
 
 
+def ordenar_mas_nuevos_primero(repertorio):
+    """Los posts más nuevos de DeathGrind primero: sus links siguen vivos más seguido.
+
+    El post_id crece con cada post. En los 1038 créditos de 2026-11-08 y 2026-11-16 bajó el
+    59% del cuarto de posts más nuevos y entre el 13% y el 22% de la mitad más vieja, también
+    a igual año del álbum. Cuando se acaban los créditos, lo que queda sin pedir es lo más viejo.
+    """
+    return sorted(repertorio, key=lambda release: -int(release.get('post_id') or 0))
+
+
 def guardar_resultados(repertorio, output_json=OUTPUT_JSON, output_txt=OUTPUT_TXT,
                        output_detalle=OUTPUT_DETALLE, verbose=True):
     """Guarda los resultados en múltiples formatos"""
@@ -375,8 +385,9 @@ def run(verbose=True, num_workers=None, input_file=None):
     repertorio = cargar_repertorio(input_file or INPUT_FILE)
     repertorio = sacar_publicados(repertorio, verbose=verbose)
     repertorio = sacar_en_cola(repertorio, verbose=verbose)
+    repertorio = ordenar_mas_nuevos_primero(repertorio)
     if verbose:
-        print(f"✓ {len(repertorio)} releases, {num_workers} workers")
+        print(f"✓ {len(repertorio)} releases, {num_workers} workers (los posts más nuevos primero)")
 
     # Extraer links via API
     repertorio_con_links = extraer_links_paralelo(

@@ -160,7 +160,8 @@ class ExtraerLinks(unittest.TestCase):
         resultado = self._correr(repertorio, sesion)
 
         self.assertEqual(len(sesion.pedidos), 2)
-        self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
+        # The newest post goes first
+        self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/5")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
 
     def test_sin_creditos_avisa_con_varios_workers_y_no_pide_todos_los_releases(self):
@@ -289,6 +290,18 @@ class ExtraerLinks(unittest.TestCase):
                 self.assertEqual(sesion.pedidos, [])
                 shutil.rmtree(self.tmp / "cola")
                 shutil.rmtree(self.tmp / "ssd")
+
+    def test_pide_primero_los_posts_mas_nuevos_y_sin_creditos_quedan_los_viejos(self):
+        repertorio = [_release(10, "Vieja", "Uno"), _release(950, "Nueva", "Dos"),
+                      _release(300, "Media", "Tres"), _release(42, "Otra", "Cuatro")]
+        sesion = _SesionLinks(con_creditos=2)
+
+        resultado = self._correr(repertorio, sesion)
+
+        self.assertEqual(sesion.pedidos[:2], [f"{utils.API_URL}/posts/950/links",
+                                              f"{utils.API_URL}/posts/300/links"])
+        sin_pedir = sorted(r["post_id"] for r in resultado if "download_links" not in r)
+        self.assertEqual(sin_pedir, [10, 42])
 
     def test_una_carpeta_de_la_cola_que_no_esta_se_avisa_y_las_demas_cuentan(self):
         editor = self._poner_cola(REGISTRO_FALSO)

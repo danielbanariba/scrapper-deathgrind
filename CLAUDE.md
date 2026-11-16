@@ -56,7 +56,7 @@ Commits in English, Gitmoji + Conventional Commits, following `templates/commit-
 ejecutar_pipeline() — 3 steps:
   Step 1: extraer_bandas.run()        → API scrape, filter by label/downloaded/failed → data/repertorio.json
   Step 2: filtrar_youtube.run()       → Playwright async, parallel YouTube search     → data/repertorio_filtrado.json
-  Step 3: extraer_links.run()         → skip published albums, parallel link extraction → data/repertorio_con_links.json
+  Step 3: extraer_links.run()         → skip published and queued albums, newest posts first, parallel link extraction → data/repertorio_con_links.json
 
 ejecutar_descarga() — separate call after pipeline:
   Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files
@@ -86,6 +86,10 @@ Resume mode only skips the initial extraction step when `data/repertorio.json` a
   - A folder that cannot be read (the render SSD not mounted) is reported with one `⚠️` line, and the other folders still count.
   - Without `config.py` or `registro_publicados.py` it warns and skips nothing. If either is there but fails to load, the step stops before any `/links` request, as above.
   - It is a name match: a reissue with the same name is skipped too. `descargados.txt` only knows what this scraper downloaded, by post id; this catches albums that came from elsewhere or from another post. On 2026-11-16 it skipped 20 of 5401 pending releases.
+- **Newest posts first**: the step asks for links in descending `post_id` order (`extraer_links.ordenar_mas_nuevos_primero()`), so when the credits run out the releases left unasked are the oldest posts. `data/repertorio_con_links.json`, and so the download, keeps that order.
+  - The `post_id` grows with each DeathGrind post. Link age decides whether a download works, and the album year does not.
+  - Data: 1038 credits on 2026-11-08 and 2026-11-16. The newest quarter of posts downloaded 59% of the time; the older half, 13% to 22%.
+  - For the same album year, a newer post did about twice as well: 70% against 37% for 2024-26 albums, 40% against 15% for older ones.
 - **Thread-local sessions**: `extraer_bandas.py` and `extraer_links.py` use `threading.local()` to give each worker its own `requests.Session` with connection pooling.
 - **YouTube filter**: Revalidates the full current repertory on every run; no YouTube cache is used. A check that fails (a Chromium error or the per-release timeout) approves the release without a verdict: it prints `⚠️ sin verificar`, the run ends with `⚠️ N releases sin verificar (aprobados sin chequear)`, and it is not written to `data/youtube_checkpoint.jsonl`, so a resumed run checks it again. The approved and rejected lists come out in the order of `data/repertorio.json`, not in the order the checks finish.
 - **Failed posts tracking**: `data/fallidos_bandas.txt` tracks posts with broken links, auto-expires after 30 days.
