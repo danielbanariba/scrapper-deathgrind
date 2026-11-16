@@ -79,7 +79,23 @@ def leer(ruta):
     ruta = Path(ruta)
     lineas = ruta.read_text(encoding="utf-8").splitlines() if ruta.exists() else []
     return _Registro({linea.split("\\t")[0] for linea in lineas if linea})
+
+
+def clave(nombre):
+    return nombre.split(" (")[0].lower()
 """
+
+
+def _config_falsa(album, renderizando, otras):
+    """A click-auto-editor config.py whose queue folders are the given paths."""
+    return (
+        "from pathlib import Path\n"
+        f"DIRS_ORIGEN_RENDER = (Path({str(otras / 'limpieza')!r}), Path({str(album)!r}), "
+        f"Path({str(otras / 'EP')!r}))\n"
+        f"DIR_RENDERIZANDO = Path({str(renderizando)!r})\n"
+        f"DIR_UPLOAD = Path({str(otras / 'upload_video')!r})\n"
+        f"DIR_CENSURA = Path({str(otras / 'Censura')!r})\n"
+    )
 
 
 class SinCreditos(unittest.TestCase):
@@ -144,7 +160,8 @@ class ExtraerLinks(unittest.TestCase):
         resultado = self._correr(repertorio, sesion)
 
         self.assertEqual(len(sesion.pedidos), 2)
-        self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/1")
+        # The newest post goes first
+        self.assertEqual(resultado[0]["download_links"][0]["url"], "https://mega.nz/file/5")
         self.assertEqual([r.get("download_links") for r in resultado[1:]], [None] * 4)
 
     def test_sin_creditos_avisa_con_varios_workers_y_no_pide_todos_los_releases(self):
@@ -226,6 +243,77 @@ class ExtraerLinks(unittest.TestCase):
 
         self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/8/links"])
         self.assertEqual([r["post_id"] for r in resultado], [8])
+
+    def _poner_cola(self, codigo_registro, config=None):
+        """A click-auto-editor with a queue: Album/ and Renderizando/ under self.tmp."""
+        editor = self._poner_registro(codigo_registro)
+        self.album, self.renderizando = self.tmp / "cola" / "Album", self.tmp / "ssd" / "Renderizando"
+        self.album.mkdir(parents=True)
+        self.renderizando.mkdir(parents=True)
+        texto = config if config is not None else _config_falsa(self.album, self.renderizando, self.tmp / "cola")
+        (editor / "config.py").write_text(texto, encoding="utf-8")
+        return editor
+
+    def test_no_pide_links_de_lo_que_ya_esta_en_una_carpeta_de_la_cola(self):
+        codigo = Path(os.environ.get("CLICK_AUTO_EDITOR_REAL", utils.DIR_CLICK_AUTO_EDITOR)).expanduser()
+        codigo = codigo / "registro_publicados.py"
+        if not codigo.is_file():
+            self.skipTest(f"no está {codigo}")
+        editor = self._poner_cola(codigo.read_text(encoding="utf-8"))
+        # Folder names as the queue keeps them: year, type tag and the __N suffix
+        (self.album / "PIGTO - The Collector (2020) [EP]").mkdir()
+        (self.renderizando / "Otra Banda - Disco (2008)__2").mkdir()
+        repertorio = [_release(7, "Pigto", "The Collector"), _release(8, "Otra Banda", "Disco"),
+                      _release(9, "Tercera", "Nuevo")]
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}):
+            resultado = self._correr(repertorio, sesion, verbose=True)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/9/links"])
+        self.assertEqual([r["post_id"] for r in resultado], [9])
+        self.assertIn("2 releases ya están en la cola", self.salida.getvalue())
+
+    def test_una_config_que_no_carga_frena_el_paso_sin_pedir_links(self):
+        for causa, config in (("SyntaxError", "DIR_EP = (\n"), ("AttributeError", "DIRS_ORIGEN_RENDER = ()\n")):
+            with self.subTest(causa=causa):
+                editor = self._poner_cola(REGISTRO_FALSO, config=config)
+                sesion = _SesionLinks(con_creditos=10)
+
+                with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}), \
+                        self.assertRaises(SystemExit) as parada:
+                    self._correr([_release(1, "Banda", "Disco")], sesion)
+
+                self.assertIsInstance(parada.exception.code, str)
+                self.assertIn(str(editor / "config.py"), parada.exception.code)
+                self.assertIn(causa, parada.exception.code)
+                self.assertEqual(sesion.pedidos, [])
+                shutil.rmtree(self.tmp / "cola")
+                shutil.rmtree(self.tmp / "ssd")
+
+    def test_pide_primero_los_posts_mas_nuevos_y_sin_creditos_quedan_los_viejos(self):
+        repertorio = [_release(10, "Vieja", "Uno"), _release(950, "Nueva", "Dos"),
+                      _release(300, "Media", "Tres"), _release(42, "Otra", "Cuatro")]
+        sesion = _SesionLinks(con_creditos=2)
+
+        resultado = self._correr(repertorio, sesion)
+
+        self.assertEqual(sesion.pedidos[:2], [f"{utils.API_URL}/posts/950/links",
+                                              f"{utils.API_URL}/posts/300/links"])
+        sin_pedir = sorted(r["post_id"] for r in resultado if "download_links" not in r)
+        self.assertEqual(sin_pedir, [10, 42])
+
+    def test_una_carpeta_de_la_cola_que_no_esta_se_avisa_y_las_demas_cuentan(self):
+        editor = self._poner_cola(REGISTRO_FALSO)
+        (self.album / "Banda - Disco (2020)").mkdir()
+        shutil.rmtree(self.renderizando)  # the SSD is not mounted
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}):
+            self._correr([_release(1, "Banda", "Disco"), _release(2, "Otra", "Cosa")], sesion)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/2/links"])
+        self.assertIn(f"⚠️ No pude leer {self.renderizando}", self.salida.getvalue())
 
 
 if __name__ == "__main__":
