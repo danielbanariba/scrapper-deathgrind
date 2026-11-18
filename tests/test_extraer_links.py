@@ -86,6 +86,25 @@ def clave(nombre):
 """
 
 
+# What registro_publicados.clave promises: "banda|album" with no case, accents or signs,
+# and None when either half is empty
+REGISTRO_CON_CLAVE = REGISTRO_FALSO + '''
+import unicodedata
+
+
+def _compacto(texto):
+    texto = unicodedata.normalize("NFKD", texto.casefold())
+    return "".join(c for c in texto if c.isalnum())
+
+
+def clave(nombre):
+    if " - " not in nombre:
+        return None
+    banda, album = (_compacto(parte) for parte in nombre.split(" - ", 1))
+    return f"{banda}|{album}" if banda and album else None
+'''
+
+
 def _config_falsa(album, renderizando, otras):
     """A click-auto-editor config.py whose queue folders are the given paths."""
     return (
@@ -314,6 +333,130 @@ class ExtraerLinks(unittest.TestCase):
 
         self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/2/links"])
         self.assertIn(f"⚠️ No pude leer {self.renderizando}", self.salida.getvalue())
+
+    def _correr_con_lista_negra(self, lista, repertorio, codigo=REGISTRO_CON_CLAVE, verbose=False):
+        """Runs the step with a click-auto-editor whose band blacklist holds `lista`.
+
+        Returns what the fake site was asked and the releases that were saved.
+        """
+        editor = self._poner_registro(codigo)
+        if lista is not None:
+            (editor / "lista_negra_bandas.txt").write_text(lista, encoding="utf-8")
+        sesion = _SesionLinks(con_creditos=100)
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}):
+            resultado = self._correr(repertorio, sesion, verbose=verbose)
+        return editor, sesion, resultado
+
+    def test_no_pide_links_de_una_banda_de_la_lista_negra(self):
+        # "# Otra Banda" is a commented-out line: that band stays allowed
+        repertorio = [_release(7, "Prophecy", "Cold Winds"), _release(8, "Otra Banda", "Disco")]
+
+        _, sesion, resultado = self._correr_con_lista_negra(
+            "# Otra Banda\n\nProphecy\n", repertorio, verbose=True)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/8/links"])
+        self.assertEqual([r["post_id"] for r in resultado], [8])
+        self.assertIn("1 releases de bandas en la lista negra", self.salida.getvalue())
+        self.assertIn("Prophecy - Cold Winds", self.salida.getvalue())
+
+    def test_la_lista_negra_ignora_mayusculas_tildes_y_espacios(self):
+        repertorio = [_release(1, "PROPHECY", "Uno"), _release(2, "Próphecy", "Dos"),
+                      _release(3, "  dark   FUNERAL ", "Tres"), _release(4, "Otra Banda", "Cuatro")]
+
+        _, sesion, _ = self._correr_con_lista_negra("Prophecy\nDark Funeral\n", repertorio)
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/4/links"])
+
+    def test_la_lista_negra_con_el_registro_real_ignora_mayusculas_y_tildes(self):
+        origen = Path(os.environ.get("CLICK_AUTO_EDITOR_REAL", utils.DIR_CLICK_AUTO_EDITOR)).expanduser()
+        codigo = origen / "registro_publicados.py"
+        if not codigo.is_file():
+            self.skipTest(f"no está {codigo}")
+        repertorio = [_release(1, "PROPHECY", "Uno"), _release(2, "Próphecy", "Dos"),
+                      _release(3, "Otra Banda", "Tres")]
+
+        _, sesion, _ = self._correr_con_lista_negra(
+            "Prophecy\n", repertorio, codigo=codigo.read_text(encoding="utf-8"))
+
+        self.assertEqual(sesion.pedidos, [f"{utils.API_URL}/posts/3/links"])
+
+    def test_una_banda_que_no_esta_en_la_lista_negra_se_sigue_pidiendo(self):
+        # Names that only contain or start like a blocked one are other bands
+        repertorio = [_release(1, "Prophecy of Doom", "Uno"), _release(2, "Proph", "Dos"),
+                      _release(3, "Otra Banda", "Tres")]
+
+        _, sesion, resultado = self._correr_con_lista_negra("Prophecy\n", repertorio)
+
+        self.assertEqual(len(sesion.pedidos), 3)
+        self.assertEqual(sorted(r["post_id"] for r in resultado), [1, 2, 3])
+
+    def test_un_nombre_sin_letras_en_la_lista_negra_no_bloquea_a_otros_sin_letras(self):
+        # Both names have an empty key: they must not match each other
+        repertorio = [_release(1, "???", "Uno"), _release(2, "Otra Banda", "Dos")]
+
+        _, sesion, _ = self._correr_con_lista_negra("†††\n", repertorio)
+
+        self.assertEqual(len(sesion.pedidos), 2)
+
+    def test_la_lista_negra_muestra_diez_nombres_y_cuenta_el_resto(self):
+        bandas = [f"Banda{letra}" for letra in "ABCDEFGHIJKL"]
+        repertorio = [_release(i, banda, "Disco") for i, banda in enumerate(bandas, start=1)]
+
+        _, sesion, _ = self._correr_con_lista_negra("\n".join(bandas), repertorio, verbose=True)
+
+        self.assertEqual(sesion.pedidos, [])
+        salida = self.salida.getvalue()
+        self.assertIn("12 releases de bandas en la lista negra", salida)
+        self.assertEqual(salida.count("   • Banda"), 10)
+        self.assertIn("… y 2 más", salida)
+
+    def test_sin_archivo_de_lista_negra_no_se_bloquea_nada(self):
+        repertorio = [_release(1, "Prophecy", "Uno"), _release(2, "Otra Banda", "Dos")]
+
+        _, sesion, _ = self._correr_con_lista_negra(None, repertorio, verbose=True)
+
+        self.assertEqual(len(sesion.pedidos), 2)
+        self.assertNotIn("lista_negra_bandas", self.salida.getvalue())
+
+    def test_sin_el_codigo_de_click_auto_editor_avisa_y_no_bloquea_nada(self):
+        # setUp points CLICK_AUTO_EDITOR_DIR at a folder that does not exist
+        sesion = _SesionLinks(con_creditos=100)
+
+        self._correr([_release(1, "Prophecy", "Uno"), _release(2, "Otra Banda", "Dos")], sesion)
+
+        self.assertEqual(len(sesion.pedidos), 2)
+        self.assertIn("lista_negra_bandas.txt", self.salida.getvalue())
+
+    def test_un_registro_sin_clave_frena_el_paso_sin_pedir_links(self):
+        # leer works (so the published step goes on) but there is no clave to normalize with
+        codigo = REGISTRO_FALSO.replace("def clave(", "def otra_cosa(")
+        editor = self._poner_registro(codigo)
+        (editor / "lista_negra_bandas.txt").write_text("Prophecy\n", encoding="utf-8")
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}), \
+                self.assertRaises(SystemExit) as parada:
+            self._correr([_release(1, "Prophecy", "Uno")], sesion)
+
+        self.assertIsInstance(parada.exception.code, str)
+        self.assertIn(str(editor / "registro_publicados.py"), parada.exception.code)
+        self.assertIn("AttributeError", parada.exception.code)
+        self.assertEqual(sesion.pedidos, [])
+
+    def test_una_lista_negra_ilegible_frena_el_paso_sin_pedir_links(self):
+        editor = self._poner_registro(REGISTRO_CON_CLAVE)
+        # Saved as latin-1 by mistake: "Próphecy" is not valid UTF-8
+        (editor / "lista_negra_bandas.txt").write_bytes("Próphecy\n".encode("latin-1"))
+        sesion = _SesionLinks(con_creditos=10)
+
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(editor)}), \
+                self.assertRaises(SystemExit) as parada:
+            self._correr([_release(1, "Prophecy", "Uno")], sesion)
+
+        self.assertIsInstance(parada.exception.code, str)
+        self.assertIn(str(editor / "lista_negra_bandas.txt"), parada.exception.code)
+        self.assertIn("UnicodeDecodeError", parada.exception.code)
+        self.assertEqual(sesion.pedidos, [])
 
 
 if __name__ == "__main__":

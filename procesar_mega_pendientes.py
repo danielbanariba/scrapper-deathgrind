@@ -42,6 +42,7 @@ from modules.descargar_y_organizar import (
     guardar_fallido,
     guardar_mega_pendientes,
     procesar_release,
+    sacar_bloqueadas_de_la_cola_mega,
     verificar_dependencias,
 )
 from modules.logger import setup_logger
@@ -131,6 +132,9 @@ def main():
     descargados = cargar_descargados()
     fallidos = cargar_fallidos()
     log.info(f"📋 {len(descargados)} ya descargados | {len(fallidos)} fallidos previos")
+
+    # La cola puede traer bandas que entraron a la lista negra después de encolarse
+    sacar_bloqueadas_de_la_cola_mega()
 
     exitosos = 0
     omitidos = 0

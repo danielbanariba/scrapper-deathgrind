@@ -17,7 +17,7 @@ import threading
 from modules.utils import (
     API_URL, DELAY_BASE_429, MAX_BACKOFF_429,
     REPERTORIO_FILTRADO_FILE, REPERTORIO_CON_LINKS_FILE, LINKS_FILE, DETALLE_FILE,
-    cargar_cola, cargar_env, cargar_publicados, crear_sesion_autenticada,
+    cargar_bandas_bloqueadas, cargar_cola, cargar_env, cargar_publicados, crear_sesion_autenticada,
     delay_con_jitter,
 )
 
@@ -298,6 +298,33 @@ def sacar_en_cola(repertorio, verbose=True):
     return quedan
 
 
+def sacar_bandas_bloqueadas(repertorio, verbose=True):
+    """Saca los releases de las bandas de la lista negra de click-auto-editor.
+
+    Son bandas que le dieron un strike de copyright al canal y no se quieren bajar ni subir más:
+    pedir sus links gastaría créditos de descarga. Se compara solo por nombre de banda
+    (`utils.cargar_bandas_bloqueadas`).
+    """
+    bloqueada = cargar_bandas_bloqueadas()
+    if bloqueada is None:
+        print("⚠️ No encontré registro_publicados.py de click-auto-editor "
+              "(CLICK_AUTO_EDITOR_DIR): no se saltean las bandas de su lista_negra_bandas.txt")
+        return repertorio
+    quedan, bloqueados = [], []
+    for release in repertorio:
+        if bloqueada(release.get('band')):
+            bloqueados.append(f"{release.get('band', '')} - {release.get('album', '')}")
+        else:
+            quedan.append(release)
+    if verbose and bloqueados:
+        print(f"⏭️  {len(bloqueados)} releases de bandas en la lista negra de click-auto-editor, se saltean:")
+        for nombre in bloqueados[:10]:
+            print(f"   • {nombre}")
+        if len(bloqueados) > 10:
+            print(f"   … y {len(bloqueados) - 10} más")
+    return quedan
+
+
 def ordenar_mas_nuevos_primero(repertorio):
     """Los posts más nuevos de DeathGrind primero: sus links siguen vivos más seguido.
 
@@ -385,6 +412,7 @@ def run(verbose=True, num_workers=None, input_file=None):
     repertorio = cargar_repertorio(input_file or INPUT_FILE)
     repertorio = sacar_publicados(repertorio, verbose=verbose)
     repertorio = sacar_en_cola(repertorio, verbose=verbose)
+    repertorio = sacar_bandas_bloqueadas(repertorio, verbose=verbose)
     repertorio = ordenar_mas_nuevos_primero(repertorio)
     if verbose:
         print(f"✓ {len(repertorio)} releases, {num_workers} workers (los posts más nuevos primero)")
