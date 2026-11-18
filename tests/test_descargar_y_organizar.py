@@ -1,7 +1,10 @@
 """Download step against fake hosts: nothing is downloaded and data/ is not touched."""
 
+import contextlib
 import io
 import json
+import os
+import shutil
 import tempfile
 import unittest
 import zipfile
@@ -83,7 +86,9 @@ def _descargar(sesion, url):
         def guardar_en_tmp(release, fallidos, **kwargs):
             guardar_fallido(release, fallidos, fallidos_file=str(fallidos_file), **kwargs)
 
-        with mock.patch.object(descarga, "cargar_repertorio", return_value=[release]), \
+        with mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(Path(tmp) / "sin-editor")}), \
+                contextlib.redirect_stdout(io.StringIO()), \
+                mock.patch.object(descarga, "cargar_repertorio", return_value=[release]), \
                 mock.patch.object(descarga, "cargar_descargados", return_value=set()), \
                 mock.patch.object(descarga, "cargar_fallidos", return_value=set()), \
                 mock.patch.object(descarga, "cargar_mega_pendientes", return_value=[]), \
@@ -175,6 +180,104 @@ class YandexDiskTest(unittest.TestCase):
         sesion = _Sesion(429, rutas={"https://yadi.sk/d/disco123": _Respuesta(404, url=PAGINA_YANDEX)})
 
         self.assertIn("[PERM]", _descargar(sesion, "https://yadi.sk/d/disco123").fallido)
+
+
+# The part of click-auto-editor's registro_publicados.py that the band blacklist uses:
+# "banda|album" with no case, accents or signs
+REGISTRO_CON_CLAVE = """
+import unicodedata
+
+
+def _compacto(texto):
+    texto = unicodedata.normalize("NFKD", texto.casefold())
+    return "".join(c for c in texto if c.isalnum())
+
+
+def clave(nombre):
+    if " - " not in nombre:
+        return None
+    banda, album = (_compacto(parte) for parte in nombre.split(" - ", 1))
+    return f"{banda}|{album}" if banda and album else None
+"""
+ZIP = "https://files.example.org/disco.zip"
+MEGA = "https://mega.nz/file/abc#clave"
+
+
+def _release_con_links(post_id, banda, url):
+    return {"post_id": post_id, "band": banda, "album": "Disco", "download_links": [{"url": url}]}
+
+
+class BandasBloqueadasTest(unittest.TestCase):
+    """Releases that already carry links (an old repertorio_con_links.json, the Mega queue)
+    reach the download without asking the site for links, so the band blacklist has to
+    stop them here too."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp)
+        self.enterContext(contextlib.chdir(self.tmp))  # the queue lives in data/ under the cwd
+        self.editor = self.tmp / "editor"
+        self.editor.mkdir()
+        (self.editor / "registro_publicados.py").write_text(REGISTRO_CON_CLAVE, encoding="utf-8")
+        (self.editor / "lista_negra_bandas.txt").write_text("Prophecy\n", encoding="utf-8")
+        self.enterContext(mock.patch.dict(os.environ, {"CLICK_AUTO_EDITOR_DIR": str(self.editor)}))
+        self.destino = self.tmp / "destino"
+        self.destino.mkdir()
+        self.intentados = []
+        self.salida = io.StringIO()
+        self.enterContext(contextlib.redirect_stdout(self.salida))
+        self.enterContext(mock.patch.object(descarga, "cargar_descargados", return_value=set()))
+        self.enterContext(mock.patch.object(descarga, "cargar_fallidos", return_value=set()))
+        self.enterContext(mock.patch.object(descarga, "_mega_cooldown_activo", return_value=False))
+        self.enterContext(mock.patch.object(descarga, "TEMP_DIR", str(self.tmp / "temp")))
+        self.enterContext(mock.patch.object(descarga, "procesar_release", side_effect=self._procesar))
+        self.enterContext(mock.patch.object(descarga, "delay_con_jitter"))
+        self.enterContext(mock.patch.object(descarga.time, "sleep"))
+
+    def _procesar(self, release, *args, **kwargs):
+        self.intentados.append(release["post_id"])
+        return True, "Ya existe", None
+
+    def _poner_cola_mega(self, releases):
+        (self.tmp / "data").mkdir(exist_ok=True)
+        (self.tmp / "data" / "mega_pendientes.json").write_text(json.dumps(releases), encoding="utf-8")
+
+    def test_no_baja_releases_de_bandas_bloqueadas_que_ya_traen_links(self):
+        # A repertorio_con_links.json written before the band went on the list
+        repertorio = [_release_con_links("1", "PROPHECY", ZIP), _release_con_links("2", "Otra Banda", ZIP),
+                      _release_con_links("3", "Próphecy", MEGA), _release_con_links("4", "Otra Mas", MEGA)]
+
+        with mock.patch.object(descarga, "cargar_repertorio", return_value=repertorio):
+            descarga.run(destino_base=str(self.destino), verbose=True)
+
+        self.assertEqual(sorted(self.intentados), ["2", "4"])
+        self.assertIn("2 releases de bandas en la lista negra", self.salida.getvalue())
+
+    def test_no_baja_las_bandas_bloqueadas_de_la_cola_de_mega(self):
+        self._poner_cola_mega([_release_con_links("5", "Prophecy", MEGA), _release_con_links("6", "Otra Banda", MEGA)])
+
+        with mock.patch.object(descarga, "cargar_repertorio", return_value=[]):
+            descarga.run(destino_base=str(self.destino), verbose=False)
+
+        self.assertEqual(self.intentados, ["6"])
+
+    def test_el_daemon_de_mega_no_baja_bandas_bloqueadas(self):
+        import procesar_mega_pendientes as daemon
+
+        self._poner_cola_mega([_release_con_links("5", "Prophecy", MEGA), _release_con_links("6", "Otra Banda", MEGA)])
+        self.enterContext(mock.patch.object(daemon, "verificar_dependencias", return_value=True))
+        self.enterContext(mock.patch.object(daemon, "DESTINO_BASE", str(self.destino)))
+        self.enterContext(mock.patch.object(daemon, "TEMP_DIR", str(self.tmp / "temp")))
+        self.enterContext(mock.patch.object(daemon, "_attach_file_handler"))
+        self.enterContext(mock.patch.object(daemon, "_mega_cooldown_activo", return_value=False))
+        self.enterContext(mock.patch.object(daemon, "cargar_descargados", return_value=set()))
+        self.enterContext(mock.patch.object(daemon, "cargar_fallidos", return_value=set()))
+        self.enterContext(mock.patch.object(daemon, "procesar_release", side_effect=self._procesar))
+        self.enterContext(mock.patch.object(daemon.signal, "signal"))
+
+        self.assertEqual(daemon.main(), 0)
+
+        self.assertEqual(self.intentados, ["6"])
 
 
 if __name__ == "__main__":

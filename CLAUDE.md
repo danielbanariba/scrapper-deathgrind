@@ -56,10 +56,10 @@ Commits in English, Gitmoji + Conventional Commits, following `templates/commit-
 ejecutar_pipeline() — 3 steps:
   Step 1: extraer_bandas.run()        → API scrape, filter by label/downloaded/failed → data/repertorio.json
   Step 2: filtrar_youtube.run()       → Playwright async, parallel YouTube search     → data/repertorio_filtrado.json
-  Step 3: extraer_links.run()         → skip published and queued albums, newest posts first, parallel link extraction → data/repertorio_con_links.json
+  Step 3: extraer_links.run()         → skip published, queued and blacklisted-band albums, newest posts first, parallel link extraction → data/repertorio_con_links.json
 
 ejecutar_descarga() — separate call after pipeline:
-  Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files
+  Step 4: descargar_y_organizar.run() → Download, extract, rename, organize files (blacklisted bands skipped here too)
 ```
 
 Resume mode only skips the initial extraction step when `data/repertorio.json` already exists; YouTube filtering and link extraction are recalculated each run.
@@ -86,6 +86,11 @@ Resume mode only skips the initial extraction step when `data/repertorio.json` a
   - A folder that cannot be read (the render SSD not mounted) is reported with one `⚠️` line, and the other folders still count.
   - Without `config.py` or `registro_publicados.py` it warns and skips nothing. If either is there but fails to load, the step stops before any `/links` request, as above.
   - It is a name match: a reissue with the same name is skipped too. `descargados.txt` only knows what this scraper downloaded, by post id; this catches albums that came from elsewhere or from another post. On 2026-11-16 it skipped 20 of 5401 pending releases.
+- **Blacklisted bands**: the step also drops the releases of the bands on click-auto-editor's band blacklist and prints up to 10 of them (`utils.cargar_bandas_bloqueadas()`, `extraer_links.sacar_bandas_bloqueadas()`, called after `sacar_en_cola`). Added on 2026-11-18, after the channel got three copyright strikes from bands: those bands are never downloaded or uploaded again, and a `/links` request for them would spend a download credit.
+  - The list is click-auto-editor's `lista_negra_bandas.txt` (its repo root; one band per line, blank lines and `#` lines ignored), not a file of this repo. It is read at each run from `CLICK_AUTO_EDITOR_DIR`, so there is no copy to keep in sync, and `lista_sello.txt` stays the label blacklist.
+  - It is a name match only. The key of a band is the part before the `|` of `registro_publicados.clave(f"{band} - x")`, for the list lines and for each release's `band`, so "PROPHECY", "Prophecy" and "Próphecy" are one line, and "Prophecy of Doom" is another band. A namesake band is blocked too, and that is accepted. A name with no letters or digits has no key: it neither blocks nor is blocked.
+  - Without click-auto-editor's `registro_publicados.py` it warns and skips nothing; without the list file nothing is blocked. If the code is there but fails to load, or the list cannot be read (a file saved in latin-1 is not UTF-8), the step stops before any `/links` request with one message that names the file and the cause, as above.
+  - The download step applies the same filter, because releases that already carry links reach it without `extraer_links.run`: a `data/repertorio_con_links.json` from before the band went on the list, and the Mega queue (`data/mega_pendientes.json`, read by `descargar_y_organizar.run()` and by `procesar_mega_pendientes.py` when it starts). Blocked entries are also removed from the queue file (`descargar_y_organizar.sacar_bloqueadas_de_la_cola_mega()`).
 - **Newest posts first**: the step asks for links in descending `post_id` order (`extraer_links.ordenar_mas_nuevos_primero()`), so when the credits run out the releases left unasked are the oldest posts. `data/repertorio_con_links.json`, and so the download, keeps that order.
   - The `post_id` grows with each DeathGrind post. Link age decides whether a download works, and the album year does not.
   - Data: 1038 credits on 2026-11-08 and 2026-11-16. The newest quarter of posts downloaded 59% of the time; the older half, 13% to 22%.
@@ -115,6 +120,7 @@ Auth headers: x-csrf-token, x-uuid, Cookie (authToken, csrfToken)
 | `.env`                                   | `DEATHGRIND_EMAIL`, `DEATHGRIND_PASSWORD`; optional `CLICK_AUTO_EDITOR_DIR` (default `~/Desktop/click-auto-editor`) |
 | `generos_activos.txt`                    | TSV: genre ID, article count, name (header row skipped) |
 | `lista_sello.txt`                        | Label blacklist (one per line)                          |
+| click-auto-editor's `lista_negra_bandas.txt` | Band blacklist, read from `CLICK_AUTO_EDITOR_DIR` at each run (not in this repo) |
 | `keywords_album.txt` / `keywords_ep.txt` | YouTube mainstream detection keywords                   |
 
 ## Data Files

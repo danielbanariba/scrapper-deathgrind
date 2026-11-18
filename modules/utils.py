@@ -51,6 +51,8 @@ P_CSRF_DE_LA_PAGINA = re.compile(r'"csrfToken"\s*:\s*"([^"]+)"')
 
 # click-auto-editor guarda el registro de los álbumes ya publicados en el canal
 DIR_CLICK_AUTO_EDITOR = Path.home() / "Desktop" / "click-auto-editor"
+# ... y la lista de bandas que no quiere ver más: una por línea, sin las vacías ni las que empiezan con #
+LISTA_NEGRA_BANDAS = "lista_negra_bandas.txt"
 
 
 # =============================================================================
@@ -198,6 +200,49 @@ def cargar_cola():
             if k:
                 en_cola.setdefault(k, album)
     return lambda nombre: en_cola.get(clave(nombre))
+
+
+def cargar_bandas_bloqueadas():
+    """Las bandas que click-auto-editor no quiere ver más, o None si no está su código.
+
+    Devuelve una función: nombre de banda -> True si está en su lista_negra_bandas.txt. El archivo
+    se lee en cada corrida: sin él no se bloquea nada. Es una comparación por nombre de banda, no
+    por banda real: una banda homónima se bloquea también.
+
+    La clave es la banda de la "banda|álbum" de su registro_publicados.clave, la misma que usa el
+    servicio, así "PROPHECY", "Prophecy" y "Próphecy" son la misma línea. Un nombre sin letras ni
+    números no tiene clave: no se bloquea ni bloquea a otro.
+
+    Si el código está pero no carga, o la lista está pero no se puede leer (por ejemplo, guardada
+    en latin-1), frena con un solo mensaje (sin traceback), igual que cargar_publicados: seguir
+    gastaría créditos de descarga en bandas que no se quieren.
+    """
+    base = _dir_click_auto_editor()
+    registro_py = base / "registro_publicados.py"
+    if not registro_py.is_file():
+        return None
+    lista = base / LISTA_NEGRA_BANDAS
+    codigo = registro_py
+    try:
+        clave = _cargar_modulo(registro_py, "registro_publicados").clave
+
+        def clave_de_banda(nombre):
+            completa = clave(f"{nombre or ''} - x")
+            return completa.split("|")[0] if completa else None
+
+        bloqueadas = set()
+        if lista.is_file():
+            codigo = lista
+            for linea in lista.read_text(encoding="utf-8").splitlines():
+                linea = linea.strip()
+                if linea and not linea.startswith("#"):
+                    bloqueadas.add(clave_de_banda(linea))
+            bloqueadas.discard(None)
+    except (SyntaxError, ImportError, AttributeError, OSError, UnicodeDecodeError) as exc:
+        sys.exit(f"❌ No se pudo cargar {codigo} ({type(exc).__name__}: {exc}). "
+                 "Se frena para no pedir links ni bajar bandas de la lista negra de "
+                 "click-auto-editor; arregla ese archivo y vuelve a correr.")
+    return lambda nombre: clave_de_banda(nombre) in bloqueadas
 
 
 def _dir_click_auto_editor():

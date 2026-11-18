@@ -33,6 +33,7 @@ from requests.utils import requote_uri
 from pathlib import Path
 from urllib.parse import urlparse, unquote, parse_qs, urlencode, urlunparse, urljoin
 
+from modules.extraer_links import sacar_bandas_bloqueadas
 from modules.utils import delay_con_jitter
 from modules.logger import setup_logger, log_context
 
@@ -825,6 +826,19 @@ def guardar_mega_pendientes(pendientes, pendientes_file=MEGA_PENDIENTES_FILE):
             json.dump(pendientes, f, ensure_ascii=False, indent=2)
     except OSError:
         pass
+
+
+def sacar_bloqueadas_de_la_cola_mega(verbose=True):
+    """La cola de Mega sin los releases de bandas bloqueadas, que también se quitan del archivo.
+
+    Esos releases ya traen sus links de una corrida anterior: llegan a la descarga sin pasar por
+    `extraer_links.run`, así que el filtro de la lista negra tiene que estar acá también.
+    """
+    cola = cargar_mega_pendientes()
+    quedan = sacar_bandas_bloqueadas(cola, verbose=verbose)
+    if len(quedan) != len(cola):
+        guardar_mega_pendientes(quedan)
+    return quedan
 
 
 def _guardar_respuesta(response, destino, verbose=True, show_progress=True,
@@ -2331,7 +2345,7 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
         logger.info(f"🧾 {len(fallidos)} posts con links fallidos (serán omitidos)")
 
     # Cargar cola de Mega pendientes
-    mega_pendientes = cargar_mega_pendientes()
+    mega_pendientes = sacar_bloqueadas_de_la_cola_mega(verbose)
     mega_pendientes_ids = set()
     for r in mega_pendientes:
         pid = str(r.get('post_id', '')).strip()
@@ -2345,6 +2359,9 @@ def run(destino_base=DESTINO_BASE, verbose=True, limit=None):
 
     # Filtrar solo los que tienen links
     con_links = [r for r in repertorio if r.get('download_links')]
+
+    # Los links pueden venir de una corrida anterior, de antes de que la banda entrara a la lista
+    con_links = sacar_bandas_bloqueadas(con_links, verbose=verbose)
 
     # Priorizar releases más recientes (year desc)
     con_links.sort(
